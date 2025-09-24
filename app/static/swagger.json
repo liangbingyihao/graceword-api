@@ -1,0 +1,43 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "User Auth API",
+        "version": "1.0",
+        "description": "API for user authentication and management"
+    },
+    "servers": [
+        {"url": "http://localhost:5000/api", "description": "Development server"}
+    ],
+    "tags": [
+        {"name": "Authentication", "description": "User login and registration"},
+        {"name": "Users", "description": "User management"}
+    ],
+    "components": {
+        "securitySchemes": {
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        },
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "integer"},
+                    "username": {"type": "string"},
+                    "email": {"type": "string", "format": "email"}
+                }
+            },
+            "AuthResponse": {
+                "type": "object",
+                "properties": {
+                    "access_token": {"type": "string"},
+                    "user_id": {"type": "integer"},
+                    "username": {"type": "string"},
+                    "email": {"type": "string"}
+                }
+            }
+        }
+    }
+}

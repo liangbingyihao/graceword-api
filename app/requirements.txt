@@ -1,2 +1,14 @@
 flask==2.3.3
 uwsgi==2.0.21
+Werkzeug==2.2.3
+pymysql
+flask-sqlalchemy
+flask-migrate
+flask-jwt-extended==4.3.1
+bcrypt==3.2.0
+python-dotenv==0.19.0
+marshmallow==3.13.0
+flask-cors==3.0.10
+flasgger
+cozepy
+dotenv
