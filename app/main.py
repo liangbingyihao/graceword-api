@@ -1,7 +1,8 @@
 import json
 import logging
 import traceback
-
+import sys
+sys.path.append('/app/app')
 import click
 import pymysql
 from flask import Flask, request, jsonify
@@ -10,7 +11,6 @@ from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate, migrate
 from flask_cors import CORS
 from werkzeug.exceptions import HTTPException
-
 from api import init_api
 from config import Config
 from utils.exceptions import AuthError, handle_auth_error
