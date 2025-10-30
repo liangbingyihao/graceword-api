@@ -190,6 +190,7 @@ color_map = {"#FFFBE8": ("信靠", "盼望", "刚强", "光明"),
 
 class CozeService:
     bot_id = "7547552285878960168"
+    hymn_bot_id = "7566915373069762569"
     executor = ThreadPoolExecutor(3)
 
     @staticmethod
@@ -207,7 +208,8 @@ class CozeService:
 
     @staticmethod
     def is_explore_msg(message):
-        return len(message.context_id) > 5
+        from services.message_service import MessageService
+        return len(message.context_id) > 5 or message.action == MessageService.action_search_hymns
 
     @staticmethod
     def _fix_ai_response(message, ai_response):
@@ -295,15 +297,13 @@ class CozeService:
                     auto_session = [session_qa_name]
                     custom_variables["target"] = "explore"
                     additional_messages.append(cozepy.Message.build_user_question_text(message.content))
-                    session_lst = session.query(Session).filter_by(owner_id=user_id, session_name=session_qa_name).order_by(
+                    session_lst = session.query(Session).filter_by(owner_id=user_id,
+                                                                   session_name=session_qa_name).order_by(
                         desc(Session.id)).with_entities(Session.id, Session.session_name).limit(1).all()
 
                     # ask_msg = (custom_prompt + message.content) if custom_prompt else msg_explore + message.content
                 # rsp_msg = message
             else:
-                # rsp_msg = Message(0, user_id, "", context_id, 1)
-                # session.add(rsp_msg)
-                # session.commit()
                 custom_variables["target"] = "record"
                 session_lst = session.query(Session).filter_by(owner_id=user_id).order_by(
                     desc(Session.id)).with_entities(Session.id, Session.session_name).limit(100).all()
@@ -318,7 +318,7 @@ class CozeService:
                 if messages:
                     latest_lang = message.lang
                     for m in reversed(messages):
-                        if m.lang==latest_lang:
+                        if m.lang == latest_lang:
                             additional_messages.append(cozepy.Message.build_user_question_text(m.content))
                             additional_messages.append(cozepy.Message.build_assistant_answer(m.feedback))
                         # if m.action == MessageService.action_daily_pray:
@@ -380,28 +380,37 @@ class CozeService:
             response = CozeService._chat_with_coze(session, message, user_id, custom_variables, additional_messages,
                                                    _set_topics if not is_explore else None)
 
-            logger.warning(f"GOT: {response}")
-            result = json.loads(response)
-            bible, view = result.get('bible'), result.get('view')
-            if view:
-                message.feedback_text = view
-            summary = result.get("summary")
-            if summary:
-                message.summary = summary
-            if not is_explore:
-                tag = result.get("tag")
-                if tag:
-                    for k, v in color_map.items():
-                        if tag in v:
-                            result["color_tag"] = k
-                            break
-            if auto_session:
-                topic_name = _set_topics(auto_session)
+            if message.action == MessageService.action_search_hymns:
+                pass
             else:
-                topic_name = _set_topics([result.get("topic1"), result.get("topic2")])
-            if topic_name:
-                result["topic"] = topic_name
-            response = json.dumps(result, ensure_ascii=False)
+                result = {}
+                try:
+                    result = json.loads(response)
+                except Exception as e:
+                    logger.error("ai.error in chat")
+                    logger.exception(e)
+                    pass
+
+                bible, view = result.get('bible'), result.get('view')
+                if view:
+                    message.feedback_text = view
+                summary = result.get("summary")
+                if summary:
+                    message.summary = summary
+                if not is_explore:
+                    tag = result.get("tag")
+                    if tag:
+                        for k, v in color_map.items():
+                            if tag in v:
+                                result["color_tag"] = k
+                                break
+                if auto_session:
+                    topic_name = _set_topics(auto_session)
+                else:
+                    topic_name = _set_topics([result.get("topic1"), result.get("topic2")])
+                if topic_name:
+                    result["topic"] = topic_name
+                response = json.dumps(result, ensure_ascii=False)
             message.feedback = response
             message.status = MessageService.status_success
             session.commit()
@@ -426,26 +435,6 @@ class CozeService:
     def create_conversations():
         conversation = coze.conversations.create()
         return conversation.id
-
-    # @staticmethod
-    # def _set_topics(session, message, topic):
-    #     is_explore = CozeService.is_explore_msg(message)
-    #     if not is_explore and not message.session_id:
-    #         if topic:
-    #             result["topic"] = topic
-    #             for session_id, session_name in session_lst:
-    #                 if topic == session_name:
-    #                     message.session_id = session_id
-    #                     session.query(Session).filter_by(id=session_id).update({
-    #                         "updated_at": func.now()
-    #                     })
-    #                     session.commit()
-    #                     break
-    #             if not message.session_id and topic:
-    #                 new_session = Session(topic, user_id, 0)
-    #                 session.add(new_session)
-    #                 session.commit()
-    #                 message.session_id = new_session.id
 
     @staticmethod
     def _extract_content(text, s):
@@ -480,14 +469,19 @@ class CozeService:
         pos = [0, 0, 0, 0]
         topic_name = None
         logger.info(f"_chat_with_coze: {user_id, custom_variables, additional_messages}")
+        from services.message_service import MessageService
+        is_search_hymns = ori_msg.action == MessageService.action_search_hymns
         # is_explore = CozeService.is_explore_msg(ori_msg)
+        dst_bot_id = CozeService.hymn_bot_id if is_search_hymns else CozeService.bot_id
         for event in coze.chat.stream(
-                bot_id=CozeService.bot_id,
+                bot_id=dst_bot_id,
                 user_id=str(user_id),
                 custom_variables=custom_variables,
                 additional_messages=additional_messages,
         ):
             if event.event == ChatEventType.CONVERSATION_MESSAGE_DELTA:
+                if is_search_hymns:
+                    continue
                 message = event.message
                 all_content += message.content
                 if f_set_topics and not topic_name:

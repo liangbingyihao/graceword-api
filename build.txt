@@ -2,3 +2,5 @@
 docker run -d -p 8084:8080 --name graceword-py --env-file /home/bliang/coze-proxy/.env bliang0623/graceword-api:2025092401
 docker run -d -p 8084:8080 --name graceword-py --env-file /etc/graceword-py/.env --network=host bliang0623/graceword-api:2025092401
 docker build -t bliang0623/graceword-api:2025092401 .
+docker push bliang0623/graceword-api:2025092401
+47.238.114.230
