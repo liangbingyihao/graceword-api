@@ -4,3 +4,4 @@ docker run -d -p 8084:8080 --name graceword-py --env-file /etc/graceword-py/.env
 docker build -t bliang0623/graceword-api:2025092401 .
 docker push bliang0623/graceword-api:2025092401
 47.238.114.230
+nohup python3 main_test.py > http.log 2>&1 &

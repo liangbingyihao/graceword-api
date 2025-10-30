@@ -18,6 +18,8 @@ class MessageService:
     action_direct_msg = 3
     action_daily_pray = 4
     action_input_prompt = 5
+    action_daily_gw_pray = 6
+    action_search_hymns = 7
 
     content_type_user = 1
     content_type_ai = 2
