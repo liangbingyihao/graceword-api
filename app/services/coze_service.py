@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import time
 
 import cozepy
 from sqlalchemy import create_engine, exc, desc, func, not_
@@ -468,11 +469,13 @@ class CozeService:
         all_content = ""
         pos = [0, 0, 0, 0]
         topic_name = None
-        logger.info(f"_chat_with_coze: {user_id, custom_variables, additional_messages}")
+        logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables}")
         from services.message_service import MessageService
         is_search_hymns = ori_msg.action == MessageService.action_search_hymns
         # is_explore = CozeService.is_explore_msg(ori_msg)
         dst_bot_id = CozeService.hymn_bot_id if is_search_hymns else CozeService.bot_id
+        pending = False
+        start_time = time.time()
         for event in coze.chat.stream(
                 bot_id=dst_bot_id,
                 user_id=str(user_id),
@@ -480,6 +483,9 @@ class CozeService:
                 additional_messages=additional_messages,
         ):
             if event.event == ChatEventType.CONVERSATION_MESSAGE_DELTA:
+                if not pending:
+                    logger.info(f"_chat_with_coze: {user_id, ori_msg.id} pending, cost:{time.time() - start_time} s")
+                    pending = True
                 if is_search_hymns:
                     continue
                 message = event.message
@@ -497,6 +503,7 @@ class CozeService:
                 ori_msg.status = 1
                 session.commit()
             elif event.event == ChatEventType.CONVERSATION_MESSAGE_COMPLETED and event.message.type == MessageType.ANSWER:
+                logger.info(f"_chat_with_coze: {user_id, ori_msg.id} done, cost:{time.time() - start_time} s")
                 # logger.info(f"CONVERSATION_MESSAGE_COMPLETED: {event.message.content}")
                 return event.message.content
             # elif event.event == ChatEventType.CONVERSATION_CHAT_COMPLETED:
