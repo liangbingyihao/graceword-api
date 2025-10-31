@@ -490,19 +490,18 @@ class CozeService:
 
                 if is_search_hymns:
                     from utils.json_robust import extract_json_values_robust
+                    logger.info(f"hymns back:{all_content}")
                     result = {}
                     try:
                         response = extract_json_values_robust(all_content,"response")
                         if response:
                             result["response"] = response[0]
-                        continue
                     except Exception as e:
                         logger.exception(e)
                     try:
                         titles = extract_json_values_robust(all_content,"title")
                         if titles:
                             result["hymns"] = [{"title":x} for x in titles]
-                        continue
                     except Exception as e:
                         logger.exception(e)
                     if result:
