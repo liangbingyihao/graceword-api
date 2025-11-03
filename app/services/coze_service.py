@@ -475,6 +475,7 @@ class CozeService:
         dst_bot_id = CozeService.hymn_bot_id if is_search_hymns else CozeService.bot_id
         pending = False
         start_time = time.time()
+        last_len_hymns = 0
         for event in coze.chat.stream(
                 bot_id=dst_bot_id,
                 user_id=str(user_id),
@@ -504,6 +505,17 @@ class CozeService:
                             result["hymns"] = [{"title":x} for x in titles]
                     except Exception as e:
                         logger.exception(e)
+
+                    hymns = result.get("hymns")
+                    if hymns and len(hymns)>last_len_hymns:
+                        for k in ["play_url","sheet_url","ppt_url","composer","album","lyrics","copyright"]:
+                            try:
+                                data = extract_json_values_robust(all_content, k)
+                                if data and len(data)<=len(hymns):
+                                    for index, value in enumerate(data):
+                                        hymns[index][k] = value
+                            except Exception as e:
+                                logger.exception(e)
                     if result:
                         try:
                             ori_msg.feedback = json.dumps(result, ensure_ascii=False)
