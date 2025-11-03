@@ -148,7 +148,7 @@ class MessageService:
             return message.public_id
 
     @staticmethod
-    def new_message(owner_id, content, context_id, action, prompt, reply,lang):
+    def new_message(owner_id, content, context_id, action, prompt, reply, lang):
         '''
         :param lang:
         :param reply:
@@ -165,7 +165,7 @@ class MessageService:
         if content:
             if prompt:
                 logging.warning(f"prompt:{owner_id, content, action, prompt}")
-            message = Message(0, owner_id, content, context_id, action=action, reply=reply,lang=lang)
+            message = Message(0, owner_id, content, context_id, action=action, reply=reply, lang=lang)
             message.feedback_text = prompt or ""
             db.session.add(message)
             db.session.commit()
@@ -285,11 +285,13 @@ class MessageService:
                 feedback = json.loads(message.feedback)
                 explore = feedback.get("explore")
                 if explore:
+                    action = MessageService.action_search_hymns if message.action == MessageService.action_search_hymns \
+                        else MessageService.action_daily_talk
                     if isinstance(explore, list):
                         for i in explore:
-                            funcs.append([i, MessageService.action_daily_talk])
+                            funcs.append([i, action])
                     else:
-                        funcs.append([explore, MessageService.action_daily_talk])
+                        funcs.append([explore, action])
 
                 explore = feedback.get("prompt")
                 if explore:
