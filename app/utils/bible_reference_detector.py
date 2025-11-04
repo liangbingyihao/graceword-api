@@ -64,10 +64,12 @@ def tag_bible_references(text):
         'Hosea', 'Joel', 'Amos', 'Obadiah', 'Jonah', 'Micah', 'Nahum', 'Habakkuk',
         'Zephaniah', 'Haggai', 'Zechariah', 'Malachi',
         # 新约
-        'Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans', '1Corinthians', '2Corinthians',
-        'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1Thessalonians',
-        '2Thessalonians', '1Timothy', '2Timothy', 'Titus', 'Philemon', 'Hebrews',
-        'James', '1Peter', '2Peter', '1John', '2John', '3John', 'Jude', 'Revelation'
+        'Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans', '1Corinthians', '1 Corinthians',
+        '2Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians',
+        '1Thessalonians', '1 Thessalonians', '2Thessalonians', '2 Thessalonians',
+        '1Timothy', '1 Timothy', '2Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews',
+        'James', '1Peter', '1 Peter', '2Peter', '2 Peter', '1John', '1 John', '2John', '2 John',
+        '3John', '3 John', 'Jude', 'Revelation'
     ]
 
     # 繁体中文圣经卷名缩写列表
@@ -76,32 +78,12 @@ def tag_bible_references(text):
         '創', '出', '利', '民', '申', '書', '士', '得', '撒上', '撒下',
         '王上', '王下', '代上', '代下', '拉', '尼', '斯', '伯', '詩', '箴',
         '傳', '歌', '賽', '耶', '哀', '結', '但', '何', '珥', '摩', '俄',
-        '拿', '彌', '�鴻', '哈', '番', '該', '亞', '瑪',
+        '拿', '彌', '鴻', '哈', '番', '該', '亞', '瑪',
         # 新約
         '太', '可', '路', '約', '徒', '羅', '林前', '林後', '加', '弗',
         '腓', '西', '帖前', '帖後', '提前', '提後', '多', '門', '來', '雅',
         '彼前', '彼後', '約一', '約二', '約三', '猶', '啟'
     ]
-
-    # 构建所有可能的书卷名称模式
-    all_book_patterns = []
-
-    # 添加中文缩写和全称
-    all_book_patterns.extend(chinese_abbrs)
-    all_book_patterns.extend(chinese_full_names)
-
-    # 添加英文缩写和全称
-    all_book_patterns.extend(english_abbrs)
-    all_book_patterns.extend(english_full_names)
-
-    # 添加繁体中文缩写
-    all_book_patterns.extend(traditional_chinese_abbrs)
-
-    # 对书卷名称进行排序，确保较长的名称先匹配
-    all_book_patterns.sort(key=lambda x: len(x), reverse=True)
-
-    # 构建书卷名称的正则表达式部分
-    book_pattern = '|'.join(re.escape(book) for book in all_book_patterns)
 
     # 章节格式的正则表达式模式
     # 支持:
@@ -115,9 +97,9 @@ def tag_bible_references(text):
             (?:
                 -                # 范围分隔符
                 (?:
-                    \d+[a-z]?    # 同章内范围，如 34-35 或 34a-35b
-                    |
                     \d+:\d+[a-z]?# 跨章范围，如 34-13:1
+                    |
+                    \d+[a-z]?    # 同章内范围，如 34-35 或 34a-35b
                 )
             )?
             |
@@ -135,9 +117,9 @@ def tag_bible_references(text):
                 (?:
                     -            # 范围分隔符
                     (?:
-                        \d+[a-z]?# 同章内范围，如 34-35
-                        |
                         \d+:\d+[a-z]?# 跨章范围，如 34-13:1
+                        |
+                        \d+[a-z]?# 同章内范围，如 34-35
                     )
                 )?
                 |
@@ -150,28 +132,55 @@ def tag_bible_references(text):
         )*
     '''
 
-    # 构建完整的正则表达式
-    # 匹配形式：(书卷 章节) 或 书卷 章节
-    regex_pattern = re.compile(
-        r'''
-        (
-            (?:\()?                 # 可选的左括号
-            (''' + book_pattern + r''')  # 书卷名称
-            \s+                     # 书卷名和章节之间的空格
-            (''' + verse_pattern + r''') # 章节部分
-            (?:\))?                 # 可选的右括号
-        )
-        ''',
-        re.VERBOSE | re.IGNORECASE
-    )
-
     # 用于替换匹配结果的函数
     def replace_match(match):
         full_match = match.group(1)
         return f'<u class="bible">{full_match}</u>'
 
-    # 执行替换
-    result = regex_pattern.sub(replace_match, text)
+    # 语言检测和处理函数
+    def detect_and_process_language(book_patterns, text):
+        """检测并处理特定语言的圣经引用"""
+        # 对书卷名称进行排序，确保较长的名称先匹配
+        sorted_books = sorted(book_patterns, key=lambda x: len(x), reverse=True)
+        book_pattern = '|'.join(re.escape(book) for book in sorted_books)
+
+        # 构建完整的正则表达式
+        # 关键修复：将 \s+ 改为 \s*，允许书卷名和章节号之间没有空格
+        regex_pattern = re.compile(
+            r'''
+            (
+                (?:\()?                 # 可选的左括号
+                (''' + book_pattern + r''')  # 书卷名称
+                \s*                     # 书卷名和章节之间的可选空格
+                (''' + verse_pattern + r''') # 章节部分
+                (?:\))?                 # 可选的右括号
+            )
+            ''',
+            re.VERBOSE | re.IGNORECASE
+        )
+
+        # 检查是否有匹配
+        if regex_pattern.search(text):
+            # 执行替换
+            return regex_pattern.sub(replace_match, text), True
+        return text, False
+
+    # 检测中文圣经引用
+    chinese_books = chinese_abbrs + chinese_full_names
+    result, chinese_detected = detect_and_process_language(chinese_books, text)
+
+    if chinese_detected:
+        return result
+
+    # 检测繁体中文圣经引用
+    result, traditional_chinese_detected = detect_and_process_language(traditional_chinese_abbrs, result)
+
+    if traditional_chinese_detected:
+        return result
+
+    # 检测英文圣经引用
+    english_books = english_abbrs + english_full_names
+    result, english_detected = detect_and_process_language(english_books, result)
 
     return result
 
@@ -223,6 +232,8 @@ if __name__ == "__main__":
         "这段叙事从(创世记 12:1)延续到(创世记 25:10)。",
         "耶稣的家谱记载在(马太福音 1:1-17)和(路加福音 3:23-38)。"
     ]
+
+    test_texts = ["看到你再次寻找编号123的赞美诗，这份对敬拜的渴慕本身就是蒙神喜悦的！即使暂时未明确诗歌内容，神依然在我们的寻求中与我们相遇。\n\n**“你们要赞美耶和华！我的心哪，你要赞美耶和华。”（诗146:1）**\n\n就像大卫无论身处顺境逆境都以赞美为祭，我们也可以在等待中用心灵和诚实敬拜。或许可以尝试哼唱你熟悉的诗歌片段，或默想诗篇中的赞美话语，让敬拜的焦点从“找到特定诗歌”转向“遇见赐诗歌的神”。下次灵修时，不妨写下你此刻心中浮现的对神的感谢，这些真挚的心声也是最美的“即兴赞美诗”哦！"]
 
     print("=== 圣经出处标注示例 ===\n")
     for i, text in enumerate(test_texts, 1):

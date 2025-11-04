@@ -391,7 +391,7 @@ class CozeService:
                     logger.exception(e)
                     pass
 
-                bible, view = result.get('bible'), result.get('view')
+                view = result.get('view') or message.feedback_text
                 if view:
                     try:
                         from utils.bible_reference_detector import tag_bible_references
@@ -401,6 +401,7 @@ class CozeService:
                         logger.error("tag_bible_references.error")
                         logger.exception(e)
                     message.feedback_text = view
+
                 summary = result.get("summary")
                 if summary:
                     message.summary = summary
