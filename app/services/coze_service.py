@@ -393,6 +393,13 @@ class CozeService:
 
                 bible, view = result.get('bible'), result.get('view')
                 if view:
+                    try:
+                        from utils.bible_reference_detector import tag_bible_references
+                        view = tag_bible_references(view)
+                        result["view"] = view
+                    except Exception as e:
+                        logger.error("tag_bible_references.error")
+                        logger.exception(e)
                     message.feedback_text = view
                 summary = result.get("summary")
                 if summary:
