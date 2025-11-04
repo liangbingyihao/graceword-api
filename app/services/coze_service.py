@@ -491,7 +491,7 @@ class CozeService:
 
                 if is_search_hymns:
                     from utils.json_robust import extract_json_values_robust
-                    logger.info(f"hymns back:{all_content}")
+                    # logger.info(f"hymns back:{all_content}")
                     result = {}
                     try:
                         response = extract_json_values_robust(all_content,"response")
@@ -508,7 +508,7 @@ class CozeService:
 
                     hymns = result.get("hymns")
                     if hymns and len(hymns)>last_len_hymns:
-                        for k in ["play_url","sheet_url","ppt_url","composer","album","lyrics","copyright"]:
+                        for k in ["composer","album","lyrics","artist","play_url","sheet_url","ppt_url","copyright"]:
                             try:
                                 data = extract_json_values_robust(all_content, k)
                                 if data and len(data)<=len(hymns):
