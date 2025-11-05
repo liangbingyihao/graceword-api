@@ -132,11 +132,6 @@ def tag_bible_references(text):
         )*
     '''
 
-    # 用于替换匹配结果的函数
-    def replace_match(match):
-        full_match = match.group(1)
-        return f'<u class="bible">{full_match}</u>'
-
     # 语言检测和处理函数
     def detect_and_process_language(book_patterns, text):
         """检测并处理特定语言的圣经引用"""
@@ -145,19 +140,41 @@ def tag_bible_references(text):
         book_pattern = '|'.join(re.escape(book) for book in sorted_books)
 
         # 构建完整的正则表达式
-        # 关键修复：将 \s+ 改为 \s*，允许书卷名和章节号之间没有空格
         regex_pattern = re.compile(
             r'''
-            (
-                (?:\()?                 # 可选的左括号
-                (''' + book_pattern + r''')  # 书卷名称
-                \s*                     # 书卷名和章节之间的可选空格
-                (''' + verse_pattern + r''') # 章节部分
-                (?:\))?                 # 可选的右括号
+            (                       # 第1组：整个匹配
+                (?:\(?)             # 可选的左括号
+                (                   # 第2组：圣经引用内容（不包含括号）
+                    (''' + book_pattern + r''')  # 第3组：书卷名称
+                    \s*             # 书卷名和章节之间的可选空格
+                    (''' + verse_pattern + r''') # 第4组：章节部分
+                )
+                (?:\)?)             # 可选的右括号
             )
             ''',
             re.VERBOSE | re.IGNORECASE
         )
+
+        def replace_match(match):
+            """修正后的替换函数：不包含括号"""
+            full_match = match.group(1)  # 完整匹配，包含括号
+            bible_content = match.group(2)  # 圣经引用内容，不包含括号
+
+            # 检查是否有括号
+            has_left_paren = full_match.startswith('(')
+            has_right_paren = full_match.endswith(')')
+
+            # 重建内容，保持原有括号在外面
+            result = ''
+            if has_left_paren:
+                result += '('
+
+            result += f'<u class="bible">{bible_content}</u>'
+
+            if has_right_paren:
+                result += ')'
+
+            return result
 
         # 检查是否有匹配
         if regex_pattern.search(text):
