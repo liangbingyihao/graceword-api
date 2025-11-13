@@ -166,13 +166,17 @@ class MessageService:
         if content:
             if prompt:
                 logging.warning(f"prompt:{owner_id, content, action, prompt}")
+            try:
+                action = int(action)
+            except Exception as e:
+                pass
             message = Message(0, owner_id, content, context_id, action=action, reply=reply, lang=lang)
             message.feedback_text = prompt or ""
             if action == MessageService.action_guest_talk:
                 message.status = MessageService.status_success
             db.session.add(message)
             db.session.commit()
-            logging.warning(f"message.id:{message.id}")
+            logging.warning(f"message.id:{message.id},action:{action}")
             if action != MessageService.action_guest_talk:
                 CozeService.chat_with_coze_async(owner_id, message.id)
 
