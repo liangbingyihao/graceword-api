@@ -20,6 +20,7 @@ class MessageService:
     action_input_prompt = 5
     action_daily_gw_pray = 6
     action_search_hymns = 7
+    action_guest_talk = 9
 
     content_type_user = 1
     content_type_ai = 2
@@ -167,11 +168,13 @@ class MessageService:
                 logging.warning(f"prompt:{owner_id, content, action, prompt}")
             message = Message(0, owner_id, content, context_id, action=action, reply=reply, lang=lang)
             message.feedback_text = prompt or ""
+            if action == MessageService.action_guest_talk:
+                message.status = MessageService.status_success
             db.session.add(message)
             db.session.commit()
             logging.warning(f"message.id:{message.id}")
-
-        CozeService.chat_with_coze_async(owner_id, message.id)
+            if action != MessageService.action_guest_talk:
+                CozeService.chat_with_coze_async(owner_id, message.id)
 
         return message.public_id
 
