@@ -6,6 +6,7 @@ class UserSchema(Schema):
     email = fields.Email(required=True)
     created_at = fields.DateTime(dump_only=True)
     updated_at = fields.DateTime(dump_only=True)
+    membership_expired_at = fields.Int(required=True)
 
 class AuthSchema(Schema):
     access_token = fields.Str(dump_only=True)

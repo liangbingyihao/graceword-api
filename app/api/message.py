@@ -150,7 +150,7 @@ def set_summary(msg_id):
     session_name = data.get('session_name')
     owner_id = get_jwt_identity()
     if summary and len(summary) > 120:
-        return jsonify({"error": "summary max length is 8"}), 400
+        return jsonify({"error": "summary max length is 120"}), 400
     session_id = MessageService.set_summary(owner_id, msg_id, summary, session_id, session_name)
     return jsonify({
         'success': True,

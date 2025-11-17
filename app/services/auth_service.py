@@ -81,4 +81,4 @@ class AuthService:
         now = datetime.now()
         # 计算剩余时间
         remaining = user.membership_expired_at - now
-        return remaining
+        return remaining.seconds
