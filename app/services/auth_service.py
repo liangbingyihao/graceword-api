@@ -19,7 +19,7 @@ class AuthService:
             raise AuthError('Email already exists', 400)
 
         # 创建新用户
-        user = User(username=username, email=email, password=password,fcm_token="")
+        user = User(username=username, email=email, password=password, fcm_token="")
         db.session.add(user)
         db.session.commit()
 
@@ -29,7 +29,7 @@ class AuthService:
         return user
 
     @staticmethod
-    def login_user(username, password,fcm_token):
+    def login_user(username, password, fcm_token):
         user = User.query.filter_by(username=username).first()
 
         if not user or not user.verify_password(password):
@@ -42,22 +42,23 @@ class AuthService:
             'access_token': access_token,
             'user_id': user.public_id,
             'username': user.username,
-            'email': user.email
+            'email': user.email,
+            'membership_expired_at':AuthService.cal_membership_left(user)
         }
 
     @staticmethod
-    def login_guest(guest,fcm_token):
+    def login_guest(guest, fcm_token):
         user = User.query.filter_by(username=guest).first()
 
         if not user:
             # 创建新用户
-            user = User(username=guest, email=guest, password="",fcm_token=fcm_token)
+            user = User(username=guest, email=guest, password="", fcm_token=fcm_token)
             db.session.add(user)
             db.session.commit()
             from services.session_service import SessionService
             SessionService.init_session(user.id)
         elif fcm_token:
-            logging.warning(f"update fcmtoken:{user.id,fcm_token}")
+            logging.warning(f"update fcmtoken:{user.id, fcm_token}")
             user.fcm_token = fcm_token
             user.updated_at = datetime.now()
             db.session.commit()
@@ -69,5 +70,15 @@ class AuthService:
             'access_token': access_token,
             'user_id': user.public_id,
             'username': user.username,
-            'email': user.email
+            'email': user.email,
+            'membership_expired_at':AuthService.cal_membership_left(user)
         }
+
+    @staticmethod
+    def cal_membership_left(user):
+        if user.membership_expired_at is None:
+            return 0
+        now = datetime.now()
+        # 计算剩余时间
+        remaining = user.membership_expired_at - now
+        return remaining

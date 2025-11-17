@@ -25,6 +25,11 @@ class User(db.Model):
         server_onupdate=text('CURRENT_TIMESTAMP'),
         nullable=False
     )
+    membership_expired_at = db.Column(
+        TIMESTAMP,
+        server_default=text('NULL'),  # 明确设置默认值为 NULL
+        nullable=True
+    )
 
     def __init__(self, username, email, password,fcm_token):
         self.username = username
