@@ -478,6 +478,7 @@ class CozeService:
         topic_name = None
         logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables}")
         from services.message_service import MessageService
+        from app.utils.json_robust import unescape_json_string
         is_search_hymns = ori_msg.action == MessageService.action_search_hymns
         # is_explore = CozeService.is_explore_msg(ori_msg)
         dst_bot_id = CozeService.hymn_bot_id if is_search_hymns else CozeService.bot_id
@@ -536,7 +537,8 @@ class CozeService:
 
                     if pos[3] <= 0:
                         bible, detail = CozeService._extract_content(all_content, pos)
-                        ori_msg.feedback_text = detail.replace(r'\n', '\n')
+                        ori_msg.feedback_text = unescape_json_string(detail)
+                        # logger.info(f"_chat_detail: {all_content} \n got {detail}")
                 # else:
                 #     ori_msg.feedback_text = all_content
                 # logger.info(f"CONVERSATION_MESSAGE_DELTA: {ori_msg.feedback}")
