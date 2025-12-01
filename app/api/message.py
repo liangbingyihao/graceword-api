@@ -158,11 +158,12 @@ def my_message():
 
 # 带msg_id参数的路由
 @message_bp.route('/<string:msg_id>', methods=['GET'])
-@swag_from({
-    'tags': ['消息'],
-    'description': 'message detail',
-    # 类似上面的Swagger定义
-})
+@swag_from('static/message/detail.yml')
+# @swag_from({
+#     'tags': ['消息'],
+#     'description': 'message detail',
+#     # 类似上面的Swagger定义
+# })
 @jwt_required()
 def msg_detail(msg_id):
     owner_id = get_jwt_identity()
