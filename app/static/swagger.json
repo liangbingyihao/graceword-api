@@ -12,14 +12,6 @@
     }
   ],
   "tags": [
-    {
-      "name": "Authentication",
-      "description": "User login and registration"
-    },
-    {
-      "name": "Users",
-      "description": "User management"
-    }
   ],
   "consumes": [
     "application/json"
