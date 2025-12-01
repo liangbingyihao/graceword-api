@@ -14,7 +14,8 @@ from services.message_service import MessageService
 from services.search_service import SearchService
 
 message_bp = Blueprint('message', __name__)
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_YML_DIR = os.path.join(os.path.abspath(__file__), 'static', 'message')
+
 
 @message_bp.route('', methods=['POST'])
 @swag_from({
@@ -31,9 +32,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
                 'properties': {
                     'text': {'type': 'string', 'example': '消息内容'},
                     'action': {'type': 'string', 'example': '0',
-                        'description': '动作类型: 0-问题探索,5-输入引导, 7-搜索诗歌, 9-仅记录,不走AI',},
+                               'description': '动作类型: 0-问题探索,5-输入引导, 7-搜索诗歌, 9-仅记录,不走AI', },
                     'context_id': {'type': 'string', 'example': "相关的上下文消息id",
-                        'description': '相关的上下文消息id'},
+                                   'description': '相关的上下文消息id'},
                     'prompt': {'type': 'string', 'example': '提示文本'},
                     'reply': {'type': 'string', 'example': '回复内容'}
                 }
@@ -75,7 +76,7 @@ def add():
     if not content:
         return jsonify({"error": "Missing required parameter 'content'"}), 400
 
-    message_id = MessageService.new_message(owner_id, content, context_id, action, prompt, reply,lang)
+    message_id = MessageService.new_message(owner_id, content, context_id, action, prompt, reply, lang)
     return jsonify({
         'success': True,
         'data': {"id": message_id}
@@ -159,7 +160,7 @@ def my_message():
 
 # 带msg_id参数的路由
 @message_bp.route('/<string:msg_id>', methods=['GET'])
-@swag_from(os.path.join(BASE_DIR, 'static', 'message', 'detail.yml'))
+@swag_from(os.path.join(BASE_YML_DIR, 'detail.yml'))
 # @swag_from({
 #     'tags': ['消息'],
 #     'description': 'message detail',
