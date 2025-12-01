@@ -29,8 +29,10 @@ message_bp = Blueprint('message', __name__)
                 'type': 'object',
                 'properties': {
                     'text': {'type': 'string', 'example': '消息内容'},
-                    'action': {'type': 'string', 'example': 'send'},
-                    'context_id': {'type': 'integer', 'example': 0},
+                    'action': {'type': 'string', 'example': '0',
+                        'description': '动作类型: 0-问题探索,5-输入引导, 7-搜索诗歌, 9-仅记录,不走AI',},
+                    'context_id': {'type': 'string', 'example': "相关的上下文消息id",
+                        'description': '相关的上下文消息id'},
                     'prompt': {'type': 'string', 'example': '提示文本'},
                     'reply': {'type': 'string', 'example': '回复内容'}
                 }
@@ -50,7 +52,7 @@ message_bp = Blueprint('message', __name__)
                 'application/json': {
                     'code': 201,
                     'message': '成功',
-                    'data': {'message_id': 1}
+                    'data': {'message_id': "abcdefg"}
                 }
             }
         }

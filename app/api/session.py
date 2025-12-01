@@ -11,7 +11,7 @@ session_bp = Blueprint('session', __name__)
 
 @session_bp.route('', methods=['POST'])
 @swag_from({
-    'tags': ['时间轴主题列表'],
+    'tags': ['恩语录'],
     'description': '增加主题',
     # 类似上面的Swagger定义
 })
@@ -37,7 +37,7 @@ def add():
 
 @session_bp.route('', methods=['GET'])
 @swag_from({
-    'tags': ['时间轴主题列表'],
+    'tags': ['恩语录'],
     'description': 'my sessions',
     # 类似上面的Swagger定义
 })
@@ -61,7 +61,7 @@ def my_sessions():
 
 @session_bp.route('del', methods=['POST'])
 @swag_from({
-    'tags': ['时间轴主题列表'],
+    'tags': ['恩语录'],
     'description': '删除主题',
     # 类似上面的Swagger定义
 })

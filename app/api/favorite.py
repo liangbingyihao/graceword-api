@@ -33,7 +33,7 @@ def add():
 
 @favorite_bp.route('/toggle', methods=['POST'])
 @swag_from({
-    'tags': ['Favorites'],
+    'tags': ['收藏'],
     'description': '调转收藏状态（已收藏变未收藏，未收藏变已收藏）',
     'parameters': [
         {
@@ -85,7 +85,7 @@ def toggle():
 
 @favorite_bp.route('', methods=['GET'])
 @swag_from({
-    'tags': ['Favorites'],
+    'tags': ['收藏'],
     'description': '我的收藏',
     # 类似上面的Swagger定义
 })
