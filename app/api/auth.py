@@ -80,7 +80,7 @@ def register():
                         'example': '123456'
                     },
                     'guest': {
-                        'type': 'boolean',
+                        'type': 'string',
                         'description': '如果是游客登录则设置本字段为设备的唯一标识，username和password参数不需要提供',
                         'example': "6c6cbd0d-503a-38e1-ba88-252340860c1a"
                     },

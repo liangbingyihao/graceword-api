@@ -16,6 +16,47 @@ message_bp = Blueprint('message', __name__)
 
 
 @message_bp.route('', methods=['POST'])
+@swag_from({
+    'tags': ['消息'],
+    'summary': '添加消息',
+    'consumes': ['application/json'],
+    'parameters': [
+        {
+            'name': 'body',
+            'in': 'body',
+            'required': True,
+            'schema': {
+                'type': 'object',
+                'properties': {
+                    'text': {'type': 'string', 'example': '消息内容'},
+                    'action': {'type': 'string', 'example': 'send'},
+                    'context_id': {'type': 'integer', 'example': 0},
+                    'prompt': {'type': 'string', 'example': '提示文本'},
+                    'reply': {'type': 'string', 'example': '回复内容'}
+                }
+            }
+        },
+        {
+            'name': 'lang',
+            'in': 'query',
+            'type': 'string',
+            'default': 'zh-hant'
+        }
+    ],
+    'responses': {
+        '201': {
+            'description': '成功',
+            'examples': {
+                'application/json': {
+                    'code': 201,
+                    'message': '成功',
+                    'data': {'message_id': 1}
+                }
+            }
+        }
+    },
+    'security': [{'Bearer': []}]
+})
 @jwt_required()
 def add():
     data = request.get_json()
@@ -74,7 +115,7 @@ def del_msg():
 
 @message_bp.route('', methods=['GET'])
 @swag_from({
-    'tags': ['message'],
+    'tags': ['消息'],
     'description': 'my message',
     # 类似上面的Swagger定义
 })
@@ -116,7 +157,7 @@ def my_message():
 # 带msg_id参数的路由
 @message_bp.route('/<string:msg_id>', methods=['GET'])
 @swag_from({
-    'tags': ['message'],
+    'tags': ['消息'],
     'description': 'message detail',
     # 类似上面的Swagger定义
 })
@@ -162,7 +203,7 @@ def set_summary(msg_id):
 
 @message_bp.route('filter', methods=['GET'])
 @swag_from({
-    'tags': ['message'],
+    'tags': ['消息'],
     'description': 'filter message',
     # 类似上面的Swagger定义
 })

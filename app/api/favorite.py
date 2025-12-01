@@ -85,8 +85,8 @@ def toggle():
 
 @favorite_bp.route('', methods=['GET'])
 @swag_from({
-    'tags': ['Authentication'],
-    'description': 'my sessions',
+    'tags': ['Favorites'],
+    'description': '我的收藏',
     # 类似上面的Swagger定义
 })
 @jwt_required()
