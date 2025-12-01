@@ -9,16 +9,16 @@ from utils.exceptions import AuthError
 user_bp = Blueprint('user', __name__)
 
 
-@user_bp.route('/users', methods=['GET'])
-@jwt_required()
-@swag_from({
-    'tags': ['Users'],
-    'security': [{'BearerAuth': []}],
-    'responses': {
-        200: {'description': 'List of users'},
-        401: {'description': 'Unauthorized'}
-    }
-})
+# @user_bp.route('/users', methods=['GET'])
+# @jwt_required()
+# @swag_from({
+#     'tags': ['Users'],
+#     'security': [{'BearerAuth': []}],
+#     'responses': {
+#         200: {'description': 'List of users'},
+#         401: {'description': 'Unauthorized'}
+#     }
+# })
 def get_users():
     users = UserService.get_all_users()
     return jsonify({
