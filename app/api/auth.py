@@ -14,7 +14,7 @@ auth_bp = Blueprint('auth', __name__)
 
 @auth_bp.route('/register', methods=['POST'])
 @swag_from({
-    'tags': ['Authentication'],
+    'tags': ['认证'],
     'description': 'Register a new user',
     'parameters': [
         {
