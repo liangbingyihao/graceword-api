@@ -47,21 +47,26 @@ class AuthService:
         }
 
     @staticmethod
-    def login_guest(guest, fcm_token):
+    def login_guest(guest, fcm_token,ios_push_token):
         user = User.query.filter_by(username=guest).first()
 
         if not user:
             # 创建新用户
             user = User(username=guest, email=guest, password="", fcm_token=fcm_token)
+            user.ios_push_token = ios_push_token
             db.session.add(user)
             db.session.commit()
             from services.session_service import SessionService
             SessionService.init_session(user.id)
         elif fcm_token:
-            logging.warning(f"update fcmtoken:{user.id, fcm_token}")
             user.fcm_token = fcm_token
             user.updated_at = datetime.now()
             db.session.commit()
+        elif ios_push_token:
+            user.ios_push_token = ios_push_token
+            user.updated_at = datetime.now()
+            db.session.commit()
+
 
         # 生成JWT令牌
         access_token = generate_jwt_token(user.id)

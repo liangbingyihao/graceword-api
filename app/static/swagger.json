@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "User Auth API",
+        "title": "User & MSG API",
         "version": "1.0",
         "description": "API for user authentication and management"
     },

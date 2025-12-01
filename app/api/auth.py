@@ -57,9 +57,64 @@ def register():
 
 @auth_bp.route('/login', methods=['POST'])
 @swag_from({
-    'tags': ['Authentication'],
-    'description': 'Login with username and password',
-    # 类似上面的Swagger定义
+    'tags': ['认证'],
+    'summary': '用户登录',
+    'description': '用户登录接口，支持普通登录和游客登录，更新推送token。登录成功后返回用户信息和访问令牌。',
+    'parameters': [
+        {
+            'name': 'body',
+            'in': 'body',
+            'required': True,
+            'schema': {
+                'type': 'object',
+                'properties': {
+                    'username': {
+                        'type': 'string',
+                        'description': '用户名',
+                        'example': 'admin'
+                    },
+                    'password': {
+                        'type': 'string',
+                        'format': 'password',
+                        'description': '密码',
+                        'example': '123456'
+                    },
+                    'guest': {
+                        'type': 'boolean',
+                        'description': '如果是游客登录则设置本字段为设备的唯一标识，username和password参数不需要提供',
+                        'example': "6c6cbd0d-503a-38e1-ba88-252340860c1a"
+                    },
+                    'fcmToken': {
+                        'type': 'string',
+                        'description': 'FCM推送令牌（Android设备）',
+                        'example': 'fcm_token_here_12345'
+                    },
+                    'ios_push_token': {
+                        'type': 'string',
+                        'description': 'APNs推送令牌（iOS设备）',
+                        'example': 'apns_token_here_12345'
+                    }
+                }
+            }
+        }
+    ],
+    'responses': {
+        '200': {
+            'description': '登录成功',
+            'examples': {
+                'application/json': {
+                    'code': 200,
+                    'message': '登录成功',
+                    'data': {
+                        'user_id': 123,
+                        'email': 'admin@example.com',
+                        'access_token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...',
+                        'membership_expired_at': '3600'
+                    }
+                }
+            }
+        }
+    }
 })
 def login():
     # 登录实现
@@ -68,9 +123,10 @@ def login():
     password = data.get('password')
     guest = data.get('guest')
     fcm_token = data.get('fcmToken')
+    ios_token = data.get('ios_push_token')
 
     if guest:
-        auth_data = AuthService.login_guest(guest, fcm_token)
+        auth_data = AuthService.login_guest(guest, fcm_token,ios_token)
     else:
         auth_data = AuthService.login_user(username, password, fcm_token)
     logging.warning(f"auth_data:{auth_data}")

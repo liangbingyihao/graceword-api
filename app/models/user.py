@@ -13,6 +13,7 @@ class User(db.Model):
     public_id = db.Column(db.String(36), unique=True, default=lambda: str(uuid.uuid4()))
     email = db.Column(db.String(100), unique=True, nullable=False)
     fcm_token = db.Column(db.String(255))
+    ios_push_token = db.Column(db.String(255))
     password_hash = db.Column(db.String(255), nullable=False)
     created_at = db.Column(
         TIMESTAMP,
