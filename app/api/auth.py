@@ -59,6 +59,10 @@ def register():
 @swag_from({
     'tags': ['认证'],
     'summary': '用户登录',
+    'consumes': ['application/json'],
+    "produces": [
+        "application/json"
+    ],
     'description': '用户登录接口，支持普通登录和游客登录，更新推送token。登录成功后返回用户信息和访问令牌。',
     'parameters': [
         {
@@ -126,7 +130,7 @@ def login():
     ios_token = data.get('ios_push_token')
 
     if guest:
-        auth_data = AuthService.login_guest(guest, fcm_token,ios_token)
+        auth_data = AuthService.login_guest(guest, fcm_token, ios_token)
     else:
         auth_data = AuthService.login_user(username, password, fcm_token)
     logging.warning(f"auth_data:{auth_data}")
