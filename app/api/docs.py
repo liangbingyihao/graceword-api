@@ -9,12 +9,12 @@ def swagger():
     return jsonify({
         "openapi": "3.0.0",
         "info": {
-            "title": "User Auth API",
+            "title": "用户&消息api",
             "version": "1.0",
-            "description": "API for user authentication and management"
+            "description": "API for user authentication and message"
         },
         "servers": [
-            {"url": "http://localhost:5000/api", "description": "Development server"}
+            {"url": "http://localhost:5000/api", "description": "用户&消息api"}
         ],
         "components": {
             "securitySchemes": {

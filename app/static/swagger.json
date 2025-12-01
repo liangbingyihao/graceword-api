@@ -6,7 +6,7 @@
         "description": "API for user authentication and management"
     },
     "servers": [
-        {"url": "http://localhost:5000/api", "description": "Development server"}
+        {"url": "http://8.217.172.116:5000/api", "description": "Test server"}
     ],
     "tags": [
         {"name": "Authentication", "description": "User login and registration"},
