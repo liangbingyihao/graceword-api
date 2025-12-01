@@ -1,4 +1,5 @@
 import logging
+import os
 
 from flask import Blueprint, jsonify, request
 from flasgger import swag_from
@@ -13,7 +14,7 @@ from services.message_service import MessageService
 from services.search_service import SearchService
 
 message_bp = Blueprint('message', __name__)
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 @message_bp.route('', methods=['POST'])
 @swag_from({
@@ -158,7 +159,7 @@ def my_message():
 
 # 带msg_id参数的路由
 @message_bp.route('/<string:msg_id>', methods=['GET'])
-@swag_from('static/message/detail.yml')
+@swag_from(os.path.join(BASE_DIR, 'static', 'message', 'detail.yml'))
 # @swag_from({
 #     'tags': ['消息'],
 #     'description': 'message detail',
