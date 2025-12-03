@@ -13,29 +13,29 @@ auth_bp = Blueprint('auth', __name__)
 
 
 @auth_bp.route('/register', methods=['POST'])
-@swag_from({
-    'tags': ['认证'],
-    'description': 'Register a new user',
-    'parameters': [
-        {
-            'name': 'body',
-            'in': 'body',
-            'required': True,
-            'schema': {
-                'type': 'object',
-                'properties': {
-                    'username': {'type': 'string'},
-                    'email': {'type': 'string', 'format': 'email'},
-                    'password': {'type': 'string', 'format': 'password'}
-                }
-            }
-        }
-    ],
-    'responses': {
-        201: {'description': 'User registered successfully'},
-        400: {'description': 'Invalid input'}
-    }
-})
+# @swag_from({
+#     'tags': ['user'],
+#     'description': 'Register a new user',
+#     'parameters': [
+#         {
+#             'name': 'body',
+#             'in': 'body',
+#             'required': True,
+#             'schema': {
+#                 'type': 'object',
+#                 'properties': {
+#                     'username': {'type': 'string'},
+#                     'email': {'type': 'string', 'format': 'email'},
+#                     'password': {'type': 'string', 'format': 'password'}
+#                 }
+#             }
+#         }
+#     ],
+#     'responses': {
+#         201: {'description': 'User registered successfully'},
+#         400: {'description': 'Invalid input'}
+#     }
+# })
 def register():
     data = request.get_json()
     username = data.get('username')
@@ -57,7 +57,7 @@ def register():
 
 @auth_bp.route('/login', methods=['POST'])
 @swag_from({
-    'tags': ['认证'],
+    'tags': ['user'],
     'summary': '用户登录',
     'consumes': ['application/json'],
     "produces": [
@@ -108,29 +108,10 @@ def register():
             'content': {
                 'application/json': {
                     'schema':{
-                        '$ref': '#/components/schemas/Category'
+                        '$ref': '#/components/schemas/User'
                     }
                 }
             },
-            'schema': {
-                'type': 'object',
-                'properties': {
-                    'user_id': {'type': 'string', 'description': '用户ID'},
-                    'access_token': {'type': 'string', 'description': 'access_token'}
-                }
-            },
-            'examples': {
-                'application/json': {
-                    'code': 200,
-                    'message': '登录成功',
-                    'data': {
-                        'user_id': 123,
-                        'email': 'admin@example.com',
-                        'access_token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...',
-                        'membership_expired_at': '3600'
-                    }
-                }
-            }
         }
     }
 })
