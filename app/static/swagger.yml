@@ -112,3 +112,10 @@ components:
             type: string
             description: 详细观点内容
             example: "ai回复的正文内容"
+    MessageId:
+        type: object
+        properties:
+          id:
+            type: string
+            description: 消息公共ID
+            example: "msg_123456789"

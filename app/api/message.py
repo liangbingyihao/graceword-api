@@ -203,16 +203,17 @@ def set_summary(msg_id):
 
 @message_bp.route('/<string:msg_id>/renew', methods=['POST'])
 @swag_from({
-    'tags': ['消息'],
+    'tags': 'message',
     'summary': '重新生成ai回复',
     'consumes': ['application/json'],
     'responses': {
         '201': {
             'description': '成功',
-            'examples': {
+            'content': {
                 'application/json': {
-                    'code': 201,
-                    'data': {'id': "msg_id"}
+                    'schema':{
+                        '$ref': '#/components/schemas/MessageId'
+                    }
                 }
             }
         }
