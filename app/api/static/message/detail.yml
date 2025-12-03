@@ -1,5 +1,5 @@
 tags:
-  - 消息
+  - message
 summary: 获取消息详情
 description: |
   根据消息ID获取消息的详细信息。
