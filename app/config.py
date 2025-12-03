@@ -13,6 +13,7 @@ class Config:
     SQLALCHEMY_ECHO = False
     SWAGGER = {
         'openapi': '3.0.2',  # 只保留这一个版本声明
-        'title': 'API Docs',
-        'specs_route': '/api/docs/'
+        'title': 'GW API Docs',
+        'specs_route': '/api/docs/',
+        'init_oauth': None
     }
