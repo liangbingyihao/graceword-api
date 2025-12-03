@@ -38,41 +38,34 @@ components:
             type: string
             description: 消息公共ID
             example: "msg_123456789"
-            readOnly: true
           session_id:
             type: integer
             description: 恩语录ID
             example: 1
-            readOnly: true
           context_id:
             type: string
             description: 上下文ID
             example: "ctx_abcdef123456"
-            readOnly: true
           summary:
             type: string
             description: 消息摘要
             example: "关于信仰问题的讨论"
-            readOnly: true
           status:
             type: integer
             description: 消息状态
-            enum: [ 0, 1, 2, 3, 4, 5, 6 ]
             example: 2
-            readOnly: true
-            x-enum-descriptions:
-              - "初始化"
-              - "处理中"
-              - "成功"
-              - "已删除"
-              - "错误"
-              - "超时"
-              - "已取消"
+            enum:
+              - "0:初始化"
+              - "1:处理中"
+              - "2:成功"
+              - "3:已删除"
+              - "4:错误"
+              - "5:超时"
+              - "6:已取消"
           action:
             type: integer
             description: 消息动作类型
             example: 1
-            readOnly: true
           content:
             type: string
             description: 消息内容
@@ -92,7 +85,6 @@ components:
             format: date-time
             description: 创建时间
             example: "2023-10-01T12:00:00Z"
-            readOnly: true
     MessageFeedback:
         type: object
         properties:
