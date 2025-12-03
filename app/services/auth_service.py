@@ -1,6 +1,5 @@
 import logging
-from datetime import datetime
-
+from datetime import datetime, timedelta
 from models.user import User
 from utils.security import generate_jwt_token
 from utils.exceptions import AuthError
@@ -43,17 +42,24 @@ class AuthService:
             'user_id': user.public_id,
             'username': user.username,
             'email': user.email,
-            'membership_expired_at':AuthService.cal_membership_left(user)
+            'membership_expired_at': AuthService.cal_membership_left(user)
         }
 
     @staticmethod
-    def login_guest(guest, fcm_token,ios_push_token):
+    def login_guest(guest, fcm_token, ios_push_token):
         user = User.query.filter_by(username=guest).first()
 
         if not user:
-            # 创建新用户
+
             user = User(username=guest, email=guest, password="", fcm_token=fcm_token)
             user.ios_push_token = ios_push_token
+            # 创建新用户
+            now = datetime.now()
+            current_year = now.year
+            current_month = now.month
+            if current_year == 2025 and current_month == 12:
+                user.membership_expired_at = now + timedelta(days=90)
+
             db.session.add(user)
             db.session.commit()
             from services.session_service import SessionService
@@ -67,7 +73,6 @@ class AuthService:
             user.updated_at = datetime.now()
             db.session.commit()
 
-
         # 生成JWT令牌
         access_token = generate_jwt_token(user.id)
 
@@ -76,7 +81,7 @@ class AuthService:
             'user_id': user.public_id,
             'username': user.username,
             'email': user.email,
-            'membership_expired_at':AuthService.cal_membership_left(user)
+            'membership_expired_at': AuthService.cal_membership_left(user)
         }
 
     @staticmethod

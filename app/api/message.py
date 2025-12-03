@@ -14,7 +14,7 @@ from services.message_service import MessageService
 from services.search_service import SearchService
 
 message_bp = Blueprint('message', __name__)
-BASE_YML_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'message', 'detail.yml')
+BASE_YML_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'message')
 
 @message_bp.route('', methods=['POST'])
 @swag_from({
