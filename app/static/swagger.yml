@@ -46,5 +46,120 @@ components:
           type: string
         message:
           type: string
-      xml:
-        name: '##default'
+    Message:
+        type: object
+        properties:
+          id:
+            type: string
+            description: 消息公共ID
+            example: "msg_123456789"
+            readOnly: true
+          session_id:
+            type: integer
+            description: 恩语录ID
+            example: 1
+            readOnly: true
+          context_id:
+            type: string
+            description: 上下文ID
+            example: "ctx_abcdef123456"
+            readOnly: true
+          summary:
+            type: string
+            description: 消息摘要
+            example: "关于信仰问题的讨论"
+            readOnly: true
+          status:
+            type: integer
+            description: 消息状态
+            enum: [ 0, 1, 2, 3, 4, 5, 6 ]
+            example: 2
+            readOnly: true
+            x-enum-descriptions:
+              - "初始化"
+              - "处理中"
+              - "成功"
+              - "已删除"
+              - "错误"
+              - "超时"
+              - "已取消"
+          action:
+            type: integer
+            description: 消息动作类型
+            example: 1
+            readOnly: true
+          content:
+            type: string
+            description: 消息内容
+            example: "请问如何理解神的救赎？"
+          reply:
+            type: string
+            description: 消息回复
+            example: "神的救赎是..."
+          feedback:
+            $ref: '#/components/schemas/MessageFeedback'
+          feedback_text:
+            type: string
+            description: 反馈文本
+            example: "这个回答很有帮助"
+          created_at:
+            type: string
+            format: date-time
+            description: 创建时间
+            example: "2023-10-01T12:00:00Z"
+            readOnly: true
+
+    MessageFeedback:
+        type: object
+        properties:
+          bible:
+            type: string
+            description: 相关圣经经文
+            example: "你们要将一切的忧虑卸给神，因为他顾念你们。（彼前5:7）"
+          explore:
+            type: array
+            description: 探索问题列表
+            items:
+              type: string
+              example: "如何区分“交托重担”与“消极逃避责任”？"
+            example:
+              - "如何区分“交托重担”与“消极逃避责任”？"
+              - "圣经中哪些人物的经历展现了“重担中的救赎”？"
+              - "信徒面对长期重担时，如何持守对神救赎的信心？"
+          summary:
+            type: string
+            description: 反馈摘要
+            example: "重担中见救赎"
+          topic:
+            type: string
+            description: 主题分类
+            example: "信仰问答"
+          view:
+            type: string
+            description: 详细观点内容
+            example: |
+              ### 【神的救赎在日常重担中的体现】神的救赎并非遥不可及的过去事件，而是在信徒日常重担中以具体方式动工的恩典。
+
+              **1. 重担的转移：** 神应许担当我们的忧虑，这是救赎在生活中的直接彰显...
+
+    MessageStatus:
+        type: integer
+        enum: [ 0, 1, 2, 3, 4, 5, 6 ]
+        description: 消息状态枚举
+        example: 2
+        x-enum-varnames:
+          - "STATUS_INIT"
+          - "STATUS_PENDING"
+          - "STATUS_SUCCESS"
+          - "STATUS_DEL"
+          - "STATUS_ERR"
+          - "STATUS_TIMEOUT"
+          - "STATUS_CANCEL"
+        x-enum-descriptions:
+          - "初始化状态"
+          - "处理中状态"
+          - "成功状态"
+          - "已删除状态"
+          - "错误状态"
+          - "超时状态"
+          - "已取消状态"
