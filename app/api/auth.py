@@ -105,6 +105,13 @@ def register():
     'responses': {
         '200': {
             'description': '登录成功',
+            'schema': {
+                'type': 'object',
+                'properties': {
+                    'user_id': {'type': 'string', 'description': '用户ID'},
+                    'access_token': {'type': 'string', 'description': 'access_token'}
+                }
+            },
             'examples': {
                 'application/json': {
                     'code': 200,

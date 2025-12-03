@@ -7,7 +7,7 @@ description: |
   ## 功能说明
   - 获取单条消息的完整信息
   - 支持JWT令牌认证
-  - 返回消息内容、状态、元数据等
+  - 返回消息内容、状态等
 
 operationId: getMessageDetail
 produces:
@@ -27,13 +27,6 @@ parameters:
     required: true
     description: 消息的唯一标识符（UUID或自定义ID）
     example: "msg_123456abc"
-
-  - name: fields
-    in: query
-    type: string
-    required: false
-    description: 指定返回的字段，用逗号分隔。如：id,content,created_at
-    example: "id,content,created_at"
 
 responses:
   200:
