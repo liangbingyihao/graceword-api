@@ -108,7 +108,6 @@ components:
             description: 创建时间
             example: "2023-10-01T12:00:00Z"
             readOnly: true
-
     MessageFeedback:
         type: object
         properties:
@@ -137,11 +136,7 @@ components:
           view:
             type: string
             description: 详细观点内容
-            example: |
-              ### 【神的救赎在日常重担中的体现】神的救赎并非遥不可及的过去事件，而是在信徒日常重担中以具体方式动工的恩典。
-
-              **1. 重担的转移：** 神应许担当我们的忧虑，这是救赎在生活中的直接彰显...
-
+            example: "ai回复的正文内容"
     MessageStatus:
         type: integer
         enum: [ 0, 1, 2, 3, 4, 5, 6 ]
