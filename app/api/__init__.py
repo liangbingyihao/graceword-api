@@ -27,4 +27,4 @@ def init_api(app):
     app.register_blueprint(main_bp)
 
     # 初始化Swagger
-    Swagger(app, template_file='static/swagger.json')
+    Swagger(app, template_file='static/swagger.yml')

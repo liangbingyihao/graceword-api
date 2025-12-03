@@ -31,61 +31,63 @@ parameters:
 responses:
   200:
     description: 获取消息详情成功
-    schema:
-      type: object
-      properties:
-        success:
-          type: boolean
-          example: true
-        data:
+    content:
+      application/json:
+        schema:
           type: object
           properties:
-            id:
-              type: string
-              description: 消息公开ID
-              example: "msg_123456abc"
-            session_id:
-              type: integer
-              description: 所属会话ID
-              example: 1
-            context_id:
-              type: string
-              description: 上下文消息ID
-              example: "ctx_789xyz"
-            summary:
-              type: string
-              description: 消息摘要
-              example: "这是一条测试消息的摘要"
-            status:
-              type: integer
-              description: 消息状态（0-草稿，1-已发送，2-已读，3-已删除）
-              enum: [0, 1, 2, 3]
-              example: 1
-            action:
-              type: integer
-              description: 消息动作类型
-              example: 1
-            content:
-              type: string
-              description: 消息内容
-              example: "你好，这是一条测试消息"
-            reply:
-              type: string
-              description: 回复内容
-              example: "这是对消息的回复"
-            feedback:
+            success:
+              type: boolean
+              example: true
+            data:
               type: object
-              description: 反馈信息（JSON对象）
-              example: {"rating": 5, "comment": "很好"}
-            feedback_text:
-              type: string
-              description: 反馈文本
-              example: "用户反馈内容"
-            created_at:
-              type: string
-              format: date-time
-              description: 创建时间
-              example: "2023-10-01T12:00:00Z"
+              properties:
+                id:
+                  type: string
+                  description: 消息公开ID
+                  example: "msg_123456abc"
+                session_id:
+                  type: integer
+                  description: 所属会话ID
+                  example: 1
+                context_id:
+                  type: string
+                  description: 上下文消息ID
+                  example: "ctx_789xyz"
+                summary:
+                  type: string
+                  description: 消息摘要
+                  example: "这是一条测试消息的摘要"
+                status:
+                  type: integer
+                  description: 消息状态（0-草稿，1-已发送，2-已读，3-已删除）
+                  enum: [0, 1, 2, 3]
+                  example: 1
+                action:
+                  type: integer
+                  description: 消息动作类型
+                  example: 1
+                content:
+                  type: string
+                  description: 消息内容
+                  example: "你好，这是一条测试消息"
+                reply:
+                  type: string
+                  description: 回复内容
+                  example: "这是对消息的回复"
+                feedback:
+                  type: object
+                  description: 反馈信息（JSON对象）
+                  example: {"rating": 5, "comment": "很好"}
+                feedback_text:
+                  type: string
+                  description: 反馈文本
+                  example: "用户反馈内容"
+                created_at:
+                  type: string
+                  format: date-time
+                  description: 创建时间
+                  example: "2023-10-01T12:00:00Z"
     examples:
       application/json:
         success: true
