@@ -26,5 +26,6 @@ def init_api(app):
     # 注册主蓝图
     app.register_blueprint(main_bp)
 
+
     # 初始化Swagger
     Swagger(app, template_file='static/swagger.yml')
