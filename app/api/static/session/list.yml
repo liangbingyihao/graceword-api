@@ -1,0 +1,57 @@
+tags:
+  - session
+summary: 获取我的会话列表
+description: 获取当前登录用户的所有会话列表，支持分页查询
+parameters:
+  - name: page
+    in: query
+    schema:
+      type: integer
+      minimum: 1
+      default: 1
+    description: 页码，从1开始
+  - name: limit
+    in: query
+    schema:
+      type: integer
+      minimum: 1
+      maximum: 100
+      default: 10
+    description: 每页数量，最大100
+  - name: Authorization
+    in: header
+    schema:
+      type: string
+    description: JWT认证令牌
+    required: true
+responses:
+  200:
+    description: 成功获取会话列表
+    content:
+      application/json:
+        schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                description: 请求是否成功
+                example: true
+              data:
+                type: object
+                items:
+                  type: array
+                  description: 会话列表
+                  items:
+                    $ref: '#/components/schemas/Session'
+                total:
+                  type: integer
+                  description: 总会话数
+                  example: 100
+  401:
+    description: 未授权访问
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ErrorResponse'
+security:
+  - Bearer: []

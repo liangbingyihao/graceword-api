@@ -1,3 +1,5 @@
+import os
+
 from flask import Blueprint, jsonify, request
 from flasgger import swag_from
 from flask_jwt_extended import jwt_required, get_jwt_identity
@@ -8,6 +10,7 @@ from utils.exceptions import AuthError
 
 session_bp = Blueprint('session', __name__)
 
+BASE_YML_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'session')
 
 @session_bp.route('', methods=['POST'])
 @swag_from({
@@ -36,11 +39,26 @@ def add():
 
 
 @session_bp.route('', methods=['GET'])
-@swag_from({
-    'tags': ['恩语录'],
-    'description': 'my sessions',
-    # 类似上面的Swagger定义
-})
+@swag_from(os.path.join(BASE_YML_DIR, 'list.yml'))
+# @swag_from({
+#     'tags': ['session'],
+#     'description': 'my sessions',
+#     'parameters': [
+#         {
+#             'name': 'page',
+#             'in': 'query',
+#             'schema': {'type': 'integer', 'default': 1},
+#             'description': '页码'
+#         },
+#         {
+#             'name': 'limit',
+#             'in': 'query',
+#             'schema': {'type': 'integer', 'default': 10},
+#             'description': '每页数量'
+#         }
+#     ],
+#     # 类似上面的Swagger定义
+# })
 @jwt_required()
 def my_sessions():
     owner_id = get_jwt_identity()

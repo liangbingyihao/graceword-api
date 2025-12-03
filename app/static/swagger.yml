@@ -119,3 +119,24 @@ components:
             type: string
             description: 消息公共ID
             example: "msg_123456789"
+    Session:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: 会话ID（只读）
+          example: 123
+          readOnly: true
+        session_name:
+          type: string
+          description: 会话名称
+          example: "信仰问题讨论"
+          minLength: 1
+          maxLength: 100
+        updated_at:
+          type: string
+          format: date-time
+          description: 最后更新时间（只读）
+          example: "2023-10-01T12:00:00Z"
+          readOnly: true
