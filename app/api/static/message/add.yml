@@ -1,0 +1,86 @@
+tags:
+  - message
+summary: 增加信息
+description: |
+  插入一条用户记录并马上返回。
+  
+  ## 功能说明
+  - 插入一条用户信息
+  - 支持JWT令牌认证
+  - 返回消息id
+
+operationId: getMessageDetail
+
+parameters:
+  - name: Authorization
+    in: header
+    type: string
+    required: true
+    description: JWT访问令牌，格式：Bearer {token}
+    default: "Bearer "
+
+  - name: lang
+    in: path
+    type: string
+    required: false
+    description: 客户端的语言
+    default: "zh-hant"
+
+requestBody:
+        description: 用户记录内容
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: 消息公共ID
+                  example: "msg_123456789"
+                session_id:
+                  type: integer
+                  description: 恩语录ID
+                  example: 1
+                context_id:
+                  type: string
+                  description: 上下文ID
+                  example: "ctx_abcdef123456"
+        required: true
+responses:
+  200:
+    description: 获取消息详情成功
+    content:
+      application/json:
+        schema:
+           $ref: "#/components/schemas/Message"
+
+  401:
+    description: 未授权访问
+    examples:
+      application/json:
+        success: false
+        error: "无效的认证令牌"
+
+  403:
+    description: 权限不足
+    examples:
+      application/json:
+        success: false
+        error: "无权访问此消息"
+
+  404:
+    description: 消息不存在
+    examples:
+      application/json:
+        success: false
+        error: "消息不存在或已被删除"
+
+  500:
+    description: 服务器内部错误
+    examples:
+      application/json:
+        success: false
+        error: "获取消息详情失败"
+
+security:
+  - Bearer: []

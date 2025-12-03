@@ -17,49 +17,50 @@ message_bp = Blueprint('message', __name__)
 BASE_YML_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'message')
 
 @message_bp.route('', methods=['POST'])
-@swag_from({
-    'tags': ['消息'],
-    'summary': '添加消息',
-    'consumes': ['application/json'],
-    'parameters': [
-        {
-            'name': 'body',
-            'in': 'body',
-            'required': True,
-            'schema': {
-                'type': 'object',
-                'properties': {
-                    'text': {'type': 'string', 'example': '消息内容'},
-                    'action': {'type': 'string', 'example': '0',
-                        'description': '动作类型: 0-问题探索,5-输入引导, 7-搜索诗歌, 9-仅记录,不走AI',},
-                    'context_id': {'type': 'string', 'example': "相关的上下文消息id",
-                        'description': '相关的上下文消息id'},
-                    'prompt': {'type': 'string', 'example': '提示文本'},
-                    'reply': {'type': 'string', 'example': '回复内容'}
-                }
-            }
-        },
-        {
-            'name': 'lang',
-            'in': 'query',
-            'type': 'string',
-            'default': 'zh-hant'
-        }
-    ],
-    'responses': {
-        '201': {
-            'description': '成功',
-            'examples': {
-                'application/json': {
-                    'code': 201,
-                    'message': '成功',
-                    'data': {'message_id': "abcdefg"}
-                }
-            }
-        }
-    },
-    'security': [{'Bearer': []}]
-})
+# @swag_from({
+#     'tags': ['message'],
+#     'summary': '添加消息',
+#     'consumes': ['application/json'],
+#     'parameters': [
+#         {
+#             'name': 'body',
+#             'in': 'body',
+#             'required': True,
+#             'schema': {
+#                 'type': 'object',
+#                 'properties': {
+#                     'text': {'type': 'string', 'example': '消息内容'},
+#                     'action': {'type': 'string', 'example': '0',
+#                         'description': '动作类型: 0-问题探索,5-输入引导, 7-搜索诗歌, 9-仅记录,不走AI',},
+#                     'context_id': {'type': 'string', 'example': "相关的上下文消息id",
+#                         'description': '相关的上下文消息id'},
+#                     'prompt': {'type': 'string', 'example': '提示文本'},
+#                     'reply': {'type': 'string', 'example': '回复内容'}
+#                 }
+#             }
+#         },
+#         {
+#             'name': 'lang',
+#             'in': 'query',
+#             'type': 'string',
+#             'default': 'zh-hant'
+#         }
+#     ],
+#     'responses': {
+#         '201': {
+#             'description': '成功',
+#             'examples': {
+#                 'application/json': {
+#                     'code': 201,
+#                     'message': '成功',
+#                     'data': {'message_id': "abcdefg"}
+#                 }
+#             }
+#         }
+#     },
+#     'security': [{'Bearer': []}]
+# })
+@swag_from(os.path.join(BASE_YML_DIR, 'add.yml'))
 @jwt_required()
 def add():
     data = request.get_json()
@@ -117,11 +118,11 @@ def del_msg():
 
 
 @message_bp.route('', methods=['GET'])
-@swag_from({
-    'tags': ['消息'],
-    'description': 'my message',
-    # 类似上面的Swagger定义
-})
+# @swag_from({
+#     'tags': ['message'],
+#     'description': 'my message',
+#     # 类似上面的Swagger定义
+# })
 @jwt_required()
 def my_message():
     # FIXME 下个版本仅获取message，不搜索
