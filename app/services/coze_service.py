@@ -265,7 +265,7 @@ class CozeService:
                 lang = "en"
             elif "hans" in lang:
                 lang = "zh-hans"
-            elif "hant" in lang:
+            elif "hant" in lang or "tw" in lang or "hk" in lang:
                 lang = 'zh-hant'
 
         session_lst = []
