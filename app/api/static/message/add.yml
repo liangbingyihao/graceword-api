@@ -9,7 +9,7 @@ description: |
   - 支持JWT令牌认证
   - 返回消息id
 
-operationId: getMessageDetail
+operationId: newMessage
 
 parameters:
   - name: Authorization
@@ -27,32 +27,47 @@ parameters:
     default: "zh-hant"
 
 requestBody:
-        description: 用户记录内容
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                id:
-                  type: string
-                  description: 消息公共ID
-                  example: "msg_123456789"
-                session_id:
-                  type: integer
-                  description: 恩语录ID
-                  example: 1
-                context_id:
-                  type: string
-                  description: 上下文ID
-                  example: "ctx_abcdef123456"
-        required: true
+  description: 用户记录内容
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          text:
+            type: string
+            description: 消息内容
+            example: "请问如何理解神的爱？"
+            minLength: 1
+            maxLength: 1000
+          action:
+            type: string
+            description: |
+              动作类型:
+              - 0: 问题探索
+              - 5: 输入引导  
+              - 7: 搜索诗歌
+              - 9: 仅记录,不走AI
+            example: "0"
+            enum: [ "0", "5", "7", "9" ]
+            default: "0"
+          context_id:
+            type: string
+            description: 相关的上下文消息ID，用于消息链式对话
+            example: "ctx_123456789"
+            pattern: "^[a-zA-Z0-9_-]+$"
+          reply:
+            type: string
+            description: 引用的内容
+            example: "这是引用的内容"
+            maxLength: 2000
+  required: true
 responses:
   200:
     description: 获取消息详情成功
     content:
       application/json:
         schema:
-           $ref: "#/components/schemas/Message"
+          $ref: "#/components/schemas/Message"
 
   401:
     description: 未授权访问
@@ -83,4 +98,4 @@ responses:
         error: "获取消息详情失败"
 
 security:
-  - Bearer: []
+  - Bearer: [ ]

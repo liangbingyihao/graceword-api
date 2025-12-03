@@ -17,6 +17,7 @@ message_bp = Blueprint('message', __name__)
 BASE_YML_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'message')
 
 @message_bp.route('', methods=['POST'])
+
 # @swag_from({
 #     'tags': ['message'],
 #     'summary': '添加消息',
