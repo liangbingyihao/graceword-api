@@ -10,15 +10,9 @@ tags:
   - name: user
     description: Operations about user
   - name: message
-    description: Everything about your Pets
-    externalDocs:
-      description: Find out more
-      url: https://swagger.io
-  - name: store
-    description: Access to Petstore orders
-    externalDocs:
-      description: Find out more about our store
-      url: https://swagger.io
+    description: Operations about message
+  - name: session
+    description: Operations about session
 components:
   schemas:
     User:
@@ -37,16 +31,6 @@ components:
         access_token:
           type: string
           example: '12345'
-    ApiResponse:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        type:
-          type: string
-        message:
-          type: string
     Category:
       type: object
       properties:
