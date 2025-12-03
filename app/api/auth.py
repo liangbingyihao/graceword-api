@@ -105,6 +105,13 @@ def register():
     'responses': {
         '200': {
             'description': '登录成功',
+            'content': {
+                'application/json': {
+                    'schema':{
+                        '$ref': '#/components/schemas/Category'
+                    }
+                }
+            },
             'schema': {
                 'type': 'object',
                 'properties': {
