@@ -203,7 +203,7 @@ def set_summary(msg_id):
 
 @message_bp.route('/<string:msg_id>/renew', methods=['POST'])
 @swag_from({
-    'tags': 'message',
+    'tags': ['message'],
     'summary': '重新生成ai回复',
     'consumes': ['application/json'],
     'responses': {
