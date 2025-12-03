@@ -38,15 +38,16 @@ responses:
                 example: true
               data:
                 type: object
-                items:
-                  type: array
-                  description: 会话列表
+                properties:
                   items:
-                    $ref: '#/components/schemas/Session'
-                total:
-                  type: integer
-                  description: 总会话数
-                  example: 100
+                    type: array
+                    description: 会话列表
+                    items:
+                      $ref: '#/components/schemas/Session'
+                  total:
+                    type: integer
+                    description: 总会话数
+                    example: 100
   401:
     description: 未授权访问
     content:
