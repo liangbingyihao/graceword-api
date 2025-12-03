@@ -204,6 +204,35 @@ def set_summary(msg_id):
         }
     })
 
+@message_bp.route('/<string:msg_id>/renew', methods=['POST'])
+@swag_from({
+    'tags': ['消息'],
+    'summary': '重新生成ai回复',
+    'consumes': ['application/json'],
+    'responses': {
+        '201': {
+            'description': '成功',
+            'examples': {
+                'application/json': {
+                    'code': 201,
+                    'data': {'id': "msg_id"}
+                }
+            }
+        }
+    },
+    'security': [{'Bearer': []}]
+})
+@jwt_required()
+def renew_message(msg_id):
+    owner_id = get_jwt_identity()
+    logging.warning(f"renew message:{msg_id}")
+    # session_id = data.get("session_id")
+
+    message_id = MessageService.renew(owner_id, msg_id, "")
+    return jsonify({
+        'success': message_id == msg_id,
+        'data': {"id": message_id}
+    }), 201
 
 @message_bp.route('filter', methods=['GET'])
 @swag_from({
