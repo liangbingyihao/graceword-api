@@ -10,6 +10,7 @@ from concurrent.futures import ThreadPoolExecutor
 from models.session import Session
 
 coze_api_token = os.getenv("COZE_API_TOKEN")
+main_bot_id = os.getenv("COZE_MAIN_BOT_ID")
 from cozepy import Coze, TokenAuth, Message, ChatEventType, COZE_CN_BASE_URL, COZE_COM_BASE_URL, MessageType  # noqa
 
 import logging
@@ -189,7 +190,7 @@ color_map = {"#FFFBE8": ("信靠", "盼望", "刚强", "光明"),
 
 
 class CozeService:
-    bot_id = "7547552285878960168"
+    bot_id = main_bot_id or "7547552285878960168"
     hymn_bot_id = "7566915373069762569"
     executor = ThreadPoolExecutor(3)
 
