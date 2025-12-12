@@ -47,21 +47,23 @@ requestBody:
 responses:
   200:
     description: "设置成功"
-    schema:
-      type: "object"
-      properties:
-        success:
-          type: "boolean"
-          description: "是否成功"
-          example: true
-        data:
+    content:
+      application/json:
+        schema:
           type: "object"
           properties:
-            session_id:
-              type: "integer"
-              description: "消息所属的会话ID"
-              example: 123
-      example:
-        success: true
-        data:
-          session_id: 123
+            success:
+              type: "boolean"
+              description: "是否成功"
+              example: true
+            data:
+              type: "object"
+              properties:
+                session_id:
+                  type: "integer"
+                  description: "消息所属的会话ID"
+                  example: 123
+          example:
+            success: true
+            data:
+              session_id: 123
