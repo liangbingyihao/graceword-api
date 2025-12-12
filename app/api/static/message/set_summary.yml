@@ -19,91 +19,49 @@ parameters:
     description: "消息ID（public_id）"
     required: true
     type: "string"
-    example: "msg_1234567890abcdef"
-  - in: "body"
-    name: "body"
-    description: "设置摘要的请求参数"
-    required: true
-    schema:
-      $ref: "#/definitions/SetSummaryRequest"
+    example: "c198b09d-2ac7-4f6a-8f2b-9511d78c7049"
+requestBody:
+  description: 设置摘要的请求参数
+  content:
+    application/json:
+      schema:
+        type: object
+      properties:
+        summary:
+          type: "string"
+          description: "消息摘要，最大长度120字符"
+          maxLength: 120
+          example: "这是一条重要消息的摘要"
+        session_id:
+          type: "integer"
+          description: "会话ID，如果提供则将消息移动到此会话"
+          example: 123
+        session_name:
+          type: "string"
+          description: "新会话名称，如果提供则创建新会话并将消息移动过去"
+          example: "新的会话"
+      example:
+        summary: "讨论项目进度和下一步计划"
+        session_id: 123
+        session_name: "项目讨论"
 responses:
   200:
     description: "设置成功"
     schema:
-      $ref: "#/definitions/SetSummaryResponse"
-  400:
-    description: "请求参数错误"
-    schema:
-      $ref: "#/definitions/ErrorResponse"
-  401:
-    description: "未授权或Token无效"
-    schema:
-      $ref: "#/definitions/ErrorResponse"
-  404:
-    description: "消息或会话不存在"
-    schema:
-      $ref: "#/definitions/ErrorResponse"
-  500:
-    description: "服务器内部错误"
-    schema:
-      $ref: "#/definitions/ErrorResponse"
-
-definitions:
-  SetSummaryRequest:
-    type: "object"
-    properties:
-      summary:
-        type: "string"
-        description: "消息摘要，最大长度120字符"
-        maxLength: 120
-        example: "这是一条重要消息的摘要"
-      session_id:
-        type: "integer"
-        description: "会话ID，如果提供则将消息移动到此会话"
-        example: 123
-      session_name:
-        type: "string"
-        description: "新会话名称，如果提供则创建新会话并将消息移动过去"
-        example: "新的会话"
-    example:
-      summary: "讨论项目进度和下一步计划"
-      session_id: 123
-      session_name: "项目讨论"
-  SetSummaryResponse:
-    type: "object"
-    properties:
-      success:
-        type: "boolean"
-        description: "是否成功"
-        example: true
-      data:
-        type: "object"
-        properties:
-          session_id:
-            type: "integer"
-            description: "消息所属的会话ID"
-            example: 123
-    example:
-      success: true
-      data:
-        session_id: 123
-  ErrorResponse:
-    type: "object"
-    properties:
-      message:
-        type: "string"
-        description: "错误信息"
-        example: "summary max length is 120"
-      code:
-        type: "integer"
-        description: "错误码（可选）"
-        example: 400
-    example:
-      message: "summary max length is 120"
-      code: 400
-securityDefinitions:
-  JWT:
-    type: "apiKey"
-    name: "Authorization"
-    in: "header"
-    description: "JWT Token, 格式: Bearer {token}"
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+          description: "是否成功"
+          example: true
+        data:
+          type: "object"
+          properties:
+            session_id:
+              type: "integer"
+              description: "消息所属的会话ID"
+              example: 123
+      example:
+        success: true
+        data:
+          session_id: 123
