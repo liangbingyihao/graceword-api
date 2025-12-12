@@ -26,24 +26,24 @@ requestBody:
     application/json:
       schema:
         type: object
-      properties:
-        summary:
-          type: "string"
-          description: "消息摘要，最大长度120字符"
-          maxLength: 120
-          example: "这是一条重要消息的摘要"
-        session_id:
-          type: "integer"
-          description: "会话ID，如果提供则将消息移动到此会话"
-          example: 123
-        session_name:
-          type: "string"
-          description: "新会话名称，如果提供则创建新会话并将消息移动过去"
-          example: "新的会话"
-      example:
-        summary: "讨论项目进度和下一步计划"
-        session_id: 123
-        session_name: "项目讨论"
+        properties:
+          summary:
+            type: "string"
+            description: "消息摘要，最大长度120字符"
+            maxLength: 120
+            example: "这是一条重要消息的摘要"
+          session_id:
+            type: "integer"
+            description: "会话ID，如果提供则将消息移动到此会话"
+            example: 123
+          session_name:
+            type: "string"
+            description: "新会话名称，如果提供则创建新会话并将消息移动过去"
+            example: "新的会话"
+        example:
+          summary: "讨论项目进度和下一步计划"
+          session_id: 123
+          session_name: "项目讨论"
 responses:
   200:
     description: "设置成功"
