@@ -13,11 +13,11 @@ session_bp = Blueprint('session', __name__)
 BASE_YML_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'session')
 
 @session_bp.route('', methods=['POST'])
-@swag_from({
-    'tags': ['恩语录'],
-    'description': '增加主题',
-    # 类似上面的Swagger定义
-})
+# @swag_from({
+#     'tags': ['恩语录'],
+#     'description': '增加主题',
+#     # 类似上面的Swagger定义
+# })
 @jwt_required()
 def add():
     data = request.get_json()
@@ -79,7 +79,7 @@ def my_sessions():
 
 @session_bp.route('del', methods=['POST'])
 @swag_from({
-    'tags': ['恩语录'],
+    'tags': ['session'],
     'description': '删除主题',
     # 类似上面的Swagger定义
 })
