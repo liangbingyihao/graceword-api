@@ -142,6 +142,7 @@ components:
           readOnly: true
     ApiResponse:
       type: object
+      description: 返回的统一结构
       properties:
           success:
             type: boolean

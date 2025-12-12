@@ -141,6 +141,7 @@ def msg_detail(msg_id):
 
 # 带msg_id参数的路由
 @message_bp.route('/<string:msg_id>', methods=['POST'])
+@swag_from(os.path.join(BASE_YML_DIR, 'set_summary.yml'))
 @jwt_required()
 def set_summary(msg_id):
     data = request.get_json()
@@ -149,7 +150,7 @@ def set_summary(msg_id):
     session_name = data.get('session_name')
     owner_id = get_jwt_identity()
     if summary and len(summary) > 120:
-        return jsonify({"error": "summary max length is 120"}), 400
+        return jsonify({'success': False,"message": "summary max length is 120"}), 400
     session_id = MessageService.set_summary(owner_id, msg_id, summary, session_id, session_name)
     return jsonify({
         'success': True,
