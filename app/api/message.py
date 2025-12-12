@@ -58,6 +58,7 @@ def renew():
 
 
 @message_bp.route('/del', methods=['POST'])
+@swag_from(os.path.join(BASE_YML_DIR, 'del.yml'))
 @jwt_required()
 def del_msg():
     owner_id = get_jwt_identity()

@@ -117,7 +117,7 @@ components:
         properties:
           id:
             type: string
-            description: 消息公共ID
+            description: 消息公共uuid
             example: "msg_123456789"
     Session:
       type: object
@@ -140,3 +140,13 @@ components:
           description: 最后更新时间（只读）
           example: "2023-10-01T12:00:00Z"
           readOnly: true
+    ApiResponse:
+      type: object
+      properties:
+          success:
+            type: boolean
+            description: 请求是否成功
+            example: true
+          data:
+            type: object
+            description: 具体的业务数据
