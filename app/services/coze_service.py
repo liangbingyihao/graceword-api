@@ -390,18 +390,13 @@ class CozeService:
                 except Exception as e:
                     logger.error("ai.error in chat")
                     logger.exception(e)
-                    pass
 
                 view = result.get('view') or message.feedback_text
                 if view:
-                    try:
-                        # from utils.bible_reference_detector import tag_bible_references
-                        # view = tag_bible_references(view)
-                        result["view"] = view
-                    except Exception as e:
-                        logger.error("tag_bible_references.error")
-                        logger.exception(e)
+                    result["view"] = view
                     message.feedback_text = view
+                else:
+                    raise Exception("view is null")
 
                 summary = result.get("summary")
                 if summary:
