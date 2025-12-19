@@ -11,5 +11,5 @@ python-dotenv==0.19.0
 marshmallow==3.13.0
 flask-cors==3.0.10
 flasgger
-cozepy
+cozepy==0.20.0
 dotenv

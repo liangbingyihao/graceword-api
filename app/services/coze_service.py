@@ -476,6 +476,8 @@ class CozeService:
         pending = False
         start_time = time.time()
         last_len_hymns = 0
+        last_complete = True
+        last_message = None
         for event in coze.chat.stream(
                 bot_id=dst_bot_id,
                 user_id=str(user_id),
@@ -483,9 +485,10 @@ class CozeService:
                 additional_messages=additional_messages,
         ):
             if event.event == ChatEventType.CONVERSATION_MESSAGE_DELTA:
-                if not pending:
-                    logger.info(f"_chat_with_coze: {user_id, ori_msg.id} pending, cost:{time.time() - start_time} s")
-                    pending = True
+                if last_complete:
+                    logger.info(f"_chat_with_coze: {user_id, ori_msg.id} delta msg coming, cost:{time.time() - start_time} s")
+                    last_complete = False
+                    all_content = ""
                 message = event.message
                 all_content += message.content
 
@@ -528,19 +531,25 @@ class CozeService:
 
                     if pos[3] <= 0:
                         bible, detail = CozeService._extract_content(all_content, pos)
-                        ori_msg.feedback_text = unescape_json_string(detail)
+                        if detail:
+                            ori_msg.feedback_text = unescape_json_string(detail)
+                        elif not all_content.startswith("{"):
+                            ori_msg.feedback_text = all_content
                         logger.info(f"_chat_detail: {all_content[-10:]} \n got {detail[-10:]}")
                 # else:
                 #     ori_msg.feedback_text = all_content
                 # logger.info(f"CONVERSATION_MESSAGE_DELTA: {ori_msg.feedback}")
                 ori_msg.status = 1
                 session.commit()
-            elif event.event == ChatEventType.CONVERSATION_MESSAGE_COMPLETED and event.message.type == MessageType.ANSWER:
-                logger.info(f"_chat_with_coze: {user_id, ori_msg.id} done, cost:{time.time() - start_time} s, {ori_msg.feedback_text[-10:]}")
+            elif event.event == ChatEventType.CONVERSATION_MESSAGE_COMPLETED:
+                last_complete = True
+                logger.info(f"_chat_with_coze msg.complete: {user_id, ori_msg.id} done, cost:{time.time() - start_time} s, {ori_msg.feedback_text[-10:]}")
+                if event.message.type == MessageType.ANSWER:
+                    last_message = event.message
                 # logger.info(f"CONVERSATION_MESSAGE_COMPLETED: {event.message.content}")
-                return event.message.content
-            # elif event.event == ChatEventType.CONVERSATION_CHAT_COMPLETED:
-            #     logger.info(f"CONVERSATION_CHAT_COMPLETED: {event.chat.usage.token_count}")
+            elif event.event == ChatEventType.CONVERSATION_CHAT_COMPLETED:
+                logger.info(f"_chat_with_coze chat.complete:{user_id, ori_msg.id} done, cost:{time.time() - start_time} s, {ori_msg.feedback_text[-10:]}")
+                return last_message.content if last_message else ""
             # if event.message.content.startswith("{"):
             #     continue
             # msg_list.append(event.message.content)
