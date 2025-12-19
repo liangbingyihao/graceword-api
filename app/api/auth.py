@@ -124,6 +124,10 @@ def login():
     fcm_token = data.get('fcmToken')
     ios_token = data.get('ios_push_token')
 
+    logging.warning("=== HTTP Headers ===")
+    for header, value in request.headers.items():
+        logging.warning(f"{header}: {value}")
+
     if guest:
         auth_data = AuthService.login_guest(guest, fcm_token, ios_token)
     else:
