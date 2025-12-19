@@ -383,7 +383,7 @@ class CozeService:
                 try:
                     result = json.loads(response)
                 except Exception as e:
-                    logger.error(f"ai.error in chat1,feedback_text:${message.feedback_text}")
+                    logger.error(f"ai.error in chat1,feedback_text:{message.feedback_text}")
                     logger.exception(e)
 
                 view = result.get('view') or message.feedback_text
@@ -529,14 +529,14 @@ class CozeService:
                     if pos[3] <= 0:
                         bible, detail = CozeService._extract_content(all_content, pos)
                         ori_msg.feedback_text = unescape_json_string(detail)
-                        logger.info(f"_chat_detail: {all_content} \n got {detail}")
+                        # logger.info(f"_chat_detail: {all_content} \n got {detail}")
                 # else:
                 #     ori_msg.feedback_text = all_content
                 # logger.info(f"CONVERSATION_MESSAGE_DELTA: {ori_msg.feedback}")
                 ori_msg.status = 1
                 session.commit()
             elif event.event == ChatEventType.CONVERSATION_MESSAGE_COMPLETED and event.message.type == MessageType.ANSWER:
-                logger.info(f"_chat_with_coze: {user_id, ori_msg.id} done, cost:{time.time() - start_time} s")
+                logger.info(f"_chat_with_coze: {user_id, ori_msg.id} done, cost:{time.time() - start_time} s, {ori_msg.feedback_text}")
                 # logger.info(f"CONVERSATION_MESSAGE_COMPLETED: {event.message.content}")
                 return event.message.content
             # elif event.event == ChatEventType.CONVERSATION_CHAT_COMPLETED:
