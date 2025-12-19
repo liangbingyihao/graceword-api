@@ -253,11 +253,6 @@ class CozeService:
 
         from services.message_service import MessageService
         from services.session_service import SessionService
-        if message.action == MessageService.action_bible_pic:
-            message.status = MessageService.status_success
-            message.feedback_text = "(实现中)将会为你生成经文图片"
-            session.commit()
-            return
 
         lang = ""
         if message.lang:
@@ -534,7 +529,7 @@ class CozeService:
                     if pos[3] <= 0:
                         bible, detail = CozeService._extract_content(all_content, pos)
                         ori_msg.feedback_text = unescape_json_string(detail)
-                        # logger.info(f"_chat_detail: {all_content} \n got {detail}")
+                        logger.info(f"_chat_detail: {all_content} \n got {detail}")
                 # else:
                 #     ori_msg.feedback_text = all_content
                 # logger.info(f"CONVERSATION_MESSAGE_DELTA: {ori_msg.feedback}")
