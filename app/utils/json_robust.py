@@ -88,6 +88,18 @@ def extra_data():
             logging.exception(e)
 
 if __name__ == '__main__':
+    result = {}
+    feedback_text = "x"
+    # try:
+    #     result = json.loads(response)
+    # except Exception as e:
+    #     logger.error("ai.error in chat")
+    #     logger.exception(e)
+
+    view = result.get('view') or feedback_text
+    print(view)
+    exit()
+
     test_cases = [
         # 标准 JSON
         '{"response": "标准回答", "title": "标准标题"}',

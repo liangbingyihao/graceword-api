@@ -383,7 +383,7 @@ class CozeService:
                 try:
                     result = json.loads(response)
                 except Exception as e:
-                    logger.error("ai.error in chat")
+                    logger.error(f"ai.error in chat1,feedback_text:${message.feedback_text}")
                     logger.exception(e)
 
                 view = result.get('view') or message.feedback_text
@@ -414,7 +414,7 @@ class CozeService:
             message.status = MessageService.status_success
             session.commit()
         except Exception as e:
-            logger.error("ai.error in chat")
+            logger.error("ai.error in chat2")
             logger.exception(e)
             if not message.feedback_text:
                 message.status = MessageService.status_err
