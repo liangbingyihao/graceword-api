@@ -88,7 +88,7 @@ def register():
                         'description': '如果是游客登录则设置本字段为设备的唯一标识，username和password参数不需要提供',
                         'example': "6c6cbd0d-503a-38e1-ba88-252340860c1a"
                     },
-                    'fcmToken': {
+                    'fcm_token': {
                         'type': 'string',
                         'description': 'FCM推送令牌（Android设备）',
                         'example': 'fcm_token_here_12345'
