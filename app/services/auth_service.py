@@ -57,8 +57,17 @@ class AuthService:
             now = datetime.now()
             current_year = now.year
             current_month = now.month
+
+            free_days = 0
             if current_year == 2025 and current_month == 12:
-                user.membership_expired_at = now + timedelta(days=90)
+                free_days = 90
+            elif current_year == 2026 and current_month == 1:
+                free_days = 60
+            elif current_year == 2026 and current_month == 2:
+                free_days = 30
+
+            if free_days>0:
+                user.membership_expired_at = now + timedelta(days=free_days)
 
             db.session.add(user)
             db.session.commit()
