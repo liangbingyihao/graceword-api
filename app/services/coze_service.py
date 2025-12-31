@@ -576,14 +576,14 @@ class CozeService:
                 session.commit()
             elif event.event == ChatEventType.CONVERSATION_MESSAGE_COMPLETED:
                 last_complete = True
-                logger.info(
-                    f"_chat_with_coze msg.complete: {user_id, ori_msg.id} done, cost:{time.time() - start_time} s, {ori_msg.feedback_text[:5]}")
+                # logger.info(
+                #     f"_chat_with_coze msg.complete: {user_id, ori_msg.id} done, cost:{time.time() - start_time} s, {ori_msg.feedback_text[:5]}")
                 if event.message.type == MessageType.ANSWER:
                     last_message = event.message
                 # logger.info(f"CONVERSATION_MESSAGE_COMPLETED: {event.message.content}")
             elif event.event == ChatEventType.CONVERSATION_CHAT_COMPLETED:
-                logger.info(
-                    f"_chat_with_coze chat.complete:{user_id, ori_msg.id} done, cost:{time.time() - start_time} s, {ori_msg.feedback_text[:5]}")
+                # logger.info(
+                #     f"_chat_with_coze chat.complete:{user_id, ori_msg.id} done, cost:{time.time() - start_time} s, {ori_msg.feedback_text[:5]}")
                 return last_message.content if last_message else ""
             # if event.message.content.startswith("{"):
             #     continue
