@@ -1,6 +1,8 @@
 import json
 import os
 import re
+from ast import literal_eval
+
 import time
 
 import cozepy
@@ -383,8 +385,16 @@ class CozeService:
                 try:
                     result = json.loads(response)
                 except Exception as e:
-                    logger.error(f"ai.error in chat1,feedback_text:{message.feedback_text}")
                     logger.exception(e)
+                    try:
+                        explore_match = re.search(r'"explore":(\[.*?])', response)
+                        if explore_match:
+                            explore_str = explore_match.group(1)
+                            result["explore"] = literal_eval(explore_str)
+                        from utils.json_robust import extract_json_values_robust
+                        result["summary"] = extract_json_values_robust(response, "summary")
+                    except Exception as e:
+                        logger.exception(e)
 
                 view = result.get('view') or message.feedback_text
                 if view:
@@ -486,7 +496,8 @@ class CozeService:
         ):
             if event.event == ChatEventType.CONVERSATION_MESSAGE_DELTA:
                 if last_complete:
-                    logger.info(f"_chat_with_coze: {user_id, ori_msg.id} delta msg coming, cost:{time.time() - start_time} s")
+                    logger.info(
+                        f"_chat_with_coze: {user_id, ori_msg.id} delta msg coming, cost:{time.time() - start_time} s")
                     last_complete = False
                     all_content = ""
                 message = event.message
@@ -497,24 +508,25 @@ class CozeService:
                     # logger.info(f"hymns back:{all_content}")
                     result = {}
                     try:
-                        response = extract_json_values_robust(all_content,"response")
+                        response = extract_json_values_robust(all_content, "response")
                         if response:
                             result["response"] = response[0]
                     except Exception as e:
                         logger.exception(e)
                     try:
-                        titles = extract_json_values_robust(all_content,"title")
+                        titles = extract_json_values_robust(all_content, "title")
                         if titles:
-                            result["hymns"] = [{"title":x} for x in titles]
+                            result["hymns"] = [{"title": x} for x in titles]
                     except Exception as e:
                         logger.exception(e)
 
                     hymns = result.get("hymns")
-                    if hymns and len(hymns)>last_len_hymns:
-                        for k in ["composer","album","lyrics","artist","play_url","sheet_url","ppt_url","copyright"]:
+                    if hymns and len(hymns) > last_len_hymns:
+                        for k in ["composer", "album", "lyrics", "artist", "play_url", "sheet_url", "ppt_url",
+                                  "copyright"]:
                             try:
                                 data = extract_json_values_robust(all_content, k)
-                                if data and len(data)<=len(hymns):
+                                if data and len(data) <= len(hymns):
                                     for index, value in enumerate(data):
                                         hymns[index][k] = value
                             except Exception as e:
@@ -543,12 +555,14 @@ class CozeService:
                 session.commit()
             elif event.event == ChatEventType.CONVERSATION_MESSAGE_COMPLETED:
                 last_complete = True
-                logger.info(f"_chat_with_coze msg.complete: {user_id, ori_msg.id} done, cost:{time.time() - start_time} s, {ori_msg.feedback_text[:5]}")
+                logger.info(
+                    f"_chat_with_coze msg.complete: {user_id, ori_msg.id} done, cost:{time.time() - start_time} s, {ori_msg.feedback_text[:5]}")
                 if event.message.type == MessageType.ANSWER:
                     last_message = event.message
                 # logger.info(f"CONVERSATION_MESSAGE_COMPLETED: {event.message.content}")
             elif event.event == ChatEventType.CONVERSATION_CHAT_COMPLETED:
-                logger.info(f"_chat_with_coze chat.complete:{user_id, ori_msg.id} done, cost:{time.time() - start_time} s, {ori_msg.feedback_text[:5]}")
+                logger.info(
+                    f"_chat_with_coze chat.complete:{user_id, ori_msg.id} done, cost:{time.time() - start_time} s, {ori_msg.feedback_text[:5]}")
                 return last_message.content if last_message else ""
             # if event.message.content.startswith("{"):
             #     continue
@@ -566,5 +580,3 @@ class CozeService:
             if event.event == ChatEventType.CONVERSATION_MESSAGE_COMPLETED:
                 logger.info(f"_summary_by_coze got: {conversation_id, event.message.content}")
                 return event.message.content
-
-
