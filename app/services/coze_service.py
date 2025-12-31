@@ -230,11 +230,32 @@ class CozeService:
         # FIXME
         message.feedback_text = default_rsp.get("view")
         message.feedback = json.dumps(default_rsp, ensure_ascii=False)
-        # if not ai_response:
-        #     response = json.dumps(default_rsp, ensure_ascii=False)
-        #     message.feedback = response
-        # else:
-        #     result = json.loads(ai_response)
+
+    @staticmethod
+    def _extra_ai_response(message, response):
+        result = {}
+        try:
+            result = json.loads(response)
+        except Exception as e:
+            logger.exception(e)
+            try:
+                from utils.json_robust import extract_json_values_robust,extract_json_list_robust
+                result["summary"] = extract_json_values_robust(response, "summary")
+                result["explore"] = extract_json_list_robust(response, "explore")
+            except Exception as e:
+                logger.exception(e)
+
+        view = result.get('view') or message.feedback_text
+        if view:
+            result["view"] = view
+            message.feedback_text = view
+        else:
+            raise Exception("view is null")
+
+        summary = result.get("summary")
+        if summary:
+            message.summary = summary
+        return result
 
     @staticmethod
     def chat_with_coze(user_id, msg_id):
@@ -381,38 +402,38 @@ class CozeService:
             if message.action == MessageService.action_search_hymns:
                 pass
             else:
-                result = {}
-                try:
-                    result = json.loads(response)
-                except Exception as e:
-                    logger.exception(e)
-                    try:
-                        explore_match = re.search(r'"explore":(\[.*?])', response)
-                        if explore_match:
-                            explore_str = explore_match.group(1)
-                            result["explore"] = literal_eval(explore_str)
-                        from utils.json_robust import extract_json_values_robust
-                        result["summary"] = extract_json_values_robust(response, "summary")
-                    except Exception as e:
-                        logger.exception(e)
-
-                view = result.get('view') or message.feedback_text
-                if view:
-                    result["view"] = view
-                    message.feedback_text = view
-                else:
-                    raise Exception("view is null")
-
-                summary = result.get("summary")
-                if summary:
-                    message.summary = summary
-                if not is_explore:
-                    tag = result.get("tag")
-                    if tag:
-                        for k, v in color_map.items():
-                            if tag in v:
-                                result["color_tag"] = k
-                                break
+                result = CozeService._extra_ai_response(message,response)
+                # try:
+                #     result = json.loads(response)
+                # except Exception as e:
+                #     logger.exception(e)
+                #     try:
+                #         explore_match = re.search(r'"explore":(\[.*?])', response)
+                #         if explore_match:
+                #             explore_str = explore_match.group(1)
+                #             result["explore"] = literal_eval(explore_str)
+                #         from utils.json_robust import extract_json_values_robust
+                #         result["summary"] = extract_json_values_robust(response, "summary")
+                #     except Exception as e:
+                #         logger.exception(e)
+                #
+                # view = result.get('view') or message.feedback_text
+                # if view:
+                #     result["view"] = view
+                #     message.feedback_text = view
+                # else:
+                #     raise Exception("view is null")
+                #
+                # summary = result.get("summary")
+                # if summary:
+                #     message.summary = summary
+                # if not is_explore:
+                #     tag = result.get("tag")
+                #     if tag:
+                #         for k, v in color_map.items():
+                #             if tag in v:
+                #                 result["color_tag"] = k
+                #                 break
                 if auto_session:
                     topic_name = _set_topics(auto_session)
                 else:

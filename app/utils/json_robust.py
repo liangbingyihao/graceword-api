@@ -1,4 +1,5 @@
 import json
+import logging
 import re
 from ast import literal_eval
 
@@ -20,6 +21,30 @@ def unescape_json_string(s):
         s = s.replace(escaped, unescaped)
 
     return s
+
+
+def extract_json_list_robust(text, key):
+    """安全地解析可能包含未转义引号的 JSON 字符串"""
+    lst_match = re.search(rf'"{key}":(\[.*?])', text)
+    if lst_match:
+        try:
+            return literal_eval(lst_match.group(1))
+        except SyntaxError as e:
+            logging.exception(e)
+            return []
+    # try:
+    #     # 尝试直接解析
+    #     return literal_eval(json_str)
+    # except SyntaxError as e:
+    #     # 如果失败，先修复引号
+    #     # 将字符串中的双引号转义，但保留数组外部的引号
+    #     fixed_str = re.sub(r'(?<!\\)"(?=[^[\]]*[\]}])', '\\"', json_str)
+    #     print("fix:",repr(fixed_str))
+    #     try:
+    #         return literal_eval(fixed_str)
+    #     except:
+    #         # 如果还是失败，尝试用 json.loads
+    #         return ""
 
 def extract_json_values_robust(text, key):
     """
@@ -90,6 +115,14 @@ def extra_data():
             logging.exception(e)
 
 if __name__ == '__main__':
+    response = '{"view":"### 【圣经中困境中乐。”","bible":"你们落在百般试炼中，都要以为大喜乐，因为知道你们的信心经过试验，就生忍耐。（雅各书1:2）","explore":["如何在现实困境中实践“以神为乐”的心态？","保罗“靠主喜乐”的神学根基是什么？","约伯的苦难观对当代基督徒有何启示？"],"summary":"困境中的属灵喜乐"}'
+    response = '{"view":"### 【圣经中困境中乐。”","bible":"你们落在百般试炼中，都要以为大喜乐，因为知道你们的信心经过试验，就生忍耐。（雅各书1:2）","explore":["《启示录》中"兽"的其他象征意义是什么？","早期教会如何用"666"提醒信徒胜过逼迫？","基督徒如何在现代社会辨别"666"所象征的价值观？"],"summary":"困境中的属灵喜乐"}'
+    explore_match = re.search(r'"explore":(\[.*?])', response)
+    if explore_match:
+        explore_str = explore_match.group(1)
+        print(safe_literal_eval(explore_str))
+        exit()
+
     result = {}
     feedback_text = "x"
     response = '{"view":"### 【圣经中困境中持守喜乐的人物】  \n圣经中多位属灵前辈在苦难中彰显了以神为乐的生命见证，他们的经历成为后人信靠的榜样。  \n\n#### 1. **保罗：捆锁中的喜乐使者**  \n**核心见证**：保罗在罗马监狱中写下《腓立比书》，虽身陷囹圄却宣告“我无论在什么景况都可以知足，这是我已经学会了”（<u class="bible">腓4:11</u>）。他劝勉信徒“靠主常常喜乐”，甚至视苦难为“为基督的名受辱”的荣耀（<u class="bible">腓1:12-14</u>）。  \n\n#### 2. **约伯：从尘土中赞美神**  \n**核心见证**：约伯在失去家产、儿女和健康后，仍撕裂外袍俯伏敬拜：“赏赐的是耶和华，收取的也是耶和华；耶和华的名是应当称颂的”（<u class="bible">伯1:21</u>）。他虽经历极大痛苦，却从未离弃对神的信靠，最终得见神的荣耀（<u class="bible">伯42:5-6</u>）。  \n\n#### 3. **大卫：苦难中的诗歌创作者**  \n**核心见证**：大卫在逃避扫罗追杀、身处旷野时，写下多首诗篇倾诉心声，却始终持守“我的心必靠耶和华快乐，靠他的救恩高兴”（<u class="bible">诗35:9</u>）。他在《诗篇》中多次宣告：“你必将生命的道路指示我，在你面前有满足的喜乐”（<u class="bible">诗16:11</u>）。  \n\n#### 4. **耶利米：流泪先知的信心根基**  \n**核心见证**：耶利米被称为“流泪的先知”，虽面对以色列的悖逆和自己的苦难，却仍说“耶和华是我的分，因此我要仰望他”（<u class="bible">耶15:16</u>）。他在狱中仍为神的百姓代求，以神的信实为喜乐的根源（<u class="bible">哀3:21-23</u>）。  \n\n这些人物的共同秘诀是：将喜乐建立在神的本性（信实、主权、慈爱）而非环境之上。正如<u class="bible">雅各书1:2</u>所劝勉：“我的弟兄们，你们落在百般试炼中，都要以为大喜乐。”","bible":"你们落在百般试炼中，都要以为大喜乐，因为知道你们的信心经过试验，就生忍耐。（雅各书1:2）","explore":["如何在现实困境中实践“以神为乐”的心态？","保罗“靠主喜乐”的神学根基是什么？","约伯的苦难观对当代基督徒有何启示？"],"summary":"困境中的属灵喜乐"}'
