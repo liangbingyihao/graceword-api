@@ -498,12 +498,12 @@ class CozeService:
         all_content = ""
         pos = [0, 0, 0, 0]
         topic_name = None
-        logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables}")
         from services.message_service import MessageService
         from utils.json_robust import unescape_json_string
         is_search_hymns = ori_msg.action == MessageService.action_search_hymns
         # is_explore = CozeService.is_explore_msg(ori_msg)
         dst_bot_id = CozeService.hymn_bot_id if is_search_hymns else CozeService.bot_id
+        logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables,dst_bot_id}")
         pending = False
         start_time = time.time()
         last_len_hymns = 0
