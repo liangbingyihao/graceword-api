@@ -105,6 +105,7 @@ def register_commands(app):
     def after_request(response):
         """请求后处理"""
         bundle_id = request.headers.get("BundleId") or request.headers.get("bundleId")
+        logger.error(f"after_request: {bundle_id}")
         if not bundle_id:
             return response
         # 统一JSON响应格式

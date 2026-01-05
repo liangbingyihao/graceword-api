@@ -26,6 +26,12 @@ def verify_jwt_token(token):
     except:
         return None
 
+def get_user_id(headers):
+    token = headers.get("Authorization") or headers.get("authorization")
+    user_id = headers.get("X-User-Id")
+    if token:
+        return user_id
+
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 

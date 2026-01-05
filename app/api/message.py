@@ -12,6 +12,7 @@ from schemas.session_msg_schema import SessionMsgSchema
 from services.favorite_service import FavoriteService
 from services.message_service import MessageService
 from services.search_service import SearchService
+from utils.security import get_user_id
 
 message_bp = Blueprint('message', __name__)
 BASE_YML_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'message')
@@ -27,7 +28,7 @@ def add():
     prompt = data.get("prompt")
     reply = data.get("reply")
     lang = request.args.get('lang', default="zh-hant", type=str)
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
     # session_id = data.get("session_id")
 
     if not content:
@@ -43,7 +44,7 @@ def add():
 @message_bp.route('/renew', methods=['POST'])
 @jwt_required()
 def renew():
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
     data = request.get_json()
     prompt = data.get("prompt")
     msg_id = data.get("message_id")
@@ -61,7 +62,7 @@ def renew():
 @swag_from(os.path.join(BASE_YML_DIR, 'del.yml'))
 @jwt_required()
 def del_msg():
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
     data = request.get_json()
     content_type = data.get("content_type")
     msg_id = data.get("message_id")
@@ -84,7 +85,7 @@ def del_msg():
 @jwt_required()
 def my_message():
     # FIXME 下个版本仅获取message，不搜索
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
     # 获取特定参数（带默认值）
     page = request.args.get('page', default=1, type=int)
     limit = request.args.get('limit', default=10, type=int)
@@ -121,7 +122,7 @@ def my_message():
 @swag_from(os.path.join(BASE_YML_DIR, 'detail.yml'))
 @jwt_required()
 def msg_detail(msg_id):
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
     retry = request.args.get('retry', default=0, type=int)
     stop = request.args.get('stop', default=0, type=int)
     lang = request.args.get('lang', default='', type=str)
@@ -148,7 +149,7 @@ def set_summary(msg_id):
     summary = data.get('summary')
     session_id = data.get('session_id')
     session_name = data.get('session_name')
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
     if summary and len(summary) > 120:
         return jsonify({'success': False,"message": "summary max length is 120"}), 400
     session_id = MessageService.set_summary(owner_id, msg_id, summary, session_id, session_name)
@@ -180,7 +181,7 @@ def set_summary(msg_id):
 })
 @jwt_required()
 def renew_message(msg_id):
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
     logging.warning(f"renew message:{msg_id}")
     # session_id = data.get("session_id")
 
@@ -204,7 +205,7 @@ def search_message():
     session_id = request.args.get("session_id", default=0, type=int)
     session_type = request.args.get("session_type", default='', type=str)  # "topic", "question"
     search = request.args.get('search', default='', type=str)
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
 
     # try:
     data = SearchService.filter_message(owner_id=owner_id, session_id=session_id, session_type=session_type,
