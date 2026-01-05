@@ -1,3 +1,4 @@
+import logging
 import os
 
 from flask import Blueprint, jsonify, request
@@ -61,6 +62,9 @@ def add():
 # })
 @jwt_required()
 def my_sessions():
+    logging.warning("=== HTTP Headers ===")
+    for header, value in request.headers.items():
+        logging.warning(f"{header}: {value}")
     owner_id = get_jwt_identity()
     page = request.args.get('page', default=1, type=int)
     limit = request.args.get('limit', default=10, type=int)
