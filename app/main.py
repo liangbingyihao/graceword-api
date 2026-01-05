@@ -77,8 +77,7 @@ def register_commands(app):
 
         # 返回标准化错误响应
         return jsonify({
-            "status": "error",
-            "code": 400,
+            "code": "error",
             "message": str(error),
             "stack_trace": error_stack if app.debug else None  # 调试模式下显示堆栈
         }), 400
@@ -92,6 +91,7 @@ def register_commands(app):
         if isinstance(e, HTTPException):
             return jsonify({
                 'success': False,
+                'code':'error',
                 'message': e.description
             }), e.code
 
