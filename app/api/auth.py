@@ -129,7 +129,7 @@ def login():
         auth_data = AuthService.login_guest(guest, fcm_token, ios_token)
     else:
         auth_data = AuthService.login_user(username, password, fcm_token)
-    logging.warning(f"auth_data:{auth_data}")
+    # logging.warning(f"auth_data:{auth_data}")
     return jsonify({
         'success': True,
         'data': AuthSchema().dump(auth_data)

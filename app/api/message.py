@@ -32,7 +32,7 @@ def add():
     # session_id = data.get("session_id")
 
     if not content:
-        return jsonify({"error": "Missing required parameter 'content'"}), 400
+        return jsonify({"msg": "Missing required parameter 'content'"}), 400
 
     message_id = MessageService.new_message(owner_id, content, context_id, action, prompt, reply,lang)
     return jsonify({

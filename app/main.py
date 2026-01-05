@@ -40,12 +40,39 @@ def create_app():
     # 初始化API
     init_api(app)
 
+    register_after_request(app)
     # 注册错误处理器
     app.register_error_handler(AuthError, handle_auth_error)
     register_commands(app)
 
     return app
 
+
+def register_after_request(app):
+    """注册 after_request 处理器"""
+
+    @app.after_request
+    def after_request_middleware(response):
+        """请求后处理"""
+        bundle_id = request.headers.get("BundleId") or request.headers.get("bundleId")
+        logger.error(f"after_request: {bundle_id}")
+        if not bundle_id:
+            return response
+        # 统一JSON响应格式
+        if response.is_json:
+            ret = response.get_json()
+
+            # 包装普通响应
+            wrapped_data = {
+                'code': "OK" if ret.success else "error",
+                'success':ret.success,
+                'msg': ret.message,
+                'data': ret.data
+            }
+
+            response.set_data(json.dumps(wrapped_data, ensure_ascii=False))
+
+        return response
 
 
 def register_commands(app):
@@ -100,29 +127,6 @@ def register_commands(app):
             'success': False,
             'message': str(e)
         }), 400
-
-    @app.after_request
-    def after_request(response):
-        """请求后处理"""
-        bundle_id = request.headers.get("BundleId") or request.headers.get("bundleId")
-        logger.error(f"after_request: {bundle_id}")
-        if not bundle_id:
-            return response
-        # 统一JSON响应格式
-        if response.is_json:
-            ret = response.get_json()
-
-            # 包装普通响应
-            wrapped_data = {
-                'code': "OK" if ret.success else "error",
-                'success':ret.success,
-                'msg': ret.message,
-                'data': ret.data
-            }
-
-            response.set_data(json.dumps(wrapped_data, ensure_ascii=False))
-
-        return response
 
 gw_app = create_app()
 if __name__ == '__main__':

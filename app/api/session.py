@@ -8,6 +8,7 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 from schemas.session_schema import SessionSchema
 from services.session_service import SessionService
 from utils.exceptions import AuthError
+from utils.security import get_user_id
 
 session_bp = Blueprint('session', __name__)
 
@@ -23,7 +24,7 @@ BASE_YML_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static'
 def add():
     data = request.get_json()
     session_name = data.get('session_name')
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
     robot_id = data.get('robot_id')
 
     try:
@@ -65,7 +66,7 @@ def my_sessions():
     logging.warning("=== HTTP Headers ===")
     for header, value in request.headers.items():
         logging.warning(f"{header}: {value}")
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
     page = request.args.get('page', default=1, type=int)
     limit = request.args.get('limit', default=10, type=int)
 
@@ -91,7 +92,7 @@ def my_sessions():
 def del_session():
     data = request.get_json()
     session_id = data.get('session_id')
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
 
     session = SessionService.del_session(owner_id, session_id)
     return jsonify({
@@ -105,7 +106,7 @@ def del_session():
 def set_topic(session_id):
     data = request.get_json()
     session_name = data.get('session_name')
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
     if session_name and len(session_name) > 20:
         return jsonify({"error": "session_name max length is 8"}), 400
     ret = SessionService.set_session_name(owner_id, session_id, session_name)

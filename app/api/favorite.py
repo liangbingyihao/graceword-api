@@ -7,6 +7,7 @@ from schemas.session_schema import SessionSchema
 from services.favorite_service import FavoriteService
 from services.session_service import SessionService
 from utils.exceptions import AuthError
+from utils.security import get_user_id
 
 favorite_bp = Blueprint('favorite', __name__)
 
@@ -17,7 +18,7 @@ def add():
     data = request.get_json()
     message_id = data.get('message_id')
     content_type = data.get('content_type')
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
 
     try:
         res = FavoriteService.new_favorite(owner_id, message_id, content_type)
@@ -68,7 +69,7 @@ def toggle():
     data = request.get_json()
     message_id = data.get('message_id')
     content_type = data.get('content_type')
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
 
     try:
         res = FavoriteService.toggle_favorite(owner_id, message_id, content_type)
@@ -91,7 +92,7 @@ def toggle():
 })
 @jwt_required()
 def my_favorites():
-    owner_id = get_jwt_identity()
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
     search = request.args.get('search', default="", type=str)
     page = request.args.get('page', default=1, type=int)
     limit = request.args.get('limit', default=10, type=int)
