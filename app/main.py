@@ -64,10 +64,10 @@ def register_after_request(app):
 
             # 包装普通响应
             wrapped_data = {
-                'code': "OK" if ret.success else "error",
-                'success':ret.success,
-                'msg': ret.message,
-                'data': ret.data
+                'code': "OK" if ret.get("success") else "error",
+                'success':ret.get("success"),
+                'msg': ret.get("message"),
+                'data': ret.get("data")
             }
 
             response.set_data(json.dumps(wrapped_data, ensure_ascii=False))

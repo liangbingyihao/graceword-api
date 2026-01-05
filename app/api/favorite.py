@@ -1,3 +1,5 @@
+import logging
+
 from flask import Blueprint, jsonify, request
 from flasgger import swag_from
 from flask_jwt_extended import jwt_required, get_jwt_identity
@@ -96,6 +98,7 @@ def my_favorites():
     search = request.args.get('search', default="", type=str)
     page = request.args.get('page', default=1, type=int)
     limit = request.args.get('limit', default=10, type=int)
+    logging.warning(f"my_favorites:{owner_id}")
 
     try:
         items = FavoriteService.get_favorite_by_owner(owner_id, page=page,
