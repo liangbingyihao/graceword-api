@@ -101,6 +101,28 @@ def register_commands(app):
             'message': str(e)
         }), 400
 
+    @app.after_request
+    def after_request(response):
+        """请求后处理"""
+        bundle_id = request.headers.get("BundleId") or request.headers.get("bundleId")
+        if not bundle_id:
+            return response
+        # 统一JSON响应格式
+        if response.is_json:
+            ret = response.get_json()
+
+            # 包装普通响应
+            wrapped_data = {
+                'code': "OK" if ret.success else "error",
+                'success':ret.success,
+                'msg': ret.message,
+                'data': ret.data
+            }
+
+            response.set_data(json.dumps(wrapped_data, ensure_ascii=False))
+
+        return response
+
 gw_app = create_app()
 if __name__ == '__main__':
     # app.logger.setLevel(logging.DEBUG)
