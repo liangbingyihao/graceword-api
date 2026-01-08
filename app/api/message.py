@@ -100,15 +100,6 @@ def my_message():
         data = MessageService.filter_message(owner_id=owner_id, session_id=session_id, session_type=session_type,
                                              search=search, page=page,
                                              limit=limit)
-    # import flask_sqlalchemy
-    # if isinstance(data, flask_sqlalchemy.BaseQuery):
-    #     return jsonify({
-    #         'success': True,
-    #         'data': {
-    #             'items': SessionMsgSchema(many=True).dump(data)
-    #         }
-    #     })
-    # else:
     return jsonify({
         'success': True,
         'data': {

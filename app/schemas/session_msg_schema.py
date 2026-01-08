@@ -43,4 +43,4 @@ class SessionMsgSchema(Schema):
     )
     content = fields.Str()
     feedback_text = fields.Str()
-    created_at = fields.DateTime()
+    created_at = fields.Str()

@@ -271,51 +271,6 @@ class MessageService:
             if stop and message.status != MessageService.status_success:
                 message.status = MessageService.status_cancel
                 db.session.commit()
-
-            # try:
-            #     if message.status == MessageService.status_err and message.session_id <= 0:
-            #         session_name = "其他话题"
-            #         if lang:
-            #             if "en" in lang:
-            #                 session_name = "Other Topics"
-            #             elif "Hant" in lang:
-            #                 session_name = "其他話題"
-            #         session = SessionService.new_session(session_name, owner_id, 0)
-            #         message.session_id = session.id
-            #         if not message.feedback:
-            #             message.feedback = json.dumps({"topic": session_name}, ensure_ascii=False)
-            #         else:
-            #             message.feedback["topic"] = session_name
-            #         db.session.commit()
-
-                # funcs = []
-                # feedback = json.loads(message.feedback)
-                # explore = feedback.get("explore")
-                # if explore:
-                #     action = MessageService.action_search_hymns if message.action == MessageService.action_search_hymns \
-                #         else MessageService.action_daily_talk
-                #     if isinstance(explore, list):
-                #         for i in explore:
-                #             funcs.append([i, action])
-                #     else:
-                #         funcs.append([explore, action])
-                #
-                # explore = feedback.get("prompt")
-                # if explore:
-                #     if isinstance(explore, list):
-                #         for i in explore:
-                #             funcs.append([i, MessageService.action_input_prompt])
-                #     else:
-                #         funcs.append([explore, MessageService.action_input_prompt])
-
-                # if funcs:
-                #     feedback["function"] = funcs
-                # message.feedback = feedback
-
-                # if not message.summary:
-                #     message.summary = feedback.get("summary")
-            # except Exception as e:
-            #     pass
             return message
 
     @staticmethod
