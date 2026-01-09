@@ -84,7 +84,6 @@ def del_msg():
 # })
 @jwt_required()
 def my_message():
-    # FIXME 下个版本仅获取message，不搜索
     owner_id = get_user_id(request.headers) or get_jwt_identity()
     # 获取特定参数（带默认值）
     page = request.args.get('page', default=1, type=int)
@@ -92,12 +91,14 @@ def my_message():
     session_id = request.args.get("session_id", default=0, type=int)
     session_type = request.args.get("session_type", default='', type=str)  # "topic", "question"
     search = request.args.get('search', default='', type=str)
+    older_than = request.args.get('older_than', default='', type=str)
 
     if session_type == "favorite":
         data = FavoriteService.get_favorite_by_owner(owner_id, page=page,
                                                      limit=limit, search=search)
     else:
-        data = MessageService.filter_message(owner_id=owner_id, session_id=session_id, session_type=session_type,
+        data = MessageService.filter_message(owner_id=owner_id,older_than=older_than,
+                                             session_id=session_id, session_type=session_type,
                                              search=search, page=page,
                                              limit=limit)
     return jsonify({

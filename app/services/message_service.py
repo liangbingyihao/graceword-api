@@ -187,7 +187,7 @@ class MessageService:
     #     return Session.query.get(session_id)
 
     @staticmethod
-    def filter_message(owner_id, session_id, session_type, search, page, limit):
+    def filter_message(owner_id,older_than, session_id, session_type, search, page, limit):
         '''
         :param owner_id:
         :param session_id:
@@ -197,7 +197,13 @@ class MessageService:
         :param limit:
         :return:
         '''
-        conditions = [Message.owner_id == owner_id]
+        conditions = []
+        if older_than:
+            message = Message.query.filter_by(public_id=older_than, owner_id=owner_id).one()
+            if message:
+                conditions.append(Message.id<message.id)
+
+        conditions.append(Message.owner_id == owner_id)
         if session_id and isinstance(session_id, int):
             conditions.append(Message.session_id == session_id)
         elif session_type:
