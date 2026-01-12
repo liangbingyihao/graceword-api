@@ -125,12 +125,12 @@ class MessageService:
                 SessionService.reset_updated_at(message.session_id)
                 message.session_id = -1
                 message.status = MessageService.status_del
-                message.updated_at = datetime.now(timezone.utc)
             elif content_type == MessageService.content_type_ai:
                 message.feedback_text = ""
                 message.feedback = ""
             else:
                 return None
+            message.updated_at = datetime.now(timezone.utc)
             #
             # if not message.content and not message.feedback_text:
             #     message.status = MessageService.status_del
