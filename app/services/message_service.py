@@ -127,7 +127,6 @@ class MessageService:
                 message.status = MessageService.status_del
             elif content_type == MessageService.content_type_ai:
                 message.feedback_text = ""
-                message.feedback = ""
             else:
                 return None
             message.updated_at = datetime.now(timezone.utc)
@@ -192,44 +191,25 @@ class MessageService:
     #     return Session.query.get(session_id)
 
     @staticmethod
-    def filter_message(owner_id,older_than, session_id, session_type, search, page, limit):
+    def filter_message(owner_id, older_than, session_id, status, page, limit):
         '''
-        :param older_than: 
+        :param status:
+        :param older_than:
         :param owner_id:
         :param session_id:
-        :param session_type: #"topic", "question"
-        :param search:
         :param page:
         :param limit:
         :return:
         '''
-        conditions = []
+        conditions = [Message.owner_id == owner_id]
         if older_than:
-            message = Message.query.filter_by(public_id=older_than, owner_id=owner_id).one()
-            if message:
-                conditions.append(Message.id<message.id)
-
-        conditions.append(Message.owner_id == owner_id)
+            conditions.append(Message.updated_at <= older_than)
         if session_id and isinstance(session_id, int):
             conditions.append(Message.session_id == session_id)
-        elif session_type:
-            if session_type == "topic":
-                conditions.append(Message.session_id > 0)
-            elif session_type == "question":
-                session = Session.query.filter_by(owner_id=owner_id, session_name="信仰问答").first()
-                if session:
-                    conditions.append(Message.session_id == session.id)
-                else:
-                    return []
 
-        if search and search.strip():
-            if session_type == "topic":
-                conditions.append(Message.content.contains(search))
-            else:
-                conditions.append(or_(
-                    Message.content.contains(search),
-                    Message.feedback.contains(search)
-                ))
+        if status>=0:
+            conditions.append(Message.status == status)
+
         query = Message.query.filter(
             and_(*conditions)
         )

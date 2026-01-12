@@ -89,18 +89,17 @@ def my_message():
     page = request.args.get('page', default=1, type=int)
     limit = request.args.get('limit', default=10, type=int)
     session_id = request.args.get("session_id", default=0, type=int)
-    session_type = request.args.get("session_type", default='', type=str)  # "topic", "question"
-    search = request.args.get('search', default='', type=str)
+    # session_type = request.args.get("session_type", default='', type=str)  # "topic", "question"
+    status = request.args.get('status', default=-1, type=int)
     older_than = request.args.get('older_than', default='', type=str)
 
-    if session_type == "favorite":
-        data = FavoriteService.get_favorite_by_owner(owner_id, page=page,
-                                                     limit=limit, search=search)
-    else:
-        data = MessageService.filter_message(owner_id=owner_id,older_than=older_than,
-                                             session_id=session_id, session_type=session_type,
-                                             search=search, page=page,
-                                             limit=limit)
+    # if session_type == "favorite":
+    #     data = FavoriteService.get_favorite_by_owner(owner_id, page=page,
+    #                                                  limit=limit, search=search)
+    # else:
+    data = MessageService.filter_message(owner_id=owner_id,older_than=older_than,
+                                         session_id=session_id, status=status, page=page,
+                                         limit=limit)
     return jsonify({
         'success': True,
         'data': {
