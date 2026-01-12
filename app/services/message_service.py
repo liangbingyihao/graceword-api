@@ -232,9 +232,7 @@ class MessageService:
                 Message.feedback,
                 Message.feedback_text,
                 Message.created_at,
-                Message.updated_at,
-                Message.feedback,
-                Message.feedback_text
+                Message.updated_at
             )
         # query = Message.query.filter(
         #     and_(*conditions)
