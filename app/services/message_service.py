@@ -1,5 +1,6 @@
 import json
 import logging
+from datetime import datetime, timezone
 
 from sqlalchemy import desc, or_, and_
 
@@ -124,6 +125,7 @@ class MessageService:
                 SessionService.reset_updated_at(message.session_id)
                 message.session_id = -1
                 message.status = MessageService.status_del
+                message.updated_at = datetime.now(timezone.utc)
             elif content_type == MessageService.content_type_ai:
                 message.feedback_text = ""
                 message.feedback = ""
