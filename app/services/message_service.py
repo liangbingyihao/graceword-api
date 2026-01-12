@@ -189,6 +189,7 @@ class MessageService:
     @staticmethod
     def filter_message(owner_id,older_than, session_id, session_type, search, page, limit):
         '''
+        :param older_than: 
         :param owner_id:
         :param session_id:
         :param session_type: #"topic", "question"

@@ -63,9 +63,9 @@ def add():
 # })
 @jwt_required()
 def my_sessions():
-    logging.warning("=== HTTP Headers ===")
-    for header, value in request.headers.items():
-        logging.warning(f"{header}: {value}")
+    # logging.warning("=== HTTP Headers ===")
+    # for header, value in request.headers.items():
+    #     logging.warning(f"{header}: {value}")
     owner_id = get_user_id(request.headers) or get_jwt_identity()
     page = request.args.get('page', default=1, type=int)
     limit = request.args.get('limit', default=10, type=int)
