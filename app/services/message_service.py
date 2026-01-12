@@ -122,15 +122,16 @@ class MessageService:
         if message:
             if content_type == MessageService.content_type_user:
                 SessionService.reset_updated_at(message.session_id)
-                message.content = ""
                 message.session_id = -1
+                message.status = MessageService.status_del
             elif content_type == MessageService.content_type_ai:
                 message.feedback_text = ""
+                message.feedback = ""
             else:
                 return None
-
-            if not message.content and not message.feedback_text:
-                message.status = MessageService.status_del
+            #
+            # if not message.content and not message.feedback_text:
+            #     message.status = MessageService.status_del
             db.session.commit()
             return message.public_id
 
