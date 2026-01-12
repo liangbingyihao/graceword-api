@@ -6,7 +6,9 @@ from flasgger import swag_from
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from schemas.session_schema import SessionSchema
+from schemas.session_msg_schema import SessionMsgSchema
 from services.session_service import SessionService
+from services.message_service import MessageService
 from utils.exceptions import AuthError
 from utils.security import get_user_id
 
@@ -42,25 +44,6 @@ def add():
 
 @session_bp.route('', methods=['GET'])
 @swag_from(os.path.join(BASE_YML_DIR, 'list.yml'))
-# @swag_from({
-#     'tags': ['session'],
-#     'description': 'my sessions',
-#     'parameters': [
-#         {
-#             'name': 'page',
-#             'in': 'query',
-#             'schema': {'type': 'integer', 'default': 1},
-#             'description': '页码'
-#         },
-#         {
-#             'name': 'limit',
-#             'in': 'query',
-#             'schema': {'type': 'integer', 'default': 10},
-#             'description': '每页数量'
-#         }
-#     ],
-#     # 类似上面的Swagger定义
-# })
 @jwt_required()
 def my_sessions():
     # logging.warning("=== HTTP Headers ===")
@@ -81,6 +64,27 @@ def my_sessions():
         }
     })
 
+
+@session_bp.route('message', methods=['GET'])
+@jwt_required()
+def my_message():
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
+    # 获取特定参数（带默认值）
+    page = request.args.get('page', default=1, type=int)
+    limit = request.args.get('limit', default=10, type=int)
+    session_id = request.args.get("session_id", default=0, type=int)
+    status = request.args.get('status', default=-1, type=int)
+    older_than = request.args.get('older_than', default='', type=str)
+
+    data = MessageService.filter_message(owner_id=owner_id,older_than=older_than,
+                                         session_id=session_id, status=status, page=page,
+                                         limit=limit, with_ai=False)
+    return jsonify({
+        'success': True,
+        'data': {
+            'items': SessionMsgSchema(many=True).dump(data)
+        }
+    })
 
 @session_bp.route('del', methods=['POST'])
 @swag_from({

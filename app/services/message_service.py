@@ -191,8 +191,9 @@ class MessageService:
     #     return Session.query.get(session_id)
 
     @staticmethod
-    def filter_message(owner_id, older_than, session_id, status, page, limit):
+    def filter_message(owner_id, older_than, session_id, status, page, limit,with_ai=False):
         '''
+        :param with_ai:
         :param status:
         :param older_than:
         :param owner_id:
@@ -210,7 +211,7 @@ class MessageService:
         if status >= 0:
             conditions.append(Message.status == status)
 
-        if session_id and isinstance(session_id, int):
+        if not with_ai:
             query = Message.query.with_entities(
                 Message.public_id,
                 Message.session_id,

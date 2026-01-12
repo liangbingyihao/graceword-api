@@ -17,6 +17,7 @@ from utils.security import get_user_id
 message_bp = Blueprint('message', __name__)
 BASE_YML_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'message')
 
+
 @message_bp.route('', methods=['POST'])
 @swag_from(os.path.join(BASE_YML_DIR, 'add.yml'))
 @jwt_required()
@@ -34,7 +35,7 @@ def add():
     if not content:
         return jsonify({"msg": "Missing required parameter 'content'"}), 400
 
-    message_id = MessageService.new_message(owner_id, content, context_id, action, prompt, reply,lang)
+    message_id = MessageService.new_message(owner_id, content, context_id, action, prompt, reply, lang)
     return jsonify({
         'success': True,
         'data': {"id": message_id}
@@ -97,9 +98,9 @@ def my_message():
     #     data = FavoriteService.get_favorite_by_owner(owner_id, page=page,
     #                                                  limit=limit, search=search)
     # else:
-    data = MessageService.filter_message(owner_id=owner_id,older_than=older_than,
+    data = MessageService.filter_message(owner_id=owner_id, older_than=older_than,
                                          session_id=session_id, status=status, page=page,
-                                         limit=limit)
+                                         limit=limit, with_ai=True)
     return jsonify({
         'success': True,
         'data': {
@@ -142,7 +143,7 @@ def set_summary(msg_id):
     session_name = data.get('session_name')
     owner_id = get_user_id(request.headers) or get_jwt_identity()
     if summary and len(summary) > 120:
-        return jsonify({'success': False,"message": "summary max length is 120"}), 400
+        return jsonify({'success': False, "message": "summary max length is 120"}), 400
     session_id = MessageService.set_summary(owner_id, msg_id, summary, session_id, session_name)
     return jsonify({
         'success': True,
@@ -150,6 +151,7 @@ def set_summary(msg_id):
             "session_id": session_id
         }
     })
+
 
 @message_bp.route('/<string:msg_id>/renew', methods=['POST'])
 @swag_from({
@@ -161,7 +163,7 @@ def set_summary(msg_id):
             'description': '成功',
             'content': {
                 'application/json': {
-                    'schema':{
+                    'schema': {
                         '$ref': '#/components/schemas/MessageId'
                     }
                 }
