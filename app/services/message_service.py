@@ -175,6 +175,7 @@ class MessageService:
                 pass
             message = Message(0, owner_id, content, context_id, action=action, reply=reply, lang=lang)
             message.feedback_text = prompt or ""
+            message.created_at = datetime.now(timezone.utc)
             if action == MessageService.action_guest_talk:
                 message.status = MessageService.status_success
             db.session.add(message)
