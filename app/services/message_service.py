@@ -202,24 +202,50 @@ class MessageService:
         :return:
         '''
         conditions = [Message.owner_id == owner_id]
-        if older_than:
-            conditions.append(Message.updated_at <= older_than)
         if session_id and isinstance(session_id, int):
             conditions.append(Message.session_id == session_id)
+        if older_than:
+            conditions.append(Message.updated_at <= older_than)
 
-        if status>=0:
+        if status >= 0:
             conditions.append(Message.status == status)
 
-        query = Message.query.filter(
-            and_(*conditions)
-        )
-        data = query.order_by(desc(Message.id)) \
+        if session_id and isinstance(session_id, int):
+            query = Message.query.with_entities(
+                Message.public_id,
+                Message.session_id,
+                Message.summary,
+                Message.status,
+                Message.content,
+                Message.reply,
+                Message.created_at,
+                Message.updated_at
+            )
+        else:
+            query = Message.query.with_entities(
+                Message.public_id,
+                Message.session_id,
+                Message.summary,
+                Message.status,
+                Message.content,
+                Message.reply,
+                Message.feedback,
+                Message.feedback_text,
+                Message.created_at,
+                Message.updated_at,
+                Message.feedback,
+                Message.feedback_text
+            )
+        # query = Message.query.filter(
+        #     and_(*conditions)
+        # )
+        data = query.filter(and_(*conditions)).order_by(desc(Message.id)) \
             .offset((page - 1) * limit) \
             .limit(limit) \
             .all()
 
-        for msg in data:
-            msg.created_at = msg.created_at.strftime('%Y-%m-%d %H:%M:%S')
+        # for msg in data:
+        #     msg.created_at = msg.created_at.strftime('%Y-%m-%d %H:%M:%S')
         return data
 
     @staticmethod
