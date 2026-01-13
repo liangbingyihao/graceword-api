@@ -92,7 +92,7 @@ def my_message():
     session_id = request.args.get("session_id", default=0, type=int)
     # session_type = request.args.get("session_type", default='', type=str)  # "topic", "question"
     status = request.args.get('status', default=-1, type=int)
-    older_than = request.args.get('older_than', default='', type=str)
+    older_than = request.args.get('older_than', default='', type=int)
 
     # if session_type == "favorite":
     #     data = FavoriteService.get_favorite_by_owner(owner_id, page=page,

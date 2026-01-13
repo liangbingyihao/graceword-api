@@ -74,7 +74,7 @@ def my_message():
     limit = request.args.get('limit', default=10, type=int)
     session_id = request.args.get("session_id", default=0, type=int)
     status = request.args.get('status', default=-1, type=int)
-    older_than = request.args.get('older_than', default='', type=str)
+    older_than = request.args.get('older_than', default='', type=int)
 
     data = MessageService.filter_message(owner_id=owner_id,older_than=older_than,
                                          session_id=session_id, status=status, page=page,

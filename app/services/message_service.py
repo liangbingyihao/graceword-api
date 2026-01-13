@@ -154,7 +154,7 @@ class MessageService:
             message.feedback_text = prompt or ""
             ts = get_utc_timestamp_millis()
             message.created_at = datetime.now(timezone.utc)
-            message.created_ts = message.created_at.timestamp()
+            message.created_ts = ts
             message.updated_ts = ts
             if action == MessageService.action_guest_talk:
                 message.status = MessageService.status_success
@@ -186,7 +186,7 @@ class MessageService:
         if session_id and isinstance(session_id, int):
             conditions.append(Message.session_id == session_id)
         if older_than:
-            conditions.append(Message.updated_at <= older_than)
+            conditions.append(Message.updated_ts <= older_than)
 
         if status >= 0:
             conditions.append(Message.status == status)
@@ -199,8 +199,8 @@ class MessageService:
                 Message.status,
                 Message.content,
                 Message.reply,
-                Message.created_at,
-                Message.updated_at
+                Message.created_ts,
+                Message.updated_ts
             )
         else:
             query = Message.query.with_entities(
@@ -212,8 +212,8 @@ class MessageService:
                 Message.reply,
                 Message.feedback,
                 Message.feedback_text,
-                Message.created_at,
-                Message.updated_at
+                Message.created_ts,
+                Message.updated_ts
             )
         # query = Message.query.filter(
         #     and_(*conditions)

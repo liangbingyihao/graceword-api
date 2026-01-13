@@ -45,4 +45,5 @@ class SessionMsgSchema(Schema):
     content = fields.Str()
     feedback_text = fields.Str()
     created_at = fields.Str()
-    updated_at = fields.Str()
+    created_ts = fields.Int(dump_only=True)
+    updated_ts = fields.Int(dump_only=True)
