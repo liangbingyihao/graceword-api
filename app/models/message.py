@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime, timezone
 
-from sqlalchemy import TIMESTAMP, text
+from sqlalchemy import BigInteger,TIMESTAMP, text
 
 from extensions import db
 
@@ -27,12 +27,8 @@ class Message(db.Model):
         server_default=text('CURRENT_TIMESTAMP'),
         nullable=False
     )
-    updated_at = db.Column(
-        TIMESTAMP,
-        server_default=text('CURRENT_TIMESTAMP'),
-        server_onupdate=text('CURRENT_TIMESTAMP'),
-        nullable=False
-    )
+    created_ts = db.Column(BigInteger, nullable=False, default=0)
+    updated_ts = db.Column(BigInteger, nullable=False, default=0)
 
     # updated_at = db.Column(db.DateTime, default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc))
 

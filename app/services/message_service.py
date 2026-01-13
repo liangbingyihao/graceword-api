@@ -3,7 +3,7 @@ import logging
 from datetime import datetime, timezone
 
 from sqlalchemy import desc, or_, and_
-
+import time
 from models.message import Message
 from extensions import db
 from models.session import Session
@@ -11,6 +11,17 @@ from services.coze_service import CozeService
 from services.session_service import SessionService
 from utils.exceptions import AuthError
 
+def get_utc_timestamp_millis() -> int:
+    """
+    获取当前 UTC 毫秒时间戳
+    这是最推荐的方法
+    """
+    if hasattr(time, 'time_ns'):
+        # Python 3.7+ 使用纳秒接口
+        return time.time_ns() // 1_000_000
+    else:
+        # Python 3.6 及以下
+        return int(time.time() * 1000)
 
 class MessageService:
     action_daily_talk = 0
@@ -37,39 +48,6 @@ class MessageService:
     explore = [["我想看今天的【每日恩语】", action_daily_gw],
                ["我想把上面的经文做成“经文图”，分享给身边的弟兄姊妹，一起思想神的话语！", action_bible_pic],
                ["我记录当下心情或事件后，你会如何帮我整理", action_direct_msg, "对应的答案"]]
-    welcome_msg = {
-        "action": 0,
-        "content": "",
-        "context_id": "0",
-        "created_at": "2025-05-28T03:40:49",
-        "feedback": {
-            "bible": "我的心你要称颂耶和华，不可忘记他的恩惠。（诗篇 103:2）",
-            "function": [
-                [
-                    "最近发生的事情现在未必能明白上帝的心意是什么，现在有了恩语，正好快速把它记下来:",
-                    action_input_prompt,
-                    "今天觉得好感恩"
-                ],
-                [
-                    "我想看今天的【每日恩语】",
-                    action_daily_gw
-                ],
-                [
-                    "怎样从日常小事中发现上帝的作为？",
-                    action_daily_talk
-                ],
-            ],
-        },
-        "feedback_text": '''✨嗨，你好🙌欢迎来到恩语~！
-正如《诗篇》103篇2节所说：“我的心你要称颂耶和华，不可忘记他的恩惠。“
-每一件感恩小事💝、圣灵感动🔥、真实感受，甚至讲道亮光🌟都是天父跟我们互动的印记💌，坚持记录，你会发现，上帝如何奇妙地与我们同行👣哦！
-快来开始你的恩语之旅吧~🎉  
-''',
-        "id": "welcome",
-        "session_id": 0,
-        "status": 2,
-        "summary": ""
-    }
     default_rsp = {
         "view": "你的这个观点很值得探讨。恩语是一个能帮你持续记录每一件感恩小事，圣灵感动，亮光发现等信息的信仰助手，并且我也努力学习圣经，期待能借助上帝的话语来鼓励你，帮助你在信仰之路上，不断看到上帝持续的工作和恩典哦。"
                 "你以上的内容我暂时无法直接找到对应的信仰相关参考，但我已经帮你记录下来了。"
@@ -129,7 +107,7 @@ class MessageService:
                 message.feedback_text = ""
             else:
                 return None
-            message.updated_at = datetime.now(timezone.utc)
+            message.updated_ts = get_utc_timestamp_millis()
             #
             # if not message.content and not message.feedback_text:
             #     message.status = MessageService.status_del
@@ -174,8 +152,10 @@ class MessageService:
                 pass
             message = Message(0, owner_id, content, context_id, action=action, reply=reply, lang=lang)
             message.feedback_text = prompt or ""
+            ts = get_utc_timestamp_millis()
             message.created_at = datetime.now(timezone.utc)
-            message.updated_at = message.created_at
+            message.created_ts = message.created_at.timestamp()
+            message.updated_ts = ts
             if action == MessageService.action_guest_talk:
                 message.status = MessageService.status_success
             db.session.add(message)
@@ -277,18 +257,15 @@ class MessageService:
 
     @staticmethod
     def get_message(owner_id, msg_id, retry, stop, lang):
-        if msg_id == "welcome":
-            return MessageService.welcome_msg
-        else:
-            message = Message.query.filter_by(public_id=msg_id, owner_id=owner_id).one()
-            if retry == 1 and message.status not in (MessageService.status_pending, MessageService.status_success):
-                CozeService.chat_with_coze_async(owner_id, message.id)
-                message.status = MessageService.status_pending
+        message = Message.query.filter_by(public_id=msg_id, owner_id=owner_id).one()
+        if retry == 1 and message.status not in (MessageService.status_pending, MessageService.status_success):
+            CozeService.chat_with_coze_async(owner_id, message.id)
+            message.status = MessageService.status_pending
 
-            if stop and message.status != MessageService.status_success:
-                message.status = MessageService.status_cancel
-                db.session.commit()
-            return message
+        if stop and message.status != MessageService.status_success:
+            message.status = MessageService.status_cancel
+            db.session.commit()
+        return message
 
     @staticmethod
     def filter_msg_by_context_id(owner_id, session_id, context_id):
