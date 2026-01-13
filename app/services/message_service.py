@@ -154,8 +154,7 @@ class MessageService:
             message.feedback_text = prompt or ""
             ts = get_utc_timestamp_millis()
             message.created_at = datetime.now(timezone.utc)
-            message.created_ts = ts
-            message.updated_ts = ts
+            message.created_ts = message.created_at.timestamp()*1000
             if action == MessageService.action_guest_talk:
                 message.status = MessageService.status_success
             db.session.add(message)
