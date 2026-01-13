@@ -148,7 +148,7 @@ def msg_detail(msg_id):
 @jwt_required()
 def retry_message(msg_id):
     owner_id = get_user_id(request.headers) or get_jwt_identity()
-    logging.warning(f"stop_message:{msg_id}")
+    logging.warning(f"retry_message:{msg_id}")
     data = MessageService.get_message(owner_id, msg_id, 1, False, "")
     return jsonify({
         'success': True,
