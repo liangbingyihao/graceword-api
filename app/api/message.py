@@ -137,7 +137,7 @@ def msg_detail(msg_id):
             'content': {
                 'application/json': {
                     'schema': {
-                        '$ref': '#/components/schemas/MessageId'
+                        '$ref': '#/components/schemas/Message'
                     }
                 }
             }
@@ -166,7 +166,7 @@ def retry_message(msg_id):
             'content': {
                 'application/json': {
                     'schema': {
-                        '$ref': '#/components/schemas/MessageId'
+                        '$ref': '#/components/schemas/Message'
                     }
                 }
             }
