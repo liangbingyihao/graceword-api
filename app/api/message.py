@@ -119,17 +119,70 @@ def msg_detail(msg_id):
     stop = request.args.get('stop', default=0, type=int)
     lang = request.args.get('lang', default='', type=str)
     logging.warning(f"get_message:{msg_id}")
-    if msg_id == "welcome":
-        return jsonify({
-            'success': True,
-            'data': MessageService.welcome_msg
-        })
-    else:
-        data = MessageService.get_message(owner_id, msg_id, retry, stop, lang)
-        return jsonify({
-            'success': True,
-            'data': MessageSchema().dump(data)
-        })
+    data = MessageService.get_message(owner_id, msg_id, retry, stop, lang)
+    return jsonify({
+        'success': True,
+        'data': MessageSchema().dump(data)
+    })
+
+
+@message_bp.route('/<string:msg_id>/retry', methods=['POST'])
+@swag_from({
+    'tags': ['message'],
+    'summary': '获取已有的ai回复，如果没有则触发重新生成ai回复',
+    'consumes': ['application/json'],
+    'responses': {
+        '201': {
+            'description': '成功',
+            'content': {
+                'application/json': {
+                    'schema': {
+                        '$ref': '#/components/schemas/MessageId'
+                    }
+                }
+            }
+        }
+    },
+    'security': [{'Bearer': []}]
+})
+@jwt_required()
+def retry_message(msg_id):
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
+    logging.warning(f"stop_message:{msg_id}")
+    data = MessageService.get_message(owner_id, msg_id, 1, False, "")
+    return jsonify({
+        'success': True,
+        'data': MessageSchema().dump(data)
+    })
+
+@message_bp.route('/<string:msg_id>/stop', methods=['POST'])
+@swag_from({
+    'tags': ['message'],
+    'summary': '停止ai回复',
+    'consumes': ['application/json'],
+    'responses': {
+        '201': {
+            'description': '成功',
+            'content': {
+                'application/json': {
+                    'schema': {
+                        '$ref': '#/components/schemas/MessageId'
+                    }
+                }
+            }
+        }
+    },
+    'security': [{'Bearer': []}]
+})
+@jwt_required()
+def stop_message(msg_id):
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
+    logging.warning(f"stop_message:{msg_id}")
+    data = MessageService.get_message(owner_id, msg_id, 0, True, "")
+    return jsonify({
+        'success': True,
+        'data': MessageSchema().dump(data)
+    })
 
 
 # 带msg_id参数的路由
