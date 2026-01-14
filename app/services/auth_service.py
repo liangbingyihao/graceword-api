@@ -47,7 +47,7 @@ class AuthService:
 
     @staticmethod
     def login_guest(guest, fcm_token, ios_push_token):
-        user = User.query.filter_by(username=guest).first()
+        user = User.query.filter_by(display_name=guest).first()
 
         if not user:
 
@@ -88,8 +88,8 @@ class AuthService:
         return {
             'access_token': access_token,
             'user_id': user.public_id,
-            'username': user.username,
-            'email': user.email,
+            'username': user.display_name,
+            'email': user.display_name,
             'membership_expired_at': AuthService.cal_membership_left(user)
         }
 
