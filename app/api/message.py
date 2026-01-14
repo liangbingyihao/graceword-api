@@ -118,7 +118,7 @@ def msg_detail(msg_id):
     retry = request.args.get('retry', default=0, type=int)
     stop = request.args.get('stop', default=0, type=int)
     lang = request.args.get('lang', default='', type=str)
-    logging.warning(f"get_message:{msg_id}")
+    # logging.warning(f"get_message:{msg_id}")
     data = MessageService.get_message(owner_id, msg_id, retry, stop, lang)
     return jsonify({
         'success': True,
