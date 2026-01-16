@@ -1,6 +1,6 @@
 tags:
   - session
-summary: 获取恩语录信息列表
+summary: 获取恩语录用户输入的信息列表
 description: |
   获取消息列表，支持分页和筛选查询。
   
@@ -42,7 +42,7 @@ parameters:
     in: query
     type: integer
     required: false
-    description: 会话ID，0表示不过滤
+    description: 会话ID
     default: 0
     example: 123
 

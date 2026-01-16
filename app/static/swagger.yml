@@ -169,10 +169,6 @@ components:
           example: "神的救赎是..."
         feedback:
           $ref: '#/components/schemas/MainFeedback'
-        feedback_text:
-          type: string
-          description: 反馈文本
-          example: "这个回答很有帮助"
         created_at:
           type: string
           format: date-time

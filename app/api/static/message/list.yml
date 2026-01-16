@@ -71,7 +71,7 @@ responses:
                 properties:
                   items:
                     type: array
-                    description: 会话列表
+                    description: 消息列表
                     items:
                       $ref: '#/components/schemas/Message'
 

@@ -247,7 +247,7 @@ class CozeService:
 
         view = result.get('view') or message.feedback_text
         if view:
-            result["view"] = view
+            # result["view"] = view
             message.feedback_text = view
         else:
             raise Exception("view is null")
@@ -255,6 +255,7 @@ class CozeService:
         summary = result.get("summary")
         if summary:
             message.summary = summary
+        result.pop('view', None)
         return result
 
     @staticmethod
@@ -403,37 +404,6 @@ class CozeService:
                 pass
             else:
                 result = CozeService._extra_ai_response(message,response)
-                # try:
-                #     result = json.loads(response)
-                # except Exception as e:
-                #     logger.exception(e)
-                #     try:
-                #         explore_match = re.search(r'"explore":(\[.*?])', response)
-                #         if explore_match:
-                #             explore_str = explore_match.group(1)
-                #             result["explore"] = literal_eval(explore_str)
-                #         from utils.json_robust import extract_json_values_robust
-                #         result["summary"] = extract_json_values_robust(response, "summary")
-                #     except Exception as e:
-                #         logger.exception(e)
-                #
-                # view = result.get('view') or message.feedback_text
-                # if view:
-                #     result["view"] = view
-                #     message.feedback_text = view
-                # else:
-                #     raise Exception("view is null")
-                #
-                # summary = result.get("summary")
-                # if summary:
-                #     message.summary = summary
-                # if not is_explore:
-                #     tag = result.get("tag")
-                #     if tag:
-                #         for k, v in color_map.items():
-                #             if tag in v:
-                #                 result["color_tag"] = k
-                #                 break
                 if auto_session:
                     topic_name = _set_topics(auto_session)
                 else:
