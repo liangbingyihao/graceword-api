@@ -73,7 +73,7 @@ responses:
                     type: array
                     description: 会话列表
                     items:
-                      $ref: '#/components/schemas/MessageSchema'
+                      $ref: '#/components/schemas/Message'
 
   401:
     description: 未授权访问

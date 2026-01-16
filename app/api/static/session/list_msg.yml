@@ -1,5 +1,5 @@
 tags:
-  - message
+  - session
 summary: 获取恩语录信息列表
 description: |
   获取消息列表，支持分页和筛选查询。
