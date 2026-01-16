@@ -30,6 +30,7 @@ components:
           type: string
           example: '12345'
     Message:
+        description: 聊天记录(包括用户输入和对应的ai返回)
         type: object
         properties:
           id:
@@ -83,6 +84,16 @@ components:
             format: date-time
             description: 创建时间
             example: "2023-10-01T12:00:00Z"
+          created_ts:
+            type: long
+            format: long
+            description: 创建时间戳(ms)
+            example: "1768478418333"
+          updated_ts:
+            type: long
+            format: long
+            description: 最后更新时间戳(ms)
+            example: "1768478418333"
     MessageFeedback:
         type: object
         properties:
@@ -112,6 +123,78 @@ components:
             type: string
             description: 详细观点内容
             example: "ai回复的正文内容"
+    UserMessage:
+      description: 用户笔记(恩语录)
+      type: object
+      properties:
+        id:
+          type: string
+          description: 消息公共ID
+          example: "msg_123456789"
+        session_id:
+          type: integer
+          description: 恩语录ID
+          example: 1
+        context_id:
+          type: string
+          description: 上下文ID
+          example: "ctx_abcdef123456"
+        summary:
+          type: string
+          description: 消息摘要
+          example: "关于信仰问题的讨论"
+        status:
+          type: integer
+          description: 消息状态
+          example: 2
+          enum:
+            - "0:初始化"
+            - "1:处理中"
+            - "2:成功"
+            - "3:用户消息已删除"
+            - "4:错误"
+            - "5:超时"
+            - "6:已取消"
+        action:
+          type: integer
+          description: 消息动作类型
+          example: 1
+        content:
+          type: string
+          description: 消息内容
+          example: "请问如何理解神的救赎？"
+        reply:
+          type: string
+          description: 消息回复
+          example: "神的救赎是..."
+        feedback:
+          $ref: '#/components/schemas/MainFeedback'
+        feedback_text:
+          type: string
+          description: 反馈文本
+          example: "这个回答很有帮助"
+        created_at:
+          type: string
+          format: date-time
+          description: 创建时间
+          example: "2023-10-01T12:00:00Z"
+        created_ts:
+          type: long
+          format: long
+          description: 创建时间戳(ms)
+          example: "1768478418333"
+        updated_ts:
+          type: long
+          format: long
+          description: 最后更新时间戳(ms)
+          example: "1768478418333"
+    MainFeedback:
+      type: object
+      properties:
+        topic:
+          type: string
+          description: 主题分类
+          example: "信仰问答"
     MessageId:
         type: object
         properties:

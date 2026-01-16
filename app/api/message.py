@@ -78,11 +78,8 @@ def del_msg():
 
 
 @message_bp.route('', methods=['GET'])
-# @swag_from({
-#     'tags': ['message'],
-#     'description': 'my message',
-#     # 类似上面的Swagger定义
-# })
+@message_bp.route('/<string:msg_id>', methods=['GET'])
+@swag_from(os.path.join(BASE_YML_DIR, 'detail.yml'))
 @jwt_required()
 def my_message():
     owner_id = get_user_id(request.headers) or get_jwt_identity()
@@ -90,7 +87,6 @@ def my_message():
     page = request.args.get('page', default=1, type=int)
     limit = request.args.get('limit', default=10, type=int)
     session_id = request.args.get("session_id", default=0, type=int)
-    # session_type = request.args.get("session_type", default='', type=str)  # "topic", "question"
     status = request.args.get('status', default=-1, type=int)
     older_than = request.args.get('older_than', default='', type=int)
 

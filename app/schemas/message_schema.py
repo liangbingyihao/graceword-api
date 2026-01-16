@@ -30,3 +30,5 @@ class MessageSchema(Schema):
     feedback = JSONStringField()
     feedback_text = fields.Str()
     created_at = fields.DateTime()
+    created_ts = fields.Int(dump_only=True)
+    updated_ts = fields.Int(dump_only=True)
