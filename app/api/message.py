@@ -120,7 +120,6 @@ def msg_detail(msg_id):
         'data': MessageSchema().dump(data)
     })
 
-
 @message_bp.route('/<string:msg_id>/retry', methods=['POST'])
 @swag_from({
     'tags': ['message'],
