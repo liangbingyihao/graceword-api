@@ -77,8 +77,8 @@ components:
             $ref: '#/components/schemas/MessageFeedback'
           feedback_text:
             type: string
-            description: 反馈文本
-            example: "这个回答很有帮助"
+            description: ai回复的正文内容
+            example: "ai回复的正文内容"
           created_at:
             type: string
             format: date-time
@@ -119,10 +119,6 @@ components:
             type: string
             description: 主题分类
             example: "信仰问答"
-          view:
-            type: string
-            description: 详细观点内容
-            example: "ai回复的正文内容"
     UserMessage:
       description: 用户笔记(恩语录)
       type: object
