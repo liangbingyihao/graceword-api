@@ -79,7 +79,7 @@ def del_msg():
 
 @message_bp.route('', methods=['GET'])
 @message_bp.route('/<string:msg_id>', methods=['GET'])
-@swag_from(os.path.join(BASE_YML_DIR, 'detail.yml'))
+@swag_from(os.path.join(BASE_YML_DIR, 'list.yml'))
 @jwt_required()
 def my_message():
     owner_id = get_user_id(request.headers) or get_jwt_identity()

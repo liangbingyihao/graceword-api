@@ -66,6 +66,7 @@ def my_sessions():
 
 
 @session_bp.route('message', methods=['GET'])
+@swag_from(os.path.join(BASE_YML_DIR, 'list_msg.yml'))
 @jwt_required()
 def my_message():
     owner_id = get_user_id(request.headers) or get_jwt_identity()

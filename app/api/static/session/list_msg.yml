@@ -1,0 +1,115 @@
+tags:
+  - message
+summary: 获取恩语录信息列表
+description: |
+  获取消息列表，支持分页和筛选查询。
+  
+  ## 功能说明
+  - 支持分页查询
+  - 支持按会话、状态、时间筛选
+  - 支持JWT令牌认证
+  - 返回消息列表及分页信息
+
+operationId: getMessageList
+produces:
+  - application/json
+
+parameters:
+  - name: Authorization
+    in: header
+    type: string
+    required: true
+    description: JWT访问令牌，格式：Bearer {token}
+    default: "Bearer "
+
+  - name: page
+    in: query
+    type: integer
+    required: false
+    description: 页码，从1开始
+    default: 1
+    example: 1
+
+  - name: limit
+    in: query
+    type: integer
+    required: false
+    description: 每页记录数
+    default: 10
+    example: 10
+
+  - name: session_id
+    in: query
+    type: integer
+    required: false
+    description: 会话ID，0表示不过滤
+    default: 0
+    example: 123
+
+  - name: status
+    in: query
+    type: integer
+    required: false
+    description: 消息状态，小于0或者不提供表示不过滤
+    default: -1
+    example: 1
+
+  - name: older_than
+    in: query
+    type: integer
+    required: false
+    description: 时间戳（毫秒），筛选最后更新实际早于此时间的消息
+    default: ""
+    example: 1768478418333
+
+responses:
+  200:
+    description: 成功获取消息列表
+    content:
+      application/json:
+        schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                description: 请求是否成功
+                example: true
+              data:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    description: 恩语录信息列表
+                    items:
+                      $ref: '#/components/schemas/UserMessage'
+
+  401:
+    description: 未授权访问
+    examples:
+      application/json:
+        success: false
+        error: "无效的认证令牌"
+
+  403:
+    description: 权限不足
+    examples:
+      application/json:
+        success: false
+        error: "无权访问此消息"
+
+  404:
+    description: 消息不存在
+    examples:
+      application/json:
+        success: false
+        error: "消息不存在或已被删除"
+
+  500:
+    description: 服务器内部错误
+    examples:
+      application/json:
+        success: false
+        error: "获取消息详情失败"
+
+security:
+  - Bearer: []
