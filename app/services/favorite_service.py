@@ -63,7 +63,10 @@ class FavoriteService:
                 if message:
                     session_name = ""
                     if content_type == MessageService.content_type_ai:
-                        content = message.feedback_text
+                        if message.action == MessageService.action_search_hymns:
+                            content = message.feedback
+                        else:
+                            content = message.feedback_text
                     else:
                         content_type = MessageService.content_type_user
                         content = message.content
