@@ -28,8 +28,12 @@ def add():
     context_id = data.get('context_id') or 0  # 探索对应的原msg id
     prompt = data.get("prompt")
     reply = data.get("reply")
-    lang = request.args.get('lang', default="zh-hant", type=str)
     owner_id = get_user_id(request.headers) or get_jwt_identity()
+    lang = request.headers.get("X-Language") or request.headers.get("x-language")
+    if not lang:
+        lang = request.args.get('lang', default="zh-hant", type=str)
+    else:
+        logging.warning(f"add msg lang:{lang}")
     # session_id = data.get("session_id")
 
     if not content:
