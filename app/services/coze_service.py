@@ -316,10 +316,10 @@ class CozeService:
                 else:
                     auto_session = [session_qa_name]
                     custom_variables["target"] = "explore"
-                    additional_messages.append(cozepy.Message.build_user_question_text(message.content))
                     context_msg = session.query(Message).filter_by(public_id=message.context_id).first()
                     if context_msg:
                         additional_messages.append(cozepy.Message.build_assistant_answer(context_msg.feedback_text))
+                    additional_messages.append(cozepy.Message.build_user_question_text(message.content))
                     session_lst = session.query(Session).filter_by(owner_id=user_id,
                                                                    session_name=session_qa_name).order_by(
                         desc(Session.id)).with_entities(Session.id, Session.session_name).limit(1).all()
