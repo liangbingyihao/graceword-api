@@ -448,13 +448,13 @@ class CozeService:
                 s[0] = s1 = match.end()
 
         if not s2:
-            match = re.search(r"(,\"bible\"\s*:\s*\")", text)
+            match = re.search(r"(,\s*\"bible\"\s*:\s*\")", text)
             if match:
                 s[1] = e1 = match.start()
                 s[2] = s2 = match.end()
 
         if not e2:
-            match = re.search(r"(,\"explore\"\s*:\s*)", text)
+            match = re.search(r"(,\s*\"explore\"\s*:\s*)", text)
             if match:
                 s[3] = e2 = match.start()
         if s1:
