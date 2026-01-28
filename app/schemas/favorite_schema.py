@@ -6,3 +6,4 @@ class FavoriteSchema(Schema):
     content = fields.Str()
     session_name = fields.Str(dump_only=True)
     created_at = fields.DateTime()
+    created_ts = fields.Int(dump_only=True)
