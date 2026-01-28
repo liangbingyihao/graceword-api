@@ -14,18 +14,18 @@ class Session(db.Model):
     conversation_id = db.Column(db.String(255))
     created_ts = db.Column(BigInteger, nullable=False, server_default=text("(unix_timestamp() * 1000)"))
     updated_ts = db.Column(BigInteger, nullable=False, server_default=text("(unix_timestamp() * 1000)"))
-    # 创建时间（自动设置）
-    created_at = db.Column(
-        TIMESTAMP,
-        server_default=text('CURRENT_TIMESTAMP'),
-        nullable=False
-    )
-    updated_at = db.Column(
-        TIMESTAMP,
-        server_default=text('CURRENT_TIMESTAMP'),
-        server_onupdate=text('CURRENT_TIMESTAMP'),
-        nullable=False
-    )
+    # # 创建时间（自动设置）
+    # created_at = db.Column(
+    #     TIMESTAMP,
+    #     server_default=text('CURRENT_TIMESTAMP'),
+    #     nullable=False
+    # )
+    # updated_at = db.Column(
+    #     TIMESTAMP,
+    #     server_default=text('CURRENT_TIMESTAMP'),
+    #     server_onupdate=text('CURRENT_TIMESTAMP'),
+    #     nullable=False
+    # )
 
     __table_args__ = (
         UniqueConstraint('owner_id', 'session_name', name='uq_user_session'),
