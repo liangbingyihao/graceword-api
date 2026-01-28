@@ -38,7 +38,7 @@ class SessionService:
 
     @staticmethod
     def get_session_by_owner(owner_id, page, limit):
-        return Session.query.filter_by(owner_id=owner_id, robot_id=0).order_by(desc(Session.updated_at)).paginate(
+        return Session.query.filter_by(owner_id=owner_id, robot_id=0).order_by(desc(Session.updated_ts)).paginate(
             page=page, per_page=limit, error_out=False)
 
     @staticmethod
@@ -46,9 +46,9 @@ class SessionService:
         if not session_id or session_id <= 0:
             return
         last_msg = Message.query.filter_by(session_id=session_id).order_by(desc(Message.id)).first()
-        update_time = last_msg.created_at if last_msg else datetime(2025, 1, 1)
+        updated_ts = last_msg.created_ts if last_msg else 0
         Session.query.filter_by(id=session_id).update({
-            "updated_at": update_time
+            "updated_ts": updated_ts
         })
         db.session.commit()
 

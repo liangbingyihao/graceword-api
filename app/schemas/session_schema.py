@@ -8,3 +8,5 @@ class SessionSchema(Schema):
     tags = fields.Str()
     created_at = fields.DateTime()
     updated_at = fields.DateTime()
+    created_ts = fields.Int(dump_only=True)
+    updated_ts = fields.Int(dump_only=True)

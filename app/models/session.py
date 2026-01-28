@@ -1,4 +1,4 @@
-from sqlalchemy import text, TIMESTAMP, Index, UniqueConstraint
+from sqlalchemy import text, TIMESTAMP,BigInteger, Index, UniqueConstraint
 
 from extensions import db
 
@@ -12,6 +12,8 @@ class Session(db.Model):
     robot_id = db.Column(db.Integer, nullable=False)
     tags = db.Column(db.String(255))
     conversation_id = db.Column(db.String(255))
+    created_ts = db.Column(BigInteger, nullable=False, server_default=text("(unix_timestamp() * 1000)"))
+    updated_ts = db.Column(BigInteger, nullable=False, server_default=text("(unix_timestamp() * 1000)"))
     # 创建时间（自动设置）
     created_at = db.Column(
         TIMESTAMP,
