@@ -281,6 +281,7 @@ class MessageService:
                 last_session_id = message.session_id
                 message.session_id = session_id
                 SessionService.reset_updated_at(last_session_id)
+                SessionService.reset_updated_at(session_id)
             db.session.commit()
             return message.session_id
 
