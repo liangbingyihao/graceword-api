@@ -1,6 +1,6 @@
 from datetime import datetime
 from time import time
-
+import logging
 from sqlalchemy import desc, update, and_
 
 from models.message import Message
@@ -47,6 +47,7 @@ class SessionService:
             return
         last_msg = Message.query.filter_by(session_id=session_id).order_by(desc(Message.id)).first()
         updated_ts = last_msg.created_ts if last_msg else 0
+        logging.warning(f"reset_updated_at:{session_id},{updated_ts}")
         Session.query.filter_by(id=session_id).update({
             "updated_ts": updated_ts
         })
