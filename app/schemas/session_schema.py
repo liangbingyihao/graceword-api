@@ -24,3 +24,4 @@ class SessionSchema(Schema):
         if 'updated_ts' in data and data['updated_ts']:
             timestamp = data['updated_ts'] / 1000  # 假设是毫秒级时间戳
             data['updated_at'] = datetime.datetime.fromtimestamp(timestamp).isoformat()
+        return data
