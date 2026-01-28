@@ -99,7 +99,8 @@ class SearchService:
             .add_columns(
                 message_id,
                 Message.content,
-                Message.created_at
+                Message.created_at,
+                Message.created_ts
             )
             .filter(
                 and_(*conditions)
@@ -115,7 +116,8 @@ class SearchService:
                 message_id,
                 Message.content,
                 Message.feedback_text,
-                Message.created_at
+                Message.created_at,
+                Message.created_ts
             )
             .filter(
                 and_(*conditions)
