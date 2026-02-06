@@ -4,10 +4,10 @@ from marshmallow import Schema, fields, post_dump
 
 class SessionSchema(Schema):
     id = fields.Int(dump_only=True)
-    owner_id = fields.Int(dump_only=True)
-    robt_id = fields.Int(dump_only=True)
+    # owner_id = fields.Int(dump_only=True)
+    # robt_id = fields.Int(dump_only=True)
+    # tags = fields.Str()
     session_name = fields.Str()
-    tags = fields.Str()
     created_at = fields.DateTime(dump_only=True)
     updated_at = fields.DateTime(dump_only=True)
     created_ts = fields.Int(dump_only=True)

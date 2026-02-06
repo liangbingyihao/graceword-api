@@ -196,6 +196,10 @@ components:
             example: "msg_123456789"
     Session:
       type: object
+      required:
+        - id
+        - session_name
+        - updated_at
       properties:
         id:
           type: integer
@@ -209,11 +213,26 @@ components:
           example: "信仰问题讨论"
           minLength: 1
           maxLength: 100
-        updated_at:
-          type: string
-          format: date-time
-          description: 最后更新时间（只读）
-          example: "2023-10-01T12:00:00Z"
+          nullable: false
+        created_ts:
+          type: integer
+          format: int64
+          description: |
+            创建时间戳
+            - 自动生成
+            - 只读字段
+            - Unix 时间戳（毫秒）
+          example: 1696147200000
+          readOnly: true
+        updated_ts:
+          type: integer
+          format: int64
+          description: |
+            更新时间戳
+            - 自动更新
+            - 只读字段
+            - Unix 时间戳（毫秒）
+          example: 1696147200000
           readOnly: true
     ApiResponse:
       type: object
