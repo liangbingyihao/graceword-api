@@ -114,7 +114,9 @@ class CozeService:
             try:
                 from utils.json_robust import extract_json_values_robust,extract_json_list_robust
                 result["explore"] = extract_json_list_robust(response, "explore")
-                result["summary"] = extract_json_values_robust(response, "summary")
+                summary = extract_json_values_robust(response, "summary")
+                if summary:
+                    result["summary"] = summary[0]
             except Exception as e:
                 logger.exception(e)
 

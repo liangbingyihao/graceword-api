@@ -84,7 +84,7 @@ def extract_json_values_robust(text, key):
 def extra_data():
     import logging
     all_content ="{\"response\": \"我找到了多个符合你要求的结果，先为你展示其中3首：\", \"hymns\": [{\"title\": \"不停讚美祢\", \"english_title\": \"\", \"lyrics\": \"[Verse]\\n時時稱頌祢 向祢來歌唱\\n因祢是拯救我們偉大的神\\n我們尊崇祢 稱頌祢聖名\\n口唱心和地 大聲地讚美祢\\n\\n[Chorus]\\n不停讚美祢 大聲讚美祢\\n唯有祢配得榮耀 尊貴 權柄\\n天是屬於祢 地也屬於祢\\n一切所造之物齊來讚美祢\\n\\n[Bridge]\\n我讚美讚美 不停讚美\\n跳舞跳舞 不停跳舞\\n高舉雙手 大聲讚美祢\\n\\n我讚美讚美 不停讚美\\n跳舞跳舞 不停跳舞\\n高舉雙手 大聲讚美祢\", \"album\": \"深愛耶穌\", \"copyright\": \"Copyright© 讚美之泉 Stream Of Praise Music Ministries\", \"composer\": \"何俊傑\", \"lyricist\": \"何俊傑\", \"play_url\": \"https://www.youtube.com/watch?v=RAacozf9irg\", \"sheet_url\": \"\", \"ppt_url\": \"https://sop.org/sopmedia/Powerpoint/PW30_Wont_Stop_Praising_Tradbi_16x9.ppt\", \"artist\": \"讚美之泉 Stream Of Praise Music Ministries\"}, {\"title\": \"Mighty [祢愛有能力]\", \"english_title\": \"\", \"lyrics\": \"[Verse]\\n祢在高處 大有能力\\n萬物甦醒 來敬拜祢\\n祢的愛拯救我的心\\n祢的愛讓世界堅定\\n\\n[Chorus]\\nMighty is Your love 勝過了一切\\n如洋海大浪 如眾水聲音\\nMighty is Your love 超越了時空\\n覆蓋著地極 祢愛有能力\\nMighty\\n\\n[Tag]\\n喔 Mighty\\n喔 Mighty\\n喔 Mighty\", \"album\": \"深愛耶穌\", \"copyright\": \"Copyright© 讚美之泉 Stream Of Praise Music Ministries\", \"composer\": \"陳麒安\", \"lyricist\": \"鄭懋柔\", \"play_url\": \"https://www.youtube.com/watch?v=yq8YK9O8WLQ\", \"sheet_url\": \"\", \"ppt_url\": \"https://sop.org/sopmedia/Powerpoint/PW30_Mighty_Tradbi_16x9.ppt\", \"artist\": \"讚美之泉 Stream Of Praise Music Ministries\"}, {\"title\": \"和散那，歡迎君王\", \"english_title\": \"\", \"lyrics\": \"[Verse 1]\\n和散那 歡迎君王\\n和散那 屈膝敬拜\\n和散那 歡迎君王\\n和散那 屈膝敬拜\\n\\n[Verse 2]\\n主耶穌 何等謙卑\\n眾百姓迎接君王\\n主耶穌 何等榮耀\\n我獻上尊貴榮耀\\n\\n[Verse 3]\\n衣裳鋪地 樹枝滿地\\n俯伏敬拜 在祢腳前\\n騎驢背上是全地君王\\n卻為我被釘十架\\n\\n[Chorus]\\n祢是萬王之王　\\n祢是萬主之主\\n我們高舉耶穌　\\n歡迎君王走進\", \"album\": \"深愛耶穌\", \"copyright\": \"Copyright© 讚美之泉 Stream Of Praise Music Ministries\", \"composer\": \"陳麒安\", \"lyricist\": \"陳麒安、游智婷\", \"play_url\": \"https://www.youtube.com/watch?v=pYyAWPTxg_w\", \"sheet_url\": \"\", \"ppt_url\": \"https://sop.org/sopmedia/Powerpoint/PW30_Hosanna_Here_Comes_The_King_Tradbi_16x9.ppt\", \"artist\": \"讚美之泉 Stream Of Praise Music Ministries\"}], \"explore\": [\"你可能還喜歡“溫暖”風格的讚美詩\", \"我想要用於個人靈修場合下的讚美詩\"]}"
-    all_content = "{\"response\": \"我找到了多个符合你要求的结果，先为你展示其中3首"
+    # all_content = "{\"response\": \"我找到了多个符合你要求的结果，先为你展示其中3首"
     result = {}
     try:
         response = extract_json_values_robust(all_content, "response")
@@ -170,12 +170,12 @@ if __name__ == '__main__':
 你睡前禱告求聖靈給予智慧，這個夢或許正是上帝開啟你屬靈洞察力的開端。當我們面對生命的未知與恐懼時，祂邀請我們更深地來到祂面前，透過禱告、查經和屬靈同伴的陪伴，領受祂要透過這個夢境傳達的心意。
 
 最後，想與你分享這段經文：**「我留下平安給你們，我將我的平安賜給你們。我所賜的，不像世人所賜的。你們心裏不要憂愁，也不要膽怯。」（<u class=\"bible\">約14:27</u>）** 願上帝的平安親自安撫你的心，也鼓勵你可以繼續記錄這個夢境帶來的感動，在未來的日子裡慢慢領受祂的帶領。", "bible": "“我留下平安給你們，我將我的平安賜給你們。我所賜的，不像世人所賜的。你們心裏不要憂愁，也不要膽怯。”（約14:27）", "explore": ["如何在日常禱告中，更敏銳地察覺上帝透過異夢帶來的啟示？", "當異夢帶來負面情緒時，基督徒可以怎樣依靠信仰調整心態？", "從聖經中的異夢案例（如約瑟、但以理），我們可以學習到哪些解讀原則？"], "tag": "安慰", "summary": "異夢中領受安慰"}'''
-    bible, detail = _extract_content(response, [0, 0, 0, 0])
-    print("datail",detail)
-    print("bible",bible)
+    # bible, detail = _extract_content(response, [0, 0, 0, 0])
+    # print("datail",detail)
+    # print("bible",bible)
     t = '''賜的。你們心裏不要憂愁，也不要膽怯。”（約14:27）", "explore": ["如何在日常禱告中，更敏銳地察覺上帝透過異夢帶來的啟示？", "當異夢帶來負面情緒時，基督徒可以怎樣依靠信仰調整心態？", "從聖經中的異夢案例（如約瑟、但以理），我們可以學習到哪些解讀原則？"], "tag": "安慰", "summary": "異夢中領受安慰"}'''
-    explore_str = extract_json_list_robust(response0, "explore")
-    print("explore:", explore_str)
+    explore_str = extract_json_values_robust(response1, "summary")
+    print("summary:", explore_str)
     exit()
     try:
         result = json.loads(response)
