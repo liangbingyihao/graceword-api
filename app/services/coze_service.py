@@ -380,7 +380,7 @@ class CozeService:
                     last_complete = False
                     all_content = ""
                 ai_rsp = event.message
-                ai_rsp = ai_rsp.replace("<bible>", "<u class=\"bible\">").replace("</bible>", "</u>").encode('utf-8', 'ignore').decode('utf-8')
+                ai_rsp = ai_rsp.encode('utf-8', 'ignore').decode('utf-8')
 
                 all_content += ai_rsp
 
@@ -436,7 +436,7 @@ class CozeService:
                 session.commit()
             elif event.event == bots.ChatEventType.GW_MESSAGE_COMPLETED:
                 last_complete = True
-                return all_content
+                return all_content.replace("<bible>", "<u class=\"bible\">").replace("</bible>", "</u>")
             elif event.event == ChatEventType.CONVERSATION_MESSAGE_COMPLETED:
                 last_complete = True
                 # logger.info(
