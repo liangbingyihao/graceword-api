@@ -29,6 +29,38 @@ components:
         access_token:
           type: string
           example: '12345'
+    Favorite:
+      type: object
+      properties:
+        message_id:
+          type: string
+          description: 消息ID
+          example: "daf7b331-d7b0-4160-a92c-60c92f2145e9"
+        content_type:
+          type: integer
+          enum: [1, 2]
+          example: 1
+          description: |
+            内容类型：
+            - 1: 用户信息
+            - 2: AI信息
+        content:
+          type: string
+          description: 收藏内容
+          example: "太6:33 你们要先求他的国和他的义"
+        session_name:
+          type: string
+          description: 所属会话名称
+          example: "每日灵修"
+        created_ts:
+          type: integer
+          description: 收藏创建时间戳（毫秒）
+          example: 1705314600000
+      required:
+        - message_id
+        - content_type
+        - content
+        - created_ts
     Message:
         description: 聊天记录(包括用户输入和对应的ai返回)
         type: object

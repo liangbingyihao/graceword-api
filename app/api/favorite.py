@@ -1,4 +1,5 @@
 import logging
+import os
 
 from flask import Blueprint, jsonify, request
 from flasgger import swag_from
@@ -12,6 +13,7 @@ from utils.exceptions import AuthError
 from utils.security import get_user_id
 
 favorite_bp = Blueprint('favorite', __name__)
+BASE_YML_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'favorite')
 
 
 @favorite_bp.route('', methods=['POST'])
@@ -87,11 +89,7 @@ def toggle():
 
 
 @favorite_bp.route('', methods=['GET'])
-@swag_from({
-    'tags': ['收藏'],
-    'description': '我的收藏',
-    # 类似上面的Swagger定义
-})
+@swag_from(os.path.join(BASE_YML_DIR, 'list.yml'))
 @jwt_required()
 def my_favorites():
     owner_id = get_user_id(request.headers) or get_jwt_identity()

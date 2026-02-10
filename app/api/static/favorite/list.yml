@@ -1,0 +1,144 @@
+tags:
+  - 收藏
+summary: 获取收藏列表
+description: |
+  获取用户的收藏列表，支持分页和搜索查询。
+  
+  ## 功能说明
+  - 支持分页查询
+  - 支持搜索收藏内容
+  - 支持JWT令牌认证
+  - 返回收藏列表
+
+operationId: getFavoriteList
+produces:
+  - application/json
+
+parameters:
+  - name: Authorization
+    in: header
+    type: string
+    required: true
+    description: JWT访问令牌，格式：Bearer {token}
+    default: "Bearer "
+    example: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+
+  - name: page
+    in: query
+    type: integer
+    required: false
+    description: 页码，从1开始
+    default: 1
+    example: 1
+    minimum: 1
+
+  - name: limit
+    in: query
+    type: integer
+    required: false
+    description: 每页记录数
+    default: 10
+    example: 10
+    maximum: 100
+    minimum: 1
+
+  - name: search
+    in: query
+    type: string
+    required: false
+    description: 搜索关键词，支持按内容搜索
+    default: ""
+    example: "圣经经文"
+
+responses:
+  200:
+    description: 成功获取收藏列表
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+              description: 请求是否成功
+              example: true
+            data:
+              type: object
+              properties:
+                items:
+                  type: array
+                  description: 收藏项列表
+                  items:
+                    $ref: '#/components/schemas/Favorite'
+    examples:
+      application/json:
+        success: true
+        data:
+          items:
+            - message_id: "daf7b331-d7b0-4160-a92c-60c92f2145e9"
+              content_type: 1
+              content: "太6:33 你们要先求他的国和他的义，这些东西都要加给你们了。"
+              session_name: "每日灵修"
+              created_ts: 1705314600000
+            - message_id: "msg_67890"
+              content_type: 2
+              content: "约翰福音3:16 神爱世人，甚至将他的独生子赐给他们..."
+              session_name: "福音分享"
+              created_ts: 1705234800000
+
+  401:
+    description: 未授权访问
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+              example: false
+            error:
+              type: string
+              example: "无效的认证令牌或令牌已过期"
+    examples:
+      application/json:
+        success: false
+        error: "无效的认证令牌"
+
+  403:
+    description: 权限不足
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+              example: false
+            error:
+              type: string
+              example: "无权访问此资源"
+    examples:
+      application/json:
+        success: false
+        error: "无权访问收藏列表"
+
+  500:
+    description: 服务器内部错误
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+              example: false
+            error:
+              type: string
+              example: "获取收藏列表失败，请稍后重试"
+    examples:
+      application/json:
+        success: false
+        error: "服务器内部错误"
+
+security:
+  - Bearer: []

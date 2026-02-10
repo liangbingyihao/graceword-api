@@ -13,6 +13,7 @@ from models.session import Session
 
 coze_api_token = os.getenv("COZE_API_TOKEN")
 main_bot_id = os.getenv("COZE_MAIN_BOT_ID")
+gw_coze_host = "https://api-test.grace-word.com"
 from cozepy import Coze, TokenAuth, Message, ChatEventType, COZE_CN_BASE_URL, COZE_COM_BASE_URL, MessageType  # noqa
 
 import logging
@@ -432,6 +433,7 @@ class CozeService:
                 ori_msg.status = 1
                 session.commit()
             elif event.event == bots.ChatEventType.GW_MESSAGE_COMPLETED:
+                last_complete = True
                 return all_content
             elif event.event == ChatEventType.CONVERSATION_MESSAGE_COMPLETED:
                 last_complete = True
