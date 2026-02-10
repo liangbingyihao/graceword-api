@@ -124,7 +124,7 @@ class CozeService:
         view = result.get('view') or message.feedback_text
         if view:
             # result["view"] = view
-            message.feedback_text = view
+            message.feedback_text = view.replace("<bible>", "<u class=\"bible\">").replace("</bible>", "</u>")
         else:
             raise Exception("view is null")
 
@@ -436,7 +436,7 @@ class CozeService:
                 session.commit()
             elif event.event == bots.ChatEventType.GW_MESSAGE_COMPLETED:
                 last_complete = True
-                return all_content.replace("<bible>", "<u class=\"bible\">").replace("</bible>", "</u>")
+                return all_content
             elif event.event == ChatEventType.CONVERSATION_MESSAGE_COMPLETED:
                 last_complete = True
                 # logger.info(
