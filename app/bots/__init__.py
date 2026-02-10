@@ -640,7 +640,7 @@ class ChatClient(object):
         """
         Create a chat.
         """
-        entity = custom_variables.get('url')
+        entity = custom_variables.get('target')
         url = f"{self._base_url}/bots/{entity}"
         # params = {
         #     "conversation_id": conversation_id if conversation_id else None,

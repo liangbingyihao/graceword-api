@@ -1,4 +1,5 @@
 import json
+import logging
 import re
 
 import httpx
@@ -70,10 +71,11 @@ class EYStream(Generic[T]):
         except StopIteration:
             return None
 
-        log_debug("receive event, logid=%s, event=%s", self.response.logid, line)
+        # print("receive event, logid=%s, event=%s", self.response.logid, line)
+        # pattern = r'^\s*data:\s*\{\s*"delta"\s*:\s*(.+?)\s*(?:,\s*\w+|})\s*$'
         pattern = r'^\s*data:\s*\{\s*"delta"\s*:\s*"(.+)"}$'
-
         match = re.match(pattern, line, re.DOTALL)
+
         from bots import ChatEventType
         if match:
             # data["data"] = json.dumps({"content":match.group(1)})
@@ -82,12 +84,19 @@ class EYStream(Generic[T]):
         elif line.endswith("[DONE]"):
             data["data"] = line
             data["event"] = ChatEventType.GW_MESSAGE_COMPLETED
-        elif "error" in line:
-            data["data"] = line
-            data["event"] = ChatEventType.ERROR
         else:
-            data["data"] = ""
-            data["event"] = ChatEventType.GW_MESSAGE_DELTA
+            # pattern_final =r'^\s*data:\s*\{\s*"final"\s*:\s*(.+)}$'
+            # match = re.match(pattern_final, line, re.DOTALL)
+            # if match:
+            #     # data["data"] = json.dumps({"content":match.group(1)})
+            #     data["data"] = match.group(1).encode('utf-8').decode('unicode_escape')
+            #     data["event"] = ChatEventType.GW_MESSAGE_COMPLETED
+            if "error" in line:
+                data["data"] = line
+                data["event"] = ChatEventType.ERROR
+            else:
+                data["data"] = ""
+                data["event"] = ChatEventType.GW_MESSAGE_DELTA
         return data
 
         # while times < len(data):
