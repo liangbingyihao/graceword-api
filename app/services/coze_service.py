@@ -186,15 +186,20 @@ class CozeService:
                     else:
                         context_content = message.content
                     custom_variables["target"] = "pray"
-                    additional_messages.append(cozepy.Message.build_user_question_text(context_content))
+                    custom_variables["user_message"] = context_content
+                    # additional_messages.append(cozepy.Message.build_user_question_text(context_content))
                     # ask_msg = (custom_prompt + context_content) if custom_prompt else msg_pray + context_content
                 else:
                     auto_session = [session_qa_name]
                     custom_variables["target"] = "hymn" if message.action == MessageService.action_search_hymns else "explore"
                     context_msg = session.query(Message).filter_by(public_id=message.context_id).first()
+                    user_msg = ""
                     if context_msg:
-                        additional_messages.append(cozepy.Message.build_assistant_answer(context_msg.feedback_text))
-                    additional_messages.append(cozepy.Message.build_user_question_text(message.content))
+                        user_msg += context_msg.feedback_text
+                        # additional_messages.append(cozepy.Message.build_assistant_answer(context_msg.feedback_text))
+                    user_msg += message.content
+                    # additional_messages.append(cozepy.Message.build_user_question_text(message.content))
+                    custom_variables["user_message"] = user_msg
                     session_lst = session.query(Session).filter_by(owner_id=user_id,
                                                                    session_name=session_qa_name).order_by(
                         desc(Session.id)).with_entities(Session.id, Session.session_name).limit(1).all()
