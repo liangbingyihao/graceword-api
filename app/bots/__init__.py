@@ -640,23 +640,36 @@ class ChatClient(object):
         """
         Create a chat.
         """
-        url = f"{self._base_url}/bots/general"
-        params = {
-            "conversation_id": conversation_id if conversation_id else None,
-        }
-        body = remove_none_values(
-            {
-                "bot_id": bot_id,
+        entity = custom_variables.get('url')
+        url = f"{self._base_url}/bots/{entity}"
+        # params = {
+        #     "conversation_id": conversation_id if conversation_id else None,
+        # }
+
+        body =  {
                 "user_id": user_id,
-                "messages": [i.model_dump() for i in additional_messages] if additional_messages else [],
                 "stream": stream,
-                "custom_variables": custom_variables,
-                "auto_save_history": auto_save_history,
-                "meta_data": meta_data,
-                "parameters": parameters,
-                "enable_card": enable_card,
+                "lang": custom_variables.get('lang'),
+                # "parameters": parameters,
+                # "enable_card": enable_card,
             }
-        )
+        if entity=="general":
+            body["messages"]=[i.model_dump() for i in additional_messages] if additional_messages else []
+        else:
+            body["user_message"] = custom_variables.get("user_message")
+        body = remove_none_values(body)
+        #     {
+        #         "bot_id": bot_id,
+        #         "user_id": user_id,
+        #         "messages": [i.model_dump() for i in additional_messages] if additional_messages else [],
+        #         "stream": stream,
+        #         "lang": custom_variables.get('lang'),
+        #         "auto_save_history": auto_save_history,
+        #         "meta_data": meta_data,
+        #         "parameters": parameters,
+        #         "enable_card": enable_card,
+        #     }
+        # )
         headers: Optional[dict] = kwargs.get("headers")
         if not stream:
             return self._requester.request(
@@ -664,7 +677,7 @@ class ChatClient(object):
                 url,
                 False,
                 Chat,
-                params=params,
+                # params=params,
                 headers=headers,
                 body=body,
             )
@@ -674,7 +687,7 @@ class ChatClient(object):
             url,
             True,
             None,
-            params=params,
+            # params=params,
             headers=headers,
             body=body,
         )

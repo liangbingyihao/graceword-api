@@ -71,7 +71,7 @@ class EYStream(Generic[T]):
             return None
 
         log_debug("receive event, logid=%s, event=%s", self.response.logid, line)
-        pattern = r'^\s*data:\s*\{\s*"delta"\s*:\s*(.+?)\s*(?:,\s*\w+|})\s*$'
+        pattern = r'^\s*data:\s*\{\s*"delta"\s*:\s*"(.+)"}$'
 
         match = re.match(pattern, line, re.DOTALL)
         from bots import ChatEventType

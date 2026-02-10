@@ -190,7 +190,7 @@ class CozeService:
                     # ask_msg = (custom_prompt + context_content) if custom_prompt else msg_pray + context_content
                 else:
                     auto_session = [session_qa_name]
-                    custom_variables["target"] = "explore"
+                    custom_variables["target"] = "hymn" if message.action == MessageService.action_search_hymns else "explore"
                     context_msg = session.query(Message).filter_by(public_id=message.context_id).first()
                     if context_msg:
                         additional_messages.append(cozepy.Message.build_assistant_answer(context_msg.feedback_text))
@@ -202,14 +202,14 @@ class CozeService:
                     # ask_msg = (custom_prompt + message.content) if custom_prompt else msg_explore + message.content
                 # rsp_msg = message
             else:
-                custom_variables["target"] = "record"
+                custom_variables["general"] = "record"
                 session_lst = session.query(Session).filter_by(owner_id=user_id).order_by(
                     desc(Session.id)).with_entities(Session.id, Session.session_name).limit(100).all()
-                names = "["
-                for session_id, session_name in session_lst:
-                    names += f"\"{session_name}\","
-                names += "]"
-                custom_variables["user_topics"] = names
+                # names = "["
+                # for session_id, session_name in session_lst:
+                #     names += f"\"{session_name}\","
+                # names += "]"
+                custom_variables["user_topics"] = [session_name for session_id, session_name in session_lst]
                 # ask_msg += message.content
                 messages = session.query(Message).filter_by(owner_id=user_id).filter(Message.id < msg_id).order_by(
                     desc(Message.id)).limit(5).all()
@@ -357,13 +357,17 @@ class CozeService:
         last_len_hymns = 0
         last_complete = True
         last_message = None
-        for event in coze.chat.stream(
+
+        import bots
+        from cozepy.request import Requester
+        chat = bots.ChatClient("https://api-test.grace-word.com", Requester())
+        for event in chat.stream(
                 bot_id=dst_bot_id,
                 user_id=str(user_id),
                 custom_variables=custom_variables,
                 additional_messages=additional_messages,
         ):
-            if event.event == ChatEventType.CONVERSATION_MESSAGE_DELTA:
+            if event.event == bots.ChatEventType.GW_MESSAGE_DELTA:
                 if last_complete:
                     logger.info(
                         f"_chat_with_coze: {user_id, ori_msg.id} delta msg coming, cost:{time.time() - start_time} s")
@@ -422,6 +426,8 @@ class CozeService:
                 # logger.info(f"CONVERSATION_MESSAGE_DELTA: {ori_msg.feedback}")
                 ori_msg.status = 1
                 session.commit()
+            elif event.event == bots.ChatEventType.GW_MESSAGE_COMPLETED:
+                return all_content
             elif event.event == ChatEventType.CONVERSATION_MESSAGE_COMPLETED:
                 last_complete = True
                 # logger.info(
