@@ -1,0 +1,55 @@
+tags:
+  - 收藏
+summary: 切换收藏状态
+description: |
+  切换指定消息的收藏状态（已收藏→未收藏，未收藏→已收藏）
+  
+  ## 功能说明
+  - 如果消息已收藏，则取消收藏
+  - 如果消息未收藏，则添加收藏
+  - 支持用户消息和AI消息
+  - 需要JWT认证
+
+operationId: toggleFavoriteStatus
+consumes:
+  - application/json
+produces:
+  - application/json
+
+parameters:
+  - name: Authorization
+    in: header
+    type: string
+    required: true
+    description: JWT访问令牌，格式：Bearer {token}
+    default: "Bearer "
+    example: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+
+  - name: body
+    in: body
+    required: true
+    description: 切换收藏状态的请求体
+    schema:
+      $ref: '#/components/schemas/ToggleFavoriteRequest'
+
+responses:
+  200:
+    description: 成功切换收藏状态
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ToggleFavoriteResponse'
+        examples:
+          successTrue:
+            summary: 成功收藏
+            value:
+              success: true
+              data: 1
+          successFalse:
+            summary: 成功取消收藏
+            value:
+              success: true
+              data: 0
+
+security:
+  - bearerAuth: []

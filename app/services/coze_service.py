@@ -379,8 +379,10 @@ class CozeService:
                         f"_chat_with_coze: {user_id, ori_msg.id} delta msg coming, cost:{time.time() - start_time} s")
                     last_complete = False
                     all_content = ""
-                # message = event.message
-                all_content += event.message
+                ai_rsp = event.message
+                ai_rsp = ai_rsp.replace("<bible>", "<u class=\"bible\">").replace("</bible>", "</u>").encode('utf-8', 'ignore').decode('utf-8')
+
+                all_content += ai_rsp
 
                 if is_search_hymns:
                     from utils.json_robust import extract_json_values_robust
