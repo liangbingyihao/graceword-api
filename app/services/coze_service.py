@@ -202,7 +202,7 @@ class CozeService:
                     # ask_msg = (custom_prompt + message.content) if custom_prompt else msg_explore + message.content
                 # rsp_msg = message
             else:
-                custom_variables["general"] = "record"
+                custom_variables["target"] = "general"
                 session_lst = session.query(Session).filter_by(owner_id=user_id).order_by(
                     desc(Session.id)).with_entities(Session.id, Session.session_name).limit(100).all()
                 # names = "["
