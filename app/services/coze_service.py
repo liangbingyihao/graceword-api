@@ -373,8 +373,8 @@ class CozeService:
                         f"_chat_with_coze: {user_id, ori_msg.id} delta msg coming, cost:{time.time() - start_time} s")
                     last_complete = False
                     all_content = ""
-                message = event.message
-                all_content += message.content
+                # message = event.message
+                all_content += event.message
 
                 if is_search_hymns:
                     from utils.json_robust import extract_json_values_robust
