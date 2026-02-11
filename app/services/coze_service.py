@@ -357,7 +357,7 @@ class CozeService:
         is_search_hymns = ori_msg.action == MessageService.action_search_hymns
         # is_explore = CozeService.is_explore_msg(ori_msg)
         dst_bot_id = CozeService.hymn_bot_id if is_search_hymns else CozeService.bot_id
-        # logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables,dst_bot_id}")
+        logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables.get('target')}")
         pending = False
         start_time = time.time()
         last_len_hymns = 0
@@ -393,39 +393,40 @@ class CozeService:
 
                 all_content += ai_rsp
 
-                if is_search_hymns:
-                    from utils.json_robust import extract_json_values_robust
-                    # logger.info(f"hymns back:{all_content}")
-                    result = {}
-                    try:
-                        response = extract_json_values_robust(all_content, "response")
-                        if response:
-                            result["response"] = response[0]
-                    except Exception as e:
-                        logger.exception(e)
-                    try:
-                        titles = extract_json_values_robust(all_content, "title")
-                        if titles:
-                            result["hymns"] = [{"title": x} for x in titles]
-                    except Exception as e:
-                        logger.exception(e)
-
-                    hymns = result.get("hymns")
-                    if hymns and len(hymns) > last_len_hymns:
-                        for k in ["composer", "album", "lyrics", "artist", "play_url", "sheet_url", "ppt_url",
-                                  "copyright"]:
-                            try:
-                                data = extract_json_values_robust(all_content, k)
-                                if data and len(data) <= len(hymns):
-                                    for index, value in enumerate(data):
-                                        hymns[index][k] = value
-                            except Exception as e:
-                                logger.exception(e)
-                    if result:
-                        try:
-                            ori_msg.feedback = json.dumps(result, ensure_ascii=False)
-                        except Exception as e:
-                            logger.exception(e)
+                if False and is_search_hymns:
+                    pass
+                    # from utils.json_robust import extract_json_values_robust
+                    # # logger.info(f"hymns back:{all_content}")
+                    # result = {}
+                    # try:
+                    #     response = extract_json_values_robust(all_content, "response")
+                    #     if response:
+                    #         result["response"] = response[0]
+                    # except Exception as e:
+                    #     logger.exception(e)
+                    # try:
+                    #     titles = extract_json_values_robust(all_content, "title")
+                    #     if titles:
+                    #         result["hymns"] = [{"title": x} for x in titles]
+                    # except Exception as e:
+                    #     logger.exception(e)
+                    #
+                    # hymns = result.get("hymns")
+                    # if hymns and len(hymns) > last_len_hymns:
+                    #     for k in ["composer", "album", "lyrics", "artist", "play_url", "sheet_url", "ppt_url",
+                    #               "copyright"]:
+                    #         try:
+                    #             data = extract_json_values_robust(all_content, k)
+                    #             if data and len(data) <= len(hymns):
+                    #                 for index, value in enumerate(data):
+                    #                     hymns[index][k] = value
+                    #         except Exception as e:
+                    #             logger.exception(e)
+                    # if result:
+                    #     try:
+                    #         ori_msg.feedback = json.dumps(result, ensure_ascii=False)
+                    #     except Exception as e:
+                    #         logger.exception(e)
                 else:
                     if f_set_topics and not topic_name:
                         topics = re.findall(r'"topic\d":\s*"([^"]*)"\s*,', all_content)
