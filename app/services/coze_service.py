@@ -370,11 +370,12 @@ class CozeService:
         if is_search_hymns:
             hymns = chat.hymns(
                 custom_variables=custom_variables)
-            try:
-                ori_msg.feedback = json.dumps(hymns, ensure_ascii=False)
-                return
-            except Exception as e:
-                logger.exception(e)
+            if hymns:
+                try:
+                    ori_msg.feedback = json.dumps(hymns.__dict__, ensure_ascii=False)
+                except Exception as e:
+                    logger.exception(e)
+            return
         for event in chat.stream(
                 bot_id=dst_bot_id,
                 user_id=str(user_id),
