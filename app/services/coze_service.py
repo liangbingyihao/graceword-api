@@ -395,38 +395,6 @@ class CozeService:
 
                 if False and is_search_hymns:
                     pass
-                    # from utils.json_robust import extract_json_values_robust
-                    # # logger.info(f"hymns back:{all_content}")
-                    # result = {}
-                    # try:
-                    #     response = extract_json_values_robust(all_content, "response")
-                    #     if response:
-                    #         result["response"] = response[0]
-                    # except Exception as e:
-                    #     logger.exception(e)
-                    # try:
-                    #     titles = extract_json_values_robust(all_content, "title")
-                    #     if titles:
-                    #         result["hymns"] = [{"title": x} for x in titles]
-                    # except Exception as e:
-                    #     logger.exception(e)
-                    #
-                    # hymns = result.get("hymns")
-                    # if hymns and len(hymns) > last_len_hymns:
-                    #     for k in ["composer", "album", "lyrics", "artist", "play_url", "sheet_url", "ppt_url",
-                    #               "copyright"]:
-                    #         try:
-                    #             data = extract_json_values_robust(all_content, k)
-                    #             if data and len(data) <= len(hymns):
-                    #                 for index, value in enumerate(data):
-                    #                     hymns[index][k] = value
-                    #         except Exception as e:
-                    #             logger.exception(e)
-                    # if result:
-                    #     try:
-                    #         ori_msg.feedback = json.dumps(result, ensure_ascii=False)
-                    #     except Exception as e:
-                    #         logger.exception(e)
                 else:
                     if f_set_topics and not topic_name:
                         topics = re.findall(r'"topic\d":\s*"([^"]*)"\s*,', all_content)
@@ -438,10 +406,7 @@ class CozeService:
                             ori_msg.feedback_text = unescape_json_string(detail)
                         elif not all_content.startswith("{"):
                             ori_msg.feedback_text = all_content
-                        # logger.info(f"_chat_detail: {all_content[-10:]} \n got {detail[-10:]}")
-                # else:
-                #     ori_msg.feedback_text = all_content
-                # logger.info(f"CONVERSATION_MESSAGE_DELTA: {ori_msg.feedback}")
+
                 ori_msg.status = 1
                 session.commit()
             elif event.event == bots.ChatEventType.GW_MESSAGE_COMPLETED:

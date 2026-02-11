@@ -39,7 +39,7 @@ class SessionMsgSchema(Schema):
     status = fields.Int(dump_only=True)
     action = fields.Int(dump_only=True)
     feedback = FilteredJSONStringField(
-        allowed_keys=["color_tag", "tag","topic","hymns","response"],
+        allowed_keys=["color_tag", "tag","topic","hymns","response","bible"],
         dump_only=True
     )
     content = fields.Str()
