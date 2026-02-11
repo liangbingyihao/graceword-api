@@ -366,12 +366,13 @@ class CozeService:
 
         import bots
         from cozepy.request import Requester
-        chat = bots.ChatClient("https://api-test.grace-word.com", Requester())
+        chat = bots.ChatClient(gw_coze_host, Requester())
         if is_search_hymns:
             hymns = chat.hymns(
                 custom_variables=custom_variables)
             if hymns:
                 try:
+                    logger.info(f"chat.hymns: {hymns}")
                     ori_msg.feedback = json.dumps(hymns.__dict__, ensure_ascii=False)
                 except Exception as e:
                     logger.exception(e)
