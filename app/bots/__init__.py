@@ -4,6 +4,7 @@ import time
 from typing import TYPE_CHECKING, Any, AsyncIterator, Dict, List, Optional, Union, overload
 
 import httpx
+from pydantic import BaseModel
 from typing_extensions import Literal
 
 from cozepy.exception import CozeAPIError
@@ -293,14 +294,22 @@ class ChatUsage(CozeModel):
     # The total number of Tokens consumed for the input part.
     input_count: int = 0
 
+class Hymns(BaseModel):
+    # The ID of the chat.
+    explore: List[str]
+    # The ID of the conversation.
+    response: str
+    # The ID of the bot.
+    hymns: List[Dict[str, str]] = []
+
 
 class Chat(CozeModel):
     # The ID of the chat.
-    id: str
+    explore: List[str]
     # The ID of the conversation.
-    conversation_id: str
+    response: str
     # The ID of the bot.
-    bot_id: Optional[str] = None
+    hymns: List[Dict[str, str]] = []
     # Indicates the create time of the chat. The value format is Unix timestamp in seconds.
     created_at: Optional[int] = None
     # Indicates the end time of the chat. The value format is Unix timestamp in seconds.
@@ -329,6 +338,11 @@ class Chat(CozeModel):
     usage: Optional[ChatUsage] = None
 
     inserted_additional_messages: Optional[List[InsertedMessage]] = None
+
+    def getResponse(self):
+        return self.response
+
+
 
 
 class ChatPoll(CozeModel):
@@ -479,50 +493,73 @@ class ChatClient(object):
             parameters=parameters,
         )
 
+    def hymns(self,
+              custom_variables: Optional[Dict[str, str]] = None,
+              **kwargs)->Hymns:
+        """
+          Create a chat.
+          """
+        entity = custom_variables.get('target')
+        url = f"{self._base_url}/bots/{entity}"
+        # params = {
+        #     "conversation_id": conversation_id if conversation_id else None,
+        # }
+
+        body = {
+            "lang": custom_variables.get('lang'),
+            "user_message":custom_variables.get("user_message")
+        }
+        body = remove_none_values(body)
+        headers: Optional[dict] = kwargs.get("headers")
+        return self._requester.request(
+            "post",
+            url,
+            False,
+            Hymns,
+            # params=params,
+            headers=headers,
+            body=body,
+        )
+
     def stream(
         self,
-        *,
-        bot_id: str,
-        user_id: str,
         additional_messages: Optional[List[Message]] = None,
         custom_variables: Optional[Dict[str, str]] = None,
-        auto_save_history: bool = True,
-        meta_data: Optional[Dict[str, str]] = None,
-        conversation_id: Optional[str] = None,
-        parameters: Optional[Dict[str, Any]] = None,
-        enable_card: Optional[bool] = None,
         **kwargs,
     ) -> EYStream[ChatEvent]:
         """
-        Call the Chat API with streaming to send messages to a published Coze bot.
-
-        docs en: https://www.coze.com/docs/developer_guides/chat_v3
-        docs zh: https://www.coze.cn/docs/developer_guides/chat_v3
-
-        :param bot_id: The ID of the bot that the API interacts with.
-        :param user_id: The user who calls the API to chat with the bot.
-        This parameter is defined, generated, and maintained by the user within their business system.
-        :param conversation_id: Indicate which conversation the chat is taking place in.
-        :param additional_messages: Additional information for the conversation. You can pass the user's query for this
-        conversation through this field. The array length is limited to 100, meaning up to 100 messages can be input.
-        :param custom_variables: The customized variable in a key-value pair.
-        :param auto_save_history: Whether to automatically save the history of conversation records.
-        :param meta_data: Additional information, typically used to encapsulate some business-related fields.
-        :param parameters: Additional parameters for the chat API. pass through to the workflow.
-        :return: iterator of ChatEvent
         """
-        return self._create(
-            bot_id=bot_id,
-            user_id=user_id,
-            stream=True,
-            additional_messages=additional_messages,
-            custom_variables=custom_variables,
-            auto_save_history=auto_save_history,
-            meta_data=meta_data,
-            conversation_id=conversation_id,
-            parameters=parameters,
-            enable_card=enable_card,
-            **kwargs,
+        entity = custom_variables.get('target')
+        url = f"{self._base_url}/bots/{entity}"
+        # params = {
+        #     "conversation_id": conversation_id if conversation_id else None,
+        # }
+
+        body = {
+            "lang": custom_variables.get('lang'),
+            # "parameters": parameters,
+            # "enable_card": enable_card,
+        }
+        if entity == "general":
+            body["messages"] = [i.model_dump() for i in additional_messages] if additional_messages else []
+        else:
+            body["user_message"] = custom_variables.get("user_message")
+        body = remove_none_values(body)
+        headers: Optional[dict] = kwargs.get("headers")
+        response: IteratorHTTPResponse[str] = self._requester.request(
+            "post",
+            url,
+            True,
+            None,
+            # params=params,
+            headers=headers,
+            body=body,
+        )
+        return EYStream(
+            response._raw_response,
+            response.data,
+            fields=["event", "data"],
+            handler=_chat_stream_handler,
         )
 
     def create_and_poll(
@@ -658,18 +695,6 @@ class ChatClient(object):
         else:
             body["user_message"] = custom_variables.get("user_message")
         body = remove_none_values(body)
-        #     {
-        #         "bot_id": bot_id,
-        #         "user_id": user_id,
-        #         "messages": [i.model_dump() for i in additional_messages] if additional_messages else [],
-        #         "stream": stream,
-        #         "lang": custom_variables.get('lang'),
-        #         "auto_save_history": auto_save_history,
-        #         "meta_data": meta_data,
-        #         "parameters": parameters,
-        #         "enable_card": enable_card,
-        #     }
-        # )
         headers: Optional[dict] = kwargs.get("headers")
         if not stream:
             return self._requester.request(
