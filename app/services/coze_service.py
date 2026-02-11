@@ -357,7 +357,7 @@ class CozeService:
         is_search_hymns = ori_msg.action == MessageService.action_search_hymns
         # is_explore = CozeService.is_explore_msg(ori_msg)
         dst_bot_id = CozeService.hymn_bot_id if is_search_hymns else CozeService.bot_id
-        logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables,dst_bot_id}")
+        # logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables,dst_bot_id}")
         pending = False
         start_time = time.time()
         last_len_hymns = 0
@@ -372,8 +372,7 @@ class CozeService:
                 custom_variables=custom_variables)
             if hymns:
                 try:
-                    logger.info(f"chat.hymns: {hymns}")
-                    ori_msg.feedback = json.dumps(hymns.__dict__, ensure_ascii=False)
+                    return json.dumps(hymns.__dict__, ensure_ascii=False)
                 except Exception as e:
                     logger.exception(e)
             return
