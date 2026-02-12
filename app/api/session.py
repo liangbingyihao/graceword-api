@@ -88,11 +88,7 @@ def my_message():
     })
 
 @session_bp.route('del', methods=['POST'])
-@swag_from({
-    'tags': ['session'],
-    'description': '删除主题',
-    # 类似上面的Swagger定义
-})
+@swag_from(os.path.join(BASE_YML_DIR, 'del.yml'))
 @jwt_required()
 def del_session():
     data = request.get_json()

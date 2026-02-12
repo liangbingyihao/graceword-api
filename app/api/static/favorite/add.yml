@@ -55,6 +55,17 @@ responses:
               type: integer
               example: 1
               description: 0-未收藏, 1-已收藏
+        examples:
+          collected:
+            summary: 已收藏
+            value:
+              success: true
+              data: 1
+          uncollected:
+            summary: 已取消收藏
+            value:
+              success: true
+              data: 0
   400:
     description: 参数错误
   401:
