@@ -17,39 +17,50 @@ produces:
   - application/json
 
 parameters:
-  - name: Authorization
-    in: header
-    type: string
+  - in: header
+    name: Authorization
     required: true
-    description: JWT访问令牌，格式：Bearer {token}
-    default: "Bearer "
-    example: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-
-  - name: body
-    in: body
-    required: true
-    description: 切换收藏状态的请求体
     schema:
-      $ref: '#/components/schemas/ToggleFavoriteRequest'
+      type: string
+    description: JWT token
+
+  - in: body
+    name: body
+    required: true
+    schema:
+      type: object
+      required: [message_id, content_type]
+      properties:
+        message_id:
+          type: integer
+          example: 12345
+        content_type:
+          type: integer
+          enum: [1, 2]
+          example: 1
+          description: 1-用户信息, 2-AI信息
 
 responses:
   200:
-    description: 成功切换收藏状态
-    content:
-      application/json:
-        schema:
-          $ref: '#/components/schemas/ToggleFavoriteResponse'
-        examples:
-          successTrue:
-            summary: 成功收藏
-            value:
-              success: true
-              data: 1
-          successFalse:
-            summary: 成功取消收藏
-            value:
-              success: true
-              data: 0
+    description: 操作成功
+    schema:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: integer
+          example: 1
+          description: 0-未收藏, 1-已收藏
+  400:
+    description: 参数错误
+  401:
+    description: 未授权
+  404:
+    description: 消息不存在
+  500:
+    description: 服务器错误
 
 security:
   - bearerAuth: []

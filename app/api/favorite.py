@@ -37,37 +37,38 @@ def add():
 
 
 @favorite_bp.route('/toggle', methods=['POST'])
-@swag_from({
-    'tags': ['收藏'],
-    'description': '调转收藏状态（已收藏变未收藏，未收藏变已收藏）',
-    'parameters': [
-        {
-            'name': 'body',
-            'in': 'body',
-            'required': True,
-            'schema': {
-                'type': 'object',
-                'properties': {
-                    'message_id': {
-                        'type': 'integer',
-                        'example': 12345,
-                        'description': '消息的唯一标识ID'
-                    },
-                    'content_type': {
-                        'type': 'integer',
-                        'enum': [1, 2],  # 明确枚举值
-                        'example': 1,
-                        'description': '内容类型: 1-用户信息, 2-AI信息'
-                    }
-                },
-                'required': ['message_id', 'content_type']
-            }
-        }
-    ],
-    'responses': {
-        200: {'success': "true/false", 'data': "0,不再收藏，1，已收藏，其他：失败"}
-    }
-})
+# @swag_from({
+#     'tags': ['收藏'],
+#     'description': '调转收藏状态（已收藏变未收藏，未收藏变已收藏）',
+#     'parameters': [
+#         {
+#             'name': 'body',
+#             'in': 'body',
+#             'required': True,
+#             'schema': {
+#                 'type': 'object',
+#                 'properties': {
+#                     'message_id': {
+#                         'type': 'integer',
+#                         'example': 12345,
+#                         'description': '消息的唯一标识ID'
+#                     },
+#                     'content_type': {
+#                         'type': 'integer',
+#                         'enum': [1, 2],  # 明确枚举值
+#                         'example': 1,
+#                         'description': '内容类型: 1-用户信息, 2-AI信息'
+#                     }
+#                 },
+#                 'required': ['message_id', 'content_type']
+#             }
+#         }
+#     ],
+#     'responses': {
+#         200: {'success': "true/false", 'data': "0,不再收藏，1，已收藏，其他：失败"}
+#     }
+# })
+@swag_from(os.path.join(BASE_YML_DIR, 'add.yml'))
 @jwt_required()
 def toggle():
     data = request.get_json()
