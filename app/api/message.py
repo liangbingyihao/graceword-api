@@ -237,11 +237,7 @@ def renew_message(msg_id):
 
 
 @message_bp.route('filter', methods=['GET'])
-# @swag_from({
-#     'tags': ['消息'],
-#     'description': 'filter message',
-#     # 类似上面的Swagger定义
-# })
+@swag_from(os.path.join(BASE_YML_DIR, 'set_summary.yml'))
 @jwt_required()
 def search_message():
     page = request.args.get('page', default=1, type=int)

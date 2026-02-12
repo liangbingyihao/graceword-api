@@ -1,0 +1,213 @@
+tags:
+  - message
+summary: 搜索消息
+description: |
+  搜索用户的消息内容，支持分页和筛选
+  
+  ## 功能说明
+  - 根据关键词搜索消息内容
+  - 支持按会话筛选
+  - 支持按会话类型筛选
+  - 支持分页查询
+  - 搜索结果中的关键词会高亮显示
+
+operationId: searchMessage
+produces:
+  - application/json
+
+parameters:
+  - in: header
+    name: Authorization
+    required: true
+    schema:
+      type: string
+    description: JWT 访问令牌，格式：Bearer {token}
+    example: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+
+  - in: query
+    name: page
+    schema:
+      type: integer
+      format: int32
+      minimum: 1
+      default: 1
+      description: 页码，从1开始
+    required: false
+    example: 1
+
+  - in: query
+    name: limit
+    schema:
+      type: integer
+      format: int32
+      minimum: 1
+      maximum: 100
+      default: 10
+      description: 每页记录数，最大100
+    required: false
+    example: 10
+
+  - in: query
+    name: session_id
+    schema:
+      type: integer
+      format: int64
+      default: 0
+      description: |
+        会话ID筛选
+        - 0: 不按会话筛选（搜索所有会话）
+        - >0: 只搜索指定会话的消息
+    required: false
+    example: 12345
+
+  - in: query
+    name: session_type
+    schema:
+      type: string
+      default: ""
+      description: |
+        会话类型筛选
+        - "topic": 主题会话
+        - "question": 问题会话
+        - "": 不按会话类型筛选
+    required: false
+    example: "topic"
+
+  - in: query
+    name: search
+    schema:
+      type: string
+      default: ""
+      description: 搜索关键词，支持模糊匹配
+    required: false
+    example: "圣经经文"
+
+responses:
+  200:
+    description: 搜索成功
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+              description: 请求是否成功
+              example: true
+            data:
+              type: object
+              properties:
+                items:
+                  type: array
+                  description: 消息列表
+                  items:
+                    $ref: '#/components/schemas/SearchResultItem'
+        examples:
+          success:
+            summary: 搜索成功
+            value:
+              success: true
+              data:
+                items:
+                  - message_id: "msg_123456"
+                    content: "这是关于<span style='color:red'>圣经</span>的经文讲解..."
+                    created_ts: 1705314600
+                  - message_id: "msg_789012"
+                    content: "<span style='color:red'>圣经</span>中的教导..."
+                    created_ts: 1705307400
+
+  400:
+    description: 请求参数错误
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+              example: false
+            error:
+              type: string
+              example: "参数错误"
+        example:
+          success: false
+          error: "参数page必须是正整数"
+
+  401:
+    description: 未授权访问
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+              example: false
+            error:
+              type: string
+              example: "未授权"
+        example:
+          success: false
+          error: "无效的认证令牌"
+
+  404:
+    description: 会话不存在
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+              example: false
+            error:
+              type: string
+              example: "会话不存在"
+        example:
+          success: false
+          error: "指定的会话不存在"
+
+  500:
+    description: 服务器内部错误
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+              example: false
+            error:
+              type: string
+              example: "服务器错误"
+        example:
+          success: false
+          error: "搜索失败，请稍后重试"
+
+security:
+  - bearerAuth: []
+
+components:
+  schemas:
+    SearchResultItem:
+      type: object
+      properties:
+        message_id:
+          type: string
+          description: 消息的唯一标识ID
+          example: "msg_123456"
+        content:
+          type: string
+          description: |
+            消息内容，关键词已用红色高亮标记
+            HTML格式，包含 <span style='color:red'>关键词</span>
+          example: "这是关于<span style='color:red'>圣经</span>的经文讲解..."
+        created_ts:
+          type: integer
+          format: int64
+          description: 消息创建时间戳（毫秒）
+          example: 1705314600000
+      required:
+        - message_id
+        - content
+        - created_ts
