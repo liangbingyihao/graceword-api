@@ -237,7 +237,7 @@ def renew_message(msg_id):
 
 
 @message_bp.route('filter', methods=['GET'])
-@swag_from(os.path.join(BASE_YML_DIR, 'set_summary.yml'))
+@swag_from(os.path.join(BASE_YML_DIR, 'search.yml'))
 @jwt_required()
 def search_message():
     page = request.args.get('page', default=1, type=int)
