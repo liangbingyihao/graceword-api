@@ -35,7 +35,6 @@ def add():
             'message': str(e)
         }), 400
 
-
 @favorite_bp.route('/toggle', methods=['POST'])
 # @swag_from({
 #     'tags': ['收藏'],
