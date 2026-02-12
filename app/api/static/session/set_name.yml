@@ -1,0 +1,73 @@
+tags:
+  - session
+summary: 设置会话主题名称
+description: |
+  设置指定会话的主题名称
+  
+  ## 功能说明
+  - 修改会话的名称
+  - 会话名称最大长度为20个字符
+  - 需要 JWT 认证
+  - 只能修改自己创建的会话
+
+operationId: setSessionTopic
+consumes:
+  - application/json
+produces:
+  - application/json
+
+parameters:
+  - in: header
+    name: Authorization
+    required: true
+    schema:
+      type: string
+    description: JWT 访问令牌，格式：Bearer {token}
+    example: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+
+  - in: path
+    name: session_id
+    required: true
+    schema:
+      type: integer
+      format: int64
+    description: 会话的唯一标识ID
+    example: 12345
+
+  - in: body
+    name: body
+    required: true
+    description: 设置会话名称的请求体
+    schema:
+      type: object
+      required: [session_name]
+      properties:
+        session_name:
+          type: string
+          description: 新的会话名称
+          example: "圣经研读"
+          maxLength: 20
+      example:
+        session_name: "圣经研读"
+
+responses:
+  200:
+    description: 成功设置会话名称
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+              description: 操作是否成功
+              example: true
+        examples:
+          success:
+            summary: 设置成功
+            value:
+              success: true
+          failure:
+            summary: 设置失败
+            value:
+              success: false

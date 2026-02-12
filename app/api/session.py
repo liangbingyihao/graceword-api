@@ -103,13 +103,14 @@ def del_session():
 
 # 带msg_id参数的路由
 @session_bp.route('/<int:session_id>', methods=['POST'])
+@swag_from(os.path.join(BASE_YML_DIR, 'set_name.yml'))
 @jwt_required()
 def set_topic(session_id):
     data = request.get_json()
     session_name = data.get('session_name')
     owner_id = get_user_id(request.headers) or get_jwt_identity()
     if session_name and len(session_name) > 20:
-        return jsonify({"error": "session_name max length is 8"}), 400
+        return jsonify({"error": "session_name max length is 20"}), 400
     ret = SessionService.set_session_name(owner_id, session_id, session_name)
     return jsonify({
         'success': ret
