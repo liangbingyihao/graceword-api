@@ -1,0 +1,81 @@
+tags:
+  - session
+summary: 删除恩语录
+description: |
+  删除指定恩语录
+  
+  ## 功能说明
+  - 根据 session_id 删除恩语录
+  - 需要 JWT 认证
+  - 只能删除自己创建的恩语录
+  - 返回操作结果
+
+operationId: delSession
+
+parameters:
+  - in: header
+    name: Authorization
+    required: true
+    schema:
+      type: string
+    description: JWT token
+
+  - in: body
+    name: body
+    required: true
+    description: 删除恩语录请求体
+    schema:
+      type: object
+      required: [session_id]
+      properties:
+        session_id:
+          type: integer
+          example: 123
+          description: 恩语录id
+      example:
+        session_id: 123
+
+responses:
+  201:
+    description: 成功删除会话
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+              description: 操作是否成功
+              example: true
+        example:
+          success: true
+  401:
+    description: 未授权访问
+    examples:
+      application/json:
+        success: false
+        error: "无效的认证令牌"
+
+  403:
+    description: 权限不足
+    examples:
+      application/json:
+        success: false
+        error: "无权访问此消息"
+
+  404:
+    description: 消息不存在
+    examples:
+      application/json:
+        success: false
+        error: "消息不存在或已被删除"
+
+  500:
+    description: 服务器内部错误
+    examples:
+      application/json:
+        success: false
+        error: "获取消息详情失败"
+
+security:
+  - Bearer: [ ]

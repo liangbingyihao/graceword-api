@@ -45,16 +45,16 @@ responses:
     description: 操作成功
     content:
       application/json:
-      schema:
-        type: object
-        properties:
-          success:
-            type: boolean
-            example: true
-          data:
-            type: integer
-            example: 1
-            description: 0-未收藏, 1-已收藏
+        schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+              example: true
+            data:
+              type: integer
+              example: 1
+              description: 0-未收藏, 1-已收藏
   400:
     description: 参数错误
   401:
