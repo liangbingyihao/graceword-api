@@ -60,18 +60,18 @@ parameters:
     required: false
     example: 12345
 
-  - in: query
-    name: session_type
-    schema:
-      type: string
-      default: ""
-      description: |
-        会话类型筛选
-        - "topic": 主题会话
-        - "question": 问题会话
-        - "": 不按会话类型筛选
-    required: false
-    example: "topic"
+#  - in: query
+#    name: session_type
+#    schema:
+#      type: string
+#      default: ""
+#      description: |
+#        会话类型筛选
+#        - "topic": 主题会话
+#        - "question": 问题会话
+#        - "": 不按会话类型筛选
+#    required: false
+#    example: "topic"
 
   - in: query
     name: search

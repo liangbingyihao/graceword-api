@@ -10,7 +10,7 @@ description: |
   3. 如果提供 session_name，会创建新会话并将消息移动到新会话
   4. 如果提供 session_id，会将消息移动到指定会话
   5. 如果 session_id 和 session_name 都不提供，只更新摘要
-operationId: "setSummary"
+operationId: setSummary
 security:
   - JWT: []
 parameters:
