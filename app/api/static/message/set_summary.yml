@@ -1,5 +1,5 @@
 tags:
-  - "message"
+  - message
 summary: "设置消息摘要或所属会话等..."
 description: |
   设置消息的摘要，并可选择更新消息所属的会话。
