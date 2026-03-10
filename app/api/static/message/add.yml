@@ -44,10 +44,11 @@ requestBody:
             description: |
               动作类型:
               - 0: 问题探索
+              - 4: 每日恩语-灵修
               - 7: 搜索诗歌
               - 9: 仅记录,不走AI
             example: "0"
-            enum: [ "0", "7", "9" ]
+            enum: [ "0","4", "7", "9" ]
             default: "0"
           context_id:
             type: string
