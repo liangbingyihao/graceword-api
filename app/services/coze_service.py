@@ -126,7 +126,7 @@ class CozeService:
             # result["view"] = view
             message.feedback_text = view.replace("<bible>", "<u class=\"bible\">").replace("</bible>", "</u>")
         else:
-            raise Exception("view is null")
+            raise Exception("view is null:"+response)
 
         summary = result.get("summary")
         if summary:
