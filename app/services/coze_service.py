@@ -53,7 +53,6 @@ engine = create_engine(
 # 第二步：拿到一个Session类,传入engine
 DBSession = sessionmaker(bind=engine)
 
-
 # 黄色：信靠，盼望，刚强，光明 #FFFBE8
 # 红色：慈爱，喜乐 #FFEEEB
 # 蓝色：安慰，永恒 #EDF8FF
@@ -86,7 +85,8 @@ class CozeService:
     @staticmethod
     def is_explore_msg(message):
         from services.message_service import MessageService
-        return len(message.context_id) > 5 or message.action == MessageService.action_search_hymns
+        return len(
+            message.context_id) > 5 or message.action == MessageService.action_search_hymns or message.action == MessageService.action_bible_note
 
     @staticmethod
     def _fix_ai_response(message, ai_response):
@@ -113,7 +113,7 @@ class CozeService:
         except Exception as e:
             logger.exception(e)
             try:
-                from utils.json_robust import extract_json_values_robust,extract_json_list_robust
+                from utils.json_robust import extract_json_values_robust, extract_json_list_robust
                 result["explore"] = extract_json_list_robust(response, "explore")
                 summary = extract_json_values_robust(response, "summary")
                 if summary:
@@ -188,11 +188,14 @@ class CozeService:
                         context_content = message.content
                     custom_variables["target"] = "pray"
                     custom_variables["user_message"] = context_content
-                    # additional_messages.append(cozepy.Message.build_user_question_text(context_content))
-                    # ask_msg = (custom_prompt + context_content) if custom_prompt else msg_pray + context_content
+                elif message.action == MessageService.action_bible_note:
+                    custom_variables["target"] = "note"
+                    additional_messages.append(cozepy.Message.build_user_question_text(
+                        "verses:" + message.reply + "\nnote:" + message.content))
                 else:
                     auto_session = [session_qa_name]
-                    custom_variables["target"] = "hymn" if message.action == MessageService.action_search_hymns else "explore"
+                    custom_variables[
+                        "target"] = "hymn" if message.action == MessageService.action_search_hymns else "explore"
                     context_msg = session.query(Message).filter_by(public_id=message.context_id).first()
                     user_msg = ""
                     if context_msg:
@@ -211,10 +214,6 @@ class CozeService:
                 custom_variables["target"] = "general"
                 session_lst = session.query(Session).filter_by(owner_id=user_id).order_by(
                     desc(Session.id)).with_entities(Session.id, Session.session_name).limit(100).all()
-                # names = "["
-                # for session_id, session_name in session_lst:
-                #     names += f"\"{session_name}\","
-                # names += "]"
                 custom_variables["user_topics"] = [session_name for session_id, session_name in session_lst]
                 # ask_msg += message.content
                 messages = session.query(Message).filter_by(owner_id=user_id).filter(Message.id < msg_id).order_by(
@@ -247,6 +246,9 @@ class CozeService:
         response = ""
 
         def _set_topics(topics):
+            if message.action == MessageService.action_bible_note:
+                return "notes"
+
             if topics and len(topics) > 0:
                 topic = topics[0]
                 if not topic and len(topics) > 1:
@@ -287,7 +289,7 @@ class CozeService:
             if message.action == MessageService.action_search_hymns:
                 pass
             else:
-                result = CozeService._extra_ai_response(message,response)
+                result = CozeService._extra_ai_response(message, response)
                 if auto_session:
                     topic_name = _set_topics(auto_session)
                 else:
