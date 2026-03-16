@@ -159,10 +159,10 @@ class CozeService:
             lang = message.lang.lower()
             if "en" in lang:
                 lang = "en"
-            elif "hans" in lang:
-                lang = "zh-hans"
             elif "hant" in lang or "tw" in lang or "hk" in lang:
                 lang = 'zh-hant'
+            elif "hans" in lang or "cn" in lang:
+                lang = "zh-hans"
 
         session_lst = []
         session_qa_name = SessionService.session_qa[0]
