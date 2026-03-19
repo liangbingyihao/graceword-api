@@ -86,8 +86,7 @@ class CozeService:
     @staticmethod
     def is_explore_msg(message):
         from services.message_service import MessageService
-        return len(
-            message.context_id) > 5 or message.action == MessageService.action_search_hymns or message.action == MessageService.action_bible_note
+        return len(message.context_id) > 5 or message.action == MessageService.action_search_hymns or message.action == MessageService.action_bible_note
 
     @staticmethod
     def _fix_ai_response(message, ai_response):
@@ -195,8 +194,7 @@ class CozeService:
                         "verses:" + message.reply + "\nnote:" + message.content))
                 else:
                     auto_session = [session_qa_name]
-                    custom_variables[
-                        "target"] = "hymn" if message.action == MessageService.action_search_hymns else "explore"
+                    custom_variables["target"] = "hymn" if message.action == MessageService.action_search_hymns else "explore"
                     context_msg = session.query(Message).filter_by(public_id=message.context_id).first()
                     user_msg = ""
                     if context_msg:
@@ -225,14 +223,6 @@ class CozeService:
                         if m.lang == latest_lang:
                             additional_messages.append(cozepy.Message.build_user_question_text(m.content))
                             additional_messages.append(cozepy.Message.build_assistant_answer(m.feedback_text))
-                        # if m.action == MessageService.action_daily_pray:
-                        #     bible_study.append(m.content)
-                        # elder_input += f"\nid:{m.id},用户输入:{m.content},AI回应:{m.feedback_text}"
-                    # if bible_study:
-                    #     ask_msg = ask_msg.replace("${bible_study}",
-                    #                               f'如果用户输入是关于内容${bible_study}的灵修默想祷告，则返回"我的灵修"。')
-                    # else:
-                    #     ask_msg = ask_msg.replace("${bible_study}", "")
                 reply = message.reply + "\n" if message.reply else ""
                 additional_messages.append(cozepy.Message.build_user_question_text(reply + message.content))
         except Exception as e:

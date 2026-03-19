@@ -67,6 +67,7 @@ color_map = {"#FFFBE8": ("信靠", "盼望", "刚强", "光明"),
 class CozeService:
     bot_id = main_bot_id or "7547552285878960168"
     hymn_bot_id = "7566915373069762569"
+    note_bot_id = "7551733805107691558"
     executor = ThreadPoolExecutor(3)
 
     @staticmethod
@@ -85,7 +86,7 @@ class CozeService:
     @staticmethod
     def is_explore_msg(message):
         from services.message_service import MessageService
-        return len(message.context_id) > 5 or message.action == MessageService.action_search_hymns
+        return len(message.context_id) > 5 or message.action == MessageService.action_search_hymns or message.action == MessageService.action_bible_note
 
     @staticmethod
     def _fix_ai_response(message, ai_response):
@@ -153,15 +154,15 @@ class CozeService:
         from services.message_service import MessageService
         from services.session_service import SessionService
 
-        lang = ""
+        lang = "zh-hant"
         if message.lang:
             lang = message.lang.lower()
             if "en" in lang:
                 lang = "en"
-            elif "hans" in lang:
-                lang = "zh-hans"
             elif "hant" in lang or "tw" in lang or "hk" in lang:
                 lang = 'zh-hant'
+            elif "hans" in lang or "cn" in lang:
+                lang = "zh-hans"
 
         session_lst = []
         session_qa_name = SessionService.session_qa[0]
@@ -188,6 +189,10 @@ class CozeService:
                     custom_variables["target"] = "pray"
                     additional_messages.append(cozepy.Message.build_user_question_text(context_content))
                     # ask_msg = (custom_prompt + context_content) if custom_prompt else msg_pray + context_content
+                elif message.action == MessageService.action_bible_note:
+                    custom_variables["target"] = "note"
+                    additional_messages.append(cozepy.Message.build_user_question_text(
+                        "verses:" + message.reply + "\nnote:" + message.content))
                 else:
                     auto_session = [session_qa_name]
                     custom_variables["target"] = "explore"
@@ -241,6 +246,9 @@ class CozeService:
         response = ""
 
         def _set_topics(topics):
+            if message.action == MessageService.action_bible_note:
+                return "notes"
+
             if topics and len(topics) > 0:
                 topic = topics[0]
                 if not topic and len(topics) > 1:
@@ -351,6 +359,8 @@ class CozeService:
         is_search_hymns = ori_msg.action == MessageService.action_search_hymns
         # is_explore = CozeService.is_explore_msg(ori_msg)
         dst_bot_id = CozeService.hymn_bot_id if is_search_hymns else CozeService.bot_id
+        if ori_msg.action == MessageService.action_bible_note:
+            dst_bot_id = CozeService.note_bot_id
         logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables,dst_bot_id}")
         pending = False
         start_time = time.time()
