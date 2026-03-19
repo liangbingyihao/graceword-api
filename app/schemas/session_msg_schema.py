@@ -43,6 +43,7 @@ class SessionMsgSchema(Schema):
         dump_only=True
     )
     content = fields.Str()
+    reply = fields.Str()
     feedback_text = fields.Str()
     created_at = fields.Str()
     created_ts = fields.Int(dump_only=True)
