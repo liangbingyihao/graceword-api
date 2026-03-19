@@ -366,7 +366,7 @@ class CozeService:
             if event.event == ChatEventType.CONVERSATION_MESSAGE_DELTA:
                 if last_complete:
                     logger.info(
-                        f"_chat_with_coze: {user_id, ori_msg.id} delta msg coming, cost:{time.time() - start_time} s")
+                        f"_chat_with_coze_cn: {user_id, ori_msg.id} delta msg coming, cost:{time.time() - start_time} s")
                     last_complete = False
                     all_content = ""
                 message = event.message
