@@ -8,7 +8,6 @@ from models.favorites import Favorites
 from models.message import Message
 from extensions import db
 from models.session import Session
-from services.coze_service import CozeService
 from services.message_service import MessageService
 from services.session_service import SessionService
 from utils.exceptions import AuthError

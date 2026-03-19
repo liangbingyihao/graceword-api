@@ -6,7 +6,6 @@ from sqlalchemy import desc, update, and_
 from models.message import Message
 from models.session import Session
 from extensions import db
-from services.coze_service import CozeService
 
 
 class SessionService:
@@ -26,7 +25,6 @@ class SessionService:
         if session:
             return session
         session = Session(session_name=session_name, owner_id=owner_id, robot_id=robot_id)
-        # session.conversation_id = CozeService.create_conversations()
         db.session.add(session)
         db.session.commit()
 

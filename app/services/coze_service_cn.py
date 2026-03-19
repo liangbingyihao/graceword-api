@@ -13,7 +13,6 @@ from models.session import Session
 
 coze_api_token = os.getenv("COZE_API_TOKEN")
 main_bot_id = os.getenv("COZE_MAIN_BOT_ID")
-gw_coze_host = "https://api-test.grace-word.com"
 from cozepy import Coze, TokenAuth, Message, ChatEventType, COZE_CN_BASE_URL, COZE_COM_BASE_URL, MessageType  # noqa
 
 import logging
@@ -53,6 +52,7 @@ engine = create_engine(
 # 第二步：拿到一个Session类,传入engine
 DBSession = sessionmaker(bind=engine)
 
+
 # 黄色：信靠，盼望，刚强，光明 #FFFBE8
 # 红色：慈爱，喜乐 #FFEEEB
 # 蓝色：安慰，永恒 #EDF8FF
@@ -67,7 +67,6 @@ color_map = {"#FFFBE8": ("信靠", "盼望", "刚强", "光明"),
 class CozeService:
     bot_id = main_bot_id or "7547552285878960168"
     hymn_bot_id = "7566915373069762569"
-    note_bot_id = "7551733805107691558"
     executor = ThreadPoolExecutor(3)
 
     @staticmethod
@@ -86,8 +85,7 @@ class CozeService:
     @staticmethod
     def is_explore_msg(message):
         from services.message_service import MessageService
-        return len(
-            message.context_id) > 5 or message.action == MessageService.action_search_hymns or message.action == MessageService.action_bible_note
+        return len(message.context_id) > 5 or message.action == MessageService.action_search_hymns
 
     @staticmethod
     def _fix_ai_response(message, ai_response):
@@ -114,7 +112,7 @@ class CozeService:
         except Exception as e:
             logger.exception(e)
             try:
-                from utils.json_robust import extract_json_values_robust, extract_json_list_robust
+                from utils.json_robust import extract_json_values_robust,extract_json_list_robust
                 result["explore"] = extract_json_list_robust(response, "explore")
                 summary = extract_json_values_robust(response, "summary")
                 if summary:
@@ -125,9 +123,9 @@ class CozeService:
         view = result.get('view') or message.feedback_text
         if view:
             # result["view"] = view
-            message.feedback_text = view.replace("<bible>", "<u class=\"bible\">").replace("</bible>", "</u>")
+            message.feedback_text = view
         else:
-            raise Exception("view is null:"+response)
+            raise Exception("view is null")
 
         summary = result.get("summary")
         if summary:
@@ -160,10 +158,10 @@ class CozeService:
             lang = message.lang.lower()
             if "en" in lang:
                 lang = "en"
+            elif "hans" in lang:
+                lang = "zh-hans"
             elif "hant" in lang or "tw" in lang or "hk" in lang:
                 lang = 'zh-hant'
-            elif "hans" in lang or "cn" in lang:
-                lang = "zh-hans"
 
         session_lst = []
         session_qa_name = SessionService.session_qa[0]
@@ -188,23 +186,15 @@ class CozeService:
                     else:
                         context_content = message.content
                     custom_variables["target"] = "pray"
-                    custom_variables["user_message"] = context_content
-                elif message.action == MessageService.action_bible_note:
-                    custom_variables["target"] = "note"
-                    additional_messages.append(cozepy.Message.build_user_question_text(
-                        "verses:" + message.reply + "\nnote:" + message.content))
+                    additional_messages.append(cozepy.Message.build_user_question_text(context_content))
+                    # ask_msg = (custom_prompt + context_content) if custom_prompt else msg_pray + context_content
                 else:
                     auto_session = [session_qa_name]
-                    custom_variables[
-                        "target"] = "hymn" if message.action == MessageService.action_search_hymns else "explore"
+                    custom_variables["target"] = "explore"
                     context_msg = session.query(Message).filter_by(public_id=message.context_id).first()
-                    user_msg = ""
                     if context_msg:
-                        user_msg += context_msg.feedback_text
-                        # additional_messages.append(cozepy.Message.build_assistant_answer(context_msg.feedback_text))
-                    user_msg += message.content
-                    # additional_messages.append(cozepy.Message.build_user_question_text(message.content))
-                    custom_variables["user_message"] = user_msg
+                        additional_messages.append(cozepy.Message.build_assistant_answer(context_msg.feedback_text))
+                    additional_messages.append(cozepy.Message.build_user_question_text(message.content))
                     session_lst = session.query(Session).filter_by(owner_id=user_id,
                                                                    session_name=session_qa_name).order_by(
                         desc(Session.id)).with_entities(Session.id, Session.session_name).limit(1).all()
@@ -212,10 +202,14 @@ class CozeService:
                     # ask_msg = (custom_prompt + message.content) if custom_prompt else msg_explore + message.content
                 # rsp_msg = message
             else:
-                custom_variables["target"] = "general"
+                custom_variables["target"] = "record"
                 session_lst = session.query(Session).filter_by(owner_id=user_id).order_by(
                     desc(Session.id)).with_entities(Session.id, Session.session_name).limit(100).all()
-                custom_variables["user_topics"] = [session_name for session_id, session_name in session_lst]
+                names = "["
+                for session_id, session_name in session_lst:
+                    names += f"\"{session_name}\","
+                names += "]"
+                custom_variables["user_topics"] = names
                 # ask_msg += message.content
                 messages = session.query(Message).filter_by(owner_id=user_id).filter(Message.id < msg_id).order_by(
                     desc(Message.id)).limit(5).all()
@@ -247,9 +241,6 @@ class CozeService:
         response = ""
 
         def _set_topics(topics):
-            if message.action == MessageService.action_bible_note:
-                return "notes"
-
             if topics and len(topics) > 0:
                 topic = topics[0]
                 if not topic and len(topics) > 1:
@@ -290,7 +281,7 @@ class CozeService:
             if message.action == MessageService.action_search_hymns:
                 pass
             else:
-                result = CozeService._extra_ai_response(message, response)
+                result = CozeService._extra_ai_response(message,response)
                 if auto_session:
                     topic_name = _set_topics(auto_session)
                 else:
@@ -360,44 +351,60 @@ class CozeService:
         is_search_hymns = ori_msg.action == MessageService.action_search_hymns
         # is_explore = CozeService.is_explore_msg(ori_msg)
         dst_bot_id = CozeService.hymn_bot_id if is_search_hymns else CozeService.bot_id
-        logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables.get('target')}")
+        logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables,dst_bot_id}")
         pending = False
         start_time = time.time()
         last_len_hymns = 0
         last_complete = True
         last_message = None
-
-        import bots
-        from cozepy.request import Requester
-        chat = bots.ChatClient(gw_coze_host, Requester())
-        if is_search_hymns:
-            hymns = chat.hymns(
-                custom_variables=custom_variables)
-            if hymns:
-                try:
-                    return json.dumps(hymns.__dict__, ensure_ascii=False)
-                except Exception as e:
-                    logger.exception(e)
-            return
-        for event in chat.stream(
+        for event in coze.chat.stream(
                 bot_id=dst_bot_id,
                 user_id=str(user_id),
                 custom_variables=custom_variables,
                 additional_messages=additional_messages,
         ):
-            if event.event == bots.ChatEventType.GW_MESSAGE_DELTA:
+            if event.event == ChatEventType.CONVERSATION_MESSAGE_DELTA:
                 if last_complete:
                     logger.info(
                         f"_chat_with_coze: {user_id, ori_msg.id} delta msg coming, cost:{time.time() - start_time} s")
                     last_complete = False
                     all_content = ""
-                ai_rsp = event.message
-                ai_rsp = ai_rsp.encode('utf-8', 'ignore').decode('utf-8')
+                message = event.message
+                all_content += message.content
 
-                all_content += ai_rsp
+                if is_search_hymns:
+                    from utils.json_robust import extract_json_values_robust
+                    # logger.info(f"hymns back:{all_content}")
+                    result = {}
+                    try:
+                        response = extract_json_values_robust(all_content, "response")
+                        if response:
+                            result["response"] = response[0]
+                    except Exception as e:
+                        logger.exception(e)
+                    try:
+                        titles = extract_json_values_robust(all_content, "title")
+                        if titles:
+                            result["hymns"] = [{"title": x} for x in titles]
+                    except Exception as e:
+                        logger.exception(e)
 
-                if False and is_search_hymns:
-                    pass
+                    hymns = result.get("hymns")
+                    if hymns and len(hymns) > last_len_hymns:
+                        for k in ["composer", "album", "lyrics", "artist", "play_url", "sheet_url", "ppt_url",
+                                  "copyright"]:
+                            try:
+                                data = extract_json_values_robust(all_content, k)
+                                if data and len(data) <= len(hymns):
+                                    for index, value in enumerate(data):
+                                        hymns[index][k] = value
+                            except Exception as e:
+                                logger.exception(e)
+                    if result:
+                        try:
+                            ori_msg.feedback = json.dumps(result, ensure_ascii=False)
+                        except Exception as e:
+                            logger.exception(e)
                 else:
                     if f_set_topics and not topic_name:
                         topics = re.findall(r'"topic\d":\s*"([^"]*)"\s*,', all_content)
@@ -409,12 +416,12 @@ class CozeService:
                             ori_msg.feedback_text = unescape_json_string(detail)
                         elif not all_content.startswith("{"):
                             ori_msg.feedback_text = all_content
-
+                        # logger.info(f"_chat_detail: {all_content[-10:]} \n got {detail[-10:]}")
+                # else:
+                #     ori_msg.feedback_text = all_content
+                # logger.info(f"CONVERSATION_MESSAGE_DELTA: {ori_msg.feedback}")
                 ori_msg.status = 1
                 session.commit()
-            elif event.event == bots.ChatEventType.GW_MESSAGE_COMPLETED:
-                last_complete = True
-                return all_content
             elif event.event == ChatEventType.CONVERSATION_MESSAGE_COMPLETED:
                 last_complete = True
                 # logger.info(

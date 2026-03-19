@@ -7,10 +7,11 @@ import time
 from models.message import Message
 from extensions import db
 from models.session import Session
-from services.coze_service import CozeService
 from services.session_service import SessionService
 from utils.exceptions import AuthError
 from utils.time_utils import get_utc_timestamp_millis
+# from services.coze_service import CozeService
+from services import CozeService
 
 
 class MessageService:
