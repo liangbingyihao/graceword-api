@@ -147,6 +147,10 @@ components:
             type: string
             description: 反馈摘要
             example: "重担中见救赎"
+          prompt:
+            type: string
+            description: 引导用户讨论的话题
+            example: "关于这个问题，我觉得..."
           topic:
             type: string
             description: 主题分类

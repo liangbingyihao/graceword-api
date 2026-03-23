@@ -57,7 +57,7 @@ requestBody:
             pattern: "^[a-zA-Z0-9_-]+$"
           reply:
             type: string
-            description: 引用的内容
+            description: 引用的内容，目前的场景：普通探索气泡里用户探讨的话题、圣经笔记引用的经文片段
             example: "这是引用的内容"
             maxLength: 2000
   required: true
