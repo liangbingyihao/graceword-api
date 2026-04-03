@@ -137,7 +137,7 @@ class CozeService:
     @staticmethod
     def add_addition_msgs(session,additional_messages, user_id, msg_id, lang):
         from services.message_service import MessageService
-        messages = session.query(Message).filter_by(owner_id=user_id).filter(Message.id < msg_id).filter(Message.lang = lang).filter(Message.action != MessageService.action_search_hymns).order_by(desc(Message.id)).limit(5).all()
+        messages = session.query(Message).filter_by(owner_id=user_id).filter(Message.id < msg_id).filter(Message.lang == lang).filter(Message.action != MessageService.action_search_hymns).order_by(desc(Message.id)).limit(5).all()
         if messages:
             for m in reversed(messages):
                 additional_messages.append(cozepy.Message.build_user_question_text(m.content))
