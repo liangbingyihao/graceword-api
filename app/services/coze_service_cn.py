@@ -68,6 +68,8 @@ class CozeService:
     hymn_bot_id = "7566915373069762569"
     note_bot_id = "7551733805107691558"
     executor = ThreadPoolExecutor(3)
+    from services.message_service import MessageService
+    from models.message import Message
 
     @staticmethod
     def chat_with_coze_async(user_id, msg_id):
@@ -84,7 +86,6 @@ class CozeService:
 
     @staticmethod
     def is_explore_msg(message):
-        from services.message_service import MessageService
         return len(
             message.context_id) > 5 or message.action == MessageService.action_search_hymns or message.action == MessageService.action_bible_note
 
@@ -136,7 +137,6 @@ class CozeService:
 
     @staticmethod
     def add_addition_msgs(session,additional_messages, user_id, msg_id, lang):
-        from services.message_service import MessageService
         messages = session.query(Message).filter_by(owner_id=user_id).filter(Message.id < msg_id).filter(Message.lang == lang).filter(Message.action != MessageService.action_search_hymns).order_by(desc(Message.id)).limit(5).all()
         if messages:
             for m in reversed(messages):
