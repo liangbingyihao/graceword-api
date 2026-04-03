@@ -52,7 +52,6 @@ engine = create_engine(
 # 第二步：拿到一个Session类,传入engine
 DBSession = sessionmaker(bind=engine)
 
-
 # 黄色：信靠，盼望，刚强，光明 #FFFBE8
 # 红色：慈爱，喜乐 #FFEEEB
 # 蓝色：安慰，永恒 #EDF8FF
@@ -86,7 +85,8 @@ class CozeService:
     @staticmethod
     def is_explore_msg(message):
         from services.message_service import MessageService
-        return len(message.context_id) > 5 or message.action == MessageService.action_search_hymns or message.action == MessageService.action_bible_note
+        return len(
+            message.context_id) > 5 or message.action == MessageService.action_search_hymns or message.action == MessageService.action_bible_note
 
     @staticmethod
     def _fix_ai_response(message, ai_response):
@@ -113,7 +113,7 @@ class CozeService:
         except Exception as e:
             logger.exception(e)
             try:
-                from utils.json_robust import extract_json_values_robust,extract_json_list_robust
+                from utils.json_robust import extract_json_values_robust, extract_json_list_robust
                 result["explore"] = extract_json_list_robust(response, "explore")
                 summary = extract_json_values_robust(response, "summary")
                 if summary:
@@ -133,6 +133,15 @@ class CozeService:
             message.summary = summary
         result.pop('view', None)
         return result
+
+    @staticmethod
+    def add_addition_msgs(session,additional_messages, user_id, msg_id, lang):
+        from services.message_service import MessageService
+        messages = session.query(Message).filter_by(owner_id=user_id).filter(Message.id < msg_id).filter(Message.lang = lang).filter(Message.action != MessageService.action_search_hymns).order_by(desc(Message.id)).limit(5).all()
+        if messages:
+            for m in reversed(messages):
+                additional_messages.append(cozepy.Message.build_user_question_text(m.content))
+                additional_messages.append(cozepy.Message.build_assistant_answer(m.feedback_text))
 
     @staticmethod
     def chat_with_coze(user_id, msg_id):
@@ -188,6 +197,7 @@ class CozeService:
                         context_content = message.content
                     custom_variables["target"] = "pray"
                     additional_messages.append(cozepy.Message.build_user_question_text(context_content))
+                    CozeService.add_addition_msgs(session,additional_messages, user_id, msg_id, message.lang)
                     # ask_msg = (custom_prompt + context_content) if custom_prompt else msg_pray + context_content
                 elif message.action == MessageService.action_bible_note:
                     custom_variables["target"] = "note"
@@ -224,14 +234,6 @@ class CozeService:
                         if m.lang == latest_lang:
                             additional_messages.append(cozepy.Message.build_user_question_text(m.content))
                             additional_messages.append(cozepy.Message.build_assistant_answer(m.feedback_text))
-                        # if m.action == MessageService.action_daily_pray:
-                        #     bible_study.append(m.content)
-                        # elder_input += f"\nid:{m.id},用户输入:{m.content},AI回应:{m.feedback_text}"
-                    # if bible_study:
-                    #     ask_msg = ask_msg.replace("${bible_study}",
-                    #                               f'如果用户输入是关于内容${bible_study}的灵修默想祷告，则返回"我的灵修"。')
-                    # else:
-                    #     ask_msg = ask_msg.replace("${bible_study}", "")
                 reply = message.reply + "\n" if message.reply else ""
                 additional_messages.append(cozepy.Message.build_user_question_text(reply + message.content))
         except Exception as e:
@@ -289,7 +291,7 @@ class CozeService:
             if message.action == MessageService.action_search_hymns:
                 pass
             else:
-                result = CozeService._extra_ai_response(message,response)
+                result = CozeService._extra_ai_response(message, response)
                 if auto_session:
                     topic_name = _set_topics(auto_session)
                 else:
@@ -361,7 +363,7 @@ class CozeService:
         dst_bot_id = CozeService.hymn_bot_id if is_search_hymns else CozeService.bot_id
         if ori_msg.action == MessageService.action_bible_note:
             dst_bot_id = CozeService.note_bot_id
-        logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables,dst_bot_id}")
+        logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables, dst_bot_id}")
         pending = False
         start_time = time.time()
         last_len_hymns = 0
