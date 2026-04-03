@@ -12,34 +12,35 @@ from utils.exceptions import AuthError
 from utils.time_utils import get_utc_timestamp_millis
 # from services.coze_service import CozeService
 from services import CozeService
+from services import constants
 
 
 class MessageService:
-    action_daily_talk = 0
-    action_bible_pic = 1
-    action_daily_gw = 2
-    action_direct_msg = 3
-    action_daily_pray = 4
-    action_input_prompt = 5
-    action_daily_gw_pray = 6
-    action_search_hymns = 7
-    action_guest_talk = 9
-    action_bible_note = 10
+    # action_daily_talk = 0
+    # action_bible_pic = 1
+    # action_daily_gw = 2
+    # action_direct_msg = 3
+    # action_daily_pray = 4
+    # action_input_prompt = 5
+    # action_daily_gw_pray = 6
+    # action_search_hymns = 7
+    # action_guest_talk = 9
+    # action_bible_note = 10
+    #
+    # content_type_user = 1
+    # content_type_ai = 2
+    #
+    # status_init = 0
+    # status_pending = 1
+    # status_success = 2
+    # status_del = 3
+    # status_err = 4
+    # status_timeout = 5
+    # status_cancel = 6
 
-    content_type_user = 1
-    content_type_ai = 2
-
-    status_init = 0
-    status_pending = 1
-    status_success = 2
-    status_del = 3
-    status_err = 4
-    status_timeout = 5
-    status_cancel = 6
-
-    explore = [["我想看今天的【每日恩语】", action_daily_gw],
-               ["我想把上面的经文做成“经文图”，分享给身边的弟兄姊妹，一起思想神的话语！", action_bible_pic],
-               ["我记录当下心情或事件后，你会如何帮我整理", action_direct_msg, "对应的答案"]]
+    # explore = [["我想看今天的【每日恩语】", action_daily_gw],
+    #            ["我想把上面的经文做成“经文图”，分享给身边的弟兄姊妹，一起思想神的话语！", action_bible_pic],
+    #            ["我记录当下心情或事件后，你会如何帮我整理", action_direct_msg, "对应的答案"]]
     default_rsp = {
         "view": "你的这个观点很值得探讨。恩语是一个能帮你持续记录每一件感恩小事，圣灵感动，亮光发现等信息的信仰助手，并且我也努力学习圣经，期待能借助上帝的话语来鼓励你，帮助你在信仰之路上，不断看到上帝持续的工作和恩典哦。"
                 "你以上的内容我暂时无法直接找到对应的信仰相关参考，但我已经帮你记录下来了。"
@@ -75,7 +76,7 @@ class MessageService:
         # logging.debug(f"session:{session_owner, session_name}")
         message = Message.query.filter_by(public_id=msg_id, owner_id=owner_id).one()
         if message:
-            message.status = MessageService.status_init
+            message.status = constants.status_init
             message.feedback_text = prompt or ""
             db.session.commit()
             CozeService.chat_with_coze_async(owner_id, message.id)
@@ -91,11 +92,11 @@ class MessageService:
         '''
         message = Message.query.filter_by(public_id=msg_id, owner_id=owner_id).one()
         if message:
-            if content_type == MessageService.content_type_user:
+            if content_type == constants.content_type_user:
                 SessionService.reset_updated_at(message.session_id)
                 message.session_id = -1
-                message.status = MessageService.status_del
-            elif content_type == MessageService.content_type_ai:
+                message.status = constants.status_del
+            elif content_type == constants.content_type_ai:
                 message.feedback_text = ""
             else:
                 return None
@@ -115,8 +116,8 @@ class MessageService:
         :return:
         '''
         message = Message.query.filter_by(public_id=msg_id, owner_id=owner_id).one()
-        if message and message.status != MessageService.status_success:
-            message.status = MessageService.status_cancel
+        if message and message.status != constants.status_success:
+            message.status = constants.status_cancel
             db.session.commit()
             return message.public_id
 
@@ -148,12 +149,12 @@ class MessageService:
             message.created_at = datetime.now(timezone.utc)
             message.created_ts = ts
             message.updated_ts = ts
-            if action == MessageService.action_guest_talk:
-                message.status = MessageService.status_success
+            if action == constants.action_guest_talk:
+                message.status = constants.status_success
             db.session.add(message)
             db.session.commit()
             logging.warning(f"message.id:{message.id},action:{action}")
-            if action != MessageService.action_guest_talk:
+            if action != constants.action_guest_talk:
                 CozeService.chat_with_coze_async(owner_id, message.id)
 
         return message.public_id
@@ -252,12 +253,12 @@ class MessageService:
     @staticmethod
     def get_message(owner_id, msg_id, retry, stop, lang):
         message = Message.query.filter_by(public_id=msg_id, owner_id=owner_id).one()
-        if retry == 1 and message.status not in (MessageService.status_pending, MessageService.status_success):
+        if retry == 1 and message.status not in (constants.status_pending, constants.status_success):
             CozeService.chat_with_coze_async(owner_id, message.id)
-            message.status = MessageService.status_pending
+            message.status = constants.status_pending
 
-        if stop and message.status != MessageService.status_success:
-            message.status = MessageService.status_cancel
+        if stop and message.status != constants.status_success:
+            message.status = constants.status_cancel
             db.session.commit()
         return message
 
