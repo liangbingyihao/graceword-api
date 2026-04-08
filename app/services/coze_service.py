@@ -195,8 +195,8 @@ class CozeService:
                     else:
                         context_content = message.content
                     custom_variables["target"] = "pray"
-                    additional_messages.append(cozepy.Message.build_user_question_text(context_content))
                     CozeService.add_addition_msgs(session,additional_messages, user_id, msg_id, message.lang)
+                    additional_messages.append(cozepy.Message.build_user_question_text(context_content))
                 elif message.action == constants.action_bible_note:
                     custom_variables["target"] = "note"
                     additional_messages.append(cozepy.Message.build_user_question_text(
