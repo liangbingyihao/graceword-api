@@ -135,6 +135,15 @@ class CozeService:
         return result
 
     @staticmethod
+    def add_addition_msgs(session,additional_messages, user_id, msg_id, lang):
+        from models.message import Message
+        messages = session.query(Message).filter_by(owner_id=user_id).filter(Message.id < msg_id).filter(Message.lang == lang).filter(Message.action != constants.action_search_hymns).order_by(desc(Message.id)).limit(5).all()
+        if messages:
+            for m in reversed(messages):
+                additional_messages.append(cozepy.Message.build_user_question_text(m.content))
+                additional_messages.append(cozepy.Message.build_assistant_answer(m.feedback_text))
+
+    @staticmethod
     def chat_with_coze(user_id, msg_id):
         session = None
         from models.message import Message
@@ -151,7 +160,6 @@ class CozeService:
             logger.exception(e)
             return
 
-        from services.message_service import MessageService
         from services.session_service import SessionService
 
         lang = ""
@@ -187,7 +195,8 @@ class CozeService:
                     else:
                         context_content = message.content
                     custom_variables["target"] = "pray"
-                    custom_variables["user_message"] = context_content
+                    additional_messages.append(cozepy.Message.build_user_question_text(context_content))
+                    CozeService.add_addition_msgs(session,additional_messages, user_id, msg_id, message.lang)
                 elif message.action == constants.action_bible_note:
                     custom_variables["target"] = "note"
                     additional_messages.append(cozepy.Message.build_user_question_text(
@@ -345,7 +354,6 @@ class CozeService:
         all_content = ""
         pos = [0, 0, 0, 0]
         topic_name = None
-        from services.message_service import MessageService
         from utils.json_robust import unescape_json_string
         is_search_hymns = ori_msg.action == constants.action_search_hymns
         # is_explore = CozeService.is_explore_msg(ori_msg)
