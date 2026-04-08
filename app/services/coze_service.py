@@ -13,7 +13,11 @@ from services import constants
 
 coze_api_token = os.getenv("COZE_API_TOKEN")
 main_bot_id = os.getenv("COZE_MAIN_BOT_ID")
-gw_coze_host = "https://api-test.grace-word.com"
+env = os.environ.get("ENV", "pro")
+if env=="pro":
+    gw_coze_host = "http://graceword-agent"
+else:
+    gw_coze_host = "https://api-test.grace-word.com"
 from cozepy import Coze, TokenAuth, Message, ChatEventType, COZE_CN_BASE_URL, COZE_COM_BASE_URL, MessageType  # noqa
 
 import logging
