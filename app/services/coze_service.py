@@ -1,7 +1,6 @@
 import json
 import os
 import re
-from ast import literal_eval
 
 import time
 from utils.time_utils import get_utc_timestamp_millis

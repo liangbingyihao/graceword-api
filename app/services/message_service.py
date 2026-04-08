@@ -10,37 +10,11 @@ from models.session import Session
 from services.session_service import SessionService
 from utils.exceptions import AuthError
 from utils.time_utils import get_utc_timestamp_millis
-# from services.coze_service import CozeService
 from services import CozeService
 from services import constants
 
 
 class MessageService:
-    # action_daily_talk = 0
-    # action_bible_pic = 1
-    # action_daily_gw = 2
-    # action_direct_msg = 3
-    # action_daily_pray = 4
-    # action_input_prompt = 5
-    # action_daily_gw_pray = 6
-    # action_search_hymns = 7
-    # action_guest_talk = 9
-    # action_bible_note = 10
-    #
-    # content_type_user = 1
-    # content_type_ai = 2
-    #
-    # status_init = 0
-    # status_pending = 1
-    # status_success = 2
-    # status_del = 3
-    # status_err = 4
-    # status_timeout = 5
-    # status_cancel = 6
-
-    # explore = [["我想看今天的【每日恩语】", action_daily_gw],
-    #            ["我想把上面的经文做成“经文图”，分享给身边的弟兄姊妹，一起思想神的话语！", action_bible_pic],
-    #            ["我记录当下心情或事件后，你会如何帮我整理", action_direct_msg, "对应的答案"]]
     default_rsp = {
         "view": "你的这个观点很值得探讨。恩语是一个能帮你持续记录每一件感恩小事，圣灵感动，亮光发现等信息的信仰助手，并且我也努力学习圣经，期待能借助上帝的话语来鼓励你，帮助你在信仰之路上，不断看到上帝持续的工作和恩典哦。"
                 "你以上的内容我暂时无法直接找到对应的信仰相关参考，但我已经帮你记录下来了。"
@@ -79,7 +53,12 @@ class MessageService:
             message.status = constants.status_init
             message.feedback_text = prompt or ""
             db.session.commit()
-            CozeService.chat_with_coze_async(owner_id, message.id)
+
+            if message.action == constants.action_search_hymns:
+                from services.coze_service import CozeService as cozeService
+                cozeService.chat_with_coze_async(owner_id, message.id)
+            else:
+                CozeService.chat_with_coze_async(owner_id, message.id)
             return message.public_id
 
     @staticmethod
@@ -154,7 +133,10 @@ class MessageService:
             db.session.add(message)
             db.session.commit()
             logging.warning(f"message.id:{message.id},action:{action}")
-            if action != constants.action_guest_talk:
+            if action == constants.action_search_hymns:
+                from services.coze_service import CozeService as cozeService
+                cozeService.chat_with_coze_async(owner_id, message.id)
+            elif action != constants.action_guest_talk:
                 CozeService.chat_with_coze_async(owner_id, message.id)
 
         return message.public_id
