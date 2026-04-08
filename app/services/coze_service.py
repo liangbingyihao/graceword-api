@@ -10,6 +10,7 @@ from sqlalchemy import create_engine, exc, desc, func, not_
 from sqlalchemy.orm import sessionmaker
 from concurrent.futures import ThreadPoolExecutor
 from models.session import Session
+from services import constants
 
 coze_api_token = os.getenv("COZE_API_TOKEN")
 main_bot_id = os.getenv("COZE_MAIN_BOT_ID")
@@ -86,7 +87,7 @@ class CozeService:
     @staticmethod
     def is_explore_msg(message):
         from services.message_service import MessageService
-        return len(message.context_id) > 5 or message.action == MessageService.action_search_hymns or message.action == MessageService.action_bible_note
+        return len(message.context_id) > 5 or message.action == constants.action_search_hymns or message.action == constants.action_bible_note
 
     @staticmethod
     def _fix_ai_response(message, ai_response):
@@ -180,7 +181,7 @@ class CozeService:
                 custom_variables["lang"] = lang
             if is_explore:
                 # 用户探索类型
-                if message.action == MessageService.action_daily_pray:
+                if message.action == constants.action_daily_pray:
                     context_msg = session.query(Message).filter_by(public_id=message.context_id).first()
                     if context_msg:
                         context_content = context_msg.content
@@ -188,13 +189,13 @@ class CozeService:
                         context_content = message.content
                     custom_variables["target"] = "pray"
                     custom_variables["user_message"] = context_content
-                elif message.action == MessageService.action_bible_note:
+                elif message.action == constants.action_bible_note:
                     custom_variables["target"] = "note"
                     additional_messages.append(cozepy.Message.build_user_question_text(
                         "verses:" + message.reply + "\nnote:" + message.content))
                 else:
                     auto_session = [session_qa_name]
-                    custom_variables["target"] = "hymn" if message.action == MessageService.action_search_hymns else "explore"
+                    custom_variables["target"] = "hymn" if message.action == constants.action_search_hymns else "explore"
                     context_msg = session.query(Message).filter_by(public_id=message.context_id).first()
                     user_msg = ""
                     if context_msg:
@@ -228,7 +229,7 @@ class CozeService:
         except Exception as e:
             logger.error("ai.error in ask msg")
             logger.exception(e)
-            message.status = MessageService.status_err
+            message.status = constants.status_err
             # message.feedback_text = str(e)
             CozeService._fix_ai_response(message, None)
             session.commit()
@@ -237,7 +238,7 @@ class CozeService:
         response = ""
 
         def _set_topics(topics):
-            if message.action == MessageService.action_bible_note:
+            if message.action == constants.action_bible_note:
                 return "notes"
 
             if topics and len(topics) > 0:
@@ -269,7 +270,7 @@ class CozeService:
                 return topic
 
         try:
-            message.status = MessageService.status_pending
+            message.status = constants.status_pending
             session.commit()
 
             _set_topics(auto_session)
@@ -277,7 +278,7 @@ class CozeService:
             response = CozeService._chat_with_coze(session, message, user_id, custom_variables, additional_messages,
                                                    _set_topics if not is_explore else None)
 
-            if message.action == MessageService.action_search_hymns:
+            if message.action == constants.action_search_hymns:
                 pass
             else:
                 result = CozeService._extra_ai_response(message, response)
@@ -289,18 +290,18 @@ class CozeService:
                     result["topic"] = topic_name
                 response = json.dumps(result, ensure_ascii=False)
             message.feedback = response
-            message.status = MessageService.status_success
+            message.status = constants.status_success
             session.commit()
         except Exception as e:
             logger.error("ai.error in chat2")
             logger.exception(e)
             if not message.feedback_text:
-                message.status = MessageService.status_err
+                message.status = constants.status_err
                 CozeService._fix_ai_response(message, response)
                 session.commit()
             else:
                 logger.error(f"ai.error in chat and ignore:{message.id}")
-                message.status = MessageService.status_success
+                message.status = constants.status_success
                 session.commit()
             # message.feedback_text = str(e)
 
@@ -347,7 +348,7 @@ class CozeService:
         topic_name = None
         from services.message_service import MessageService
         from utils.json_robust import unescape_json_string
-        is_search_hymns = ori_msg.action == MessageService.action_search_hymns
+        is_search_hymns = ori_msg.action == constants.action_search_hymns
         # is_explore = CozeService.is_explore_msg(ori_msg)
         dst_bot_id = CozeService.hymn_bot_id if is_search_hymns else CozeService.bot_id
         logger.info(f"_chat_with_coze: {user_id, ori_msg.id, custom_variables.get('target')}")
