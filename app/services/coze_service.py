@@ -209,6 +209,9 @@ class CozeService:
                     auto_session = [session_qa_name]
                     custom_variables["target"] = "hymn"
                     custom_variables["user_message"] = message.content
+                    session_lst = session.query(Session).filter_by(owner_id=user_id,
+                                                                   session_name=session_qa_name).order_by(
+                        desc(Session.id)).with_entities(Session.id, Session.session_name).limit(1).all()
                 else:
                     auto_session = [session_qa_name]
                     custom_variables["target"] = "explore"
