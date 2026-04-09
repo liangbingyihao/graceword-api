@@ -205,9 +205,13 @@ class CozeService:
                     custom_variables["target"] = "note"
                     additional_messages.append(cozepy.Message.build_user_question_text(
                         "verses:" + message.reply + "\nnote:" + message.content))
+                elif message.action == constants.action_search_hymns:
+                    auto_session = [session_qa_name]
+                    custom_variables["target"] = "hymn"
+                    custom_variables["user_message"] = message.content
                 else:
                     auto_session = [session_qa_name]
-                    custom_variables["target"] = "hymn" if message.action == constants.action_search_hymns else "explore"
+                    custom_variables["target"] = "explore"
                     context_msg = session.query(Message).filter_by(public_id=message.context_id).first()
                     # user_msg = ""
                     if context_msg:
