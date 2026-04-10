@@ -283,3 +283,11 @@ class MessageService:
             db.session.commit()
             SessionService.reset_updated_at(last_session_id)
             return True
+
+    @staticmethod
+    def set_action(owner_id, msg_id, action):
+        message = Message.query.filter_by(public_id=msg_id, owner_id=owner_id).one()
+        if message:
+            message.action = action
+            db.session.commit()
+            return True
