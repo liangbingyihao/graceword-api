@@ -14,7 +14,7 @@ from services import constants
 coze_api_token = os.getenv("COZE_API_TOKEN")
 main_bot_id = os.getenv("COZE_MAIN_BOT_ID")
 env = os.environ.get("ENV", "pro")
-if env=="pro":
+if env == "pro":
     gw_coze_host = "http://graceword-agent"
 else:
     gw_coze_host = "https://api-test.grace-word.com"
@@ -90,7 +90,8 @@ class CozeService:
     @staticmethod
     def is_explore_msg(message):
         from services.message_service import MessageService
-        return len(message.context_id) > 5 or message.action == constants.action_search_hymns or message.action == constants.action_bible_note
+        return len(
+            message.context_id) > 5 or message.action == constants.action_search_hymns or message.action == constants.action_bible_note
 
     @staticmethod
     def _fix_ai_response(message, ai_response):
@@ -130,7 +131,7 @@ class CozeService:
             # result["view"] = view
             message.feedback_text = view.replace("<bible>", "<u class=\"bible\">").replace("</bible>", "</u>")
         else:
-            raise Exception("view is null:"+response)
+            raise Exception("view is null:" + response)
 
         summary = result.get("summary")
         if summary:
@@ -139,13 +140,44 @@ class CozeService:
         return result
 
     @staticmethod
-    def add_addition_msgs(session,additional_messages, user_id, msg_id, lang):
+    def add_addition_msgs(session, additional_messages, user_id, msg_id, lang):
         from models.message import Message
-        messages = session.query(Message).filter_by(owner_id=user_id).filter(Message.id < msg_id).filter(Message.lang == lang).filter(Message.action != constants.action_search_hymns).order_by(desc(Message.id)).limit(5).all()
+        messages = session.query(Message).filter_by(owner_id=user_id).filter(Message.id < msg_id).filter(
+            Message.lang == lang).filter(Message.action != constants.action_search_hymns).order_by(
+            desc(Message.id)).limit(5).all()
         if messages:
             for m in reversed(messages):
                 additional_messages.append(cozepy.Message.build_user_question_text(m.content))
                 additional_messages.append(cozepy.Message.build_assistant_answer(m.feedback_text))
+
+    @staticmethod
+    def set_msg_sessions(session, message, topic, is_sys_session=False):
+        if not topic:
+            return
+        topic_id = None
+        if not is_sys_session:
+            try:
+                existing_topic = session.query(Session).filter_by(owner_id=message.owner_id,
+                                                               session_name=topic).first()
+                if existing_topic:
+                    # 如果已存在，返回已有的topic.id
+                    topic_id = existing_topic.id
+                    existing_topic.updated_ts = get_utc_timestamp_millis()
+                    session.commit()
+                else:
+                    # 如果不存在，创建新的topic
+                    new_topic = Session(topic, message.owner_id, 0)
+                    session.add(new_topic)
+                    session.commit()
+                    topic_id = new_topic.id
+            except Exception as e:
+                print(f"Error: {e}")
+                topic_id = None
+        if topic_id:
+            message.session_id = topic_id
+            if not message.feedback:
+                message.feedback = json.dumps({"topic": topic}, ensure_ascii=False)
+            session.commit()
 
     @staticmethod
     def chat_with_coze(user_id, msg_id):
@@ -190,59 +222,56 @@ class CozeService:
                 return
             if lang:
                 custom_variables["lang"] = lang
-            if is_explore:
-                # 用户探索类型
-                if message.action == constants.action_daily_pray:
-                    context_msg = session.query(Message).filter_by(public_id=message.context_id).first()
-                    if context_msg:
-                        context_content = context_msg.content
-                    else:
-                        context_content = message.content
-                    custom_variables["target"] = "pray"
-                    CozeService.add_addition_msgs(session,additional_messages, user_id, msg_id, message.lang)
-                    additional_messages.append(cozepy.Message.build_user_question_text(context_content))
-                elif message.action == constants.action_bible_note:
-                    custom_variables["target"] = "note"
-                    additional_messages.append(cozepy.Message.build_user_question_text(
-                        "verses:" + message.reply + "\nnote:" + message.content))
-                elif message.action == constants.action_search_hymns:
-                    auto_session = [session_qa_name]
-                    custom_variables["target"] = "hymn"
-                    custom_variables["user_message"] = message.content
-                    session_lst = session.query(Session).filter_by(owner_id=user_id,
-                                                                   session_name=session_qa_name).order_by(
-                        desc(Session.id)).with_entities(Session.id, Session.session_name).limit(1).all()
-                else:
-                    auto_session = [session_qa_name]
-                    custom_variables["target"] = "explore"
-                    context_msg = session.query(Message).filter_by(public_id=message.context_id).first()
-                    # user_msg = ""
-                    if context_msg:
-                        # user_msg += context_msg.feedback_text
-                        additional_messages.append(cozepy.Message.build_assistant_answer(context_msg.feedback_text))
-                    # user_msg += message.content
-                    additional_messages.append(cozepy.Message.build_user_question_text(message.content))
-                    # custom_variables["user_message"] = user_msg
-                    session_lst = session.query(Session).filter_by(owner_id=user_id,
-                                                                   session_name=session_qa_name).order_by(
-                        desc(Session.id)).with_entities(Session.id, Session.session_name).limit(1).all()
 
-                    # ask_msg = (custom_prompt + message.content) if custom_prompt else msg_explore + message.content
-                # rsp_msg = message
+            # #FIXME 兼容老版本...
+            # session_qa = session.query(Session).filter_by(owner_id=user_id,
+            #                                                session_name=session_qa_name).order_by(
+            #     desc(Session.id)).with_entities(Session.id, Session.session_name).limit(1).all()
+            # if session_qa:
+            #     session_qa = session_qa[0]
+
+            # 用户探索类型
+            if message.action == constants.action_daily_pray:
+                context_msg = session.query(Message).filter_by(public_id=message.context_id).first()
+                if context_msg:
+                    context_content = context_msg.content
+                else:
+                    context_content = message.content
+                custom_variables["target"] = "pray"
+                CozeService.add_addition_msgs(session, additional_messages, user_id, msg_id, message.lang)
+                additional_messages.append(cozepy.Message.build_user_question_text(context_content))
+            elif message.action == constants.action_bible_note:
+                custom_variables["target"] = "note"
+                additional_messages.append(cozepy.Message.build_user_question_text(
+                    "verses:" + message.reply + "\nnote:" + message.content))
+                CozeService.set_msg_sessions(session,message,"notes")
+            elif message.action == constants.action_bible_question:
+                custom_variables["target"] = "note"
+                additional_messages.append(cozepy.Message.build_user_question_text(
+                    "verses:" + message.reply + "\nquestion:" + message.content))
+                CozeService.set_msg_sessions(session,message,session_qa_name)
+            elif message.action == constants.action_search_hymns:
+                # auto_session = [session_qa_name]
+                custom_variables["target"] = "hymn"
+                custom_variables["user_message"] = message.content
+                CozeService.set_msg_sessions(session,message,session_qa_name)
+            elif len(message.context_id) > 5:
+                custom_variables["target"] = "explore"
+                context_msg = session.query(Message).filter_by(public_id=message.context_id).first()
+                # user_msg = ""
+                if context_msg:
+                    # user_msg += context_msg.feedback_text
+                    additional_messages.append(cozepy.Message.build_assistant_answer(context_msg.feedback_text))
+                # user_msg += message.content
+                additional_messages.append(cozepy.Message.build_user_question_text(message.content))
+                CozeService.set_msg_sessions(session,message,session_qa_name)
             else:
                 custom_variables["target"] = "general"
                 session_lst = session.query(Session).filter_by(owner_id=user_id).order_by(
-                    desc(Session.id)).with_entities(Session.id, Session.session_name).limit(100).all()
-                custom_variables["user_topics"] = [session_name for session_id, session_name in session_lst]
-                # ask_msg += message.content
-                messages = session.query(Message).filter_by(owner_id=user_id).filter(Message.id < msg_id).order_by(
-                    desc(Message.id)).limit(5).all()
-                if messages:
-                    latest_lang = message.lang
-                    for m in reversed(messages):
-                        if m.lang == latest_lang:
-                            additional_messages.append(cozepy.Message.build_user_question_text(m.content))
-                            additional_messages.append(cozepy.Message.build_assistant_answer(m.feedback_text))
+                    desc(Session.id)).with_entities(Session.session_name).limit(100).all()
+                session_lst.insert(0,session_qa_name)
+                custom_variables["user_topics"] = session_lst
+                CozeService.add_addition_msgs(session, additional_messages, user_id, msg_id, message.lang)
                 reply = message.reply + "\n" if message.reply else ""
                 additional_messages.append(cozepy.Message.build_user_question_text(reply + message.content))
         except Exception as e:
@@ -408,7 +437,8 @@ class CozeService:
                 if False and is_search_hymns:
                     pass
                 else:
-                    if f_set_topics and not topic_name:
+                    if not topic_name:
+                        user_topics = custom_variables["user_topics"]
                         topics = re.findall(r'"topic\d":\s*"([^"]*)"\s*,', all_content)
                         topic_name = f_set_topics(topics)
 

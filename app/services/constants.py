@@ -8,6 +8,7 @@ action_daily_gw_pray = 6
 action_search_hymns = 7
 action_guest_talk = 9
 action_bible_note = 10
+action_bible_question = 11
 
 content_type_user = 1
 content_type_ai = 2

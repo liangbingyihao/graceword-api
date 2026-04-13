@@ -10,6 +10,7 @@ from extensions import db
 
 class SessionService:
     session_qa = ["信仰问答", "Faith Q&A", "信仰問答"]
+    session_devotion = ["圣经灵修", "Devotion", "聖經靈修"]
 
     @staticmethod
     def init_session(owner_id):
