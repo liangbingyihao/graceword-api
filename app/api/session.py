@@ -16,6 +16,7 @@ session_bp = Blueprint('session', __name__)
 
 BASE_YML_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'session')
 
+
 @session_bp.route('', methods=['POST'])
 # @swag_from({
 #     'tags': ['恩语录'],
@@ -52,18 +53,20 @@ def my_sessions():
     owner_id = get_user_id(request.headers) or get_jwt_identity()
     page = request.args.get('page', default=1, type=int)
     limit = request.args.get('limit', default=10, type=int)
-
-    if page==1:
-        system_sessions = SessionService.get_system_sessions()
-        logging.warning(f"system_sessions:{system_sessions}")
+    version = request.args.get('v', default=1, type=int)
 
     data = SessionService.get_session_by_owner(owner_id, page=page,
                                                limit=limit)
+    sessions = data.items
+    if page == 1 and version == 2:
+        system_sessions = SessionService.get_system_sessions()
+        logging.warning(f"system_sessions:{system_sessions}")
+        sessions = system_sessions + sessions
     return jsonify({
         'success': True,
         # 'data': SessionSchema(many=True).dump(data),
         'data': {
-            'items': SessionSchema(many=True).dump(data.items),
+            'items': SessionSchema(many=True).dump(sessions),
             'total': data.total
         }
     })
@@ -81,7 +84,7 @@ def my_message():
     status = request.args.get('status', default=-1, type=int)
     older_than = request.args.get('older_than', default='', type=int)
 
-    data = MessageService.filter_message(owner_id=owner_id,older_than=older_than,
+    data = MessageService.filter_message(owner_id=owner_id, older_than=older_than,
                                          session_id=session_id, status=status, page=page,
                                          limit=limit, with_ai=False)
     return jsonify({
@@ -90,6 +93,7 @@ def my_message():
             'items': SessionMsgSchema(many=True).dump(data)
         }
     })
+
 
 @session_bp.route('del', methods=['POST'])
 @swag_from(os.path.join(BASE_YML_DIR, 'del.yml'))
