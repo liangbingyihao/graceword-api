@@ -174,7 +174,7 @@ class CozeService:
                 lang = "zh-hans"
 
         session_lst = []
-        session_qa_name = SessionService.session_qa[0]
+        session_qa_name = constants.session_qa[0]
         auto_session = None
         from models.session import Session
         custom_variables = {}
@@ -256,7 +256,7 @@ class CozeService:
                 if not topic and len(topics) > 1:
                     topic = topics[1]
                 if topic:
-                    if topic in SessionService.session_qa:
+                    if topic in constants.session_qa:
                         topic = session_qa_name
                     if not message.session_id:
                         for s_id, s_name in session_lst:

@@ -6,22 +6,15 @@ from sqlalchemy import desc, update, and_
 from models.message import Message
 from models.session import Session
 from extensions import db
+from services import constants
 
 
 class SessionService:
-    session_qa = ["信仰问答", "Faith Q&A", "信仰問答"]
-    session_devotion = ["圣经灵修", "Devotion", "聖經靈修"]
+    system_sessions = []
 
-    @staticmethod
-    def init_session(owner_id):
-        SessionService.new_session(SessionService.session_qa[0], owner_id, 0)
 
     @staticmethod
     def new_session(session_name, owner_id, robot_id):
-
-        # 创建会话
-        # if not session_name:
-        #     session_name = f"{robt_id}_{int(time())}"
         session = Session.query.filter_by(owner_id=owner_id, session_name=session_name).first()
         if session:
             return session
@@ -34,6 +27,13 @@ class SessionService:
     @staticmethod
     def get_session_by_id(session_id):
         return Session.query.get(session_id)
+
+
+    @staticmethod
+    def get_system_sessions():
+        if not SessionService.system_sessions:
+            SessionService.system_sessions = Session.query.filter_by(owner_id=0).order_by(desc(Session.id)).all()
+        return SessionService.system_sessions
 
     @staticmethod
     def get_session_by_owner(owner_id, page, limit):
@@ -57,7 +57,7 @@ class SessionService:
         exits_session = Session.query.filter_by(id=session_id, owner_id=owner_id).first()
 
         if exits_session:
-            if exits_session.session_name == SessionService.session_qa[0]:
+            if exits_session.session_name == constants.session_qa[0]:
                 return
             # 执行删除
             db.session.delete(exits_session)
@@ -80,7 +80,7 @@ class SessionService:
             return
         session = Session.query.filter_by(id=session_id, owner_id=owner_id).first()
         if session:
-            if session.session_name == SessionService.session_qa[0]:
+            if session.session_name == constants.session_qa[0]:
                 return
             session.session_name = session_name
             db.session.commit()

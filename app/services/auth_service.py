@@ -22,9 +22,6 @@ class AuthService:
         db.session.add(user)
         db.session.commit()
 
-        from services.session_service import SessionService
-        SessionService.init_session(user.id)
-
         return user
 
     @staticmethod
@@ -71,8 +68,6 @@ class AuthService:
 
             db.session.add(user)
             db.session.commit()
-            from services.session_service import SessionService
-            SessionService.init_session(user.id)
         elif fcm_token:
             user.fcm_token = fcm_token
             user.updated_at = datetime.now()

@@ -53,6 +53,10 @@ def my_sessions():
     page = request.args.get('page', default=1, type=int)
     limit = request.args.get('limit', default=10, type=int)
 
+    if page==1:
+        system_sessions = SessionService.get_system_sessions()
+        logging.warning(f"system_sessions:{system_sessions}")
+
     data = SessionService.get_session_by_owner(owner_id, page=page,
                                                limit=limit)
     return jsonify({

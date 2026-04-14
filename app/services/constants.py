@@ -20,3 +20,6 @@ status_del = 3
 status_err = 4
 status_timeout = 5
 status_cancel = 6
+
+session_qa = ["信仰问答", "Faith Q&A", "信仰問答"]
+session_devotion = ["圣经灵修", "Devotion", "聖經靈修"]
