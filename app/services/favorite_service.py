@@ -10,6 +10,7 @@ from extensions import db
 from models.session import Session
 from services.message_service import MessageService
 from services.session_service import SessionService
+from services import constants
 from utils.exceptions import AuthError
 
 
@@ -27,10 +28,10 @@ class FavoriteService:
         # logging.debug(f"session:{session_owner, session_name}")
         message = Message.query.filter_by(public_id=message_id, owner_id=owner_id).one()
         if message:
-            if content_type == MessageService.content_type_ai:
+            if content_type == constants.content_type_ai:
                 content = message.feedback_text
             else:
-                content_type = MessageService.content_type_user
+                content_type = constants.content_type_user
                 content = message.content
 
             favorite = Favorites(owner_id, message_id, content_type, content)
