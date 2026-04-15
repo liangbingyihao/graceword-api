@@ -62,13 +62,13 @@ class FavoriteService:
                 message = Message.query.filter_by(public_id=message_id, owner_id=owner_id).one()
                 if message:
                     session_name = ""
-                    if content_type == MessageService.content_type_ai:
-                        if message.action == MessageService.action_search_hymns:
+                    if content_type == constants.content_type_ai:
+                        if message.action == constants.action_search_hymns:
                             content = message.feedback
                         else:
                             content = message.feedback_text
                     else:
-                        content_type = MessageService.content_type_user
+                        content_type = constants.content_type_user
                         content = message.content
                         session = Session.query.filter_by(id=message.session_id).first()
                         if session:
