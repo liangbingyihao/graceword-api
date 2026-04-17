@@ -257,7 +257,7 @@ class CozeService:
                 additional_messages.append(cozepy.Message.build_user_question_text(
                     "verses:" + message.reply + "\nnote:" + message.content))
                 # CozeService.set_msg_sessions(session, message, "notes")
-            elif message.action == constants.action_bible_question:
+            elif message.action == constants.action_bible_question or message.action == constants.action_bible_question_note:
                 custom_variables["target"] = "note"
                 additional_messages.append(cozepy.Message.build_user_question_text(
                     "verses:" + message.reply + "\nquestion:" + message.content))

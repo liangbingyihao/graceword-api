@@ -9,6 +9,7 @@ action_search_hymns = 7
 action_guest_talk = 9
 action_bible_note = 10
 action_bible_question = 11
+action_bible_question_note = 12
 
 content_type_user = 1
 content_type_ai = 2
