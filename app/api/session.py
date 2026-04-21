@@ -58,7 +58,7 @@ def my_sessions():
     data = SessionService.get_session_by_owner(owner_id, page=page,
                                                limit=limit)
     sessions = data.items
-    if page == 1 and version == 2:
+    if page == 1:
         system_sessions = SessionService.get_system_sessions()
         logging.warning(f"system_sessions:{system_sessions}")
         sessions = system_sessions + sessions
