@@ -233,7 +233,7 @@ class CozeService:
         from models.session import Session
         custom_variables = {}
         additional_messages = []
-        is_explore = CozeService.is_explore_msg(message)
+        # is_explore = CozeService.is_explore_msg(message)
         try:
             if message.content == "test":
                 raise Exception("test error")
