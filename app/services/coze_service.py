@@ -234,6 +234,7 @@ class CozeService:
         custom_variables = {}
         additional_messages = []
         # is_explore = CozeService.is_explore_msg(message)
+        topic_name = None
         try:
             if message.content == "test":
                 raise Exception("test error")
@@ -261,11 +262,13 @@ class CozeService:
                 custom_variables["target"] = "note"
                 additional_messages.append(cozepy.Message.build_user_question_text(
                     "verses:" + message.reply + "\nquestion:" + message.content))
+                topic_name = session_qa_name
                 CozeService.set_msg_sessions(session, message, session_qa_name)
             elif message.action == constants.action_search_hymns:
                 # auto_session = [session_qa_name]
                 custom_variables["target"] = "hymn"
                 custom_variables["user_message"] = message.content
+                topic_name = session_qa_name
                 CozeService.set_msg_sessions(session, message, session_qa_name)
             elif len(message.context_id) > 5:
                 custom_variables["target"] = "explore"
@@ -276,6 +279,7 @@ class CozeService:
                     additional_messages.append(cozepy.Message.build_assistant_answer(context_msg.feedback_text))
                 # user_msg += message.content
                 additional_messages.append(cozepy.Message.build_user_question_text(message.content))
+                topic_name = session_qa_name
                 CozeService.set_msg_sessions(session, message, session_qa_name)
             else:
                 custom_variables["target"] = "general"
@@ -297,38 +301,6 @@ class CozeService:
 
         response = ""
 
-        def _set_topics(topics):
-            if message.action == constants.action_bible_note:
-                return "notes"
-
-            if topics and len(topics) > 0:
-                topic = topics[0]
-                if not topic and len(topics) > 1:
-                    topic = topics[1]
-                if topic:
-                    if topic in SessionService.session_qa:
-                        topic = session_qa_name
-                    if not message.session_id:
-                        for s_id, s_name in session_lst:
-                            if topic == s_name:
-                                message.session_id = s_id
-                                if not message.feedback:
-                                    message.feedback = json.dumps({"topic": topic}, ensure_ascii=False)
-                                session.query(Session).filter_by(id=s_id).update({
-                                    "updated_ts": get_utc_timestamp_millis()
-                                })
-                                session.commit()
-                                break
-                        if not message.session_id and topic:
-                            new_session = Session(topic, user_id, 0)
-                            session.add(new_session)
-                            session.commit()
-                            message.session_id = new_session.id
-                            if not message.feedback:
-                                message.feedback = json.dumps({"topic": topic}, ensure_ascii=False)
-                            session.commit()
-                return topic
-
         try:
             message.status = constants.status_pending
             session.commit()
@@ -338,12 +310,15 @@ class CozeService:
             response = CozeService._chat_with_coze(session, message, user_id, custom_variables, additional_messages)
 
             if message.action == constants.action_search_hymns:
-                pass
+                if topic_name:
+                    response["topic"] = topic_name
+                response = json.dumps(response, ensure_ascii=False)
             else:
                 result = CozeService._extra_ai_response(message, response)
-                topic_name = result.get("topic1") or result.get("topic2")
-                if message.session_id<=0 and topic_name:
-                    topic_name = CozeService.set_msg_sessions(session, message, topic_name)
+                if not topic_name:
+                    topic_name = result.get("topic1") or result.get("topic2")
+                    if message.session_id<=0 and topic_name:
+                        topic_name = CozeService.set_msg_sessions(session, message, topic_name)
                 if topic_name:
                     result["topic"] = topic_name
                 response = json.dumps(result, ensure_ascii=False)
@@ -361,11 +336,9 @@ class CozeService:
                 logger.error(f"ai.error in chat and ignore:{message.id}")
                 message.status = constants.status_success
                 session.commit()
-            # message.feedback_text = str(e)
-
-        # finally:
-        #     if session:
-        #         session.close()  # 重要！清理会话
+        finally:
+            if session:
+                session.close()  # 重要！清理会话
 
     @staticmethod
     def create_conversations():
@@ -419,14 +392,14 @@ class CozeService:
         from cozepy.request import Requester
         chat = bots.ChatClient(gw_coze_host, Requester())
         if is_search_hymns:
-            hymns = chat.hymns(
-                custom_variables=custom_variables)
-            if hymns:
-                try:
-                    return json.dumps(hymns.__dict__, ensure_ascii=False)
-                except Exception as e:
-                    logger.exception(e)
-            return
+            hymns = chat.hymns(custom_variables=custom_variables)
+            return hymns.__dict__
+            # if hymns:
+            #     try:
+            #         return json.dumps(hymns.__dict__, ensure_ascii=False)
+            #     except Exception as e:
+            #         logger.exception(e)
+            # return
         for event in chat.stream(
                 bot_id=dst_bot_id,
                 user_id=str(user_id),
