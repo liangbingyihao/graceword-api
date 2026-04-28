@@ -90,7 +90,7 @@ class SessionService:
     def get_session(owner_id, session_id):
         if not session_id or session_id <= 0:
             return
-        session = Session.query.filter_by(id=session_id, owner_id=owner_id).one_or_none()
+        session = Session.query.filter_by(id=session_id, owner_id=owner_id).first()
         if not session:
-            session = Session.query.filter_by(id=session_id, owner_id=0).one()
+            session = Session.query.filter_by(id=session_id, owner_id=0).first()
         return session

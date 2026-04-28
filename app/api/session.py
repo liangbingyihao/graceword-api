@@ -130,7 +130,7 @@ def session_detail(session_id):
     owner_id = get_user_id(request.headers) or get_jwt_identity()
     session = SessionService.get_session(owner_id, session_id)
     if not session:
-        return jsonify({"msg": "session_name max length is 20"}), 404
+        return jsonify({"msg": "session not exits"}), 404
     return jsonify({
         'success': True,
         'data': SessionSchema().dump(session)
