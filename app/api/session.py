@@ -133,5 +133,5 @@ def session_detail(session_id):
         return jsonify({"msg": "session_name max length is 20"}), 404
     return jsonify({
         'success': True,
-        'data': SessionMsgSchema().dump(session)
+        'data': SessionSchema().dump(session)
     })
