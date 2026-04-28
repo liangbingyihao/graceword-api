@@ -53,14 +53,12 @@ def my_sessions():
     owner_id = get_user_id(request.headers) or get_jwt_identity()
     page = request.args.get('page', default=1, type=int)
     limit = request.args.get('limit', default=10, type=int)
-    version = request.args.get('v', default=1, type=int)
 
     data = SessionService.get_session_by_owner(owner_id, page=page,
                                                limit=limit)
     sessions = data.items
     if page == 1:
         system_sessions = SessionService.get_system_sessions()
-        logging.warning(f"system_sessions:{system_sessions}")
         sessions = system_sessions + sessions
     return jsonify({
         'success': True,
@@ -109,7 +107,7 @@ def del_session():
     }), 201
 
 
-# 带msg_id参数的路由
+# 带session_id参数的路由
 @session_bp.route('/<int:session_id>', methods=['POST'])
 @swag_from(os.path.join(BASE_YML_DIR, 'set_name.yml'))
 @jwt_required()
@@ -118,8 +116,22 @@ def set_topic(session_id):
     session_name = data.get('session_name')
     owner_id = get_user_id(request.headers) or get_jwt_identity()
     if session_name and len(session_name) > 20:
-        return jsonify({"error": "session_name max length is 20"}), 400
+        return jsonify({"msg": "session_name max length is 20"}), 400
     ret = SessionService.set_session_name(owner_id, session_id, session_name)
     return jsonify({
         'success': ret
+    })
+
+# 带session_id参数的路由
+@session_bp.route('/<int:session_id>', methods=['GET'])
+@swag_from(os.path.join(BASE_YML_DIR, 'detail.yml'))
+@jwt_required()
+def session_detail(session_id):
+    owner_id = get_user_id(request.headers) or get_jwt_identity()
+    session = SessionService.get_session(owner_id, session_id)
+    if not session:
+        return jsonify({"msg": "session_name max length is 20"}), 404
+    return jsonify({
+        'success': True,
+        'data': SessionMsgSchema().dump(session)
     })

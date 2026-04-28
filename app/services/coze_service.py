@@ -305,8 +305,6 @@ class CozeService:
             message.status = constants.status_pending
             session.commit()
 
-            # _set_topics(auto_session)
-            # ask_msg = msg_json + ask_msg
             response = CozeService._chat_with_coze(session, message, user_id, custom_variables, additional_messages)
 
             if message.action == constants.action_search_hymns:

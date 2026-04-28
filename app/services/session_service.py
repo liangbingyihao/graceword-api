@@ -85,3 +85,12 @@ class SessionService:
             session.session_name = session_name
             db.session.commit()
             return True
+
+    @staticmethod
+    def get_session(owner_id, session_id):
+        if not session_id or session_id <= 0:
+            return
+        session = Session.query.filter_by(id=session_id, owner_id=owner_id).one()
+        if not session:
+            session = Session.query.filter_by(id=session_id, owner_id=0).one()
+        return session
