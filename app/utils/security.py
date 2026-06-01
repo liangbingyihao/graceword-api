@@ -32,6 +32,23 @@ def get_user_id(headers):
     if token:
         return user_id
 
+def parse_version(version: str):
+    """
+    将版本号转为元组，便于比较
+    非法数字段自动视为 0
+    例：
+        1.0.5     -> (1, 0, 5)
+        1.2       -> (1, 2, 0)
+        1.x.3     -> (1, 0, 3)
+        a.b.c     -> (0, 0, 0)
+    """
+    def safe_int(value):
+        try:
+            return int(value)
+        except (ValueError, TypeError):
+            return 0
+
+    return tuple(safe_int(part) for part in version.split("."))
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 

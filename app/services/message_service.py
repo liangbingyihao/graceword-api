@@ -101,8 +101,9 @@ class MessageService:
             return message.public_id
 
     @staticmethod
-    def new_message(owner_id, content, context_id, action, prompt, reply, lang):
+    def new_message(owner_id, content, context_id, action, prompt, reply, lang,auto_rsp):
         '''
+        :param auto_rsp:
         :param lang:
         :param reply:
         :param action:
@@ -128,15 +129,17 @@ class MessageService:
             message.created_at = datetime.now(timezone.utc)
             message.created_ts = ts
             message.updated_ts = ts
-            if action == constants.action_guest_talk:
+            if action == constants.action_guest_talk or auto_rsp:
                 message.status = constants.status_success
+            if auto_rsp:
+                message.feedback_text = auto_rsp
             db.session.add(message)
             db.session.commit()
             logging.warning(f"message.id:{message.id},action:{action}")
             if action == constants.action_search_hymns:
                 from services.coze_service import CozeService as cozeService
                 cozeService.chat_with_coze_async(owner_id, message.id)
-            elif action != constants.action_guest_talk:
+            elif action != constants.action_guest_talk and auto_rsp is not None:
                 CozeService.chat_with_coze_async(owner_id, message.id)
 
         return message.public_id
