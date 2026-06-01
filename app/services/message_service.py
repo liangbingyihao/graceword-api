@@ -110,7 +110,7 @@ class MessageService:
     def get_auto_rsp(bundle_id,app_version,lang):
         if bundle_id=="com.graceword.ios":
             if parse_version(app_version)<(1,0,7):
-                return "请[升级](https://apps.apple.com/us/app/grace-word-bible-ai-journal/id6758707628)后继续使用"
+                return "[Upgrade required to continue.] (https://apps.apple.com/us/app/grace-word-bible-ai-journal/id6758707628)"
 
 
     @staticmethod
