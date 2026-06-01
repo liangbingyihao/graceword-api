@@ -13,7 +13,6 @@ from services.favorite_service import FavoriteService
 from services.message_service import MessageService
 from services.search_service import SearchService
 from utils.security import get_user_id
-from utils.security import parse_version
 
 message_bp = Blueprint('message', __name__)
 BASE_YML_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'message')
@@ -38,18 +37,13 @@ def add():
 
     bundle_id = request.headers.get("X-Bundle-ID")
     app_version = request.headers.get("X-App-Version")
-    auto_rsp = None
-    if bundle_id=="com.graceword.ios":
-        if parse_version(app_version)<(1,0,6):
-            auto_rsp = "请升级后继续使用"
-
 
     # session_id = data.get("session_id")
 
     if not content:
         return jsonify({"msg": "Missing required parameter 'content'"}), 400
 
-    message_id = MessageService.new_message(owner_id, content, context_id, action, prompt, reply, lang,auto_rsp)
+    message_id = MessageService.new_message(owner_id, content, context_id, action, prompt, reply, lang,bundle_id,app_version)
     return jsonify({
         'success': True,
         'data': {"id": message_id}
@@ -64,9 +58,17 @@ def renew():
     prompt = data.get("prompt")
     msg_id = data.get("message_id")
     logging.warning(f"renew message:{msg_id}")
-    # session_id = data.get("session_id")
 
-    message_id = MessageService.renew(owner_id, msg_id, prompt)
+    lang = request.headers.get("X-Language") or request.headers.get("x-language")
+    if not lang:
+        lang = request.args.get('lang', default="zh-hant", type=str)
+    else:
+        logging.warning(f"add msg lang:{lang}")
+
+    bundle_id = request.headers.get("X-Bundle-ID")
+    app_version = request.headers.get("X-App-Version")
+
+    message_id = MessageService.renew(owner_id, msg_id, prompt,lang,bundle_id,app_version)
     return jsonify({
         'success': message_id == msg_id,
         'data': {"id": message_id}

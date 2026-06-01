@@ -12,6 +12,7 @@ from utils.exceptions import AuthError
 from utils.time_utils import get_utc_timestamp_millis
 from services import CozeService
 from services import constants
+from utils.security import parse_version
 
 
 class MessageService:
@@ -39,7 +40,7 @@ class MessageService:
         return session
 
     @staticmethod
-    def renew(owner_id, msg_id, prompt):
+    def renew(owner_id, msg_id, prompt, lang,bundle_id,app_version):
         '''
         :param msg_id:
         :param prompt:
@@ -48,16 +49,19 @@ class MessageService:
         '''
         # session_owner, session_name, conversation_id = MessageService.check_permission(session_id, owner_id)
         # logging.debug(f"session:{session_owner, session_name}")
+        auto_rsp = MessageService.get_auto_rsp(bundle_id,app_version,lang)
         message = Message.query.filter_by(public_id=msg_id, owner_id=owner_id).one()
         if message:
-            message.status = constants.status_init
-            message.feedback_text = prompt or ""
+            if auto_rsp:
+                message.feedback_text = auto_rsp
+            else:
+                message.status = constants.status_init
             db.session.commit()
 
             if message.action == constants.action_search_hymns:
                 from services.coze_service import CozeService as cozeService
                 cozeService.chat_with_coze_async(owner_id, message.id)
-            else:
+            elif auto_rsp is None:
                 CozeService.chat_with_coze_async(owner_id, message.id)
             return message.public_id
 
@@ -100,8 +104,16 @@ class MessageService:
             db.session.commit()
             return message.public_id
 
+
     @staticmethod
-    def new_message(owner_id, content, context_id, action, prompt, reply, lang,auto_rsp):
+    def get_auto_rsp(bundle_id,app_version,lang):
+        if bundle_id=="com.graceword.ios":
+            if parse_version(app_version)<(1,0,7):
+                return "请[升级](https://apps.apple.com/us/app/grace-word-bible-ai-journal/id6758707628)后继续使用"
+
+
+    @staticmethod
+    def new_message(owner_id, content, context_id, action, prompt, reply, lang,bundle_id,app_version):
         '''
         :param auto_rsp:
         :param lang:
@@ -115,6 +127,8 @@ class MessageService:
         '''
         # session_owner, session_name, conversation_id = MessageService.check_permission(session_id, owner_id)
         # logging.debug(f"session:{session_owner, session_name}")
+        auto_rsp = MessageService.get_auto_rsp(bundle_id,app_version,lang)
+
         message = None
         if content:
             if prompt:
@@ -139,7 +153,7 @@ class MessageService:
             if action == constants.action_search_hymns:
                 from services.coze_service import CozeService as cozeService
                 cozeService.chat_with_coze_async(owner_id, message.id)
-            elif action != constants.action_guest_talk and auto_rsp is not None:
+            elif action != constants.action_guest_talk and auto_rsp is None:
                 CozeService.chat_with_coze_async(owner_id, message.id)
 
         return message.public_id
