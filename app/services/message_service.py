@@ -56,6 +56,7 @@ class MessageService:
                 message.feedback_text = auto_rsp
             else:
                 message.status = constants.status_init
+                message.feedback_text = ""
             db.session.commit()
 
             if message.action == constants.action_search_hymns:
