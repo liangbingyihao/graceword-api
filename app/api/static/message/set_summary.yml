@@ -2,9 +2,10 @@ tags:
   - message
 summary: "设置消息摘要或所属会话等..."
 description: |
-  设置消息的摘要，并可选择更新消息所属的会话。
+  设置消息的摘要，并可选择更新消息所属的会话action等。
   
   注意：
+  0. 提供action，只修改action。用于action=11,12状态下互转（- 11: 圣经提问，- 12: 圣经提问，并且收录到读经笔记）
   1. 摘要长度不能超过120个字符
   2. 可以同时更新摘要和消息所属的会话
   3. 如果提供 session_name，会创建新会话并将消息移动到新会话
@@ -27,6 +28,10 @@ requestBody:
       schema:
         type: object
         properties:
+          action:
+            type: "integer"
+            description: "- 11: 圣经提问，- 12: 圣经提问，并且收录到读经笔记 "
+            example: 12
           summary:
             type: "string"
             description: "消息摘要，最大长度120字符"
