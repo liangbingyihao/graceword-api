@@ -1,0 +1,386 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "early-ministry",
+  "story": {
+    "zh-Hant": {
+      "id": "early-ministry",
+      "title": "受洗與早期事工",
+      "intro": "從約旦河受洗到呼召第一批門徒，看見耶穌公開事工的起點。",
+      "outro": "天國近了，你們應當悔改。",
+      "era": "nt",
+      "section": "jesus-life",
+      "themes": [
+        "miracle",
+        "people"
+      ],
+      "order": 3,
+      "questionIds": [
+        "baptism",
+        "temptation",
+        "calling_peter"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "baptism",
+      "coverImage": "/images/baptism.jpg",
+      "coverTitle": "基督受洗"
+    },
+    "en": {
+      "id": "early-ministry",
+      "title": "Baptism & Early Ministry",
+      "intro": "From the Jordan River to the calling of the first disciples, the beginning of Jesus' public ministry.",
+      "outro": "The kingdom of heaven is at hand. Repent.",
+      "era": "nt",
+      "section": "jesus-life",
+      "themes": [
+        "miracle",
+        "people"
+      ],
+      "order": 3,
+      "questionIds": [
+        "baptism",
+        "temptation",
+        "calling_peter"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "baptism",
+      "coverImage": "/images/baptism.jpg",
+      "coverTitle": "The Baptism of Christ"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "baptism",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "耶穌受洗",
+        "options": [
+          "耶穌受洗",
+          "耶穌受試探",
+          "迦拿婚宴水變酒",
+          "平靜風浪"
+        ],
+        "hints": [
+          "有人在河水中施洗。",
+          "天空有聖靈如鴿子降下。",
+          "施洗者約翰在場。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 3,
+          "verse": "13-17"
+        },
+        "event": {
+          "year": 27,
+          "tolerance": 6,
+          "locationId": "jordan_river",
+          "placeName": "約旦河",
+          "lat": 31.8375,
+          "lng": 35.535
+        },
+        "image": {
+          "src": "/images/baptism.jpg",
+          "title": "基督受洗",
+          "artist": "Jan van Scorel",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jan_van_Scorel_-_The_Baptism_of_Christ_-_WGA21079.jpg"
+        },
+        "summary": "耶穌在約旦河受約翰的洗，天開了，聖靈如鴿子降下，天上有聲音說：「這是我的愛子。」",
+        "artNote": "Jan van Scorel 以義大利式風景描繪約旦河洗禮，天使與鴿子點出三位一體的啟示。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 3:16",
+            "text": "耶穌受了洗，隨即從水裡上來。天忽然為他開了，他就看見神的靈彷彿鴿子降下，落在他身上。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 3:17",
+          "text": "從天上有聲音說：「這是我的愛子，我所喜悅的。」"
+        },
+        "storyId": "early-ministry",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Qasr al-Yahud（傳統地點）",
+        "geoNote": "傳統認為耶穌受洗處在耶利哥附近的約旦河，今 Qasr al-Yahud 一帶。"
+      },
+      {
+        "id": "temptation",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "耶穌受試探",
+        "options": [
+          "耶穌受試探",
+          "耶穌受洗",
+          "客西馬尼園的禱告",
+          "耶穌受難"
+        ],
+        "hints": [
+          "荒涼的曠野中只有兩個身影。",
+          "其中一位帶著試探的誘惑。",
+          "耶穌引用經文抵擋誘惑。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 4,
+          "verse": "1-11"
+        },
+        "event": {
+          "year": 27,
+          "tolerance": 6,
+          "locationId": "judea",
+          "placeName": "猶大曠野",
+          "lat": 31.874,
+          "lng": 35.434
+        },
+        "image": {
+          "src": "/images/temptation.jpg",
+          "title": "基督受試探",
+          "artist": "Titian",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Titian_(Tiziano_Vecelli)_-_The_Temptation_of_Christ_-_25.30_-_Minneapolis_Institute_of_Arts.jpg"
+        },
+        "summary": "耶穌在曠野禁食四十晝夜，魔鬼三次試探他，他皆以神的話語勝過。",
+        "artNote": "Titian 以昏暗曠野與對比的兩個身影，呈現試探的張力。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 4:4",
+            "text": "耶穌卻回答說：「經上記著說：人活著，不是單靠食物，乃是靠神口裡所出的一切話。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 4:10",
+          "text": "耶穌說：「撒但（就是抵擋的意思，乃魔鬼的別名），退去吧！因為經上記著說：當拜主－你的神，單要事奉他。」"
+        },
+        "storyId": "early-ministry",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Mount of Temptation（傳統地點）",
+        "geoNote": "猶大曠野位於耶路撒冷與耶利哥之間；傳統將試探山與耶利哥附近的 Mount of Temptation 聯繫。"
+      },
+      {
+        "id": "calling_peter",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "耶穌呼召彼得與安得烈",
+        "options": [
+          "耶穌呼召彼得與安得烈",
+          "耶穌平靜風浪",
+          "耶穌在水面行走",
+          "耶穌升天"
+        ],
+        "hints": [
+          "兩兄弟正在湖邊撒網。",
+          "耶穌應許他們要得人如得魚。",
+          "這是加利利海邊的呼召。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 4,
+          "verse": "18-20"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "sea_of_galilee",
+          "placeName": "加利利海",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/calling_peter.jpg",
+          "title": "呼召彼得與安得烈",
+          "artist": "Duccio di Buoninsegna",
+          "license": "CC0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Duccio_di_Buoninsegna,_The_Calling_of_the_Apostles_Peter_and_Andrew,_1308-1311,_NGA_282.jpg"
+        },
+        "summary": "耶穌在加利利海邊看見打魚的彼得與安得烈，呼召他們跟從他，應許使他們得人如得魚。",
+        "artNote": "Duccio 以金色背景與簡潔人物，保留拜占庭聖像畫的莊嚴感。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 4:19",
+            "text": "耶穌對他們說：「來跟從我，我要叫你們得人如得魚一樣。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 4:20",
+          "text": "他們就立刻捨了網，跟從了他。"
+        },
+        "storyId": "early-ministry",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "Sea of Galilee / Lake Kinneret",
+        "geoNote": "加利利海又稱提比哩亞海或基尼烈湖；今為以色列最大的淡水湖。"
+      }
+    ],
+    "en": [
+      {
+        "id": "baptism",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Baptism of Jesus",
+        "options": [
+          "The Baptism of Jesus",
+          "The Temptation of Jesus",
+          "The Wedding at Cana",
+          "Calming the Storm"
+        ],
+        "hints": [
+          "Someone is baptizing in the river.",
+          "The Spirit descends like a dove.",
+          "John the Baptist is present."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 3,
+          "verse": "13-17"
+        },
+        "event": {
+          "year": 27,
+          "tolerance": 6,
+          "locationId": "jordan_river",
+          "placeName": "Jordan River",
+          "lat": 31.8375,
+          "lng": 35.535
+        },
+        "image": {
+          "src": "/images/baptism.jpg",
+          "title": "The Baptism of Christ",
+          "artist": "Jan van Scorel",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jan_van_Scorel_-_The_Baptism_of_Christ_-_WGA21079.jpg"
+        },
+        "summary": "Jesus is baptized by John in the Jordan; the heavens open, the Spirit descends like a dove, and a voice says, “This is my beloved Son.”",
+        "artNote": "Jan van Scorel sets the Jordan baptism in an Italianate landscape; the angels and dove point to the Trinity.",
+        "verseHints": [
+          {
+            "ref": "Matthew 3:16",
+            "text": "Jesus, when he was baptized, went up directly from the water: and behold, the heavens were opened to him. He saw the Spirit of God descending as a dove, and coming on him."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 3:17",
+          "text": "Behold, a voice out of the heavens said, “This is my beloved Son, with whom I am well pleased.”"
+        },
+        "storyId": "early-ministry",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Qasr al-Yahud (traditional site)",
+        "geoNote": "Tradition places Jesus' baptism in the Jordan near Jericho, around Qasr al-Yahud."
+      },
+      {
+        "id": "temptation",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Temptation of Jesus",
+        "options": [
+          "The Temptation of Jesus",
+          "The Baptism of Jesus",
+          "The Agony in the Garden",
+          "The Passion"
+        ],
+        "hints": [
+          "Only two figures are in the wilderness.",
+          "One of them is tempting the other.",
+          "Jesus answers with Scripture."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 4,
+          "verse": "1-11"
+        },
+        "event": {
+          "year": 27,
+          "tolerance": 6,
+          "locationId": "judea",
+          "placeName": "Judean Wilderness",
+          "lat": 31.874,
+          "lng": 35.434
+        },
+        "image": {
+          "src": "/images/temptation.jpg",
+          "title": "The Temptation of Christ",
+          "artist": "Titian",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Titian_(Tiziano_Vecelli)_-_The_Temptation_of_Christ_-_25.30_-_Minneapolis_Institute_of_Arts.jpg"
+        },
+        "summary": "After fasting forty days in the wilderness, Jesus is tempted three times by the devil and overcomes each temptation with God's word.",
+        "artNote": "Titian uses a dark wilderness and two contrasting figures to heighten the tension of temptation.",
+        "verseHints": [
+          {
+            "ref": "Matthew 4:4",
+            "text": "But he answered, “It is written, ‘Man shall not live by bread alone, but by every word that proceeds out of the mouth of God.’”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 4:10",
+          "text": "Then Jesus said to him, “Get behind me,Satan! For it is written, ‘You shall worship the Lord your God, and you shall serve him only.’”"
+        },
+        "storyId": "early-ministry",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Mount of Temptation (traditional site)",
+        "geoNote": "The Judean wilderness lies between Jerusalem and Jericho; tradition identifies the Mount of Temptation near Jericho."
+      },
+      {
+        "id": "calling_peter",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Calling of Peter and Andrew",
+        "options": [
+          "The Calling of Peter and Andrew",
+          "Calming the Storm",
+          "Jesus Walks on Water",
+          "The Ascension"
+        ],
+        "hints": [
+          "Two brothers are casting nets by the lake.",
+          "Jesus promises to make them fishers of men.",
+          "This call happens by the Sea of Galilee."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 4,
+          "verse": "18-20"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "sea_of_galilee",
+          "placeName": "Sea of Galilee",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/calling_peter.jpg",
+          "title": "The Calling of the Apostles Peter and Andrew",
+          "artist": "Duccio di Buoninsegna",
+          "license": "CC0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Duccio_di_Buoninsegna,_The_Calling_of_the_Apostles_Peter_and_Andrew,_1308-1311,_NGA_282.jpg"
+        },
+        "summary": "By the Sea of Galilee, Jesus calls the fishermen Peter and Andrew to follow him, promising to make them fishers of men.",
+        "artNote": "Duccio keeps a gold ground and simplified figures, preserving the solemnity of Byzantine icon painting.",
+        "verseHints": [
+          {
+            "ref": "Matthew 4:19",
+            "text": "He said to them, “Come after me, and I will make you fishers for men.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 4:20",
+          "text": "They immediately left their nets and followed him."
+        },
+        "storyId": "early-ministry",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Sea of Galilee / Lake Kinneret",
+        "geoNote": "The Sea of Galilee is also called the Sea of Tiberias or Lake Kinneret; it is Israel's largest freshwater lake."
+      }
+    ]
+  }
+}

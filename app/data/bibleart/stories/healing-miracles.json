@@ -1,0 +1,388 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "healing-miracles",
+  "story": {
+    "zh-Hant": {
+      "id": "healing-miracles",
+      "title": "醫治的神蹟",
+      "intro": "癱子、睚魯的女兒與十個麻風病人，看見耶穌的權柄與憐憫。",
+      "outro": "你的信救了你。",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "miracle",
+        "people"
+      ],
+      "order": 9,
+      "questionIds": [
+        "paralytic_roof",
+        "jairus_daughter",
+        "ten_lepers"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "paralytic_roof",
+      "coverImage": "/images/paralytic_roof.jpg",
+      "coverTitle": "癱子從屋頂縋下"
+    },
+    "en": {
+      "id": "healing-miracles",
+      "title": "Healing Miracles",
+      "intro": "The paralytic, Jairus' daughter, and the ten lepers show Jesus' authority and compassion.",
+      "outro": "Your faith has saved you.",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "miracle",
+        "people"
+      ],
+      "order": 9,
+      "questionIds": [
+        "paralytic_roof",
+        "jairus_daughter",
+        "ten_lepers"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "paralytic_roof",
+      "coverImage": "/images/paralytic_roof.jpg",
+      "coverTitle": "The Healing of the Paralytic"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "paralytic_roof",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "癱子從屋頂縋下",
+        "options": [
+          "癱子從屋頂縋下",
+          "血漏婦人得醫治",
+          "瞎子巴底買",
+          "十個麻風病人"
+        ],
+        "hints": [
+          "一群人拆開屋頂。",
+          "他們把癱子縋下去。",
+          "耶穌赦免他的罪並醫治他。"
+        ],
+        "scripture": {
+          "book": "馬可福音",
+          "chapter": 2,
+          "verse": "3-5"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "capernaum",
+          "placeName": "迦百農",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/paralytic_roof.jpg",
+          "title": "癱子從屋頂縋下",
+          "artist": "BLAGO Fund",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Healing_of_the_Paralytic_LIPLJAN.jpg"
+        },
+        "summary": "朋友們拆開屋頂把癱子縋到耶穌面前，耶穌赦免他並醫治他。",
+        "artNote": "拜占庭風格壁畫以屋頂與群眾，呈現朋友合力把癱子帶到耶穌面前。",
+        "verseHints": [
+          {
+            "ref": "馬可福音 2:4",
+            "text": "因為人多，不得近前，就把耶穌所在的房子，拆了房頂，既拆通了，就把癱子連所躺臥的褥子都縋下來。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬可福音 2:5",
+          "text": "耶穌見他們的信心，就對癱子說：「小子，你的罪赦了。」"
+        },
+        "storyId": "healing-miracles",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "迦百農",
+        "geoNote": "癱子從屋頂縋下的記載發生在迦百農。"
+      },
+      {
+        "id": "jairus_daughter",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "睚魯的女兒復活",
+        "options": [
+          "睚魯的女兒復活",
+          "癱子從屋頂縋下",
+          "血漏婦人得醫治",
+          "拉撒路復活"
+        ],
+        "hints": [
+          "一位管會堂的父親懇求。",
+          "他的女兒病重。",
+          "耶穌拉著她的手叫她起來。"
+        ],
+        "scripture": {
+          "book": "馬可福音",
+          "chapter": 5,
+          "verse": "22-24,41-42"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "capernaum",
+          "placeName": "迦百農",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/jairus_daughter.jpg",
+          "title": "睚魯的女兒復活",
+          "artist": "Dionisius",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Raising_of_Jairus%27_daughter_03-19.jpg"
+        },
+        "summary": "睚魯的女兒去世後，耶穌拉著她的手，使她從死裡復活。",
+        "artNote": "Dionisius 以基督伸手與女孩起身，表現生命勝過死亡的瞬間。",
+        "verseHints": [
+          {
+            "ref": "馬可福音 5:41",
+            "text": "就拉著孩子的手，對她說：「大利大，古米！」（翻出來就是說：「閨女，我吩咐你起來！」）"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬可福音 5:42",
+          "text": "那閨女立時起來走。他們就大大地驚奇；閨女已經十二歲了。"
+        },
+        "storyId": "healing-miracles",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "迦百農",
+        "geoNote": "睚魯是管會堂的，事件發生在迦百農一帶。"
+      },
+      {
+        "id": "ten_lepers",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "十個麻風病人得潔淨",
+        "options": [
+          "十個麻風病人得潔淨",
+          "瞎子巴底買得醫治",
+          "血漏婦人得醫治",
+          "睚魯的女兒復活"
+        ],
+        "hints": [
+          "十個麻風病人遠遠站著。",
+          "他們求耶穌憐憫。",
+          "只有一人回來感謝。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 17,
+          "verse": "12-16"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "samaria_galilee_border",
+          "placeName": "撒馬利亞與加利利邊界",
+          "lat": 32.2,
+          "lng": 35.3
+        },
+        "image": {
+          "src": "/images/ten_lepers.jpg",
+          "title": "十個麻風病人得潔淨",
+          "artist": "James Tissot",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_The_Healing_of_Ten_Lepers_(Gu%C3%A9rison_de_dix_l%C3%A9preux)_-_James_Tissot_-_overall.jpg"
+        },
+        "summary": "十個麻風病人得潔淨，卻只有一人回來俯伏感謝耶穌。",
+        "artNote": "Tissot 以十人與唯一回來感謝者，突顯感恩與信心。",
+        "verseHints": [
+          {
+            "ref": "路加福音 17:14",
+            "text": "耶穌看見，就對他們說：「你們去把身體給祭司察看。」他們去的時候就潔淨了。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 17:16",
+          "text": "又俯伏在耶穌腳前感謝他；這人是撒馬利亞人。"
+        },
+        "storyId": "healing-miracles",
+        "regionId": "samaria",
+        "regionName": "撒馬利亞",
+        "modernName": "撒馬利亞與加利利邊界",
+        "geoNote": "十個麻風病人得潔淨發生在撒馬利亞與加利利交界。"
+      }
+    ],
+    "en": [
+      {
+        "id": "paralytic_roof",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Paralytic Lowered Through the Roof",
+        "options": [
+          "The Paralytic Lowered Through the Roof",
+          "The Healing of the Woman with the Issue of Blood",
+          "Blind Bartimaeus",
+          "The Ten Lepers"
+        ],
+        "hints": [
+          "A group opens the roof.",
+          "They lower a paralyzed man to Jesus.",
+          "Jesus forgives and heals him."
+        ],
+        "scripture": {
+          "book": "Mark",
+          "chapter": 2,
+          "verse": "3-5"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "capernaum",
+          "placeName": "Capernaum",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/paralytic_roof.jpg",
+          "title": "The Healing of the Paralytic",
+          "artist": "BLAGO Fund",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Healing_of_the_Paralytic_LIPLJAN.jpg"
+        },
+        "summary": "Friends lower a paralyzed man through the roof to Jesus, who forgives his sins and heals him.",
+        "artNote": "The Byzantine-style fresco shows friends lowering the paralytic through the roof to Jesus.",
+        "verseHints": [
+          {
+            "ref": "Mark 2:4",
+            "text": "When they could not come near to him for the crowd, they removed the roof where he was. When they had broken it up, they let down the mat that the paralytic was lying on."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Mark 2:5",
+          "text": "Jesus, seeing their faith, said to the paralytic, “Son, your sins are forgiven you.”"
+        },
+        "storyId": "healing-miracles",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Capernaum",
+        "geoNote": "The paralytic lowered through the roof is set in Capernaum."
+      },
+      {
+        "id": "jairus_daughter",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Raising of Jairus' Daughter",
+        "options": [
+          "The Raising of Jairus' Daughter",
+          "The Paralytic Lowered Through the Roof",
+          "The Healing of the Woman with the Issue of Blood",
+          "The Raising of Lazarus"
+        ],
+        "hints": [
+          "A synagogue ruler pleads with Jesus.",
+          "His daughter is dying.",
+          "Jesus takes her hand and raises her."
+        ],
+        "scripture": {
+          "book": "Mark",
+          "chapter": 5,
+          "verse": "22-24,41-42"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "capernaum",
+          "placeName": "Capernaum",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/jairus_daughter.jpg",
+          "title": "The Raising of Jairus' Daughter",
+          "artist": "Dionisius",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Raising_of_Jairus%27_daughter_03-19.jpg"
+        },
+        "summary": "After Jairus' daughter dies, Jesus takes her hand and raises her to life.",
+        "artNote": "Dionisius shows Christ's hand and the girl rising, capturing life triumphing over death.",
+        "verseHints": [
+          {
+            "ref": "Mark 5:41",
+            "text": "Taking the child by the hand, he said to her, “Talitha cumi!” which means, being interpreted, “Girl, I tell you, get up!”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Mark 5:42",
+          "text": "Immediately the girl rose up and walked, for she was twelve years old. They were amazed with great amazement."
+        },
+        "storyId": "healing-miracles",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Capernaum",
+        "geoNote": "Jairus was a synagogue ruler, and the event is set around Capernaum."
+      },
+      {
+        "id": "ten_lepers",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Cleansing of the Ten Lepers",
+        "options": [
+          "The Cleansing of the Ten Lepers",
+          "The Healing of Blind Bartimaeus",
+          "The Healing of the Woman with the Issue of Blood",
+          "The Raising of Jairus' Daughter"
+        ],
+        "hints": [
+          "Ten lepers stand at a distance.",
+          "They beg Jesus for mercy.",
+          "Only one returns to give thanks."
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 17,
+          "verse": "12-16"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "samaria_galilee_border",
+          "placeName": "Border of Samaria and Galilee",
+          "lat": 32.2,
+          "lng": 35.3
+        },
+        "image": {
+          "src": "/images/ten_lepers.jpg",
+          "title": "The Healing of Ten Lepers",
+          "artist": "James Tissot",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_The_Healing_of_Ten_Lepers_(Gu%C3%A9rison_de_dix_l%C3%A9preux)_-_James_Tissot_-_overall.jpg"
+        },
+        "summary": "Ten lepers are cleansed, but only one returns to fall at Jesus' feet and give thanks.",
+        "artNote": "Tissot contrasts the ten with the one who returns to give thanks, highlighting gratitude and faith.",
+        "verseHints": [
+          {
+            "ref": "Luke 17:14",
+            "text": "When he saw them, he said to them, “Go and show yourselves to the priests.” As they went, they were cleansed."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 17:16",
+          "text": "He fell on his face at Jesus’ feet, giving him thanks; and he was a Samaritan."
+        },
+        "storyId": "healing-miracles",
+        "regionId": "samaria",
+        "regionName": "Samaria",
+        "modernName": "Border of Samaria and Galilee",
+        "geoNote": "The ten lepers are cleansed on the border between Samaria and Galilee."
+      }
+    ]
+  }
+}

@@ -1,0 +1,398 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "jonah",
+  "story": {
+    "zh-Hant": {
+      "id": "jonah",
+      "title": "約拿與尼尼微",
+      "intro": "從逃避呼召到尼尼微悔改，體會神的憐憫與寬容。",
+      "outro": "我知道你是有恩典、有憐憫的神。",
+      "era": "ot",
+      "section": "old-testament",
+      "themes": [
+        "mission",
+        "people"
+      ],
+      "order": 26,
+      "questionIds": [
+        "jonah_call",
+        "jonah_fish",
+        "nineveh"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "nineveh",
+      "coverImage": "/images/nineveh.jpg",
+      "coverTitle": "約拿在尼尼微宣講"
+    },
+    "en": {
+      "id": "jonah",
+      "title": "Jonah and Nineveh",
+      "intro": "From fleeing the call to Nineveh's repentance, discover God's mercy and patience.",
+      "outro": "I knew that you are a gracious God and merciful.",
+      "era": "ot",
+      "section": "old-testament",
+      "themes": [
+        "mission",
+        "people"
+      ],
+      "order": 26,
+      "questionIds": [
+        "jonah_call",
+        "jonah_fish",
+        "nineveh"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "nineveh",
+      "coverImage": "/images/nineveh.jpg",
+      "coverTitle": "Jonah Preaching before Nineveh"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "jonah_call",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "divided-kingdom",
+        "answer": "神吩咐約拿去尼尼微",
+        "options": [
+          "神吩咐約拿去尼尼微",
+          "約拿被大魚吞下",
+          "約拿在蓖麻下",
+          "尼希米重建城牆"
+        ],
+        "hints": [
+          "一位先知領受使命。",
+          "神要他向一座大城宣告。",
+          "他卻起來要逃往別處。"
+        ],
+        "scripture": {
+          "book": "約拿書",
+          "chapter": 1,
+          "verse": "1-2"
+        },
+        "event": {
+          "year": -760,
+          "tolerance": 100,
+          "locationId": "gath_hepher",
+          "placeName": "迦特希弗",
+          "lat": 32.74,
+          "lng": 35.32
+        },
+        "image": {
+          "src": "/images/jonah_call.jpg",
+          "title": "神吩咐約拿去尼尼微",
+          "artist": "Rijksmuseum (anonymous)",
+          "license": "CC0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:God_beveelt_Jona_om_naar_Nineve_te_gaan,_RP-P-1988-297-8.jpg"
+        },
+        "summary": "神呼召約拿向尼尼微宣告審判，約拿卻起來逃避神。",
+        "artNote": "Rijksmuseum 版畫以手勢與命令的場景，呈現神呼召約拿的時刻。",
+        "verseHints": [
+          {
+            "ref": "約拿書 1:1",
+            "text": "耶和華的話臨到亞米太的兒子約拿，說："
+          }
+        ],
+        "keyVerse": {
+          "ref": "約拿書 1:2",
+          "text": "「你起來往尼尼微大城去，向其中的居民呼喊，因為他們的惡達到我面前。」"
+        },
+        "storyId": "jonah",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "迦特希弗（Gath-hepher）",
+        "geoNote": "約拿的家乡在加利利的迦特希弗；今多與 Meshhed 一帶相連。"
+      },
+      {
+        "id": "jonah_fish",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "divided-kingdom",
+        "answer": "大魚吐出約拿",
+        "options": [
+          "大魚吐出約拿",
+          "約拿向尼尼微宣講",
+          "約拿在蓖麻下",
+          "彼得打魚"
+        ],
+        "hints": [
+          "一條巨大的魚。",
+          "約拿在魚腹中三日三夜。",
+          "他被吐在旱地上。"
+        ],
+        "scripture": {
+          "book": "約拿書",
+          "chapter": 2,
+          "verse": "10"
+        },
+        "event": {
+          "year": -760,
+          "tolerance": 100,
+          "locationId": "mediterranean_sea",
+          "placeName": "地中海",
+          "lat": 32,
+          "lng": 34.5
+        },
+        "image": {
+          "src": "/images/jonah_fish.jpg",
+          "title": "大魚吐出約拿",
+          "artist": "Gustave Doré",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:137.Jonah_Is_Spewed_Forth_by_the_Whale.jpg"
+        },
+        "summary": "約拿在魚腹中向神禱告，神使大魚把他吐在旱地上。",
+        "artNote": "Doré 以巨大魚口與被吐出的先知，強調神在審判中的保守。",
+        "verseHints": [
+          {
+            "ref": "約拿書 2:10",
+            "text": "耶和華吩咐魚，魚就把約拿吐在旱地上。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約拿書 2:1",
+          "text": "約拿在魚腹中禱告耶和華─他的神，"
+        },
+        "storyId": "jonah",
+        "regionId": "philistia",
+        "regionName": "非利士",
+        "modernName": "地中海（約帕外海）",
+        "geoNote": "約拿被拋入海中，被大魚吞下；地點在約帕外海一帶。"
+      },
+      {
+        "id": "nineveh",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "divided-kingdom",
+        "answer": "約拿向尼尼微宣講",
+        "options": [
+          "約拿向尼尼微宣講",
+          "以斯拉宣讀律法",
+          "耶穌在聖殿教導",
+          "保羅在雅典"
+        ],
+        "hints": [
+          "一座巨大的城市。",
+          "先知在城中宣告信息。",
+          "城裡的人披麻悔改。"
+        ],
+        "scripture": {
+          "book": "約拿書",
+          "chapter": 3,
+          "verse": "4-5"
+        },
+        "event": {
+          "year": -760,
+          "tolerance": 100,
+          "locationId": "nineveh",
+          "placeName": "尼尼微",
+          "lat": 36.36,
+          "lng": 43.15
+        },
+        "image": {
+          "src": "/images/nineveh.jpg",
+          "title": "約拿在尼尼微宣講",
+          "artist": "John Martin",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Martin_(1789-1854)_-_Jonah_Preaching_before_Nineveh_-_NEWHG-2000.003_-_Hatton_Gallery.jpg"
+        },
+        "summary": "約拿宣告尼尼微將被傾覆，城裡的人竟都悔改，神就施恩不降災。",
+        "artNote": "John Martin 以宏偉古城與渺小先知，對比尼尼微的規模與神的信息。",
+        "verseHints": [
+          {
+            "ref": "約拿書 3:4",
+            "text": "約拿進城走了一日，宣告說：「再等四十日，尼尼微必傾覆了！」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約拿書 3:5",
+          "text": "尼尼微人信服神，便宣告禁食，從最大的到至小的都穿麻衣（或譯：披上麻布）。"
+        },
+        "storyId": "jonah",
+        "regionId": "assyria",
+        "regionName": "亞述",
+        "modernName": "尼尼微（今摩蘇爾附近）",
+        "geoNote": "尼尼微是亞述帝國的重要城市，位於底格里斯河畔。"
+      }
+    ],
+    "en": [
+      {
+        "id": "jonah_call",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "divided-kingdom",
+        "answer": "God Commands Jonah to Go to Nineveh",
+        "options": [
+          "God Commands Jonah to Go to Nineveh",
+          "Jonah Swallowed by the Fish",
+          "Jonah Under the Gourd",
+          "Nehemiah Rebuilds the Wall"
+        ],
+        "hints": [
+          "A prophet receives a mission.",
+          "God sends him to a great city.",
+          "He rises to flee elsewhere."
+        ],
+        "scripture": {
+          "book": "Jonah",
+          "chapter": 1,
+          "verse": "1-2"
+        },
+        "event": {
+          "year": -760,
+          "tolerance": 100,
+          "locationId": "gath_hepher",
+          "placeName": "Gath-hepher",
+          "lat": 32.74,
+          "lng": 35.32
+        },
+        "image": {
+          "src": "/images/jonah_call.jpg",
+          "title": "God Commands Jonah to Go to Nineveh",
+          "artist": "Rijksmuseum (anonymous)",
+          "license": "CC0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:God_beveelt_Jona_om_naar_Nineve_te_gaan,_RP-P-1988-297-8.jpg"
+        },
+        "summary": "God calls Jonah to proclaim judgment on Nineveh, but Jonah rises to flee from the Lord.",
+        "artNote": "The Rijksmuseum print uses gesture and command to depict God's call to Jonah.",
+        "verseHints": [
+          {
+            "ref": "Jonah 1:1",
+            "text": "Now Yahweh’s word came to Jonah the son of Amittai, saying,"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Jonah 1:2",
+          "text": "“Arise, go to Nineveh, that great city, and preach against it, for their wickedness has come up before me.”"
+        },
+        "storyId": "jonah",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Gath-hepher",
+        "geoNote": "Jonah's hometown was Gath-hepher in Galilee, often linked with modern Meshhed."
+      },
+      {
+        "id": "jonah_fish",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "divided-kingdom",
+        "answer": "The Great Fish Vomits Jonah",
+        "options": [
+          "The Great Fish Vomits Jonah",
+          "Jonah Preaches in Nineveh",
+          "Jonah Under the Gourd",
+          "Peter Goes Fishing"
+        ],
+        "hints": [
+          "A huge fish is shown.",
+          "Jonah is in its belly three days and nights.",
+          "He is vomited onto dry land."
+        ],
+        "scripture": {
+          "book": "Jonah",
+          "chapter": 2,
+          "verse": "10"
+        },
+        "event": {
+          "year": -760,
+          "tolerance": 100,
+          "locationId": "mediterranean_sea",
+          "placeName": "Mediterranean Sea",
+          "lat": 32,
+          "lng": 34.5
+        },
+        "image": {
+          "src": "/images/jonah_fish.jpg",
+          "title": "Jonah Is Spewed Forth by the Whale",
+          "artist": "Gustave Doré",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:137.Jonah_Is_Spewed_Forth_by_the_Whale.jpg"
+        },
+        "summary": "Jonah prays from the belly of the fish, and God has the fish vomit him onto dry land.",
+        "artNote": "Doré's enormous fish and emerging prophet stress God's preservation within judgment.",
+        "verseHints": [
+          {
+            "ref": "Jonah 2:10",
+            "text": "Yahweh spoke to the fish, and it vomited out Jonah on the dry land."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Jonah 2:1",
+          "text": "Then Jonah prayed to Yahweh, his God, out of the fish’s belly."
+        },
+        "storyId": "jonah",
+        "regionId": "philistia",
+        "regionName": "Philistia",
+        "modernName": "Mediterranean Sea (off Joppa)",
+        "geoNote": "Jonah was thrown into the sea and swallowed by a great fish, somewhere off Joppa."
+      },
+      {
+        "id": "nineveh",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "divided-kingdom",
+        "answer": "Jonah Preaches in Nineveh",
+        "options": [
+          "Jonah Preaches in Nineveh",
+          "Ezra Reads the Law",
+          "Jesus Teaches in the Temple",
+          "Paul in Athens"
+        ],
+        "hints": [
+          "A vast city is shown.",
+          "The prophet proclaims a message in the city.",
+          "The people repent in sackcloth."
+        ],
+        "scripture": {
+          "book": "Jonah",
+          "chapter": 3,
+          "verse": "4-5"
+        },
+        "event": {
+          "year": -760,
+          "tolerance": 100,
+          "locationId": "nineveh",
+          "placeName": "Nineveh",
+          "lat": 36.36,
+          "lng": 43.15
+        },
+        "image": {
+          "src": "/images/nineveh.jpg",
+          "title": "Jonah Preaching before Nineveh",
+          "artist": "John Martin",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Martin_(1789-1854)_-_Jonah_Preaching_before_Nineveh_-_NEWHG-2000.003_-_Hatton_Gallery.jpg"
+        },
+        "summary": "Jonah proclaims that Nineveh will be overthrown, and the city repents, so God spares it.",
+        "artNote": "John Martin contrasts the vast city with the small prophet, setting the message against Nineveh's scale.",
+        "verseHints": [
+          {
+            "ref": "Jonah 3:4",
+            "text": "Jonah began to enter into the city a day’s journey, and he cried out, and said, “In forty days, Nineveh will be overthrown!”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Jonah 3:5",
+          "text": "The people of Nineveh believed God; and they proclaimed a fast, and put on sackcloth, from their greatest even to their least."
+        },
+        "storyId": "jonah",
+        "regionId": "assyria",
+        "regionName": "Assyria",
+        "modernName": "Nineveh (near modern Mosul)",
+        "geoNote": "Nineveh was a major Assyrian city on the Tigris River."
+      }
+    ]
+  }
+}

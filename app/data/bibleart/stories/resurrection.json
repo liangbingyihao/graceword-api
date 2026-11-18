@@ -1,0 +1,386 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "resurrection",
+  "story": {
+    "zh-Hant": {
+      "id": "resurrection",
+      "title": "復活與升天",
+      "intro": "從空墳墓到橄欖山，復活的基督向門徒顯現並託付使命。",
+      "outro": "你們要去，使萬民作我的門徒。",
+      "era": "nt",
+      "section": "passion-resurrection",
+      "themes": [
+        "resurrection",
+        "mission"
+      ],
+      "order": 18,
+      "questionIds": [
+        "resurrection",
+        "peter_commission",
+        "ascension"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "resurrection",
+      "coverImage": "/images/resurrection.jpg",
+      "coverTitle": "基督復活"
+    },
+    "en": {
+      "id": "resurrection",
+      "title": "Resurrection & Ascension",
+      "intro": "From the empty tomb to the Mount of Olives, the risen Christ appears and commissions his disciples.",
+      "outro": "Go and make disciples of all nations.",
+      "era": "nt",
+      "section": "passion-resurrection",
+      "themes": [
+        "resurrection",
+        "mission"
+      ],
+      "order": 18,
+      "questionIds": [
+        "resurrection",
+        "peter_commission",
+        "ascension"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "resurrection",
+      "coverImage": "/images/resurrection.jpg",
+      "coverTitle": "The Resurrection of Christ"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "resurrection",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "耶穌復活",
+        "options": [
+          "耶穌復活",
+          "耶穌升天",
+          "耶穌受難",
+          "多馬的懷疑"
+        ],
+        "hints": [
+          "墓穴已經空了。",
+          "耶穌勝過死亡從墓中出來。",
+          "復活清晨婦女們來到墳墓。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 28,
+          "verse": "1-10"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.7784,
+          "lng": 35.2298
+        },
+        "image": {
+          "src": "/images/resurrection.jpg",
+          "title": "基督復活",
+          "artist": "Giovanni Bellini",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Bellini_-_Resurrection_of_Christ_-_WGA01675.jpg"
+        },
+        "summary": "第三日清晨，耶穌從死裡復活，勝過罪與死亡，並向門徒顯現。",
+        "artNote": "Bellini 以勝利的基督與沉睡的士兵，對比復活的生命與人的無知。",
+        "verseHints": [
+          {
+            "ref": "路加福音 24:6",
+            "text": "他不在這裡，已經復活了。當記念他還在加利利的時候怎樣告訴你們，"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 28:6",
+          "text": "他不在這裡，照他所說的，已經復活了。你們來看安放主的地方。"
+        },
+        "storyId": "resurrection",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Church of the Holy Sepulchre（傳統地點）",
+        "geoNote": "復活的地點傳統上與聖墓教堂聯繫；福音書記載空墳墓在耶路撒冷。"
+      },
+      {
+        "id": "ascension",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "耶穌升天",
+        "options": [
+          "耶穌升天",
+          "耶穌復活",
+          "多馬的懷疑",
+          "五旬節聖靈降臨"
+        ],
+        "hints": [
+          "耶穌在門徒注視下被舉起。",
+          "地點在橄欖山附近。",
+          "一朵雲彩把他接去。"
+        ],
+        "scripture": {
+          "book": "使徒行傳",
+          "chapter": 1,
+          "verse": "6-11"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "橄欖山",
+          "lat": 31.7789,
+          "lng": 35.245
+        },
+        "image": {
+          "src": "/images/ascension.jpg",
+          "title": "基督升天",
+          "artist": "Hans von Kulmbach",
+          "license": "CC0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Ascension_of_Christ_MET_DP280379.jpg"
+        },
+        "summary": "耶穌復活四十天後，在門徒眼前被舉上升，有雲彩把他接去，天使預告他必再來。",
+        "artNote": "Hans von Kulmbach 以向上延伸的構圖與仰望的門徒，表現升天的動勢。",
+        "verseHints": [
+          {
+            "ref": "使徒行傳 1:9",
+            "text": "說了這話，他們正看的時候，他就被取上升，有一朵雲彩把他接去，便看不見他了。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "使徒行傳 1:11",
+          "text": "「加利利人哪，你們為甚麼站著望天呢？這離開你們被接升天的耶穌，你們見他怎樣往天上去，他還要怎樣來。」"
+        },
+        "storyId": "resurrection",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Chapel of the Ascension（傳統地點）",
+        "geoNote": "耶穌升天發生在伯大尼附近的橄欖山；傳統地點為升天教堂。"
+      },
+      {
+        "id": "peter_commission",
+        "era": "NT",
+        "difficulty": 3,
+        "mode": "zoom",
+        "answer": "耶穌託付彼得",
+        "options": [
+          "耶穌託付彼得",
+          "耶穌升天",
+          "多馬的懷疑",
+          "五旬節聖靈降臨"
+        ],
+        "hints": [
+          "復活後的耶穌在湖邊向門徒顯現。",
+          "耶穌三次問彼得「你愛我嗎？」",
+          "耶穌把羊群託付給他。"
+        ],
+        "scripture": {
+          "book": "約翰福音",
+          "chapter": 21,
+          "verse": "15-19"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "sea_of_galilee",
+          "placeName": "提比哩亞海邊",
+          "lat": 32.88,
+          "lng": 35.58
+        },
+        "image": {
+          "src": "/images/peter_commission.jpg",
+          "title": "基督託付彼得",
+          "artist": "Raphael",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Raphael_-_Christ%27s_Charge_to_Peter_c.1515-6.jpg"
+        },
+        "summary": "復活後的耶穌在提比哩亞海邊三次問彼得「你愛我嗎」，並把餵養羊群的使命託付給他。",
+        "artNote": "Raphael 以海邊與羊群為背景，將託付彼得置於復活後的使命場景。",
+        "verseHints": [
+          {
+            "ref": "約翰福音 21:15",
+            "text": "他們吃完了早飯，耶穌對西門•彼得說：「約翰（在馬太十六章十七節稱約拿）的兒子西門，你愛我比這些更深嗎？」彼得說：「主啊，是的，你知道我愛你。」耶穌對他說：「你餵養我的小羊。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約翰福音 21:17",
+          "text": "第三次對他說：「約翰的兒子西門，你愛我嗎？」彼得因為耶穌第三次對他說「你愛我嗎」，就憂愁，對耶穌說：「主啊，你是無所不知的；你知道我愛你。」耶穌說：「你餵養我的羊。"
+        },
+        "storyId": "resurrection",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "Sea of Galilee（Tiberias）",
+        "geoNote": "提比哩亞海即加利利海；提比哩亞是湖畔古城，今名 Tiberias。"
+      }
+    ],
+    "en": [
+      {
+        "id": "resurrection",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Resurrection",
+        "options": [
+          "The Resurrection",
+          "The Ascension",
+          "The Passion",
+          "The Doubting Thomas"
+        ],
+        "hints": [
+          "The tomb is empty.",
+          "Jesus rises from the dead.",
+          "Women come to the tomb at dawn."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 28,
+          "verse": "1-10"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.7784,
+          "lng": 35.2298
+        },
+        "image": {
+          "src": "/images/resurrection.jpg",
+          "title": "The Resurrection of Christ",
+          "artist": "Giovanni Bellini",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Bellini_-_Resurrection_of_Christ_-_WGA01675.jpg"
+        },
+        "summary": "On the third day Jesus rises from the dead, conquers sin and death, and appears to his disciples.",
+        "artNote": "Bellini contrasts the victorious Christ with sleeping soldiers, setting risen life against human unawareness.",
+        "verseHints": [
+          {
+            "ref": "Luke 24:6",
+            "text": "He isn’t here, but is risen. Remember what he told you when he was still in Galilee,"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 28:6",
+          "text": "He is not here, for he has risen, just like he said. Come, see the place where the Lord was lying."
+        },
+        "storyId": "resurrection",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Church of the Holy Sepulchre (traditional site)",
+        "geoNote": "The empty tomb is placed in Jerusalem; tradition links it with the Church of the Holy Sepulchre."
+      },
+      {
+        "id": "ascension",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Ascension",
+        "options": [
+          "The Ascension",
+          "The Resurrection",
+          "The Doubting Thomas",
+          "Pentecost"
+        ],
+        "hints": [
+          "Jesus is lifted up as the disciples watch.",
+          "The place is near the Mount of Olives.",
+          "A cloud receives him."
+        ],
+        "scripture": {
+          "book": "Acts",
+          "chapter": 1,
+          "verse": "6-11"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Mount of Olives",
+          "lat": 31.7789,
+          "lng": 35.245
+        },
+        "image": {
+          "src": "/images/ascension.jpg",
+          "title": "The Ascension of Christ",
+          "artist": "Hans von Kulmbach",
+          "license": "CC0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Ascension_of_Christ_MET_DP280379.jpg"
+        },
+        "summary": "Forty days after his resurrection, Jesus is lifted up before his disciples, and a cloud receives him out of their sight.",
+        "artNote": "Hans von Kulmbach uses an upward composition and upturned faces to convey the movement of the ascension.",
+        "verseHints": [
+          {
+            "ref": "Acts 1:9",
+            "text": "When he had said these things, as they were looking, he was taken up, and a cloud received him out of their sight."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Acts 1:11",
+          "text": "who also said, “You men of Galilee, why do you stand looking into the sky? This Jesus, who was received up from you into the sky will come back in the same way as you saw him going into the sky.”"
+        },
+        "storyId": "resurrection",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Chapel of the Ascension (traditional site)",
+        "geoNote": "The Ascension took place near Bethany on the Mount of Olives; the traditional site is the Chapel of the Ascension."
+      },
+      {
+        "id": "peter_commission",
+        "era": "NT",
+        "difficulty": 3,
+        "mode": "zoom",
+        "answer": "Jesus Commissions Peter",
+        "options": [
+          "Jesus Commissions Peter",
+          "The Ascension",
+          "The Doubting Thomas",
+          "Pentecost"
+        ],
+        "hints": [
+          "The risen Jesus appears to his disciples by the lake.",
+          "Jesus asks Peter three times, “Do you love me?”",
+          "He entrusts his sheep to Peter."
+        ],
+        "scripture": {
+          "book": "John",
+          "chapter": 21,
+          "verse": "15-19"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "sea_of_galilee",
+          "placeName": "Sea of Tiberias",
+          "lat": 32.88,
+          "lng": 35.58
+        },
+        "image": {
+          "src": "/images/peter_commission.jpg",
+          "title": "Christ's Charge to Peter",
+          "artist": "Raphael",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Raphael_-_Christ%27s_Charge_to_Peter_c.1515-6.jpg"
+        },
+        "summary": "By the Sea of Tiberias the risen Jesus asks Peter three times, “Do you love me?” and entrusts him with the care of his sheep.",
+        "artNote": "Raphael places the commission by the shore with sheep nearby, tying Peter's charge to the risen mission.",
+        "verseHints": [
+          {
+            "ref": "John 21:15",
+            "text": "So when they had eaten their breakfast, Jesus said to Simon Peter, “Simon, son of Jonah, do you love me more than these?” He said to him, “Yes, Lord; you know that I have affection for you.” He said to him, “Feed my lambs.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "John 21:17",
+          "text": "He said to him the third time, “Simon, son of Jonah, do you have affection for me?” Peter was grieved because he asked him the third time, “Do you have affection for me?” He said to him, “Lord, you know everything. You know that I have affection for you.” Jesus said to him, “Feed my sheep."
+        },
+        "storyId": "resurrection",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Sea of Galilee (Tiberias)",
+        "geoNote": "The Sea of Tiberias is the Sea of Galilee; Tiberias is the lakeside city known today as Tiberias."
+      }
+    ]
+  }
+}

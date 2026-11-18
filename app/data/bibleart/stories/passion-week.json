@@ -1,0 +1,384 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "passion-week",
+  "story": {
+    "zh-Hant": {
+      "id": "passion-week",
+      "title": "受難週：進城與受審",
+      "intro": "從榮入聖城、潔淨聖殿到彼拉多審判，跟隨耶穌走向各各他。",
+      "outro": "他為我們的過犯受害，為我們的罪孽壓傷。",
+      "era": "nt",
+      "section": "passion-resurrection",
+      "themes": [
+        "passion"
+      ],
+      "order": 16,
+      "questionIds": [
+        "triumphal_entry",
+        "cleansing_temple",
+        "trial_pilate"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "trial_pilate",
+      "coverImage": "/images/trial_pilate.jpg",
+      "coverTitle": "耶穌在彼拉多面前受審"
+    },
+    "en": {
+      "id": "passion-week",
+      "title": "Passion Week: Entry and Trial",
+      "intro": "From the triumphal entry and cleansing of the temple to Pilate's trial, follow Jesus toward Golgotha.",
+      "outro": "He was pierced for our transgressions.",
+      "era": "nt",
+      "section": "passion-resurrection",
+      "themes": [
+        "passion"
+      ],
+      "order": 16,
+      "questionIds": [
+        "triumphal_entry",
+        "cleansing_temple",
+        "trial_pilate"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "trial_pilate",
+      "coverImage": "/images/trial_pilate.jpg",
+      "coverTitle": "Christ Before Pilate"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "triumphal_entry",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "耶穌榮入耶路撒冷",
+        "options": [
+          "耶穌榮入耶路撒冷",
+          "潔淨聖殿",
+          "最後的晚餐",
+          "彼拉多審判"
+        ],
+        "hints": [
+          "耶穌騎著驢駒。",
+          "群眾揮舞樹枝。",
+          "他們喊著和散那。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 21,
+          "verse": "8-9"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 3,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/triumphal_entry.jpg",
+          "title": "耶穌榮入耶路撒冷",
+          "artist": "Anthony van Dyck",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg"
+        },
+        "summary": "耶穌騎驢進入耶路撒冷，群眾鋪衣揮枝，喊著和散那迎接他。",
+        "artNote": "van Dyck 以群眾、樹枝與驢駒，呈現榮入聖城的盛大場面。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 21:8",
+            "text": "眾人多半把衣服鋪在路上；還有人砍下樹枝來鋪在路上。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 21:9",
+          "text": "前行後隨的眾人喊著說：和散那（原有求救的意思，在此是稱頌的話）歸於大衛的子孫！奉主名來的是應當稱頌的！高高在上和散那！"
+        },
+        "storyId": "passion-week",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶路撒冷",
+        "geoNote": "耶穌從伯大尼方向騎驢進入耶路撒冷。"
+      },
+      {
+        "id": "cleansing_temple",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "耶穌潔淨聖殿",
+        "options": [
+          "耶穌潔淨聖殿",
+          "耶穌榮入耶路撒冷",
+          "洗腳",
+          "最後的晚餐"
+        ],
+        "hints": [
+          "場景在聖殿。",
+          "耶穌推倒兌換銀錢的桌子。",
+          "他說聖殿要成為禱告的殿。"
+        ],
+        "scripture": {
+          "book": "馬可福音",
+          "chapter": 11,
+          "verse": "15-17"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 3,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/cleansing_temple.png",
+          "title": "耶穌潔淨聖殿",
+          "artist": "Pieter Aertsen",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Aertsen_Christ_cleansing_the_Temple.png"
+        },
+        "summary": "耶穌在聖殿趕出買賣的人，推倒桌子，責備人把禱告的殿變成賊窩。",
+        "artNote": "Aertsen 以聖殿中的混亂與基督的動作，強調潔淨與禱告的殿。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 21:12",
+            "text": "耶穌進了神的殿，趕出殿裡一切做買賣的人，推倒兌換銀錢之人的桌子，和賣鴿子之人的凳子，"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 21:13",
+          "text": "對他們說：「經上記著說：我的殿必稱為禱告的殿，你們倒使它成為賊窩了。」"
+        },
+        "storyId": "passion-week",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶路撒冷聖殿",
+        "geoNote": "潔淨聖殿發生在耶路撒冷的聖殿區。"
+      },
+      {
+        "id": "trial_pilate",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "耶穌在彼拉多面前受審",
+        "options": [
+          "耶穌在彼拉多面前受審",
+          "耶穌潔淨聖殿",
+          "洗腳",
+          "西門背十字架"
+        ],
+        "hints": [
+          "一位羅馬總督坐在位上。",
+          "群眾要求釋放巴拉巴。",
+          "彼拉多洗手表示無辜。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 27,
+          "verse": "11-14"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 3,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/trial_pilate.jpg",
+          "title": "耶穌在彼拉多面前受審",
+          "artist": "Maître de Marguerite d'Orléans",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pilate_Heures_Marguerite_d%27Orl%C3%A9ans.jpg"
+        },
+        "summary": "耶穌被帶到羅馬總督彼拉多面前受審，他沉默面對控告。",
+        "artNote": "中世紀手抄本以總督座位與群眾，呈現耶穌受審的場景。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 27:24",
+            "text": "彼拉多見說也無濟於事，反要生亂，就拿水在眾人面前洗手，說：「流這義人的血，罪不在我，你們承當吧。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 27:26",
+          "text": "於是彼拉多釋放巴拉巴給他們，把耶穌鞭打了，交給人釘十字架。"
+        },
+        "storyId": "passion-week",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶路撒冷（總督府）",
+        "geoNote": "耶穌在耶路撒冷的羅馬總督府受審。"
+      }
+    ],
+    "en": [
+      {
+        "id": "triumphal_entry",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Triumphal Entry into Jerusalem",
+        "options": [
+          "The Triumphal Entry into Jerusalem",
+          "The Cleansing of the Temple",
+          "The Last Supper",
+          "Jesus Before Pilate"
+        ],
+        "hints": [
+          "Jesus rides a donkey.",
+          "The crowd waves branches.",
+          "They shout Hosanna."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 21,
+          "verse": "8-9"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 3,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/triumphal_entry.jpg",
+          "title": "The Entry of Christ into Jerusalem",
+          "artist": "Anthony van Dyck",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg"
+        },
+        "summary": "Jesus enters Jerusalem on a donkey as the crowd spreads garments and branches, shouting Hosanna.",
+        "artNote": "Van Dyck's crowd, branches, and donkey present the public triumph of the entry into Jerusalem.",
+        "verseHints": [
+          {
+            "ref": "Matthew 21:8",
+            "text": "A very great multitude spread their clothes on the road. Others cut branches from the trees, and spread them on the road."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 21:9",
+          "text": "The multitudes who went before him, and who followed kept shouting, “Hosanna to the son of David! Blessed is he who comes in the name of the Lord! Hosanna in the highest!”"
+        },
+        "storyId": "passion-week",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem",
+        "geoNote": "Jesus enters Jerusalem on a donkey from the direction of Bethany."
+      },
+      {
+        "id": "cleansing_temple",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Cleansing of the Temple",
+        "options": [
+          "The Cleansing of the Temple",
+          "The Triumphal Entry into Jerusalem",
+          "The Foot Washing",
+          "The Last Supper"
+        ],
+        "hints": [
+          "The scene is in the temple.",
+          "Jesus overturns the money changers' tables.",
+          "He says the temple is a house of prayer."
+        ],
+        "scripture": {
+          "book": "Mark",
+          "chapter": 11,
+          "verse": "15-17"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 3,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/cleansing_temple.png",
+          "title": "Christ Cleansing the Temple",
+          "artist": "Pieter Aertsen",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Aertsen_Christ_cleansing_the_Temple.png"
+        },
+        "summary": "Jesus drives out the buyers and sellers from the temple and calls it a house of prayer.",
+        "artNote": "Aertsen's temple scene and Christ's action stress purification and the house of prayer.",
+        "verseHints": [
+          {
+            "ref": "Matthew 21:12",
+            "text": "Jesus entered into the temple of God, and drove out all of those who sold and bought in the temple, and overthrew the money changers’ tables and the seats of those who sold the doves."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 21:13",
+          "text": "He said to them, “It is written, ‘My house shall be called a house of prayer,’but you have made it a den of robbers!”"
+        },
+        "storyId": "passion-week",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem Temple",
+        "geoNote": "The cleansing of the temple takes place in the temple courts of Jerusalem."
+      },
+      {
+        "id": "trial_pilate",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "Jesus Before Pilate",
+        "options": [
+          "Jesus Before Pilate",
+          "The Cleansing of the Temple",
+          "The Foot Washing",
+          "Simon Carries the Cross"
+        ],
+        "hints": [
+          "A Roman governor sits in judgment.",
+          "The crowd demands Barabbas be released.",
+          "Pilate washes his hands."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 27,
+          "verse": "11-14"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 3,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/trial_pilate.jpg",
+          "title": "Christ Before Pilate",
+          "artist": "Maître de Marguerite d'Orléans",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pilate_Heures_Marguerite_d%27Orl%C3%A9ans.jpg"
+        },
+        "summary": "Jesus is brought before the Roman governor Pilate, who washes his hands and hands him over.",
+        "artNote": "The medieval illumination sets the governor's seat and crowd around Jesus' trial.",
+        "verseHints": [
+          {
+            "ref": "Matthew 27:24",
+            "text": "So when Pilate saw that nothing was being gained, but rather that a disturbance was starting, he took water, and washed his hands before the multitude, saying, “I am innocent of the blood of this righteous person. You see to it.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 27:26",
+          "text": "Then he released to them Barabbas, but Jesus he flogged and delivered to be crucified."
+        },
+        "storyId": "passion-week",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem (Praetorium)",
+        "geoNote": "Jesus is tried at the Roman praetorium in Jerusalem."
+      }
+    ]
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "acts-church",
+  "story": {
+    "zh-Hant": {
+      "id": "acts-church",
+      "title": "初代教會的行動",
+      "intro": "腓力、哥尼流與腓立比獄卒，看見福音跨越邊界。",
+      "outro": "並要在耶路撒冷、猶太全地和撒馬利亞，直到地極，作我的見證。",
+      "era": "early-church",
+      "section": "early-church",
+      "themes": [
+        "mission",
+        "holy-spirit"
+      ],
+      "order": 21,
+      "questionIds": [
+        "philip_ethiopian",
+        "cornelius",
+        "philippian_jailer"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "philippian_jailer",
+      "coverImage": "/images/philippian_jailer.jpg",
+      "coverTitle": "腓立比獄卒受洗"
+    },
+    "en": {
+      "id": "acts-church",
+      "title": "The Early Church in Action",
+      "intro": "Philip, Cornelius, and the Philippian jailer show the gospel crossing boundaries.",
+      "outro": "You will be my witnesses to the ends of the earth.",
+      "era": "early-church",
+      "section": "early-church",
+      "themes": [
+        "mission",
+        "holy-spirit"
+      ],
+      "order": 21,
+      "questionIds": [
+        "philip_ethiopian",
+        "cornelius",
+        "philippian_jailer"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "philippian_jailer",
+      "coverImage": "/images/philippian_jailer.jpg",
+      "coverTitle": "Paul and Silas in Prison"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "philip_ethiopian",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "腓力為埃塞俄比亞太監施洗",
+        "options": [
+          "腓力為埃塞俄比亞太監施洗",
+          "哥尼流見異象",
+          "呂底亞受洗",
+          "保羅海難"
+        ],
+        "hints": [
+          "一位太監坐在車上讀經。",
+          "腓力靠近車子。",
+          "他們在路旁的水邊受洗。"
+        ],
+        "scripture": {
+          "book": "使徒行傳",
+          "chapter": 8,
+          "verse": "35-38"
+        },
+        "event": {
+          "year": 35,
+          "tolerance": 8,
+          "locationId": "gaza_road",
+          "placeName": "迦薩路",
+          "lat": 31.5,
+          "lng": 34.5
+        },
+        "image": {
+          "src": "/images/philip_ethiopian.jpg",
+          "title": "腓力為埃塞俄比亞太監施洗",
+          "artist": "Rembrandt",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt,_The_Baptism_of_the_Eunuch,_1626,_Museum_Catharijneconvent,_Utrecht.jpg"
+        },
+        "summary": "腓力在迦薩路上向埃塞俄比亞太監講解以賽亞書，並為他施洗。",
+        "artNote": "Rembrandt 以馬車與水邊施洗，呈現腓力向太監講解經文。",
+        "verseHints": [
+          {
+            "ref": "使徒行傳 8:35",
+            "text": "腓利就開口從這經上起，對他傳講耶穌。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "使徒行傳 8:38",
+          "text": "於是吩咐車站住，腓利和太監二人同下水裡去，腓利就給他施洗。"
+        },
+        "storyId": "acts-church",
+        "regionId": "philistia",
+        "regionName": "非利士",
+        "modernName": "迦薩路",
+        "geoNote": "腓力在耶路撒冷往迦薩的曠野路上遇見太監。"
+      },
+      {
+        "id": "cornelius",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "哥尼流見異象",
+        "options": [
+          "哥尼流見異象",
+          "腓力為太監施洗",
+          "呂底亞受洗",
+          "保羅海難"
+        ],
+        "hints": [
+          "一位羅馬百夫長在禱告。",
+          "天使向他顯現。",
+          "他的禱告蒙神記念。"
+        ],
+        "scripture": {
+          "book": "使徒行傳",
+          "chapter": 10,
+          "verse": "3-4"
+        },
+        "event": {
+          "year": 40,
+          "tolerance": 8,
+          "locationId": "caesarea_maritima",
+          "placeName": "該撒利亞",
+          "lat": 32.5,
+          "lng": 34.9
+        },
+        "image": {
+          "src": "/images/cornelius.jpg",
+          "title": "哥尼流見異象",
+          "artist": "Gerbrand van den Eeckhout",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gerbrand_van_den_Eeckhout_-_Vision_of_Cornelius_the_Centurion_-_Walters_372492.jpg"
+        },
+        "summary": "羅馬百夫長哥尼流在禱告中見異象，天使告訴他神已記念他的禱告。",
+        "artNote": "Eeckhout 以異象與百夫長，呈現哥尼流在禱告中領受啟示。",
+        "verseHints": [
+          {
+            "ref": "使徒行傳 10:3",
+            "text": "有一天，約在申初，他在異象中明明看見神的一個使者進去，到他那裡，說：「哥尼流。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "使徒行傳 10:4",
+          "text": "哥尼流定睛看他，驚怕說：「主啊，甚麼事呢？」天使說：「你的禱告和你的賙濟達到神面前，已蒙記念了。"
+        },
+        "storyId": "acts-church",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "該撒利亞",
+        "geoNote": "哥尼流是駐守該撒利亞的羅馬百夫長。"
+      },
+      {
+        "id": "philippian_jailer",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "腓立比獄卒受洗",
+        "options": [
+          "腓立比獄卒受洗",
+          "呂底亞受洗",
+          "哥尼流見異象",
+          "保羅海難"
+        ],
+        "hints": [
+          "半夜發生地震。",
+          "監門全開，鎖鏈鬆開。",
+          "獄卒問當怎樣行才可以得救。"
+        ],
+        "scripture": {
+          "book": "使徒行傳",
+          "chapter": 16,
+          "verse": "25-31"
+        },
+        "event": {
+          "year": 50,
+          "tolerance": 8,
+          "locationId": "philippi",
+          "placeName": "腓立比",
+          "lat": 41.01,
+          "lng": 24.29
+        },
+        "image": {
+          "src": "/images/philippian_jailer.jpg",
+          "title": "腓立比獄卒受洗",
+          "artist": "Michael Václav Halbax",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michael_V%C3%A1clav_Halbax_-_St_Paul_and_Silas_in_Prison_-_O_2303_-_National_Gallery_Prague.jpg"
+        },
+        "summary": "保羅與西拉在監獄中唱詩禱告，地震使監門打開，獄卒因而信主受洗。",
+        "artNote": "Halbax 以監獄與地震後的光景，呈現獄卒在震動中尋求救恩。",
+        "verseHints": [
+          {
+            "ref": "使徒行傳 16:26",
+            "text": "忽然，地大震動，甚至監牢的地基都搖動了，監門立刻全開，眾囚犯的鎖鍊也都鬆開了。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "使徒行傳 16:31",
+          "text": "他們說：「當信主耶穌，你和你一家都必得救。」"
+        },
+        "storyId": "acts-church",
+        "regionId": "macedonia",
+        "regionName": "馬其頓",
+        "modernName": "腓立比",
+        "geoNote": "保羅與西拉在腓立比被囚，獄卒因此信主。"
+      }
+    ],
+    "en": [
+      {
+        "id": "philip_ethiopian",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "Philip Baptizes the Ethiopian Eunuch",
+        "options": [
+          "Philip Baptizes the Ethiopian Eunuch",
+          "Cornelius Sees a Vision",
+          "Lydia Is Baptized",
+          "Paul's Shipwreck"
+        ],
+        "hints": [
+          "A eunuch reads Scripture in his chariot.",
+          "Philip runs up to the chariot.",
+          "They stop at water and he is baptized."
+        ],
+        "scripture": {
+          "book": "Acts",
+          "chapter": 8,
+          "verse": "35-38"
+        },
+        "event": {
+          "year": 35,
+          "tolerance": 8,
+          "locationId": "gaza_road",
+          "placeName": "Gaza Road",
+          "lat": 31.5,
+          "lng": 34.5
+        },
+        "image": {
+          "src": "/images/philip_ethiopian.jpg",
+          "title": "The Baptism of the Ethiopian Eunuch",
+          "artist": "Rembrandt",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt,_The_Baptism_of_the_Eunuch,_1626,_Museum_Catharijneconvent,_Utrecht.jpg"
+        },
+        "summary": "Philip explains Isaiah to the Ethiopian eunuch on the Gaza road and baptizes him.",
+        "artNote": "Rembrandt's chariot and waterside baptism depict Philip explaining Scripture to the eunuch.",
+        "verseHints": [
+          {
+            "ref": "Acts 8:35",
+            "text": "Philip opened his mouth, and beginning from this Scripture, preached to him Jesus."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Acts 8:38",
+          "text": "He commanded the chariot to stand still, and they both went down into the water, both Philip and the eunuch, and he baptized him."
+        },
+        "storyId": "acts-church",
+        "regionId": "philistia",
+        "regionName": "Philistia",
+        "modernName": "Gaza Road",
+        "geoNote": "Philip meets the eunuch on the desert road from Jerusalem to Gaza."
+      },
+      {
+        "id": "cornelius",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "Cornelius Sees a Vision",
+        "options": [
+          "Cornelius Sees a Vision",
+          "Philip Baptizes the Eunuch",
+          "Lydia Is Baptized",
+          "Paul's Shipwreck"
+        ],
+        "hints": [
+          "A Roman centurion prays.",
+          "An angel appears to him.",
+          "His prayers are remembered before God."
+        ],
+        "scripture": {
+          "book": "Acts",
+          "chapter": 10,
+          "verse": "3-4"
+        },
+        "event": {
+          "year": 40,
+          "tolerance": 8,
+          "locationId": "caesarea_maritima",
+          "placeName": "Caesarea",
+          "lat": 32.5,
+          "lng": 34.9
+        },
+        "image": {
+          "src": "/images/cornelius.jpg",
+          "title": "The Vision of Cornelius the Centurion",
+          "artist": "Gerbrand van den Eeckhout",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gerbrand_van_den_Eeckhout_-_Vision_of_Cornelius_the_Centurion_-_Walters_372492.jpg"
+        },
+        "summary": "Cornelius the centurion sees a vision in prayer, and an angel tells him his prayers are remembered.",
+        "artNote": "Eeckhout's vision and centurion picture Cornelius receiving revelation in prayer.",
+        "verseHints": [
+          {
+            "ref": "Acts 10:3",
+            "text": "At about the ninth hour of the day, he clearly saw in a vision an angel of God coming to him, and saying to him, “Cornelius!”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Acts 10:4",
+          "text": "He, fastening his eyes on him, and being frightened, said, “What is it, Lord?” He said to him, “Your prayers and your gifts to the needy have gone up for a memorial before God."
+        },
+        "storyId": "acts-church",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Caesarea",
+        "geoNote": "Cornelius was a Roman centurion stationed at Caesarea."
+      },
+      {
+        "id": "philippian_jailer",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Philippian Jailer Is Baptized",
+        "options": [
+          "The Philippian Jailer Is Baptized",
+          "Lydia Is Baptized",
+          "Cornelius Sees a Vision",
+          "Paul's Shipwreck"
+        ],
+        "hints": [
+          "An earthquake happens at midnight.",
+          "The prison doors open and chains fall off.",
+          "The jailer asks what he must do to be saved."
+        ],
+        "scripture": {
+          "book": "Acts",
+          "chapter": 16,
+          "verse": "25-31"
+        },
+        "event": {
+          "year": 50,
+          "tolerance": 8,
+          "locationId": "philippi",
+          "placeName": "Philippi",
+          "lat": 41.01,
+          "lng": 24.29
+        },
+        "image": {
+          "src": "/images/philippian_jailer.jpg",
+          "title": "Paul and Silas in Prison",
+          "artist": "Michael Václav Halbax",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michael_V%C3%A1clav_Halbax_-_St_Paul_and_Silas_in_Prison_-_O_2303_-_National_Gallery_Prague.jpg"
+        },
+        "summary": "Paul and Silas sing and pray in prison; an earthquake opens the doors, and the jailer believes and is baptized.",
+        "artNote": "Halbax's prison scene after the earthquake shows the jailer seeking salvation in the upheaval.",
+        "verseHints": [
+          {
+            "ref": "Acts 16:26",
+            "text": "Suddenly there was a great earthquake, so that the foundations of the prison were shaken; and immediately all the doors were opened, and everyone’s bonds were loosened."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Acts 16:31",
+          "text": "They said, “Believe in the Lord Jesus Christ, and you will be saved, you and your household.”"
+        },
+        "storyId": "acts-church",
+        "regionId": "macedonia",
+        "regionName": "Macedonia",
+        "modernName": "Philippi",
+        "geoNote": "Paul and Silas are imprisoned in Philippi, where the jailer believes."
+      }
+    ]
+  }
+}

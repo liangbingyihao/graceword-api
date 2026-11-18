@@ -1,0 +1,396 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "nehemiah",
+  "story": {
+    "zh-Hant": {
+      "id": "nehemiah",
+      "title": "尼希米與重建",
+      "intro": "從書珊的禱告到耶路撒冷的城牆，看見神使用一個人帶動群體重建。",
+      "outro": "我們的神必為我們爭戰。",
+      "era": "ot",
+      "section": "old-testament",
+      "themes": [
+        "people"
+      ],
+      "order": 27,
+      "questionIds": [
+        "nehemiah_prayer",
+        "rebuild_wall",
+        "law_reading"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "rebuild_wall",
+      "coverImage": "/images/rebuild_wall.jpg",
+      "coverTitle": "重建耶路撒冷城牆"
+    },
+    "en": {
+      "id": "nehemiah",
+      "title": "Nehemiah and the Rebuilding",
+      "intro": "From prayer in Susa to the walls of Jerusalem, see God use one person to rally a community.",
+      "outro": "Our God will fight for us.",
+      "era": "ot",
+      "section": "old-testament",
+      "themes": [
+        "people"
+      ],
+      "order": 27,
+      "questionIds": [
+        "nehemiah_prayer",
+        "rebuild_wall",
+        "law_reading"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "rebuild_wall",
+      "coverImage": "/images/rebuild_wall.jpg",
+      "coverTitle": "Rebuilding the Walls of Jerusalem"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "nehemiah_prayer",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "return",
+        "answer": "尼希米在亞達薛西王面前",
+        "options": [
+          "尼希米在亞達薛西王面前",
+          "以斯拉宣讀律法",
+          "尼希米夜巡城牆",
+          "摩西見法老"
+        ],
+        "hints": [
+          "場景在波斯王宮。",
+          "尼希米是王的酒政。",
+          "他面帶愁容，向王陳情。"
+        ],
+        "scripture": {
+          "book": "尼希米記",
+          "chapter": 2,
+          "verse": "1-4"
+        },
+        "event": {
+          "year": -445,
+          "tolerance": 80,
+          "locationId": "susa",
+          "placeName": "書珊",
+          "lat": 32.19,
+          "lng": 48.25
+        },
+        "image": {
+          "src": "/images/nehemiah_prayer.jpg",
+          "title": "尼希米在亞達薛西王面前",
+          "artist": "Unknown (French, 17th c.)",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Artaxerx%C3%A8s_et_son_%C3%A9chanson_N%C3%A9h%C3%A9mie_-_btv1b10574740w.jpg"
+        },
+        "summary": "尼希米在書珊王宮向亞達薛西王陳情，求准他回耶路撒冷重建城牆。",
+        "artNote": "法國畫派以波斯宮廷與酒政尼希米，呈現他面帶愁容向王陳情。",
+        "verseHints": [
+          {
+            "ref": "尼希米記 2:4",
+            "text": "王問我說：「你要求甚麼？」於是我默禱天上的神。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "尼希米記 2:5",
+          "text": "我對王說：「僕人若在王眼前蒙恩，王若喜歡，求王差遣我往猶大，到我列祖墳墓所在的那城去，我好重新建造。」"
+        },
+        "storyId": "nehemiah",
+        "regionId": "persia",
+        "regionName": "波斯",
+        "modernName": "書珊（Susa／Shush）",
+        "geoNote": "書珊是波斯王的冬宮所在；尼希米在此作王的酒政。"
+      },
+      {
+        "id": "rebuild_wall",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "return",
+        "answer": "重建耶路撒冷城牆",
+        "options": [
+          "重建耶路撒冷城牆",
+          "尼希米夜巡城牆",
+          "以斯拉宣讀律法",
+          "所羅門建聖殿"
+        ],
+        "hints": [
+          "百姓一同施工。",
+          "城牆逐漸連接起來。",
+          "敵人試圖阻止工程。"
+        ],
+        "scripture": {
+          "book": "尼希米記",
+          "chapter": 4,
+          "verse": "6"
+        },
+        "event": {
+          "year": -445,
+          "tolerance": 80,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/rebuild_wall.jpg",
+          "title": "重建耶路撒冷城牆",
+          "artist": "Rijksmuseum (anonymous)",
+          "license": "CC0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Herbouw_van_de_muren_van_Jeruzalem,_RP-P-OB-45.376.jpg"
+        },
+        "summary": "尼希米帶領百姓同心重建城牆，雖遭反對，工程仍然完成。",
+        "artNote": "Rijksmuseum 版畫以施工人群與城牆，呈現同心重建的場景。",
+        "verseHints": [
+          {
+            "ref": "尼希米記 4:6",
+            "text": "這樣，我們修造城牆，城牆就都連絡，高至一半，因為百姓專心做工。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "尼希米記 6:15",
+          "text": "以祿月二十五日，城牆修完了，共修了五十二天。"
+        },
+        "storyId": "nehemiah",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶路撒冷",
+        "geoNote": "城牆重建工程環繞耶路撒冷；敵人的反對也隨之而來。"
+      },
+      {
+        "id": "law_reading",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "return",
+        "answer": "以斯拉宣讀律法",
+        "options": [
+          "以斯拉宣讀律法",
+          "尼希米重建城牆",
+          "約西亞發現律法書",
+          "耶穌在會堂讀經"
+        ],
+        "hints": [
+          "場景在水門前的廣場。",
+          "一位文士站在木臺上。",
+          "百姓站立聆聽神的律法。"
+        ],
+        "scripture": {
+          "book": "尼希米記",
+          "chapter": 8,
+          "verse": "1-3"
+        },
+        "event": {
+          "year": -445,
+          "tolerance": 80,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/law_reading.jpg",
+          "title": "以斯拉向百姓宣讀律法",
+          "artist": "Gustave Doré",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:109.Ezra_Reads_the_Law_to_the_People.jpg"
+        },
+        "summary": "以斯拉在水門前的廣場宣讀神的律法，百姓側耳聆聽並敬拜。",
+        "artNote": "Doré 以木臺、群眾與高舉的律法書，強調神話語的中心地位。",
+        "verseHints": [
+          {
+            "ref": "尼希米記 8:1",
+            "text": "到了七月，以色列人住在自己的城裡。那時，他們如同一人聚集在水門前的寬闊處，請文士以斯拉將耶和華藉摩西傳給以色列人的律法書帶來。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "尼希米記 8:8",
+          "text": "他們清清楚楚地念神的律法書，講明意思，使百姓明白所念的。"
+        },
+        "storyId": "nehemiah",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶路撒冷",
+        "geoNote": "以斯拉在水門前的廣場宣讀律法；水門位於耶路撒冷東側。"
+      }
+    ],
+    "en": [
+      {
+        "id": "nehemiah_prayer",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "return",
+        "answer": "Nehemiah Before King Artaxerxes",
+        "options": [
+          "Nehemiah Before King Artaxerxes",
+          "Ezra Reads the Law",
+          "Nehemiah Inspects the Walls",
+          "Moses Before Pharaoh"
+        ],
+        "hints": [
+          "The scene is in the Persian palace.",
+          "Nehemiah is the king's cupbearer.",
+          "He looks sad and asks the king for help."
+        ],
+        "scripture": {
+          "book": "Nehemiah",
+          "chapter": 2,
+          "verse": "1-4"
+        },
+        "event": {
+          "year": -445,
+          "tolerance": 80,
+          "locationId": "susa",
+          "placeName": "Susa",
+          "lat": 32.19,
+          "lng": 48.25
+        },
+        "image": {
+          "src": "/images/nehemiah_prayer.jpg",
+          "title": "Nehemiah Before King Artaxerxes",
+          "artist": "Unknown (French, 17th c.)",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Artaxerx%C3%A8s_et_son_%C3%A9chanson_N%C3%A9h%C3%A9mie_-_btv1b10574740w.jpg"
+        },
+        "summary": "At Susa, Nehemiah asks King Artaxerxes for permission to return and rebuild Jerusalem's walls.",
+        "artNote": "The French painting places the cupbearer Nehemiah in the Persian court, his sadness before the king.",
+        "verseHints": [
+          {
+            "ref": "Nehemiah 2:4",
+            "text": "Then the king said to me, “For what do you make request?” So I prayed to the God of heaven."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Nehemiah 2:5",
+          "text": "I said to the king, “If it pleases the king, and if your servant has found favor in your sight, that you would send me to Judah, to the city of my fathers’ tombs, that I may build it.”"
+        },
+        "storyId": "nehemiah",
+        "regionId": "persia",
+        "regionName": "Persia",
+        "modernName": "Susa (Shush)",
+        "geoNote": "Susa was a Persian royal residence; Nehemiah served there as the king's cupbearer."
+      },
+      {
+        "id": "rebuild_wall",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "return",
+        "answer": "Rebuilding the Walls of Jerusalem",
+        "options": [
+          "Rebuilding the Walls of Jerusalem",
+          "Nehemiah Inspects the Walls",
+          "Ezra Reads the Law",
+          "Solomon Builds the Temple"
+        ],
+        "hints": [
+          "The people work together.",
+          "The wall is being joined together.",
+          "Enemies try to stop the work."
+        ],
+        "scripture": {
+          "book": "Nehemiah",
+          "chapter": 4,
+          "verse": "6"
+        },
+        "event": {
+          "year": -445,
+          "tolerance": 80,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/rebuild_wall.jpg",
+          "title": "Rebuilding the Walls of Jerusalem",
+          "artist": "Rijksmuseum (anonymous)",
+          "license": "CC0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Herbouw_van_de_muren_van_Jeruzalem,_RP-P-OB-45.376.jpg"
+        },
+        "summary": "Nehemiah leads the people to rebuild the wall together; despite opposition, the work is completed.",
+        "artNote": "The Rijksmuseum print shows workers and rising walls, capturing the shared rebuilding effort.",
+        "verseHints": [
+          {
+            "ref": "Nehemiah 4:6",
+            "text": "So we built the wall; and all the wall was joined together to half its height: for the people had a mind to work."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Nehemiah 6:15",
+          "text": "So the wall was finished in the twenty-fifth day of Elul, in fifty-two days."
+        },
+        "storyId": "nehemiah",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem",
+        "geoNote": "The rebuilding of the wall surrounded Jerusalem, and opposition soon followed."
+      },
+      {
+        "id": "law_reading",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "return",
+        "answer": "Ezra Reads the Law",
+        "options": [
+          "Ezra Reads the Law",
+          "Nehemiah Rebuilds the Wall",
+          "Josiah Finds the Book of the Law",
+          "Jesus Reads in the Synagogue"
+        ],
+        "hints": [
+          "The scene is at the Water Gate square.",
+          "A scribe stands on a wooden platform.",
+          "The people stand and listen to God's law."
+        ],
+        "scripture": {
+          "book": "Nehemiah",
+          "chapter": 8,
+          "verse": "1-3"
+        },
+        "event": {
+          "year": -445,
+          "tolerance": 80,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/law_reading.jpg",
+          "title": "Ezra Reads the Law to the People",
+          "artist": "Gustave Doré",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:109.Ezra_Reads_the_Law_to_the_People.jpg"
+        },
+        "summary": "Ezra reads the Law of God before the people at the Water Gate, and they listen and worship.",
+        "artNote": "Doré centers the wooden platform, the crowd, and the lifted book of the Law.",
+        "verseHints": [
+          {
+            "ref": "Nehemiah 8:1",
+            "text": "All the people gathered themselves together as one man into the broad place that was before the water gate; and they spoke to Ezra the scribe to bring the book of the law of Moses, which Yahweh had commanded to Israel."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Nehemiah 8:8",
+          "text": "They read in the book, in the law of God, distinctly; and they gave the sense, so that they understood the reading."
+        },
+        "storyId": "nehemiah",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem",
+        "geoNote": "Ezra read the Law at the square by the Water Gate, on Jerusalem's eastern side."
+      }
+    ]
+  }
+}

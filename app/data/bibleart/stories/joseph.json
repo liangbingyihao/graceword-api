@@ -1,0 +1,396 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "joseph",
+  "story": {
+    "zh-Hant": {
+      "id": "joseph",
+      "title": "約瑟的故事",
+      "intro": "從彩衣、獄中到與兄弟相認，跟隨神在約瑟生命中的帶領。",
+      "outro": "你們的意思是要害我，但神的意思原是好的。",
+      "era": "ot",
+      "section": "old-testament",
+      "themes": [
+        "people"
+      ],
+      "order": 22,
+      "questionIds": [
+        "joseph_coat",
+        "joseph_prison",
+        "joseph_reunion"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "joseph_reunion",
+      "coverImage": "/images/joseph_reunion.jpg",
+      "coverTitle": "約瑟與兄弟相認"
+    },
+    "en": {
+      "id": "joseph",
+      "title": "The Story of Joseph",
+      "intro": "From the coat and prison to reunion with his brothers, follow God's guidance through Joseph's life.",
+      "outro": "You meant evil against me, but God meant it for good.",
+      "era": "ot",
+      "section": "old-testament",
+      "themes": [
+        "people"
+      ],
+      "order": 22,
+      "questionIds": [
+        "joseph_coat",
+        "joseph_prison",
+        "joseph_reunion"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "joseph_reunion",
+      "coverImage": "/images/joseph_reunion.jpg",
+      "coverTitle": "Joseph Reveals Himself to His Brothers"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "joseph_coat",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "patriarchal",
+        "answer": "約瑟的彩衣被帶回給雅各",
+        "options": [
+          "約瑟的彩衣被帶回給雅各",
+          "約瑟為法老解夢",
+          "摩西擊石出水",
+          "大衛擊敗歌利亞"
+        ],
+        "hints": [
+          "幾位兄弟帶著一件衣服回家。",
+          "衣服上有血跡。",
+          "父親雅各以為兒子死了。"
+        ],
+        "scripture": {
+          "book": "創世記",
+          "chapter": 37,
+          "verse": "32-33"
+        },
+        "event": {
+          "year": -1800,
+          "tolerance": 200,
+          "locationId": "hebron",
+          "placeName": "希伯崙",
+          "lat": 31.5326,
+          "lng": 35.0998
+        },
+        "image": {
+          "src": "/images/joseph_coat.jpg",
+          "title": "約瑟的彩衣被帶回給雅各",
+          "artist": "Jan Victors",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victors_Joseph%27s_coat_brought_to_Jacob.jpg"
+        },
+        "summary": "兄弟把約瑟的彩衣染血帶回，雅各以為約瑟被野獸所害，悲痛哀哭。",
+        "artNote": "Jan Victors 以戲劇性的光影呈現兄弟把染血彩衣交給雅各，父親的哀痛成為畫面中心。",
+        "verseHints": [
+          {
+            "ref": "﻿創世記 37:32",
+            "text": "打發人送到他們的父親那裡，說：「我們撿了這個；請認一認是你兒子的外衣不是？」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "﻿創世記 37:3",
+          "text": "以色列原來愛約瑟過於愛他的眾子，因為約瑟是他年老生的；他給約瑟做了一件彩衣。"
+        },
+        "storyId": "joseph",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "希伯崙（Hebron）",
+        "geoNote": "雅各住在希伯崙一帶；傳統以此作為約瑟被賣後父親哀哭的地方。"
+      },
+      {
+        "id": "joseph_prison",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "patriarchal",
+        "answer": "約瑟在獄中解夢",
+        "options": [
+          "約瑟在獄中解夢",
+          "約瑟被賣到埃及",
+          "摩西在曠野",
+          "但以理在獅子坑"
+        ],
+        "hints": [
+          "場景在監獄裡。",
+          "兩個人面帶愁容。",
+          "約瑟為他們解釋夢的意思。"
+        ],
+        "scripture": {
+          "book": "創世記",
+          "chapter": 40,
+          "verse": "8"
+        },
+        "event": {
+          "year": -1800,
+          "tolerance": 200,
+          "locationId": "egypt",
+          "placeName": "埃及",
+          "lat": 29.844,
+          "lng": 31.25
+        },
+        "image": {
+          "src": "/images/joseph_prison.jpg",
+          "title": "約瑟在獄中解夢",
+          "artist": "Claude Vignon",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Joseph_Interpreting_Dreams_in_Prison.jpg"
+        },
+        "summary": "約瑟在獄中為酒政與膳長解夢，顯明神所賜的智慧。",
+        "artNote": "Vignon 以監獄的幽暗與人物的手勢，對比約瑟解夢的智慧與囚室的束縛。",
+        "verseHints": [
+          {
+            "ref": "﻿創世記 40:8",
+            "text": "他們對他說：「我們各人做了一夢，沒有人能解。」約瑟說：「解夢不是出於神嗎？請你們將夢告訴我。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "﻿創世記 40:12",
+          "text": "約瑟對他說：「你所做的夢是這樣解：三根枝子就是三天；"
+        },
+        "storyId": "joseph",
+        "regionId": "egypt",
+        "regionName": "埃及",
+        "modernName": "孟斐斯（Memphis）",
+        "geoNote": "約瑟被囚於埃及；確切監獄位置不詳，一般以孟斐斯一帶為代表。"
+      },
+      {
+        "id": "joseph_reunion",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "patriarchal",
+        "answer": "約瑟與兄弟相認",
+        "options": [
+          "約瑟與兄弟相認",
+          "雅各夢見天梯",
+          "摩西領受十誡",
+          "約拿被大魚吞下"
+        ],
+        "hints": [
+          "一位埃及高官與兄弟相見。",
+          "他忍不住放聲大哭。",
+          "他說：「我是約瑟。」"
+        ],
+        "scripture": {
+          "book": "創世記",
+          "chapter": 45,
+          "verse": "1-4"
+        },
+        "event": {
+          "year": -1800,
+          "tolerance": 200,
+          "locationId": "goshen",
+          "placeName": "歌珊",
+          "lat": 30.79,
+          "lng": 31.83
+        },
+        "image": {
+          "src": "/images/joseph_reunion.jpg",
+          "title": "約瑟與兄弟相認",
+          "artist": "Peter von Cornelius",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_von_Cornelius_-_Joseph_gibt_sich_seinen_Br%C3%BCdern_zu_erkennen_-_Google_Art_Project.jpg"
+        },
+        "summary": "約瑟向兄弟表明自己的身份，並以恩慈安慰他們，不追究過往。",
+        "artNote": "Cornelius 以擁抱與淚水呈現寬恕的張力，兄弟的驚訝襯托約瑟的恩慈。",
+        "verseHints": [
+          {
+            "ref": "﻿創世記 45:4",
+            "text": "約瑟又對他弟兄們說：「請你們近前來。」他們就近前來。他說：「我是你們的兄弟約瑟，就是你們所賣到埃及的。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "﻿創世記 45:5",
+          "text": "現在，不要因為把我賣到這裡自憂自恨。這是神差我在你們以先來，為要保全生命。"
+        },
+        "storyId": "joseph",
+        "regionId": "egypt",
+        "regionName": "埃及",
+        "modernName": "歌珊（Goshen）",
+        "geoNote": "約瑟與兄弟在埃及相認；歌珊是雅各家族後來的居地。"
+      }
+    ],
+    "en": [
+      {
+        "id": "joseph_coat",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "patriarchal",
+        "answer": "Joseph's Coat Brought to Jacob",
+        "options": [
+          "Joseph's Coat Brought to Jacob",
+          "Joseph Interprets Pharaoh's Dream",
+          "Moses Strikes the Rock",
+          "David Defeats Goliath"
+        ],
+        "hints": [
+          "Several brothers bring a garment home.",
+          "The garment is stained with blood.",
+          "Father Jacob believes his son is dead."
+        ],
+        "scripture": {
+          "book": "Genesis",
+          "chapter": 37,
+          "verse": "32-33"
+        },
+        "event": {
+          "year": -1800,
+          "tolerance": 200,
+          "locationId": "hebron",
+          "placeName": "Hebron",
+          "lat": 31.5326,
+          "lng": 35.0998
+        },
+        "image": {
+          "src": "/images/joseph_coat.jpg",
+          "title": "Joseph's Coat Brought to Jacob",
+          "artist": "Jan Victors",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victors_Joseph%27s_coat_brought_to_Jacob.jpg"
+        },
+        "summary": "The brothers bring Joseph's bloodstained coat to Jacob, who grieves, believing Joseph was killed by a wild animal.",
+        "artNote": "Jan Victors uses dramatic light to center the grief of Jacob as the bloodstained coat is presented.",
+        "verseHints": [
+          {
+            "ref": "Genesis 37:32",
+            "text": "They took the coat of many colors, and they brought it to their father, and said, “We have found this. Examine it, now, whether it is your son’s coat or not.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Genesis 37:3",
+          "text": "Now Israel loved Joseph more than all his children, because he was the son of his old age, and he made him a coat of many colors."
+        },
+        "storyId": "joseph",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Hebron",
+        "geoNote": "Jacob lived in the Hebron area; tradition places his grief over Joseph here."
+      },
+      {
+        "id": "joseph_prison",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "patriarchal",
+        "answer": "Joseph Interprets Dreams in Prison",
+        "options": [
+          "Joseph Interprets Dreams in Prison",
+          "Joseph Is Sold into Egypt",
+          "Moses in the Wilderness",
+          "Daniel in the Lions' Den"
+        ],
+        "hints": [
+          "The scene is in a prison.",
+          "Two men look troubled.",
+          "Joseph explains the meaning of their dreams."
+        ],
+        "scripture": {
+          "book": "Genesis",
+          "chapter": 40,
+          "verse": "8"
+        },
+        "event": {
+          "year": -1800,
+          "tolerance": 200,
+          "locationId": "egypt",
+          "placeName": "Egypt",
+          "lat": 29.844,
+          "lng": 31.25
+        },
+        "image": {
+          "src": "/images/joseph_prison.jpg",
+          "title": "Joseph Interprets Dreams in Prison",
+          "artist": "Claude Vignon",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Joseph_Interpreting_Dreams_in_Prison.jpg"
+        },
+        "summary": "In prison, Joseph interprets the dreams of Pharaoh's cupbearer and baker, showing God-given wisdom.",
+        "artNote": "Vignon contrasts the darkness of the cell with Joseph's discerning gestures as he interprets dreams.",
+        "verseHints": [
+          {
+            "ref": "Genesis 40:8",
+            "text": "They said to him, “We have dreamed a dream, and there is no one who can interpret it.” Joseph said to them, “Don’t interpretations belong to God? Please tell it to me.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Genesis 40:12",
+          "text": "Joseph said to him, “This is its interpretation: the three branches are three days."
+        },
+        "storyId": "joseph",
+        "regionId": "egypt",
+        "regionName": "Egypt",
+        "modernName": "Memphis",
+        "geoNote": "Joseph was imprisoned in Egypt; the exact prison is unknown, so Memphis is used as a representative site."
+      },
+      {
+        "id": "joseph_reunion",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "patriarchal",
+        "answer": "Joseph Reveals Himself to His Brothers",
+        "options": [
+          "Joseph Reveals Himself to His Brothers",
+          "Jacob's Ladder",
+          "Moses Receives the Ten Commandments",
+          "Jonah Swallowed by the Fish"
+        ],
+        "hints": [
+          "A high official in Egypt meets his brothers.",
+          "He weeps aloud.",
+          "He says, “I am Joseph.”"
+        ],
+        "scripture": {
+          "book": "Genesis",
+          "chapter": 45,
+          "verse": "1-4"
+        },
+        "event": {
+          "year": -1800,
+          "tolerance": 200,
+          "locationId": "goshen",
+          "placeName": "Goshen",
+          "lat": 30.79,
+          "lng": 31.83
+        },
+        "image": {
+          "src": "/images/joseph_reunion.jpg",
+          "title": "Joseph Reveals Himself to His Brothers",
+          "artist": "Peter von Cornelius",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_von_Cornelius_-_Joseph_gibt_sich_seinen_Br%C3%BCdern_zu_erkennen_-_Google_Art_Project.jpg"
+        },
+        "summary": "Joseph reveals his identity to his brothers and comforts them with forgiveness instead of revenge.",
+        "artNote": "Cornelius centers the embrace and tears of reconciliation; the brothers' shock heightens Joseph's mercy.",
+        "verseHints": [
+          {
+            "ref": "Genesis 45:4",
+            "text": "Joseph said to his brothers, “Come near to me, please.” They came near. “He said, I am Joseph, your brother, whom you sold into Egypt."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Genesis 45:5",
+          "text": "Now don’t be grieved, nor angry with yourselves, that you sold me here, for God sent me before you to preserve life."
+        },
+        "storyId": "joseph",
+        "regionId": "egypt",
+        "regionName": "Egypt",
+        "modernName": "Goshen",
+        "geoNote": "Joseph and his brothers are reunited in Egypt; Goshen became the family's later dwelling place."
+      }
+    ]
+  }
+}

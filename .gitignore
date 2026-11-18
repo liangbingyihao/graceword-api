@@ -16,3 +16,4 @@ test_coze.py
 secret_key.py
 .env
 build.txt
+deploy/env

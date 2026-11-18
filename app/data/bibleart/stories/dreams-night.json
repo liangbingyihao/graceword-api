@@ -1,0 +1,396 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "dreams-night",
+  "story": {
+    "zh-Hant": {
+      "id": "dreams-night",
+      "title": "夢與夜間的引導",
+      "intro": "約瑟的夢、法老的夢與尼希米夜巡城牆，看見神在夜間與夢中引導歷史。",
+      "outro": "神必指引你的路。",
+      "era": "ot",
+      "section": "old-testament",
+      "themes": [
+        "people"
+      ],
+      "order": 23,
+      "questionIds": [
+        "joseph_dreams",
+        "pharaoh_dream",
+        "nehemiah_night"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "pharaoh_dream",
+      "coverImage": "/images/pharaoh_dream.jpg",
+      "coverTitle": "約瑟為法老解夢"
+    },
+    "en": {
+      "id": "dreams-night",
+      "title": "Dreams & Night Guidance",
+      "intro": "Joseph's dreams, Pharaoh's dream, and Nehemiah's night inspection show God guiding through dreams and the night.",
+      "outro": "He will direct your path.",
+      "era": "ot",
+      "section": "old-testament",
+      "themes": [
+        "people"
+      ],
+      "order": 23,
+      "questionIds": [
+        "joseph_dreams",
+        "pharaoh_dream",
+        "nehemiah_night"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "pharaoh_dream",
+      "coverImage": "/images/pharaoh_dream.jpg",
+      "coverTitle": "Joseph Interprets Pharaoh's Dream"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "joseph_dreams",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "patriarchal",
+        "answer": "約瑟的夢",
+        "options": [
+          "約瑟的夢",
+          "摩西的呼召",
+          "尼希米的禱告",
+          "約拿的逃船"
+        ],
+        "hints": [
+          "畫面中是一位少年。",
+          "他夢見太陽、月亮與星星。",
+          "夢中眾人向他下拜。"
+        ],
+        "scripture": {
+          "book": "創世記",
+          "chapter": 37,
+          "verse": "9"
+        },
+        "event": {
+          "year": -1800,
+          "tolerance": 200,
+          "locationId": "hebron",
+          "placeName": "希伯崙",
+          "lat": 31.5326,
+          "lng": 35.0998
+        },
+        "image": {
+          "src": "/images/joseph_dreams.jpg",
+          "title": "約瑟的夢",
+          "artist": "Gaetano Gandolfi",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%27Joseph%27s_Dream%27,_painting_by_Gaetano_Gandolfi,_c._1790.jpg"
+        },
+        "summary": "約瑟夢見日、月與十一顆星向他下拜，暗示他將被高舉。",
+        "artNote": "Gandolfi 以柔和色調描繪少年約瑟的夢境，光線象徵神啟示的臨在。",
+        "verseHints": [
+          {
+            "ref": "﻿創世記 37:9",
+            "text": "後來他又做了一夢，也告訴他的哥哥們說：「看哪，我又做了一夢，夢見太陽、月亮，與十一個星向我下拜。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "﻿創世記 37:7",
+          "text": "我們在田裡捆禾稼，我的捆起來站著，你們的捆來圍著我的捆下拜。」"
+        },
+        "storyId": "dreams-night",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "希伯崙（Hebron）",
+        "geoNote": "約瑟的夢發生在迦南地；希伯崙是族長時期的代表地點。"
+      },
+      {
+        "id": "pharaoh_dream",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "patriarchal",
+        "answer": "約瑟為法老解夢",
+        "options": [
+          "約瑟為法老解夢",
+          "摩西見燃燒荊棘",
+          "約拿向尼尼微宣講",
+          "尼希米重建城牆"
+        ],
+        "hints": [
+          "畫面中有一位君王。",
+          "夢裡有牛和麥穗。",
+          "約瑟預言七個豐年與七個荒年。"
+        ],
+        "scripture": {
+          "book": "創世記",
+          "chapter": 41,
+          "verse": "25-29"
+        },
+        "event": {
+          "year": -1800,
+          "tolerance": 200,
+          "locationId": "egypt",
+          "placeName": "埃及",
+          "lat": 29.844,
+          "lng": 31.25
+        },
+        "image": {
+          "src": "/images/pharaoh_dream.jpg",
+          "title": "約瑟為法老解夢",
+          "artist": "Nicolas Poussin",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nicolas_Poussin_-_Joseph_Interprets_Pharaoh%27s_Dream_-_KMSsp691_-_Statens_Museum_for_Kunst.jpg"
+        },
+        "summary": "約瑟解釋法老的夢，預言埃及將有七個豐年，隨後是七個荒年。",
+        "artNote": "Poussin 以古典構圖安排法老與約瑟，夢中的牛與麥穗成為視覺線索。",
+        "verseHints": [
+          {
+            "ref": "﻿創世記 41:25",
+            "text": "約瑟對法老說：「法老的夢乃是一個。神已將所要做的事指示法老了。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "﻿創世記 41:29",
+          "text": "埃及遍地必來七個大豐年，"
+        },
+        "storyId": "dreams-night",
+        "regionId": "egypt",
+        "regionName": "埃及",
+        "modernName": "孟斐斯（Memphis）",
+        "geoNote": "法老之夢與約瑟解夢發生在埃及宮廷；孟斐斯是常見的代表地點。"
+      },
+      {
+        "id": "nehemiah_night",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "return",
+        "answer": "尼希米夜巡耶路撒冷城牆",
+        "options": [
+          "尼希米夜巡耶路撒冷城牆",
+          "尼希米重建城牆",
+          "以斯拉宣讀律法",
+          "約拿在尼尼微"
+        ],
+        "hints": [
+          "場景在夜間。",
+          "城牆殘破，城門被火焚燒。",
+          "他獨自察看，沒有告訴別人。"
+        ],
+        "scripture": {
+          "book": "尼希米記",
+          "chapter": 2,
+          "verse": "12-13"
+        },
+        "event": {
+          "year": -445,
+          "tolerance": 80,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/nehemiah_night.jpg",
+          "title": "尼希米夜巡耶路撒冷",
+          "artist": "Gustave Doré",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:108.Nehemiah_Views_the_Ruins_of_Jerusalem%27s_Walls.jpg"
+        },
+        "summary": "尼希米夜間起來，察看耶路撒冷殘破的城牆與被焚的城門。",
+        "artNote": "Doré 以夜色與殘破城牆，凸顯尼希米孤身巡察的沉重。",
+        "verseHints": [
+          {
+            "ref": "尼希米記 2:12",
+            "text": "我夜間起來，有幾個人也一同起來；但神使我心裡要為耶路撒冷做甚麼事，我並沒有告訴人。除了我騎的牲口以外，也沒有別的牲口在我那裡。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "尼希米記 2:17",
+          "text": "以後，我對他們說：「我們所遭的難，耶路撒冷怎樣荒涼，城門被火焚燒，你們都看見了。來吧，我們重建耶路撒冷的城牆，免得再受凌辱！」"
+        },
+        "storyId": "dreams-night",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶路撒冷",
+        "geoNote": "尼希米夜間察看耶路撒冷殘破的城牆與被焚的城門。"
+      }
+    ],
+    "en": [
+      {
+        "id": "joseph_dreams",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "patriarchal",
+        "answer": "Joseph's Dream",
+        "options": [
+          "Joseph's Dream",
+          "The Call of Moses",
+          "Nehemiah's Prayer",
+          "Jonah Flees by Ship"
+        ],
+        "hints": [
+          "A young man is shown.",
+          "He dreams of the sun, moon, and stars.",
+          "In the dream, others bow down to him."
+        ],
+        "scripture": {
+          "book": "Genesis",
+          "chapter": 37,
+          "verse": "9"
+        },
+        "event": {
+          "year": -1800,
+          "tolerance": 200,
+          "locationId": "hebron",
+          "placeName": "Hebron",
+          "lat": 31.5326,
+          "lng": 35.0998
+        },
+        "image": {
+          "src": "/images/joseph_dreams.jpg",
+          "title": "Joseph's Dream",
+          "artist": "Gaetano Gandolfi",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%27Joseph%27s_Dream%27,_painting_by_Gaetano_Gandolfi,_c._1790.jpg"
+        },
+        "summary": "Joseph dreams that the sun, moon, and eleven stars bow down to him, foreshadowing his exaltation.",
+        "artNote": "Gandolfi's soft tones frame the young Joseph's dream, with light suggesting divine revelation.",
+        "verseHints": [
+          {
+            "ref": "Genesis 37:9",
+            "text": "He dreamed yet another dream, and told it to his brothers, and said, “Behold, I have dreamed yet another dream: and behold, the sun and the moon and eleven stars bowed down to me.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Genesis 37:7",
+          "text": "for behold, we were binding sheaves in the field, and behold, my sheaf arose and also stood upright; and behold, your sheaves came around, and bowed down to my sheaf.”"
+        },
+        "storyId": "dreams-night",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Hebron",
+        "geoNote": "Joseph's dreams belong to the land of Canaan; Hebron is a representative patriarchal site."
+      },
+      {
+        "id": "pharaoh_dream",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "patriarchal",
+        "answer": "Joseph Interprets Pharaoh's Dream",
+        "options": [
+          "Joseph Interprets Pharaoh's Dream",
+          "Moses and the Burning Bush",
+          "Jonah Preaches in Nineveh",
+          "Nehemiah Rebuilds the Wall"
+        ],
+        "hints": [
+          "A king is shown.",
+          "The dream involves cows and grain.",
+          "Joseph foretells seven years of plenty and seven of famine."
+        ],
+        "scripture": {
+          "book": "Genesis",
+          "chapter": 41,
+          "verse": "25-29"
+        },
+        "event": {
+          "year": -1800,
+          "tolerance": 200,
+          "locationId": "egypt",
+          "placeName": "Egypt",
+          "lat": 29.844,
+          "lng": 31.25
+        },
+        "image": {
+          "src": "/images/pharaoh_dream.jpg",
+          "title": "Joseph Interprets Pharaoh's Dream",
+          "artist": "Nicolas Poussin",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nicolas_Poussin_-_Joseph_Interprets_Pharaoh%27s_Dream_-_KMSsp691_-_Statens_Museum_for_Kunst.jpg"
+        },
+        "summary": "Joseph explains Pharaoh's dream, foretelling seven years of plenty followed by seven years of famine.",
+        "artNote": "Poussin arranges Pharaoh and Joseph in a classical composition, with cows and grain as visual clues.",
+        "verseHints": [
+          {
+            "ref": "Genesis 41:25",
+            "text": "Joseph said to Pharaoh, “The dream of Pharaoh is one. What God is about to do he has declared to Pharaoh."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Genesis 41:29",
+          "text": "Behold, there come seven years of great plenty throughout all the land of Egypt."
+        },
+        "storyId": "dreams-night",
+        "regionId": "egypt",
+        "regionName": "Egypt",
+        "modernName": "Memphis",
+        "geoNote": "Pharaoh's dream and Joseph's interpretation belong to the Egyptian court; Memphis is a common representative site."
+      },
+      {
+        "id": "nehemiah_night",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "return",
+        "answer": "Nehemiah Inspects the Walls at Night",
+        "options": [
+          "Nehemiah Inspects the Walls at Night",
+          "Nehemiah Rebuilds the Wall",
+          "Ezra Reads the Law",
+          "Jonah in Nineveh"
+        ],
+        "hints": [
+          "The scene is at night.",
+          "The walls are broken and the gates burned.",
+          "He inspects them alone without telling others."
+        ],
+        "scripture": {
+          "book": "Nehemiah",
+          "chapter": 2,
+          "verse": "12-13"
+        },
+        "event": {
+          "year": -445,
+          "tolerance": 80,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/nehemiah_night.jpg",
+          "title": "Nehemiah Views the Ruins of Jerusalem's Walls",
+          "artist": "Gustave Doré",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:108.Nehemiah_Views_the_Ruins_of_Jerusalem%27s_Walls.jpg"
+        },
+        "summary": "Nehemiah rises at night and inspects Jerusalem's broken walls and burned gates.",
+        "artNote": "Doré's night scene and broken walls emphasize Nehemiah's solitary inspection.",
+        "verseHints": [
+          {
+            "ref": "Nehemiah 2:12",
+            "text": "I arose in the night, I and some few men with me; neither told I any man what my God put into my heart to do for Jerusalem; neither was there any animal with me, except the animal that I rode on."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Nehemiah 2:17",
+          "text": "Then I said to them, “You see the evil case that we are in, how Jerusalem lies waste, and its gates are burned with fire. Come, let us build up the wall of Jerusalem, that we won’t be disgraced.”"
+        },
+        "storyId": "dreams-night",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem",
+        "geoNote": "Nehemiah inspected Jerusalem's broken walls and burned gates at night."
+      }
+    ]
+  }
+}

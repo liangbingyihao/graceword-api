@@ -14,6 +14,7 @@ def init_api(app):
     # from .docs import docs_bp
     from .system import system_bp
     from .favorite import favorite_bp
+    from .bibleart import bibleart_bp
 
     main_bp.register_blueprint(auth_bp, url_prefix='/auth')
     main_bp.register_blueprint(user_bp, url_prefix='/user')
@@ -21,6 +22,7 @@ def init_api(app):
     main_bp.register_blueprint(message_bp, url_prefix='/message')
     main_bp.register_blueprint(system_bp, url_prefix='/system')
     main_bp.register_blueprint(favorite_bp, url_prefix='/favorite')
+    main_bp.register_blueprint(bibleart_bp, url_prefix='/bibleart')
     # main_bp.register_blueprint(docs_bp)
 
     # 注册主蓝图

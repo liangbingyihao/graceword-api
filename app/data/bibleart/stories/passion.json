@@ -1,0 +1,384 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "passion",
+  "story": {
+    "zh-Hant": {
+      "id": "passion",
+      "title": "受難週",
+      "intro": "從最後的晚餐、客西馬尼園到各各他，跟隨耶穌走向十字架。",
+      "outro": "成了。",
+      "era": "nt",
+      "section": "passion-resurrection",
+      "themes": [
+        "passion"
+      ],
+      "order": 15,
+      "questionIds": [
+        "last_supper",
+        "gethsemane",
+        "crucifixion"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "crucifixion",
+      "coverImage": "/images/crucifixion.jpg",
+      "coverTitle": "基督受難"
+    },
+    "en": {
+      "id": "passion",
+      "title": "Passion Week",
+      "intro": "From the Last Supper and Gethsemane to Golgotha, follow Jesus toward the cross.",
+      "outro": "It is finished.",
+      "era": "nt",
+      "section": "passion-resurrection",
+      "themes": [
+        "passion"
+      ],
+      "order": 15,
+      "questionIds": [
+        "last_supper",
+        "gethsemane",
+        "crucifixion"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "crucifixion",
+      "coverImage": "/images/crucifixion.jpg",
+      "coverTitle": "The Crucifixion"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "last_supper",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "最後的晚餐",
+        "options": [
+          "最後的晚餐",
+          "迦拿婚宴水變酒",
+          "五餅二魚",
+          "東方博士朝拜"
+        ],
+        "hints": [
+          "十三個人圍坐在長桌旁。",
+          "耶穌說有人要出賣他。",
+          "他設立了聖餐。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 22,
+          "verse": "7-20"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.7717,
+          "lng": 35.2297
+        },
+        "image": {
+          "src": "/images/last_supper.jpg",
+          "title": "最後的晚餐",
+          "artist": "Leonardo da Vinci",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_(1452-1519)_-_The_Last_Supper_(1495-1498).jpg"
+        },
+        "summary": "耶穌在被賣的那一夜與門徒共進晚餐，拿起餅和杯設立聖餐，並預告自己將被出賣。",
+        "artNote": "Leonardo 以透視線匯聚於基督，門徒分組的動勢凝固了「有人要出賣我」的一刻。",
+        "verseHints": [
+          {
+            "ref": "路加福音 22:19",
+            "text": "又拿起餅來，祝謝了，就擘開，遞給他們，說：「這是我的身體，為你們捨的，你們也應當如此行，為的是記念我。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 22:20",
+          "text": "飯後也照樣拿起杯來，說：「這杯是用我血所立的新約，是為你們流出來的。"
+        },
+        "storyId": "passion",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Cenacle, Mount Zion（傳統地點）",
+        "geoNote": "最後的晚餐發生在耶路撒冷；傳統地點為錫安山的馬可樓，但確切位置不詳。"
+      },
+      {
+        "id": "gethsemane",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "客西馬尼園的禱告",
+        "options": [
+          "客西馬尼園的禱告",
+          "耶穌受試探",
+          "耶穌受洗",
+          "登山寶訓"
+        ],
+        "hints": [
+          "夜色中的園子裡有人俯伏禱告。",
+          "門徒在一旁睡著了。",
+          "耶穌求父挪去那杯。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 26,
+          "verse": "36-46"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "客西馬尼園",
+          "lat": 31.7794,
+          "lng": 35.2397
+        },
+        "image": {
+          "src": "/images/gethsemane.jpg",
+          "title": "客西馬尼園的苦禱",
+          "artist": "Giovanni Bellini",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bellini,Giovanni_-_Agony_in_the_Garden_-_National_Gallery.jpg"
+        },
+        "summary": "耶穌在客西馬尼園極其憂傷，禱告說：「我父啊，倘若可行，求你叫這杯離開我。」",
+        "artNote": "Bellini 以清晨風景與跪禱的基督，將憂傷與順服放在同一畫面。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 26:39",
+            "text": "他就稍往前走，俯伏在地，禱告說：「我父啊，倘若可行，求你叫這杯離開我。然而，不要照我的意思，只要照你的意思。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 26:42",
+          "text": "第二次又去禱告說：「我父啊，這杯若不能離開我，必要我喝，就願你的意旨成全。」"
+        },
+        "storyId": "passion",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Gethsemane / Church of All Nations",
+        "geoNote": "客西馬尼園位於耶路撒冷東側橄欖山腳；今有萬國教堂與古老橄欖樹。"
+      },
+      {
+        "id": "crucifixion",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "耶穌被釘十字架",
+        "options": [
+          "耶穌被釘十字架",
+          "耶穌復活",
+          "耶穌升天",
+          "拉撒路復活"
+        ],
+        "hints": [
+          "畫面中央是十字架。",
+          "母親與門徒站在十字架下。",
+          "這是各各他的刑場。"
+        ],
+        "scripture": {
+          "book": "約翰福音",
+          "chapter": 19,
+          "verse": "17-30"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "各各他",
+          "lat": 31.7784,
+          "lng": 35.2298
+        },
+        "image": {
+          "src": "/images/crucifixion.jpg",
+          "title": "基督受難",
+          "artist": "Hendrick ter Brugghen",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hendrick_ter_Brugghen_The_Crucifixion_with_the_Virgin_and_Saint_John.jpg"
+        },
+        "summary": "耶穌在各各他被釘在十字架上，承擔世人的罪，說完「成了」便將靈魂交付父神。",
+        "artNote": "Hendrick ter Brugghen 以簡潔十字架與周圍人物，強調受難的孤獨與凝重。",
+        "verseHints": [
+          {
+            "ref": "路加福音 23:46",
+            "text": "耶穌大聲喊著說：「父啊！我將我的靈魂交在你手裡。」說了這話，氣就斷了。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約翰福音 19:30",
+          "text": "耶穌嘗（原文是受）了那醋，就說：「成了！」便低下頭，將靈魂交付神了。"
+        },
+        "storyId": "passion",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Church of the Holy Sepulchre（傳統地點）",
+        "geoNote": "各各他位於耶路撒冷城外；傳統認為在聖墓教堂，另有戈登各各他之說。"
+      }
+    ],
+    "en": [
+      {
+        "id": "last_supper",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Last Supper",
+        "options": [
+          "The Last Supper",
+          "The Wedding at Cana",
+          "Feeding the Five Thousand",
+          "Adoration of the Magi"
+        ],
+        "hints": [
+          "Thirteen people sit around a long table.",
+          "Jesus says one of them will betray him.",
+          "He institutes the Lord's Supper."
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 22,
+          "verse": "7-20"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.7717,
+          "lng": 35.2297
+        },
+        "image": {
+          "src": "/images/last_supper.jpg",
+          "title": "The Last Supper",
+          "artist": "Leonardo da Vinci",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_(1452-1519)_-_The_Last_Supper_(1495-1498).jpg"
+        },
+        "summary": "On the night he is betrayed, Jesus eats with his disciples, institutes the Lord's Supper, and foretells his betrayal.",
+        "artNote": "Leonardo gathers the perspective on Christ while the disciples' grouped gestures freeze the moment of betrayal.",
+        "verseHints": [
+          {
+            "ref": "Luke 22:19",
+            "text": "He took bread, and when he had given thanks, he broke it, and gave to them, saying, “This is my body which is given for you. Do this in memory of me.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 22:20",
+          "text": "Likewise, he took the cup after supper, saying, “This cup is the new covenant in my blood, which is poured out for you."
+        },
+        "storyId": "passion",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Cenacle, Mount Zion (traditional site)",
+        "geoNote": "The Last Supper took place in Jerusalem; the traditional site is the Cenacle on Mount Zion, though the exact location is unknown."
+      },
+      {
+        "id": "gethsemane",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Agony in the Garden",
+        "options": [
+          "The Agony in the Garden",
+          "The Temptation of Jesus",
+          "The Baptism of Jesus",
+          "The Sermon on the Mount"
+        ],
+        "hints": [
+          "Someone prays face down in a garden at night.",
+          "The disciples are asleep nearby.",
+          "Jesus asks the Father to take away the cup."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 26,
+          "verse": "36-46"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Garden of Gethsemane",
+          "lat": 31.7794,
+          "lng": 35.2397
+        },
+        "image": {
+          "src": "/images/gethsemane.jpg",
+          "title": "The Agony in the Garden",
+          "artist": "Giovanni Bellini",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bellini,Giovanni_-_Agony_in_the_Garden_-_National_Gallery.jpg"
+        },
+        "summary": "In Gethsemane Jesus is deeply sorrowful and prays, “My Father, if it is possible, let this cup pass from me.”",
+        "artNote": "Bellini places the praying Christ in a dawn landscape, holding sorrow and obedience in one frame.",
+        "verseHints": [
+          {
+            "ref": "Matthew 26:39",
+            "text": "He went forward a little, fell on his face, and prayed, saying, “My Father, if it is possible, let this cup pass away from me; nevertheless, not what I desire, but what you desire.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 26:42",
+          "text": "Again, a second time he went away, and prayed, saying, “My Father, if this cup can’t pass away from me unless I drink it, your desire be done.”"
+        },
+        "storyId": "passion",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Gethsemane / Church of All Nations",
+        "geoNote": "Gethsemane lies at the foot of the Mount of Olives east of Jerusalem; the Church of All Nations stands there."
+      },
+      {
+        "id": "crucifixion",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Crucifixion",
+        "options": [
+          "The Crucifixion",
+          "The Resurrection",
+          "The Ascension",
+          "The Raising of Lazarus"
+        ],
+        "hints": [
+          "A cross stands at the center.",
+          "His mother and disciples stand below.",
+          "This is Golgotha, the place of the skull."
+        ],
+        "scripture": {
+          "book": "John",
+          "chapter": 19,
+          "verse": "17-30"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Golgotha",
+          "lat": 31.7784,
+          "lng": 35.2298
+        },
+        "image": {
+          "src": "/images/crucifixion.jpg",
+          "title": "The Crucifixion",
+          "artist": "Hendrick ter Brugghen",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hendrick_ter_Brugghen_The_Crucifixion_with_the_Virgin_and_Saint_John.jpg"
+        },
+        "summary": "Jesus is crucified at Golgotha, bearing the sins of the world; after saying “It is finished,” he gives up his spirit.",
+        "artNote": "Hendrick ter Brugghen strips the scene to the cross and a few figures, stressing the solitude and weight of the Passion.",
+        "verseHints": [
+          {
+            "ref": "Luke 23:46",
+            "text": "Jesus, crying with a loud voice, said, “Father, into your hands I commit my spirit!” Having said this, he breathed his last."
+          }
+        ],
+        "keyVerse": {
+          "ref": "John 19:30",
+          "text": "When Jesus therefore had received the vinegar, he said, “It is finished.” He bowed his head, and gave up his spirit."
+        },
+        "storyId": "passion",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Church of the Holy Sepulchre (traditional site)",
+        "geoNote": "Golgotha was outside Jerusalem; tradition identifies it with the Church of the Holy Sepulchre, while Gordon's Calvary is another proposal."
+      }
+    ]
+  }
+}

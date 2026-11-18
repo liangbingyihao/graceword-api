@@ -19,25 +19,7 @@ import logging
 from services import constants
 
 # 创建日志记录器
-logger = logging.getLogger('my_app')
-logger.propagate = False
-logger.setLevel(logging.DEBUG)  # 设置日志级别
-
-# 创建文件处理器
-file_handler = logging.FileHandler('coze.log')
-file_handler.setLevel(logging.INFO)
-
-# 创建日志格式
-formatter = logging.Formatter(
-    '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
-file_handler.setFormatter(formatter)
-
-# logger.handlers.clear()
-logging.getLogger().handlers.clear()
-# 添加处理器到日志记录器
-logger.addHandler(file_handler)
+logger = logging.getLogger(__name__)
 
 # Init the Coze client through the access_token.
 coze = Coze(auth=TokenAuth(token=coze_api_token), base_url=COZE_CN_BASE_URL)
@@ -458,5 +440,5 @@ class CozeService:
                 conversation_id=conversation_id
         ):
             if event.event == ChatEventType.CONVERSATION_MESSAGE_COMPLETED:
-                logger.info(f"_summary_by_coze got: {conversation_id, event.message.content}")
+                logger.info("_summary_by_coze completed conversation_id=%s", conversation_id)
                 return event.message.content

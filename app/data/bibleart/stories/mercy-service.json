@@ -1,0 +1,390 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "mercy-service",
+  "story": {
+    "zh-Hant": {
+      "id": "mercy-service",
+      "title": "饒恕、服事與奉獻",
+      "intro": "不饒恕人的僕人、馬大與馬利亞的接待，以及城牆奉獻的敬拜，思想饒恕、服事與奉獻。",
+      "outro": "你們若有彼此相愛的心，眾人因此就認出你們是我的門徒了。",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "people",
+        "teaching"
+      ],
+      "order": 12,
+      "questionIds": [
+        "unforgiving_servant",
+        "mary_martha",
+        "dedication"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "mary_martha",
+      "coverImage": "/images/mary_martha.jpg",
+      "coverTitle": "馬大與馬利亞接待耶穌"
+    },
+    "en": {
+      "id": "mercy-service",
+      "title": "Forgiveness, Service & Dedication",
+      "intro": "The unforgiving servant, Mary and Martha's welcome, and the dedication of the wall invite us to forgive, serve, and offer ourselves.",
+      "outro": "By this everyone will know that you are my disciples, if you love one another.",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "people",
+        "teaching"
+      ],
+      "order": 12,
+      "questionIds": [
+        "unforgiving_servant",
+        "mary_martha",
+        "dedication"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "mary_martha",
+      "coverImage": "/images/mary_martha.jpg",
+      "coverTitle": "Christ with Mary and Martha"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "dedication",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "return",
+        "answer": "城牆奉獻禮的遊行",
+        "options": [
+          "城牆奉獻禮的遊行",
+          "約櫃進入耶路撒冷",
+          "耶穌榮入聖城",
+          "尼希米夜巡城牆"
+        ],
+        "hints": [
+          "一群人走在城牆上。",
+          "有詩班與樂器。",
+          "這是城牆重建完成後的奉獻。"
+        ],
+        "scripture": {
+          "book": "尼希米記",
+          "chapter": 12,
+          "verse": "27"
+        },
+        "event": {
+          "year": -445,
+          "tolerance": 80,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/dedication.jpg",
+          "title": "耶路撒冷城牆奉獻遊行",
+          "artist": "James Tissot",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tissot_Drawing_360_The_procession_on_the_walls_of_Jerusalem_Nehemiah_12_27_for_Brunoff_346_La_procession_sur_les_murs.jpg"
+        },
+        "summary": "城牆重建完成後，尼希米帶領百姓在城牆上遊行，獻上感恩與奉獻。",
+        "artNote": "Tissot 以城牆上的遊行與詩班，呈現奉獻禮的喜樂與感恩。",
+        "verseHints": [
+          {
+            "ref": "尼希米記 12:27",
+            "text": "耶路撒冷城牆告成的時候，眾民就把各處的利未人招到耶路撒冷，要稱謝、歌唱、敲鈸、鼓瑟、彈琴，歡歡喜喜地行告成之禮。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "尼希米記 12:43",
+          "text": "那日，眾人獻大祭而歡樂；因為神使他們大大歡樂，連婦女帶孩童也都歡樂，甚至耶路撒冷中的歡聲聽到遠處。"
+        },
+        "storyId": "mercy-service",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶路撒冷",
+        "geoNote": "城牆奉獻禮在耶路撒冷城牆上舉行，有兩隊詩班同行。"
+      },
+      {
+        "id": "unforgiving_servant",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "不饒恕人的僕人",
+        "options": [
+          "不饒恕人的僕人",
+          "浪子回頭",
+          "好撒馬利亞人",
+          "法利賽人與稅吏"
+        ],
+        "hints": [
+          "一位僕人被免去大筆債務。",
+          "他卻不肯饒恕同伴。",
+          "主人因此責備他。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 18,
+          "verse": "32-33"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "加利利",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/unforgiving_servant.jpg",
+          "title": "不饒恕人的僕人",
+          "artist": "Claude Vignon",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Parable_of_the_Unforgiving_Servant.jpg"
+        },
+        "summary": "被主人免債的僕人卻不肯饒恕同伴，主人責備他不該如此。",
+        "artNote": "Vignon 以人物手勢與緊張對峙，呈現不饒恕所帶來的張力。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 18:28",
+            "text": "「那僕人出來，遇見他的一個同伴欠他十兩銀子，便揪著他，掐住他的喉嚨，說：『你把所欠的還我！』"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 18:35",
+          "text": "你們各人若不從心裡饒恕你的弟兄，我天父也要這樣待你們了。」"
+        },
+        "storyId": "mercy-service",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "加利利（迦百農一帶）",
+        "geoNote": "這比喻屬馬太福音的教導段落，背景在加利利事工。"
+      },
+      {
+        "id": "mary_martha",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "馬大與馬利亞接待耶穌",
+        "options": [
+          "馬大與馬利亞接待耶穌",
+          "撒該",
+          "尼哥底母",
+          "少年官"
+        ],
+        "hints": [
+          "一對姐妹接待耶穌。",
+          "馬大忙於服事。",
+          "馬利亞選擇聆聽。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 10,
+          "verse": "38-42"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "伯大尼",
+          "lat": 31.771,
+          "lng": 35.263
+        },
+        "image": {
+          "src": "/images/mary_martha.jpg",
+          "title": "馬大與馬利亞接待耶穌",
+          "artist": "Pieter Aertsen",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Aertsen_-_Christ_with_Mary_and_Martha_-_Google_Art_Project.jpg"
+        },
+        "summary": "馬大忙於服事，馬利亞坐在耶穌腳前聆聽，耶穌稱讚她選擇了上好福分。",
+        "artNote": "Aertsen 以室內場景與兩位姊妹，對比忙碌服事與安靜聆聽。",
+        "verseHints": [
+          {
+            "ref": "路加福音 10:39",
+            "text": "她有一個妹子，名叫馬利亞，在耶穌腳前坐著聽他的道。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 10:42",
+          "text": "但是不可少的只有一件；馬利亞已經選擇那上好的福分，是不能奪去的。」"
+        },
+        "storyId": "mercy-service",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "伯大尼",
+        "geoNote": "馬大與馬利亞住在耶路撒冷附近的伯大尼。"
+      }
+    ],
+    "en": [
+      {
+        "id": "dedication",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "return",
+        "answer": "The Procession at the Wall's Dedication",
+        "options": [
+          "The Procession at the Wall's Dedication",
+          "The Ark Enters Jerusalem",
+          "Jesus' Triumphal Entry",
+          "Nehemiah Inspects the Walls"
+        ],
+        "hints": [
+          "A group walks on the wall.",
+          "There are choirs and instruments.",
+          "This follows the completion of the wall."
+        ],
+        "scripture": {
+          "book": "Nehemiah",
+          "chapter": 12,
+          "verse": "27"
+        },
+        "event": {
+          "year": -445,
+          "tolerance": 80,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/dedication.jpg",
+          "title": "The Procession on the Walls of Jerusalem",
+          "artist": "James Tissot",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tissot_Drawing_360_The_procession_on_the_walls_of_Jerusalem_Nehemiah_12_27_for_Brunoff_346_La_procession_sur_les_murs.jpg"
+        },
+        "summary": "After the wall is finished, Nehemiah leads a procession on the walls in thanksgiving and dedication.",
+        "artNote": "Tissot's procession on the walls, with choirs, conveys the joy and thanksgiving of dedication.",
+        "verseHints": [
+          {
+            "ref": "Nehemiah 12:27",
+            "text": "At the dedication of the wall of Jerusalem they sought the Levites out of all their places, to bring them to Jerusalem, to keep the dedication with gladness, both with giving thanks, and with singing, with cymbals, stringed instruments, and with harps."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Nehemiah 12:43",
+          "text": "They offered great sacrifices that day, and rejoiced; for God had made them rejoice with great joy; and the women also and the children rejoiced: so that the joy of Jerusalem was heard even afar off."
+        },
+        "storyId": "mercy-service",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem",
+        "geoNote": "The dedication took place on Jerusalem's walls, with two choirs processing."
+      },
+      {
+        "id": "unforgiving_servant",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Unforgiving Servant",
+        "options": [
+          "The Unforgiving Servant",
+          "The Return of the Prodigal Son",
+          "The Good Samaritan",
+          "The Pharisee and the Tax Collector"
+        ],
+        "hints": [
+          "A servant is forgiven a huge debt.",
+          "He refuses to forgive a fellow servant.",
+          "The master rebukes him for it."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 18,
+          "verse": "32-33"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "Galilee",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/unforgiving_servant.jpg",
+          "title": "The Parable of the Unforgiving Servant",
+          "artist": "Claude Vignon",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Parable_of_the_Unforgiving_Servant.jpg"
+        },
+        "summary": "A servant whose huge debt was forgiven refuses to forgive a fellow servant, and the master rebukes him.",
+        "artNote": "Vignon uses gestures and tense confrontation to show the strain of unforgiveness.",
+        "verseHints": [
+          {
+            "ref": "Matthew 18:28",
+            "text": "“But that servant went out, and found one of his fellow servants, who owed him one hundred denarii,and he grabbed him, and took him by the throat, saying, ‘Pay me what you owe!’"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 18:35",
+          "text": "So my heavenly Father will also do to you, if you don’t each forgive your brother from your hearts for his misdeeds.”"
+        },
+        "storyId": "mercy-service",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Galilee (Capernaum area)",
+        "geoNote": "This parable belongs to Matthew's teaching block set within the Galilean ministry."
+      },
+      {
+        "id": "mary_martha",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "Mary and Martha Welcome Jesus",
+        "options": [
+          "Mary and Martha Welcome Jesus",
+          "Zacchaeus",
+          "Nicodemus",
+          "The Rich Young Ruler"
+        ],
+        "hints": [
+          "Two sisters welcome Jesus.",
+          "Martha is busy serving.",
+          "Mary chooses to listen."
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 10,
+          "verse": "38-42"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Bethany",
+          "lat": 31.771,
+          "lng": 35.263
+        },
+        "image": {
+          "src": "/images/mary_martha.jpg",
+          "title": "Christ with Mary and Martha",
+          "artist": "Pieter Aertsen",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Aertsen_-_Christ_with_Mary_and_Martha_-_Google_Art_Project.jpg"
+        },
+        "summary": "Martha busies herself serving while Mary sits at Jesus' feet; Jesus praises Mary's choice.",
+        "artNote": "Aertsen contrasts the busy server with the sister sitting quietly to listen.",
+        "verseHints": [
+          {
+            "ref": "Luke 10:39",
+            "text": "She had a sister called Mary, who also sat at Jesus’ feet, and heard his word."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 10:42",
+          "text": "but one thing is needed. Mary has chosen the good part, which will not be taken away from her.”"
+        },
+        "storyId": "mercy-service",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Bethany",
+        "geoNote": "Mary and Martha lived in Bethany, near Jerusalem."
+      }
+    ]
+  }
+}

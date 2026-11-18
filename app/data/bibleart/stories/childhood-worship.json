@@ -1,0 +1,386 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "childhood-worship",
+  "story": {
+    "zh-Hant": {
+      "id": "childhood-worship",
+      "title": "朝拜與童年",
+      "intro": "從聖母訪親、東方博士朝拜，到少年耶穌在聖殿，跟隨耶穌童年的敬拜與成長。",
+      "outro": "耶穌的智慧和身量，並神和人喜愛他的心，都一齊增長。",
+      "era": "nt",
+      "section": "jesus-life",
+      "themes": [
+        "birth",
+        "people"
+      ],
+      "order": 2,
+      "questionIds": [
+        "visitation",
+        "magi",
+        "boy_jesus_temple"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "boy_jesus_temple",
+      "coverImage": "/images/boy_jesus_temple.jpg",
+      "coverTitle": "少年耶穌在聖殿"
+    },
+    "en": {
+      "id": "childhood-worship",
+      "title": "Childhood & Worship",
+      "intro": "From the visitation and the magi to the boy Jesus in the temple, follow the worship and growth of Jesus' childhood.",
+      "outro": "Jesus grew in wisdom and stature, and in favor with God and people.",
+      "era": "nt",
+      "section": "jesus-life",
+      "themes": [
+        "birth",
+        "people"
+      ],
+      "order": 2,
+      "questionIds": [
+        "visitation",
+        "magi",
+        "boy_jesus_temple"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "boy_jesus_temple",
+      "coverImage": "/images/boy_jesus_temple.jpg",
+      "coverTitle": "Jesus among the Doctors"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "magi",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "東方博士朝拜",
+        "options": [
+          "東方博士朝拜",
+          "五餅二魚",
+          "耶穌受洗",
+          "耶穌升天"
+        ],
+        "hints": [
+          "幾位來自東方的訪客帶著禮物。",
+          "他們跟隨星的引導。",
+          "畫面中的嬰孩被尊為君王。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 2,
+          "verse": "1-12"
+        },
+        "event": {
+          "year": -4,
+          "tolerance": 8,
+          "locationId": "bethlehem",
+          "placeName": "伯利恆",
+          "lat": 31.7054,
+          "lng": 35.2024
+        },
+        "image": {
+          "src": "/images/magi.jpg",
+          "title": "三博士朝拜",
+          "artist": "Fra Angelico 與 Fra Filippo Lippi",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fra_Angelico,_Fra_Filippo_Lippi,_The_Adoration_of_the_Magi.jpg"
+        },
+        "summary": "幾位東方的博士跟隨明星來到伯利恆，俯伏朝拜嬰孩耶穌，並獻上黃金、乳香、沒藥。",
+        "artNote": "Fra Angelico 與 Lippi 合作的圓形畫作，將朝拜行列安排在繁複的建築與風景中。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 2:2",
+            "text": "「那生下來作猶太人之王的在哪裡？我們在東方看見他的星，特來拜他。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 2:11",
+          "text": "進了房子，看見小孩子和他母親馬利亞，就俯伏拜那小孩子，揭開寶盒，拿黃金、乳香、沒藥為禮物獻給他。"
+        },
+        "storyId": "childhood-worship",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Bethlehem（伯利恆）",
+        "geoNote": "博士在伯利恆朝拜；該地今屬巴勒斯坦西岸地區，聖誕教堂是傳統地點。"
+      },
+      {
+        "id": "visitation",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "聖母訪親",
+        "options": [
+          "聖母訪親",
+          "耶穌降生",
+          "東方博士朝拜",
+          "耶穌受洗"
+        ],
+        "hints": [
+          "兩位女子在門口相擁。",
+          "其中一位年長者已經懷孕。",
+          "這是馬利亞探望伊利莎白。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 1,
+          "verse": "39-56"
+        },
+        "event": {
+          "year": -5,
+          "tolerance": 8,
+          "locationId": "judea",
+          "placeName": "猶大山地",
+          "lat": 31.76,
+          "lng": 35.16
+        },
+        "image": {
+          "src": "/images/visitation.jpg",
+          "title": "聖母訪親",
+          "artist": "Domenico Ghirlandaio",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Visitation_by_Domenico_Ghirlandaio.jpg"
+        },
+        "summary": "馬利亞起身往猶大山地探望伊利莎白，兩人相擁，伊利莎白稱馬利亞為有福的。",
+        "artNote": "Ghirlandaio 以拱門與城市背景襯托兩位女子的擁抱，強調信心與盼望的相遇。",
+        "verseHints": [
+          {
+            "ref": "路加福音 1:42",
+            "text": "高聲喊著說：「你在婦女中是有福的！你所懷的胎也是有福的！"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 1:45",
+          "text": "這相信的女子是有福的！因為主對她所說的話都要應驗。」"
+        },
+        "storyId": "childhood-worship",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Ein Karem（傳統地點）",
+        "geoNote": "聖經只說「猶大山地」；傳統將訪親地點與耶路撒冷西郊的 Ein Karem 聯繫起來。"
+      },
+      {
+        "id": "boy_jesus_temple",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "少年耶穌在聖殿",
+        "options": [
+          "少年耶穌在聖殿",
+          "耶穌受洗",
+          "耶穌潔淨聖殿",
+          "耶穌在曠野受試探"
+        ],
+        "hints": [
+          "耶穌十二歲時上耶路撒冷。",
+          "他在聖殿裡與教師對話。",
+          "他的父母三天後才找到他。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 2,
+          "verse": "41-52"
+        },
+        "event": {
+          "year": 8,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/boy_jesus_temple.jpg",
+          "title": "少年耶穌在聖殿",
+          "artist": "Albrecht Dürer",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Jesus_among_the_Doctors_-_Google_Art_Project.jpg"
+        },
+        "summary": "耶穌十二歲時在耶路撒冷聖殿與教師對話，父母找到他時，他正以父的事為念。",
+        "artNote": "Dürer 以緊湊的人物群像與少年基督的手勢，呈現他在教師中間對話的智慧與專注。",
+        "verseHints": [
+          {
+            "ref": "路加福音 2:49",
+            "text": "耶穌說：「為甚麼找我呢？豈不知我應當以我父的事為念嗎？（或譯：豈不知我應當在我父的家裡嗎？）」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 2:52",
+          "text": "耶穌的智慧和身量（或譯：年紀），並神和人喜愛他的心，都一齊增長。"
+        },
+        "storyId": "childhood-worship",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶路撒冷聖殿",
+        "geoNote": "路加福音記載耶穌十二歲時在耶路撒冷聖殿與教師對話；確切位置不詳。"
+      }
+    ],
+    "en": [
+      {
+        "id": "magi",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "Adoration of the Magi",
+        "options": [
+          "Adoration of the Magi",
+          "Feeding the Five Thousand",
+          "The Baptism of Jesus",
+          "The Ascension"
+        ],
+        "hints": [
+          "Visitors from the East bring gifts.",
+          "They follow a star.",
+          "The child is honored as a king."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 2,
+          "verse": "1-12"
+        },
+        "event": {
+          "year": -4,
+          "tolerance": 8,
+          "locationId": "bethlehem",
+          "placeName": "Bethlehem",
+          "lat": 31.7054,
+          "lng": 35.2024
+        },
+        "image": {
+          "src": "/images/magi.jpg",
+          "title": "The Adoration of the Magi",
+          "artist": "Fra Angelico 與 Fra Filippo Lippi",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fra_Angelico,_Fra_Filippo_Lippi,_The_Adoration_of_the_Magi.jpg"
+        },
+        "summary": "Magi from the East follow a star to Bethlehem, bow before the child Jesus, and offer gold, frankincense, and myrrh.",
+        "artNote": "A circular panel by Fra Angelico and Lippi places the procession within intricate architecture and landscape.",
+        "verseHints": [
+          {
+            "ref": "Matthew 2:2",
+            "text": "“Where is he who is born King of the Jews? For we saw his star in the east, and have come to worship him.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 2:11",
+          "text": "They came into the house and saw the young child with Mary, his mother, and they fell down and worshiped him. Opening their treasures, they offered to him gifts: gold, frankincense, and myrrh."
+        },
+        "storyId": "childhood-worship",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Bethlehem",
+        "geoNote": "The Magi worshiped in Bethlehem, today in the West Bank; the Church of the Nativity is the traditional site."
+      },
+      {
+        "id": "visitation",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Visitation",
+        "options": [
+          "The Visitation",
+          "The Nativity",
+          "Adoration of the Magi",
+          "The Baptism of Jesus"
+        ],
+        "hints": [
+          "Two women embrace at a doorway.",
+          "The older woman is already pregnant.",
+          "Mary has come to visit Elizabeth."
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 1,
+          "verse": "39-56"
+        },
+        "event": {
+          "year": -5,
+          "tolerance": 8,
+          "locationId": "judea",
+          "placeName": "Hill Country of Judea",
+          "lat": 31.76,
+          "lng": 35.16
+        },
+        "image": {
+          "src": "/images/visitation.jpg",
+          "title": "The Visitation",
+          "artist": "Domenico Ghirlandaio",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Visitation_by_Domenico_Ghirlandaio.jpg"
+        },
+        "summary": "Mary travels to the hill country of Judea to visit Elizabeth; they embrace, and Elizabeth blesses Mary.",
+        "artNote": "Ghirlandaio frames the embrace with an arch and a cityscape, emphasizing a meeting of faith and hope.",
+        "verseHints": [
+          {
+            "ref": "Luke 1:42",
+            "text": "She called out with a loud voice, and said, “Blessed are you among women, and blessed is the fruit of your womb!"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 1:45",
+          "text": "Blessed is she who believed, for there will be a fulfillment of the things which have been spoken to her from the Lord!”"
+        },
+        "storyId": "childhood-worship",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Ein Karem (traditional site)",
+        "geoNote": "The Gospel says only “the hill country of Judea”; tradition links the visit to Ein Karem, west of Jerusalem."
+      },
+      {
+        "id": "boy_jesus_temple",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Boy Jesus in the Temple",
+        "options": [
+          "The Boy Jesus in the Temple",
+          "The Baptism of Jesus",
+          "The Cleansing of the Temple",
+          "The Temptation in the Wilderness"
+        ],
+        "hints": [
+          "Jesus goes up to Jerusalem at age twelve.",
+          "He is found among the teachers in the temple.",
+          "His parents find him after three days."
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 2,
+          "verse": "41-52"
+        },
+        "event": {
+          "year": 8,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/boy_jesus_temple.jpg",
+          "title": "Jesus among the Doctors",
+          "artist": "Albrecht Dürer",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Jesus_among_the_Doctors_-_Google_Art_Project.jpg"
+        },
+        "summary": "At twelve, Jesus stays behind in the Jerusalem temple among the teachers, and his parents find him after three days.",
+        "artNote": "Dürer packs the scene with debating figures and gestures, focusing attention on the young Christ's wisdom and composure.",
+        "verseHints": [
+          {
+            "ref": "Luke 2:49",
+            "text": "He said to them, “Why were you looking for me? Didn’t you know that I must be in my Father’s house?”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 2:52",
+          "text": "And Jesus increased in wisdom and stature, and in favor with God and men."
+        },
+        "storyId": "childhood-worship",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem Temple",
+        "geoNote": "Luke places the twelve-year-old Jesus among the teachers in the Jerusalem temple; the exact location is unknown."
+      }
+    ]
+  }
+}

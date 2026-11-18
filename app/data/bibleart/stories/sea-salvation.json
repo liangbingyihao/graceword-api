@@ -1,0 +1,390 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "sea-salvation",
+  "story": {
+    "zh-Hant": {
+      "id": "sea-salvation",
+      "title": "海上的拯救",
+      "intro": "耶穌在水面行走，保羅在海難中獲救，約拿在海上被拋下，看見風浪中的拯救。",
+      "outro": "在患難中，神仍掌權。",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "miracle",
+        "mission"
+      ],
+      "order": 14,
+      "questionIds": [
+        "walk_water",
+        "shipwreck_rome",
+        "jonah_ship"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "walk_water",
+      "coverImage": "/images/walk_water.jpg",
+      "coverTitle": "門徒看見耶穌在水面行走"
+    },
+    "en": {
+      "id": "sea-salvation",
+      "title": "Salvation on the Sea",
+      "intro": "Jesus walks on the water, Paul survives a shipwreck, and Jonah is thrown into the sea, revealing God's rescue in the storm.",
+      "outro": "Even in the storm, God reigns.",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "miracle",
+        "mission"
+      ],
+      "order": 14,
+      "questionIds": [
+        "walk_water",
+        "shipwreck_rome",
+        "jonah_ship"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "walk_water",
+      "coverImage": "/images/walk_water.jpg",
+      "coverTitle": "The Disciples See Christ Walking on the Water"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "walk_water",
+        "era": "NT",
+        "difficulty": 3,
+        "mode": "zoom",
+        "answer": "耶穌在水面行走",
+        "options": [
+          "耶穌在水面行走",
+          "耶穌平靜風浪",
+          "耶穌呼召彼得與安得烈",
+          "耶穌升天"
+        ],
+        "hints": [
+          "夜晚的湖面上出現一個身影。",
+          "門徒起初以為是鬼怪。",
+          "彼得也曾試著下水。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 14,
+          "verse": "22-33"
+        },
+        "event": {
+          "year": 29,
+          "tolerance": 6,
+          "locationId": "sea_of_galilee",
+          "placeName": "加利利海",
+          "lat": 32.82,
+          "lng": 35.57
+        },
+        "image": {
+          "src": "/images/walk_water.jpg",
+          "title": "門徒看見耶穌在水面行走",
+          "artist": "Henry Ossawa Tanner",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Disciples_See_Christ_Walking_on_the_Water,_by_Henry_Ossawa_Tanner.jpg"
+        },
+        "summary": "夜裡耶穌在加利利海面上行走，門徒害怕；彼得也下水行走，卻因小信而沉下去。",
+        "artNote": "Henry Ossawa Tanner 以夜色與薄霧描繪湖面，強調門徒在黑暗中看見基督的瞬間。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 14:29",
+            "text": "耶穌說：「你來吧。」彼得就從船上下去，在水面上走，要到耶穌那裡去；"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 14:31",
+          "text": "耶穌趕緊伸手拉住他，說：「你這小信的人哪，為甚麼疑惑呢？」"
+        },
+        "storyId": "sea-salvation",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "Sea of Galilee",
+        "geoNote": "福音書記載耶穌在夜間於加利利海面行走；湖面在風暴時波濤洶湧。"
+      },
+      {
+        "id": "jonah_ship",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "divided-kingdom",
+        "answer": "約拿被拋入海中",
+        "options": [
+          "約拿被拋入海中",
+          "耶穌平靜風浪",
+          "保羅海難",
+          "摩西過紅海"
+        ],
+        "hints": [
+          "海上起了大風暴。",
+          "水手們把一個人拋下船。",
+          "一條大魚在旁。"
+        ],
+        "scripture": {
+          "book": "約拿書",
+          "chapter": 1,
+          "verse": "15"
+        },
+        "event": {
+          "year": -760,
+          "tolerance": 100,
+          "locationId": "joppa",
+          "placeName": "約帕",
+          "lat": 32.05,
+          "lng": 34.75
+        },
+        "image": {
+          "src": "/images/jonah_ship.jpg",
+          "title": "約拿與大魚",
+          "artist": "Carlo Antonio Tavella",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jonah_and_the_Whale_RMG_BHC0881.tiff"
+        },
+        "summary": "約拿逃避神的呼召，船遇風暴，水手將他拋入海中，風浪就平息。",
+        "artNote": "Tavella 以暴風中的船與巨魚，營造約拿逃亡的張力。",
+        "verseHints": [
+          {
+            "ref": "約拿書 1:15",
+            "text": "他們遂將約拿抬起，拋在海中，海的狂浪就平息了。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約拿書 1:4",
+          "text": "然而耶和華使海中起大風，海就狂風大作，甚至船幾乎破壞。"
+        },
+        "storyId": "sea-salvation",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "約帕（Joppa／Jaffa）",
+        "geoNote": "約拿從約帕港登船，想逃往他施。"
+      },
+      {
+        "id": "shipwreck_rome",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "保羅在馬耳他海難",
+        "options": [
+          "保羅在馬耳他海難",
+          "腓立比獄卒受洗",
+          "呂底亞受洗",
+          "哥尼流見異象"
+        ],
+        "hints": [
+          "船在暴風中漂流。",
+          "船撞上沙灘破裂。",
+          "眾人游到島上獲救。"
+        ],
+        "scripture": {
+          "book": "使徒行傳",
+          "chapter": 28,
+          "verse": "1-3"
+        },
+        "event": {
+          "year": 59,
+          "tolerance": 8,
+          "locationId": "malta",
+          "placeName": "馬耳他",
+          "lat": 35.9,
+          "lng": 14.4
+        },
+        "image": {
+          "src": "/images/shipwreck_rome.jpg",
+          "title": "保羅在馬耳他海難",
+          "artist": "Laurent de La Hyre",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Laurent_de_La_Hyre%27s_Saint_Paul_Shipwrecked_on_Malta.jpg"
+        },
+        "summary": "保羅被押往羅馬途中遇海難，船在馬耳他擱淺破裂，眾人平安上岸。",
+        "artNote": "La Hyre 以暴風與破裂的船，呈現保羅海難中的驚險與保守。",
+        "verseHints": [
+          {
+            "ref": "使徒行傳 27:41",
+            "text": "但遇著兩水夾流的地方，就把船擱了淺；船頭膠住不動，船尾被浪的猛力衝壞。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "使徒行傳 27:44",
+          "text": "其餘的人可以用板子或船上的零碎東西上岸。這樣，眾人都得了救，上了岸。"
+        },
+        "storyId": "sea-salvation",
+        "regionId": "malta",
+        "regionName": "米利大",
+        "modernName": "馬耳他",
+        "geoNote": "保羅被押往羅馬途中在馬耳他島附近遇海難。"
+      }
+    ],
+    "en": [
+      {
+        "id": "walk_water",
+        "era": "NT",
+        "difficulty": 3,
+        "mode": "zoom",
+        "answer": "Jesus Walks on Water",
+        "options": [
+          "Jesus Walks on Water",
+          "Calming the Storm",
+          "The Calling of Peter and Andrew",
+          "The Ascension"
+        ],
+        "hints": [
+          "A figure appears on the lake at night.",
+          "The disciples first think it is a ghost.",
+          "Peter also tries to walk on the water."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 14,
+          "verse": "22-33"
+        },
+        "event": {
+          "year": 29,
+          "tolerance": 6,
+          "locationId": "sea_of_galilee",
+          "placeName": "Sea of Galilee",
+          "lat": 32.82,
+          "lng": 35.57
+        },
+        "image": {
+          "src": "/images/walk_water.jpg",
+          "title": "The Disciples See Christ Walking on the Water",
+          "artist": "Henry Ossawa Tanner",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Disciples_See_Christ_Walking_on_the_Water,_by_Henry_Ossawa_Tanner.jpg"
+        },
+        "summary": "At night Jesus walks on the Sea of Galilee; the disciples are afraid, and Peter walks on the water until his faith wavers.",
+        "artNote": "Henry Ossawa Tanner paints the lake in night and mist, emphasizing the moment the disciples see Christ in the dark.",
+        "verseHints": [
+          {
+            "ref": "Matthew 14:29",
+            "text": "He said, “Come!” Peter stepped down from the boat, and walked on the waters to come to Jesus."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 14:31",
+          "text": "Immediately Jesus stretched out his hand, took hold of him, and said to him, “You of little faith, why did you doubt?”"
+        },
+        "storyId": "sea-salvation",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Sea of Galilee",
+        "geoNote": "The Gospels place Jesus' night walk on the Sea of Galilee, a lake known for sudden rough weather."
+      },
+      {
+        "id": "jonah_ship",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "divided-kingdom",
+        "answer": "Jonah Is Thrown into the Sea",
+        "options": [
+          "Jonah Is Thrown into the Sea",
+          "Jesus Calms the Storm",
+          "Paul's Shipwreck",
+          "Moses Crosses the Red Sea"
+        ],
+        "hints": [
+          "A great storm arises at sea.",
+          "The sailors throw a man overboard.",
+          "A great fish is nearby."
+        ],
+        "scripture": {
+          "book": "Jonah",
+          "chapter": 1,
+          "verse": "15"
+        },
+        "event": {
+          "year": -760,
+          "tolerance": 100,
+          "locationId": "joppa",
+          "placeName": "Joppa",
+          "lat": 32.05,
+          "lng": 34.75
+        },
+        "image": {
+          "src": "/images/jonah_ship.jpg",
+          "title": "Jonah and the Whale",
+          "artist": "Carlo Antonio Tavella",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jonah_and_the_Whale_RMG_BHC0881.tiff"
+        },
+        "summary": "Jonah flees God's call; a storm strikes the ship, and the sailors throw him into the sea, where the storm ceases.",
+        "artNote": "Tavella sets a storm-tossed ship beside a great fish, heightening the tension of Jonah's flight.",
+        "verseHints": [
+          {
+            "ref": "Jonah 1:15",
+            "text": "So they took up Jonah, and threw him into the sea; and the sea ceased its raging."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Jonah 1:4",
+          "text": "But Yahweh sent out a great wind on the sea, and there was a mighty storm on the sea, so that the ship was likely to break up."
+        },
+        "storyId": "sea-salvation",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Joppa (Jaffa)",
+        "geoNote": "Jonah boarded a ship at Joppa, intending to flee to Tarshish."
+      },
+      {
+        "id": "shipwreck_rome",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "Paul's Shipwreck on Malta",
+        "options": [
+          "Paul's Shipwreck on Malta",
+          "The Philippian Jailer Is Baptized",
+          "Lydia Is Baptized",
+          "Cornelius Sees a Vision"
+        ],
+        "hints": [
+          "The ship drifts in a storm.",
+          "It strikes a sandbar and breaks apart.",
+          "Everyone swims safely to shore."
+        ],
+        "scripture": {
+          "book": "Acts",
+          "chapter": 28,
+          "verse": "1-3"
+        },
+        "event": {
+          "year": 59,
+          "tolerance": 8,
+          "locationId": "malta",
+          "placeName": "Malta",
+          "lat": 35.9,
+          "lng": 14.4
+        },
+        "image": {
+          "src": "/images/shipwreck_rome.jpg",
+          "title": "Saint Paul Shipwrecked on Malta",
+          "artist": "Laurent de La Hyre",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Laurent_de_La_Hyre%27s_Saint_Paul_Shipwrecked_on_Malta.jpg"
+        },
+        "summary": "On the way to Rome, Paul's ship is wrecked at Malta, and all aboard reach shore safely.",
+        "artNote": "La Hyre's storm and breaking ship capture the peril and preservation of Paul's shipwreck.",
+        "verseHints": [
+          {
+            "ref": "Acts 27:41",
+            "text": "But coming to a place where two seas met, they ran the vessel aground. The bow struck and remained immovable, but the stern began to break up by the violence of the waves."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Acts 27:44",
+          "text": "and the rest should follow, some on planks, and some on other things from the ship. So they all escaped safely to the land."
+        },
+        "storyId": "sea-salvation",
+        "regionId": "malta",
+        "regionName": "Malta",
+        "modernName": "Malta",
+        "geoNote": "Paul is shipwrecked near Malta on the voyage to Rome."
+      }
+    ]
+  }
+}

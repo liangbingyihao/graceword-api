@@ -1,0 +1,386 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "galilee",
+  "story": {
+    "zh-Hant": {
+      "id": "galilee",
+      "title": "加利利事工與教導",
+      "intro": "在加利利海邊，耶穌教導、醫治、平靜風浪，也呼召人跟隨他。",
+      "outro": "他的話語帶著權柄。",
+      "era": "nt",
+      "section": "jesus-life",
+      "themes": [
+        "miracle",
+        "teaching"
+      ],
+      "order": 5,
+      "questionIds": [
+        "sermon",
+        "storm",
+        "feed5000"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "sermon",
+      "coverImage": "/images/sermon.jpg",
+      "coverTitle": "登山寶訓"
+    },
+    "en": {
+      "id": "galilee",
+      "title": "Galilee: Ministry & Teaching",
+      "intro": "By the Sea of Galilee, Jesus teaches, heals, calms the storm, and calls people to follow him.",
+      "outro": "His words carried authority.",
+      "era": "nt",
+      "section": "jesus-life",
+      "themes": [
+        "miracle",
+        "teaching"
+      ],
+      "order": 5,
+      "questionIds": [
+        "sermon",
+        "storm",
+        "feed5000"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "sermon",
+      "coverImage": "/images/sermon.jpg",
+      "coverTitle": "The Sermon on the Mount"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "sermon",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "登山寶訓",
+        "options": [
+          "登山寶訓",
+          "耶穌受試探",
+          "最後的晚餐",
+          "客西馬尼園的禱告"
+        ],
+        "hints": [
+          "耶穌在山上向群眾教導。",
+          "聽眾坐在草地上。",
+          "八福與主禱文都出自這段教導。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 5,
+          "verse": "1-16"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "sea_of_galilee",
+          "placeName": "八福山",
+          "lat": 32.8806,
+          "lng": 35.5556
+        },
+        "image": {
+          "src": "/images/sermon.jpg",
+          "title": "登山寶訓",
+          "artist": "Carl Bloch",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bloch-SermonOnTheMount.jpg"
+        },
+        "summary": "耶穌在山上向門徒與群眾宣講天國的倫理，包括八福、主禱文與愛仇敵的教導。",
+        "artNote": "Carl Bloch 以山坡與人群的層次，呈現耶穌教導的開放場景。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 5:3",
+            "text": "虛心的人有福了！因為天國是他們的。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 5:16",
+          "text": "你們的光也當這樣照在人前，叫他們看見你們的好行為，便將榮耀歸給你們在天上的父。」"
+        },
+        "storyId": "galilee",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "Mount of Beatitudes（傳統地點）",
+        "geoNote": "八福山是傳統上紀念登山寶訓的地點，位於加利利海西北岸；名稱來自「八福」，非聖經地名。"
+      },
+      {
+        "id": "storm",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "耶穌平靜風浪",
+        "options": [
+          "耶穌平靜風浪",
+          "耶穌在水面行走",
+          "五餅二魚",
+          "耶穌受洗"
+        ],
+        "hints": [
+          "小船在洶湧的海上搖晃。",
+          "門徒驚慌，耶穌卻在船尾睡著。",
+          "他斥責風和海。"
+        ],
+        "scripture": {
+          "book": "馬可福音",
+          "chapter": 4,
+          "verse": "35-41"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "sea_of_galilee",
+          "placeName": "加利利海",
+          "lat": 32.8,
+          "lng": 35.58
+        },
+        "image": {
+          "src": "/images/storm.jpg",
+          "title": "加利利海上的風暴",
+          "artist": "Rembrandt",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg"
+        },
+        "summary": "耶穌與門徒在加利利海上遇見大風浪，他起來斥責風和海，海面就大大平靜。",
+        "artNote": "Rembrandt 以強烈明暗對比與傾斜船身，捕捉門徒的恐懼與風浪的威力。",
+        "verseHints": [
+          {
+            "ref": "馬可福音 4:39",
+            "text": "耶穌醒了，斥責風，向海說：「住了吧！靜了吧！」風就止住，大大地平靜了。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬可福音 4:41",
+          "text": "他們就大大地懼怕，彼此說：「這到底是誰，連風和海也聽從他了。」"
+        },
+        "storyId": "galilee",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "Sea of Galilee",
+        "geoNote": "加利利海地勢低窪，周邊山丘易起風浪；福音書記載耶穌在船上平靜風浪。"
+      },
+      {
+        "id": "feed5000",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "五餅二魚",
+        "options": [
+          "五餅二魚",
+          "迦拿婚宴水變酒",
+          "最後的晚餐",
+          "東方博士朝拜"
+        ],
+        "hints": [
+          "一大群人聚集在野地。",
+          "門徒分發餅和魚。",
+          "約有五千人吃飽。"
+        ],
+        "scripture": {
+          "book": "約翰福音",
+          "chapter": 6,
+          "verse": "1-14"
+        },
+        "event": {
+          "year": 29,
+          "tolerance": 6,
+          "locationId": "sea_of_galilee",
+          "placeName": "塔布加",
+          "lat": 32.873,
+          "lng": 35.548
+        },
+        "image": {
+          "src": "/images/feed5000.jpg",
+          "title": "餵飽五千人",
+          "artist": "Domenico Fiasella",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domenico_Fiasella_-_Feeding_the_five_thousand_-_371_-_Gem%C3%A4ldegalerie.jpg"
+        },
+        "summary": "耶穌用一個孩童的五個餅和兩條魚，使五千人吃飽，剩下的零碎還裝滿十二個籃子。",
+        "artNote": "Domenico Fiasella 讓耶穌、孩童與餅魚成為畫面中心，群眾在背景延伸。",
+        "verseHints": [
+          {
+            "ref": "約翰福音 6:11",
+            "text": "耶穌拿起餅來，祝謝了，就分給那坐著的人；分魚也是這樣，都隨著他們所要的。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約翰福音 6:14",
+          "text": "眾人看見耶穌所行的神蹟，就說：「這真是那要到世間來的先知！」"
+        },
+        "storyId": "galilee",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "Tabgha（傳統地點）",
+        "geoNote": "塔布加是加利利海西北岸的傳統地點，五餅二魚堂紀念餵飽五千人的神蹟；「塔布加」是現代地名。"
+      }
+    ],
+    "en": [
+      {
+        "id": "sermon",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Sermon on the Mount",
+        "options": [
+          "The Sermon on the Mount",
+          "The Temptation of Jesus",
+          "The Last Supper",
+          "The Agony in the Garden"
+        ],
+        "hints": [
+          "Jesus teaches the crowds on a hillside.",
+          "The listeners sit on the grass.",
+          "The Beatitudes and the Lord's Prayer come from this teaching."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 5,
+          "verse": "1-16"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "sea_of_galilee",
+          "placeName": "Mount of Beatitudes",
+          "lat": 32.8806,
+          "lng": 35.5556
+        },
+        "image": {
+          "src": "/images/sermon.jpg",
+          "title": "The Sermon on the Mount",
+          "artist": "Carl Bloch",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bloch-SermonOnTheMount.jpg"
+        },
+        "summary": "On a mountain, Jesus teaches his disciples and the crowd about the kingdom of heaven, including the Beatitudes, the Lord's Prayer, and love for enemies.",
+        "artNote": "Carl Bloch layers hillside, crowd, and gesture to open up the scene of Jesus' teaching.",
+        "verseHints": [
+          {
+            "ref": "Matthew 5:3",
+            "text": "“Blessed are the poor in spirit, for theirs is the Kingdom of Heaven."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 5:16",
+          "text": "Even so, let your light shine before men; that they may see your good works, and glorify your Father who is in heaven."
+        },
+        "storyId": "galilee",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Mount of Beatitudes (traditional site)",
+        "geoNote": "The Mount of Beatitudes is a traditional site by the northwest shore of the Sea of Galilee; the name comes from the Beatitudes, not the Bible text."
+      },
+      {
+        "id": "storm",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "Calming the Storm",
+        "options": [
+          "Calming the Storm",
+          "Jesus Walks on Water",
+          "Feeding the Five Thousand",
+          "The Baptism of Jesus"
+        ],
+        "hints": [
+          "A small boat tosses on a rough sea.",
+          "The disciples panic while Jesus sleeps in the stern.",
+          "He rebukes the wind and the sea."
+        ],
+        "scripture": {
+          "book": "Mark",
+          "chapter": 4,
+          "verse": "35-41"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "sea_of_galilee",
+          "placeName": "Sea of Galilee",
+          "lat": 32.8,
+          "lng": 35.58
+        },
+        "image": {
+          "src": "/images/storm.jpg",
+          "title": "Christ in the Storm on the Sea of Galilee",
+          "artist": "Rembrandt",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg"
+        },
+        "summary": "A violent storm strikes the Sea of Galilee; Jesus rebukes the wind and the sea, and there is a great calm.",
+        "artNote": "Rembrandt's sharp chiaroscuro and tilted boat capture both the disciples' fear and the force of the storm.",
+        "verseHints": [
+          {
+            "ref": "Mark 4:39",
+            "text": "He awoke, and rebuked the wind, and said to the sea, “Peace! Be still!” The wind ceased, and there was a great calm."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Mark 4:41",
+          "text": "They were greatly afraid, and said to one another, “Who then is this, that even the wind and the sea obey him?”"
+        },
+        "storyId": "galilee",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Sea of Galilee",
+        "geoNote": "The Sea of Galilee lies below sea level and is prone to sudden storms; the Gospels record Jesus calming one."
+      },
+      {
+        "id": "feed5000",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "Feeding the Five Thousand",
+        "options": [
+          "Feeding the Five Thousand",
+          "The Wedding at Cana",
+          "The Last Supper",
+          "Adoration of the Magi"
+        ],
+        "hints": [
+          "A large crowd gathers in a remote place.",
+          "The disciples distribute bread and fish.",
+          "About five thousand people are fed."
+        ],
+        "scripture": {
+          "book": "John",
+          "chapter": 6,
+          "verse": "1-14"
+        },
+        "event": {
+          "year": 29,
+          "tolerance": 6,
+          "locationId": "sea_of_galilee",
+          "placeName": "Tabgha",
+          "lat": 32.873,
+          "lng": 35.548
+        },
+        "image": {
+          "src": "/images/feed5000.jpg",
+          "title": "The Feeding of the Five Thousand",
+          "artist": "Domenico Fiasella",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domenico_Fiasella_-_Feeding_the_five_thousand_-_371_-_Gem%C3%A4ldegalerie.jpg"
+        },
+        "summary": "Jesus uses a boy's five loaves and two fish to feed five thousand people, and twelve baskets of leftovers remain.",
+        "artNote": "Domenico Fiasella centers Jesus, the child, and the loaves and fish, with the crowd receding behind them.",
+        "verseHints": [
+          {
+            "ref": "John 6:11",
+            "text": "Jesus took the loaves; and having given thanks, he distributed to the disciples, and the disciples to those who were sitting down; likewise also of the fish as much as they desired."
+          }
+        ],
+        "keyVerse": {
+          "ref": "John 6:14",
+          "text": "When therefore the people saw the sign which Jesus did, they said, “This is truly the prophet who comes into the world.”"
+        },
+        "storyId": "galilee",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Tabgha (traditional site)",
+        "geoNote": "Tabgha is a modern name for a traditional site on the northwest shore; the Church of the Multiplication commemorates the feeding."
+      }
+    ]
+  }
+}

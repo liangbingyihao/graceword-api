@@ -1,0 +1,388 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "early-church",
+  "story": {
+    "zh-Hant": {
+      "id": "early-church",
+      "title": "初代教會與保羅",
+      "intro": "從五旬節到拔摩島，跟隨福音傳遍地中海的腳步。",
+      "outro": "直到地極，作我的見證。",
+      "era": "early-church",
+      "section": "early-church",
+      "themes": [
+        "mission",
+        "holy-spirit"
+      ],
+      "order": 19,
+      "questionIds": [
+        "pentecost",
+        "saul",
+        "patmos"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "pentecost",
+      "coverImage": "/images/pentecost.jpg",
+      "coverTitle": "聖靈降臨"
+    },
+    "en": {
+      "id": "early-church",
+      "title": "The Early Church & Paul",
+      "intro": "From Pentecost to Patmos, follow the gospel as it spreads across the Mediterranean.",
+      "outro": "To the ends of the earth, my witnesses.",
+      "era": "early-church",
+      "section": "early-church",
+      "themes": [
+        "mission",
+        "holy-spirit"
+      ],
+      "order": 19,
+      "questionIds": [
+        "pentecost",
+        "saul",
+        "patmos"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "pentecost",
+      "coverImage": "/images/pentecost.jpg",
+      "coverTitle": "The Descent of the Holy Spirit"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "pentecost",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "五旬節聖靈降臨",
+        "options": [
+          "五旬節聖靈降臨",
+          "耶穌升天",
+          "耶穌受洗",
+          "多馬的懷疑"
+        ],
+        "hints": [
+          "門徒聚集在一處。",
+          "火焰般的舌頭落在各人頭上。",
+          "他們被聖靈充滿，說起別國的話。"
+        ],
+        "scripture": {
+          "book": "使徒行傳",
+          "chapter": 2,
+          "verse": "1-13"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.7717,
+          "lng": 35.2297
+        },
+        "image": {
+          "src": "/images/pentecost.jpg",
+          "title": "聖靈降臨",
+          "artist": "Lucas Franchoys（攝影：Ad Meskens）",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lucas_Franchoys_(I)_-_Descent_of_the_Holy_Spirit_(Sint-Janskerk,_Mechelen).jpg"
+        },
+        "summary": "五旬節當天，聖靈如風如火降臨在門徒身上，他們被聖靈充滿，勇敢見證復活的基督。",
+        "artNote": "Lucas Franchoys 以火焰與聚集的門徒，呈現聖靈降臨的群體場景。",
+        "verseHints": [
+          {
+            "ref": "使徒行傳 2:2",
+            "text": "忽然，從天上有響聲下來，好像一陣大風吹過，充滿了他們所坐的屋子，"
+          }
+        ],
+        "keyVerse": {
+          "ref": "使徒行傳 2:4",
+          "text": "他們就都被聖靈充滿，按著聖靈所賜的口才說起別國的話來。"
+        },
+        "storyId": "early-church",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Cenacle, Mount Zion（傳統地點）",
+        "geoNote": "五旬節聖靈降臨發生在耶路撒冷；傳統地點為錫安山的馬可樓。"
+      },
+      {
+        "id": "saul",
+        "era": "NT",
+        "difficulty": 3,
+        "mode": "zoom",
+        "answer": "掃羅歸主（大馬士革路上）",
+        "options": [
+          "掃羅歸主（大馬士革路上）",
+          "保羅在雅典講道",
+          "彼得獲救出獄",
+          "五旬節聖靈降臨"
+        ],
+        "hints": [
+          "一道大光照倒了一個趕路的人。",
+          "他聽見有聲音呼喚他的名字。",
+          "他後來成為向外邦人傳福音的使徒。"
+        ],
+        "scripture": {
+          "book": "使徒行傳",
+          "chapter": 9,
+          "verse": "1-19"
+        },
+        "event": {
+          "year": 34,
+          "tolerance": 8,
+          "locationId": "road_to_damascus",
+          "placeName": "大馬士革路上",
+          "lat": 33.45,
+          "lng": 36.35
+        },
+        "image": {
+          "src": "/images/saul.jpg",
+          "title": "掃羅歸主",
+          "artist": "Caravaggio",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Conversion_of_Saint_Paul-Caravaggio_(c._1600-1).jpg"
+        },
+        "summary": "逼迫教會的掃羅在往大馬士革路上被大光光照，聽見主的聲音，三日後受洗，成為使徒保羅。",
+        "artNote": "Caravaggio 以倒地的掃羅與張開雙臂的馬，強調大光與呼召的震撼。",
+        "verseHints": [
+          {
+            "ref": "使徒行傳 9:4",
+            "text": "他就仆倒在地，聽見有聲音對他說：「掃羅！掃羅！你為甚麼逼迫我？」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "使徒行傳 9:15",
+          "text": "主對亞拿尼亞說：「你只管去！他是我所揀選的器皿，要在外邦人和君王，並以色列人面前宣揚我的名。"
+        },
+        "storyId": "early-church",
+        "regionId": "syria",
+        "regionName": "敘利亞",
+        "modernName": "Road to Damascus",
+        "geoNote": "掃羅歸主發生在往大馬士革的路上；這是一條路線，確切地點不詳。"
+      },
+      {
+        "id": "patmos",
+        "era": "NT",
+        "difficulty": 3,
+        "mode": "zoom",
+        "answer": "約翰在拔摩島見異象",
+        "options": [
+          "約翰在拔摩島見異象",
+          "保羅在雅典講道",
+          "五旬節聖靈降臨",
+          "耶穌升天"
+        ],
+        "hints": [
+          "一位老人獨自被放逐在海島上。",
+          "他看見天上的異象。",
+          "《啟示錄》由此寫成。"
+        ],
+        "scripture": {
+          "book": "啟示錄",
+          "chapter": 1,
+          "verse": "9-20"
+        },
+        "event": {
+          "year": 95,
+          "tolerance": 10,
+          "locationId": "patmos",
+          "placeName": "拔摩島",
+          "lat": 37.308,
+          "lng": 26.548
+        },
+        "image": {
+          "src": "/images/patmos.jpg",
+          "title": "拔摩島上的聖約翰",
+          "artist": "Nicolas Poussin",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nicolas_Poussin_-_Landscape_with_Saint_John_on_Patmos_-_Google_Art_Project.jpg"
+        },
+        "summary": "使徒約翰被放逐到拔摩島，在靈裡看見榮耀的基督與末後的異象，寫下《啟示錄》。",
+        "artNote": "Poussin 以廣闊風景與默想的老人，營造拔摩島上領受異象的沉思氛圍。",
+        "verseHints": [
+          {
+            "ref": "啟示錄 1:9",
+            "text": "我─約翰就是你們的弟兄，和你們在耶穌的患難、國度、忍耐裡一同有分，為神的道，並為給耶穌作的見證，曾在那名叫拔摩的海島上。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "啟示錄 1:19",
+          "text": "所以你要把所看見的，和現在的事，並將來必成的事，都寫出來。"
+        },
+        "storyId": "early-church",
+        "regionId": "asia",
+        "regionName": "亞細亞",
+        "modernName": "Patmos（希臘）",
+        "geoNote": "拔摩島位於愛琴海東部、小亞細亞外海；今屬希臘，島上有聖約翰修道院。"
+      }
+    ],
+    "en": [
+      {
+        "id": "pentecost",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "Pentecost",
+        "options": [
+          "Pentecost",
+          "The Ascension",
+          "The Baptism of Jesus",
+          "The Doubting Thomas"
+        ],
+        "hints": [
+          "The disciples gather in one place.",
+          "Tongues of fire rest on each of them.",
+          "They are filled with the Spirit and speak in other tongues."
+        ],
+        "scripture": {
+          "book": "Acts",
+          "chapter": 2,
+          "verse": "1-13"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.7717,
+          "lng": 35.2297
+        },
+        "image": {
+          "src": "/images/pentecost.jpg",
+          "title": "The Descent of the Holy Spirit",
+          "artist": "Lucas Franchoys（攝影：Ad Meskens）",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lucas_Franchoys_(I)_-_Descent_of_the_Holy_Spirit_(Sint-Janskerk,_Mechelen).jpg"
+        },
+        "summary": "On the day of Pentecost the Holy Spirit comes like wind and fire; the disciples are filled and boldly testify to the risen Christ.",
+        "artNote": "Lucas Franchoys fills the gathered room with flame and motion, a communal scene of the Spirit's descent.",
+        "verseHints": [
+          {
+            "ref": "Acts 2:2",
+            "text": "Suddenly there came from the sky a sound like the rushing of a mighty wind, and it filled all the house where they were sitting."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Acts 2:4",
+          "text": "They were all filled with the Holy Spirit, and began to speak with other languages, as the Spirit gave them the ability to speak."
+        },
+        "storyId": "early-church",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Cenacle, Mount Zion (traditional site)",
+        "geoNote": "Pentecost took place in Jerusalem; the traditional site is the Cenacle on Mount Zion."
+      },
+      {
+        "id": "saul",
+        "era": "NT",
+        "difficulty": 3,
+        "mode": "zoom",
+        "answer": "The Conversion of Saul",
+        "options": [
+          "The Conversion of Saul",
+          "Paul Preaches in Athens",
+          "Peter Is Freed from Prison",
+          "Pentecost"
+        ],
+        "hints": [
+          "A light from heaven knocks down a traveler.",
+          "He hears a voice calling his name.",
+          "He later becomes the apostle to the Gentiles."
+        ],
+        "scripture": {
+          "book": "Acts",
+          "chapter": 9,
+          "verse": "1-19"
+        },
+        "event": {
+          "year": 34,
+          "tolerance": 8,
+          "locationId": "road_to_damascus",
+          "placeName": "Road to Damascus",
+          "lat": 33.45,
+          "lng": 36.35
+        },
+        "image": {
+          "src": "/images/saul.jpg",
+          "title": "The Conversion of Saint Paul",
+          "artist": "Caravaggio",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Conversion_of_Saint_Paul-Caravaggio_(c._1600-1).jpg"
+        },
+        "summary": "Saul, who persecutes the church, is struck by a light on the road to Damascus and hears the Lord's voice; he is baptized and becomes Paul.",
+        "artNote": "Caravaggio's fallen Saul and rearing horse make the blinding light and the call physically overwhelming.",
+        "verseHints": [
+          {
+            "ref": "Acts 9:4",
+            "text": "He fell on the earth, and heard a voice saying to him, “Saul, Saul, why do you persecute me?”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Acts 9:15",
+          "text": "But the Lord said to him, “Go your way, for he is my chosen vessel to bear my name before the nations and kings, and the children of Israel."
+        },
+        "storyId": "early-church",
+        "regionId": "syria",
+        "regionName": "Syria",
+        "modernName": "Road to Damascus",
+        "geoNote": "The conversion happened on the road to Damascus; it is a route rather than a single site, and the exact spot is unknown."
+      },
+      {
+        "id": "patmos",
+        "era": "NT",
+        "difficulty": 3,
+        "mode": "zoom",
+        "answer": "John's Vision on Patmos",
+        "options": [
+          "John's Vision on Patmos",
+          "Paul Preaches in Athens",
+          "Pentecost",
+          "The Ascension"
+        ],
+        "hints": [
+          "An elderly man is exiled alone on an island.",
+          "He sees a heavenly vision.",
+          "The Book of Revelation comes from this vision."
+        ],
+        "scripture": {
+          "book": "Revelation",
+          "chapter": 1,
+          "verse": "9-20"
+        },
+        "event": {
+          "year": 95,
+          "tolerance": 10,
+          "locationId": "patmos",
+          "placeName": "Patmos",
+          "lat": 37.308,
+          "lng": 26.548
+        },
+        "image": {
+          "src": "/images/patmos.jpg",
+          "title": "Saint John on Patmos",
+          "artist": "Nicolas Poussin",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nicolas_Poussin_-_Landscape_with_Saint_John_on_Patmos_-_Google_Art_Project.jpg"
+        },
+        "summary": "The apostle John is exiled to Patmos, where he sees the glorious Christ and the visions of the end, and writes the Book of Revelation.",
+        "artNote": "Poussin's wide landscape and contemplative old man create a quiet setting for visionary revelation.",
+        "verseHints": [
+          {
+            "ref": "Revelation of John 1:9",
+            "text": "I John, your brother and partner with you in oppression, Kingdom, and perseverance in Christ Jesus, was on the isle that is called Patmos because of God’s Word and the testimony of Jesus Christ."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Revelation of John 1:19",
+          "text": "Write therefore the things which you have seen, and the things which are, and the things which will happen hereafter;"
+        },
+        "storyId": "early-church",
+        "regionId": "asia",
+        "regionName": "Asia",
+        "modernName": "Patmos (Greece)",
+        "geoNote": "Patmos is an island in the eastern Aegean off Asia Minor; it is now part of Greece and home to the Monastery of Saint John."
+      }
+    ]
+  }
+}

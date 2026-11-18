@@ -1,0 +1,386 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "encounters",
+  "story": {
+    "zh-Hant": {
+      "id": "encounters",
+      "title": "與耶穌相遇",
+      "intro": "井邊婦人、撒該與少年官，每個人都在耶穌面前被看見。",
+      "outro": "人子來，為要尋找、拯救失喪的人。",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "people",
+        "teaching"
+      ],
+      "order": 11,
+      "questionIds": [
+        "woman_well",
+        "zacchaeus",
+        "rich_young_ruler"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "woman_well",
+      "coverImage": "/images/woman_well.jpg",
+      "coverTitle": "耶穌與撒馬利亞婦人"
+    },
+    "en": {
+      "id": "encounters",
+      "title": "Encounters with Jesus",
+      "intro": "The woman at the well, Zacchaeus, and the rich young ruler are each seen by Jesus.",
+      "outro": "The Son of Man came to seek and save the lost.",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "people",
+        "teaching"
+      ],
+      "order": 11,
+      "questionIds": [
+        "woman_well",
+        "zacchaeus",
+        "rich_young_ruler"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "woman_well",
+      "coverImage": "/images/woman_well.jpg",
+      "coverTitle": "Jesus and the Samaritan Woman at the Well"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "woman_well",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "耶穌與撒馬利亞婦人",
+        "options": [
+          "耶穌與撒馬利亞婦人",
+          "撒該",
+          "尼哥底母",
+          "馬大與馬利亞"
+        ],
+        "hints": [
+          "場景在井旁。",
+          "耶穌向一位婦人求水。",
+          "他談到活水。"
+        ],
+        "scripture": {
+          "book": "約翰福音",
+          "chapter": 4,
+          "verse": "7-10"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "sychar",
+          "placeName": "敘加",
+          "lat": 32.21,
+          "lng": 35.28
+        },
+        "image": {
+          "src": "/images/woman_well.jpg",
+          "title": "耶穌與撒馬利亞婦人",
+          "artist": "Jan de Herdt",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jan_de_Herdt_-_Jesus_and_the_Samaritan_woman_at_the_well.jpg"
+        },
+        "summary": "耶穌在敘加的井旁與撒馬利亞婦人談道，賜下活水的應許。",
+        "artNote": "Jan de Herdt 以井旁對話與水罐，將活水的應許放在日常場景中。",
+        "verseHints": [
+          {
+            "ref": "約翰福音 4:10",
+            "text": "耶穌回答說：「你若知道神的恩賜，和對你說『給我水喝』的是誰，你必早求他，他也必早給了你活水。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約翰福音 4:14",
+          "text": "人若喝我所賜的水就永遠不渴。我所賜的水要在他裡頭成為泉源，直湧到永生。」"
+        },
+        "storyId": "encounters",
+        "regionId": "samaria",
+        "regionName": "撒馬利亞",
+        "modernName": "敘加（Sychar）",
+        "geoNote": "耶穌與撒馬利亞婦人對話發生在敘加的雅各井旁。"
+      },
+      {
+        "id": "zacchaeus",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "耶穌與撒該",
+        "options": [
+          "耶穌與撒該",
+          "耶穌與撒馬利亞婦人",
+          "尼哥底母",
+          "少年官"
+        ],
+        "hints": [
+          "一位稅吏長爬上桑樹。",
+          "他身量矮小。",
+          "耶穌說要到他家裡去。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 19,
+          "verse": "2-5"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jericho",
+          "placeName": "耶利哥",
+          "lat": 31.87,
+          "lng": 35.44
+        },
+        "image": {
+          "src": "/images/zacchaeus.jpg",
+          "title": "耶穌與撒該",
+          "artist": "Anonymous (MET roundel)",
+          "license": "CC0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Roundel_with_Christ_and_Zacchaeus_MET_cdi32-24-44.jpg"
+        },
+        "summary": "稅吏長撒該爬上桑樹要看耶穌，耶穌卻主動到他家中住宿。",
+        "artNote": "圓形畫以樹上人物與基督呼喚，呈現被接納的稅吏。",
+        "verseHints": [
+          {
+            "ref": "路加福音 19:5",
+            "text": "耶穌到了那裡，抬頭一看，對他說：「撒該，快下來！今天我必住在你家裡。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 19:9",
+          "text": "耶穌說：「今天救恩到了這家，因為他也是亞伯拉罕的子孫。"
+        },
+        "storyId": "encounters",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶利哥",
+        "geoNote": "撒該是耶利哥的稅吏長。"
+      },
+      {
+        "id": "rich_young_ruler",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "少年官求問永生",
+        "options": [
+          "少年官求問永生",
+          "撒該",
+          "尼哥底母",
+          "撒馬利亞婦人"
+        ],
+        "hints": [
+          "一位富有的少年人來見耶穌。",
+          "他問如何承受永生。",
+          "他因產業多而憂愁離開。"
+        ],
+        "scripture": {
+          "book": "馬可福音",
+          "chapter": 10,
+          "verse": "17-22"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "judea",
+          "placeName": "猶太",
+          "lat": 31.8,
+          "lng": 35.5
+        },
+        "image": {
+          "src": "/images/rich_young_ruler.jpg",
+          "title": "少年官求問永生",
+          "artist": "Heinrich Hofmann",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hoffman-ChristAndTheRichYoungRuler.jpg"
+        },
+        "summary": "少年官詢問永生，耶穌要他變賣所有跟隨祂，他卻憂愁地走了。",
+        "artNote": "Hofmann 以少年人的表情與耶穌的目光，呈現財富與跟隨之間的張力。",
+        "verseHints": [
+          {
+            "ref": "馬可福音 10:21",
+            "text": "耶穌看著他，就愛他，對他說：「你還缺少一件：去變賣你所有的，分給窮人，就必有財寶在天上；你還要來跟從我。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬可福音 10:22",
+          "text": "他聽見這話，臉上就變了色，憂憂愁愁地走了，因為他的產業很多。"
+        },
+        "storyId": "encounters",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "猶太（約旦河東一帶）",
+        "geoNote": "少年官的故事發生在耶穌往耶路撒冷途中。"
+      }
+    ],
+    "en": [
+      {
+        "id": "woman_well",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "Jesus and the Samaritan Woman",
+        "options": [
+          "Jesus and the Samaritan Woman",
+          "Zacchaeus",
+          "Nicodemus",
+          "Mary and Martha"
+        ],
+        "hints": [
+          "The scene is at a well.",
+          "Jesus asks a woman for water.",
+          "He speaks of living water."
+        ],
+        "scripture": {
+          "book": "John",
+          "chapter": 4,
+          "verse": "7-10"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "sychar",
+          "placeName": "Sychar",
+          "lat": 32.21,
+          "lng": 35.28
+        },
+        "image": {
+          "src": "/images/woman_well.jpg",
+          "title": "Jesus and the Samaritan Woman at the Well",
+          "artist": "Jan de Herdt",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jan_de_Herdt_-_Jesus_and_the_Samaritan_woman_at_the_well.jpg"
+        },
+        "summary": "At the well of Sychar, Jesus speaks with a Samaritan woman about living water.",
+        "artNote": "Jan de Herdt sets the well-side conversation and water jar within an everyday scene, pointing to living water.",
+        "verseHints": [
+          {
+            "ref": "John 4:10",
+            "text": "Jesus answered her, “If you knew the gift of God, and who it is who says to you, ‘Give me a drink,’ you would have asked him, and he would have given you living water.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "John 4:14",
+          "text": "but whoever drinks of the water that I will give him will never thirst again; but the water that I will give him will become in him a well of water springing up to eternal life.”"
+        },
+        "storyId": "encounters",
+        "regionId": "samaria",
+        "regionName": "Samaria",
+        "modernName": "Sychar",
+        "geoNote": "Jesus speaks with the Samaritan woman at Jacob's well near Sychar."
+      },
+      {
+        "id": "zacchaeus",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "Jesus and Zacchaeus",
+        "options": [
+          "Jesus and Zacchaeus",
+          "Jesus and the Samaritan Woman",
+          "Nicodemus",
+          "The Rich Young Ruler"
+        ],
+        "hints": [
+          "A tax collector climbs a sycamore tree.",
+          "He is short in stature.",
+          "Jesus says he will stay at his house."
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 19,
+          "verse": "2-5"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jericho",
+          "placeName": "Jericho",
+          "lat": 31.87,
+          "lng": 35.44
+        },
+        "image": {
+          "src": "/images/zacchaeus.jpg",
+          "title": "Christ and Zacchaeus",
+          "artist": "Anonymous (MET roundel)",
+          "license": "CC0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Roundel_with_Christ_and_Zacchaeus_MET_cdi32-24-44.jpg"
+        },
+        "summary": "Zacchaeus the tax collector climbs a tree to see Jesus, and Jesus invites himself to his house.",
+        "artNote": "The roundel shows the figure in the tree and Christ's call, picturing the tax collector's welcome.",
+        "verseHints": [
+          {
+            "ref": "Luke 19:5",
+            "text": "When Jesus came to the place, he looked up and saw him, and said to him, “Zacchaeus, hurry and come down, for today I must stay at your house.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 19:9",
+          "text": "Jesus said to him, “Today, salvation has come to this house, because he also is a son of Abraham."
+        },
+        "storyId": "encounters",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jericho",
+        "geoNote": "Zacchaeus was the chief tax collector in Jericho."
+      },
+      {
+        "id": "rich_young_ruler",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Rich Young Ruler Asks About Eternal Life",
+        "options": [
+          "The Rich Young Ruler Asks About Eternal Life",
+          "Zacchaeus",
+          "Nicodemus",
+          "The Samaritan Woman"
+        ],
+        "hints": [
+          "A rich young man comes to Jesus.",
+          "He asks how to inherit eternal life.",
+          "He leaves sorrowful because of his wealth."
+        ],
+        "scripture": {
+          "book": "Mark",
+          "chapter": 10,
+          "verse": "17-22"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "judea",
+          "placeName": "Judea",
+          "lat": 31.8,
+          "lng": 35.5
+        },
+        "image": {
+          "src": "/images/rich_young_ruler.jpg",
+          "title": "Christ and the Rich Young Ruler",
+          "artist": "Heinrich Hofmann",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hoffman-ChristAndTheRichYoungRuler.jpg"
+        },
+        "summary": "A rich young man asks about eternal life; Jesus tells him to sell all and follow, but he leaves sorrowful.",
+        "artNote": "Hofmann's faces capture the tension between wealth and following Jesus.",
+        "verseHints": [
+          {
+            "ref": "Mark 10:21",
+            "text": "Jesus looking at him loved him, and said to him, “One thing you lack. Go, sell whatever you have, and give to the poor, and you will have treasure in heaven; and come, follow me, taking up the cross.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Mark 10:22",
+          "text": "But his face fell at that saying, and he went away sorrowful, for he was one who had great possessions."
+        },
+        "storyId": "encounters",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Judea (east of the Jordan)",
+        "geoNote": "The rich young ruler meets Jesus on the way toward Jerusalem."
+      }
+    ]
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "healing-resurrection",
+  "story": {
+    "zh-Hant": {
+      "id": "healing-resurrection",
+      "title": "醫治與復活",
+      "intro": "血漏婦人、瞎子巴底買與拉撒路，看見耶穌勝過疾病、黑暗與死亡。",
+      "outro": "復活在我，生命也在我。",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "miracle",
+        "passion"
+      ],
+      "order": 10,
+      "questionIds": [
+        "woman_hemorrhage",
+        "blind_bartimaeus",
+        "lazarus"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "lazarus",
+      "coverImage": "/images/lazarus.jpg",
+      "coverTitle": "拉撒路復活"
+    },
+    "en": {
+      "id": "healing-resurrection",
+      "title": "Healing & Resurrection",
+      "intro": "The bleeding woman, blind Bartimaeus, and Lazarus show Jesus' victory over illness, darkness, and death.",
+      "outro": "I am the resurrection and the life.",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "miracle",
+        "passion"
+      ],
+      "order": 10,
+      "questionIds": [
+        "woman_hemorrhage",
+        "blind_bartimaeus",
+        "lazarus"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "lazarus",
+      "coverImage": "/images/lazarus.jpg",
+      "coverTitle": "The Raising of Lazarus"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "lazarus",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "拉撒路復活",
+        "options": [
+          "拉撒路復活",
+          "耶穌醫治瞎眼的人",
+          "耶穌受難",
+          "耶穌升天"
+        ],
+        "hints": [
+          "墓穴的石頭被挪開。",
+          "耶穌呼喚一個死去四天的人出來。",
+          "他的姊妹馬大與馬利亞在旁。"
+        ],
+        "scripture": {
+          "book": "約翰福音",
+          "chapter": 11,
+          "verse": "1-44"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "伯大尼",
+          "lat": 31.771,
+          "lng": 35.263
+        },
+        "image": {
+          "src": "/images/lazarus.jpg",
+          "title": "拉撒路復活",
+          "artist": "Rembrandt",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt_Harmensz._van_Rijn_-_The_Raising_of_Lazarus_-_Google_Art_Project.jpg"
+        },
+        "summary": "耶穌在伯大尼的墓前大聲呼叫：「拉撒路，出來！」死了四天的人就從墳墓裡出來。",
+        "artNote": "Rembrandt 以深暗墓穴與舉手呼喚的基督，聚焦生命與死亡的對比。",
+        "verseHints": [
+          {
+            "ref": "約翰福音 11:43",
+            "text": "說了這話，就大聲呼叫說：「拉撒路出來！」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約翰福音 11:25",
+          "text": "耶穌對她說：「復活在我，生命也在我。信我的人雖然死了，也必復活；"
+        },
+        "storyId": "healing-resurrection",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "al-Eizariya（伯大尼）",
+        "geoNote": "伯大尼位於耶路撒冷東側的橄欖山附近；今名 al-Eizariya，屬東耶路撒冷/西岸地區。"
+      },
+      {
+        "id": "woman_hemorrhage",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "血漏婦人得醫治",
+        "options": [
+          "血漏婦人得醫治",
+          "睚魯的女兒復活",
+          "瞎子巴底買",
+          "十個麻風病人"
+        ],
+        "hints": [
+          "一位婦人患血漏十二年。",
+          "她摸耶穌的衣裳。",
+          "耶穌說她的信救了她。"
+        ],
+        "scripture": {
+          "book": "馬可福音",
+          "chapter": 5,
+          "verse": "25-29"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "capernaum",
+          "placeName": "迦百農",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/woman_hemorrhage.jpg",
+          "title": "血漏婦人得醫治",
+          "artist": "T'oros Roslin",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:T%27oros_Roslin_-_Healing_of_the_Woman_with_the_Issue_of_Blood_-_Walters_W539148V.jpg"
+        },
+        "summary": "患血漏十二年的婦人摸著耶穌的衣裳就得醫治，耶穌稱讚她的信心。",
+        "artNote": "T'oros Roslin 以手抄本插畫描繪婦人觸摸衣裳，強調信心的行動。",
+        "verseHints": [
+          {
+            "ref": "馬可福音 5:28",
+            "text": "意思說：「我只摸他的衣裳，就必痊癒。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬可福音 5:34",
+          "text": "耶穌對她說：「女兒，你的信救了你，平平安安地回去吧！你的災病痊癒了。」"
+        },
+        "storyId": "healing-resurrection",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "迦百農",
+        "geoNote": "血漏婦人得醫治發生在耶穌前往睚魯家的途中。"
+      },
+      {
+        "id": "blind_bartimaeus",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "瞎子巴底買得醫治",
+        "options": [
+          "瞎子巴底買得醫治",
+          "癱子從屋頂縋下",
+          "血漏婦人得醫治",
+          "十個麻風病人"
+        ],
+        "hints": [
+          "一位瞎子在路旁喊叫。",
+          "他稱耶穌為大衛的子孫。",
+          "耶穌使他能看見。"
+        ],
+        "scripture": {
+          "book": "馬可福音",
+          "chapter": 10,
+          "verse": "46-52"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jericho",
+          "placeName": "耶利哥",
+          "lat": 31.87,
+          "lng": 35.44
+        },
+        "image": {
+          "src": "/images/blind_bartimaeus.jpg",
+          "title": "瞎子巴底買得醫治",
+          "artist": "Workshop of Fernando Gallego",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Healing_of_Blind_Bartimaeus_by_Fernando_Gallego_workshop,_1480-1488,_oil_on_panel_-_University_of_Arizona_Museum_of_Art_-_University_of_Arizona_-_Tucson,_AZ_-_DSC08346.jpg"
+        },
+        "summary": "瞎子巴底買在路旁呼求耶穌，耶穌因他的信心使他看見。",
+        "artNote": "Gallego 工作室以人物手勢與眼神，呈現瞎子得看見的戲劇性。",
+        "verseHints": [
+          {
+            "ref": "馬可福音 10:51",
+            "text": "耶穌說：「要我為你做甚麼？」瞎子說：「拉波尼（就是夫子），我要能看見。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬可福音 10:52",
+          "text": "耶穌說：「你去吧！你的信救了你了。」瞎子立刻看見了，就在路上跟隨耶穌。"
+        },
+        "storyId": "healing-resurrection",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶利哥",
+        "geoNote": "瞎子巴底買得醫治發生在耶利哥城外。"
+      }
+    ],
+    "en": [
+      {
+        "id": "lazarus",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Raising of Lazarus",
+        "options": [
+          "The Raising of Lazarus",
+          "Jesus Heals the Blind Man",
+          "The Passion",
+          "The Ascension"
+        ],
+        "hints": [
+          "The stone of the tomb has been rolled away.",
+          "Jesus calls a man who has been dead four days.",
+          "His sisters Martha and Mary are nearby."
+        ],
+        "scripture": {
+          "book": "John",
+          "chapter": 11,
+          "verse": "1-44"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Bethany",
+          "lat": 31.771,
+          "lng": 35.263
+        },
+        "image": {
+          "src": "/images/lazarus.jpg",
+          "title": "The Raising of Lazarus",
+          "artist": "Rembrandt",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt_Harmensz._van_Rijn_-_The_Raising_of_Lazarus_-_Google_Art_Project.jpg"
+        },
+        "summary": "At the tomb in Bethany, Jesus cries, “Lazarus, come out!” and the man who had been dead four days comes out.",
+        "artNote": "Rembrandt sets the raising against a dark tomb, focusing on the contrast between death and the calling Christ.",
+        "verseHints": [
+          {
+            "ref": "John 11:43",
+            "text": "When he had said this, he cried with a loud voice, “Lazarus, come out!”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "John 11:25",
+          "text": "Jesus said to her, “I am the resurrection and the life. He who believes in me will still live, even if he dies."
+        },
+        "storyId": "healing-resurrection",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "al-Eizariya (Bethany)",
+        "geoNote": "Bethany lay east of Jerusalem near the Mount of Olives; its modern name is al-Eizariya, in East Jerusalem/the West Bank."
+      },
+      {
+        "id": "woman_hemorrhage",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Healing of the Woman with the Issue of Blood",
+        "options": [
+          "The Healing of the Woman with the Issue of Blood",
+          "The Raising of Jairus' Daughter",
+          "Blind Bartimaeus",
+          "The Ten Lepers"
+        ],
+        "hints": [
+          "A woman has suffered for twelve years.",
+          "She touches the edge of Jesus' garment.",
+          "Jesus says her faith has healed her."
+        ],
+        "scripture": {
+          "book": "Mark",
+          "chapter": 5,
+          "verse": "25-29"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "capernaum",
+          "placeName": "Capernaum",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/woman_hemorrhage.jpg",
+          "title": "Christ Healing the Woman with an Issue of Blood",
+          "artist": "T'oros Roslin",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:T%27oros_Roslin_-_Healing_of_the_Woman_with_the_Issue_of_Blood_-_Walters_W539148V.jpg"
+        },
+        "summary": "A woman who had bled for twelve years touches Jesus' garment and is healed; Jesus praises her faith.",
+        "artNote": "T'oros Roslin's manuscript illumination depicts the woman touching the garment, a gesture of faith.",
+        "verseHints": [
+          {
+            "ref": "Mark 5:28",
+            "text": "For she said, “If I just touch his clothes, I will be made well.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Mark 5:34",
+          "text": "He said to her, “Daughter, your faith has made you well. Go in peace, and be cured of your disease.”"
+        },
+        "storyId": "healing-resurrection",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Capernaum",
+        "geoNote": "The healing of the bleeding woman occurs on the way to Jairus' house."
+      },
+      {
+        "id": "blind_bartimaeus",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Healing of Blind Bartimaeus",
+        "options": [
+          "The Healing of Blind Bartimaeus",
+          "The Paralytic Lowered Through the Roof",
+          "The Healing of the Woman with the Issue of Blood",
+          "The Ten Lepers"
+        ],
+        "hints": [
+          "A blind man cries out by the road.",
+          "He calls Jesus the Son of David.",
+          "Jesus restores his sight."
+        ],
+        "scripture": {
+          "book": "Mark",
+          "chapter": 10,
+          "verse": "46-52"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jericho",
+          "placeName": "Jericho",
+          "lat": 31.87,
+          "lng": 35.44
+        },
+        "image": {
+          "src": "/images/blind_bartimaeus.jpg",
+          "title": "The Healing of Blind Bartimaeus",
+          "artist": "Workshop of Fernando Gallego",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Healing_of_Blind_Bartimaeus_by_Fernando_Gallego_workshop,_1480-1488,_oil_on_panel_-_University_of_Arizona_Museum_of_Art_-_University_of_Arizona_-_Tucson,_AZ_-_DSC08346.jpg"
+        },
+        "summary": "Blind Bartimaeus cries out to Jesus by the road, and Jesus restores his sight.",
+        "artNote": "The Gallego workshop uses gesture and gaze to dramatize the blind man receiving sight.",
+        "verseHints": [
+          {
+            "ref": "Mark 10:51",
+            "text": "Jesus asked him, “What do you want me to do for you?” The blind man said to him, “Rabboni, that I may see again.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Mark 10:52",
+          "text": "Jesus said to him, “Go your way. Your faith has made you well.” Immediately he received his sight, and followed Jesus on the way."
+        },
+        "storyId": "healing-resurrection",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jericho",
+        "geoNote": "Blind Bartimaeus is healed outside Jericho."
+      }
+    ]
+  }
+}

@@ -133,7 +133,7 @@ class MessageService:
         message = None
         if content:
             if prompt:
-                logging.warning(f"prompt:{owner_id, content, action, prompt}")
+                logging.info("message prompt owner=%s action=%s", owner_id, action)
             try:
                 action = int(action)
             except Exception as e:
@@ -150,7 +150,7 @@ class MessageService:
                 message.feedback_text = auto_rsp
             db.session.add(message)
             db.session.commit()
-            logging.warning(f"message.id:{message.id},action:{action}")
+            logging.info("message id=%s action=%s", message.id, action)
             if action == constants.action_search_hymns:
                 from services.coze_service import CozeService as cozeService
                 cozeService.chat_with_coze_async(owner_id, message.id)

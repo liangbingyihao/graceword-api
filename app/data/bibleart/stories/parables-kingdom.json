@@ -1,0 +1,388 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "parables-kingdom",
+  "story": {
+    "zh-Hant": {
+      "id": "parables-kingdom",
+      "title": "天國的比喻",
+      "intro": "撒種、芥菜種與藏寶，揭示天國由小而大的成長與價值。",
+      "outro": "有耳可聽的，就應當聽。",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "parable",
+        "teaching"
+      ],
+      "order": 7,
+      "questionIds": [
+        "sower",
+        "mustard_seed",
+        "hidden_treasure"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "sower",
+      "coverImage": "/images/sower.jpg",
+      "coverTitle": "撒種的比喻"
+    },
+    "en": {
+      "id": "parables-kingdom",
+      "title": "Parables of the Kingdom",
+      "intro": "The sower, the mustard seed, and the hidden treasure reveal the kingdom's growth and value.",
+      "outro": "Whoever has ears to hear, let them hear.",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "parable",
+        "teaching"
+      ],
+      "order": 7,
+      "questionIds": [
+        "sower",
+        "mustard_seed",
+        "hidden_treasure"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "sower",
+      "coverImage": "/images/sower.jpg",
+      "coverTitle": "The Parable of the Sower"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "sower",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "撒種的比喻",
+        "options": [
+          "撒種的比喻",
+          "稗子的比喻",
+          "芥菜種的比喻",
+          "藏寶的比喻"
+        ],
+        "hints": [
+          "一位撒種者出去撒種。",
+          "種子落在不同的土裡。",
+          "只有好土結出果實。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 13,
+          "verse": "3-8"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "加利利",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/sower.jpg",
+          "title": "撒種的比喻",
+          "artist": "Pieter Brueghel the Elder",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Landscape_with_the_Parable_of_the_Sower_-_WGA03340.jpg"
+        },
+        "summary": "撒種者把種子撒在不同土地，只有落在好土裡的結出豐盛果實。",
+        "artNote": "Bruegel 以廣闊田野與撒種者，將比喻放入日常農耕景象。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 13:3",
+            "text": "他用比喻對他們講許多道理，說：「有一個撒種的出去撒種；"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 13:8",
+          "text": "又有落在好土裡的，就結實，有一百倍的，有六十倍的，有三十倍的。"
+        },
+        "storyId": "parables-kingdom",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "加利利（迦百農一帶）",
+        "geoNote": "撒種的比喻以加利利的農田與土地為背景。"
+      },
+      {
+        "id": "mustard_seed",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "芥菜種的比喻",
+        "options": [
+          "芥菜種的比喻",
+          "撒種的比喻",
+          "稗子的比喻",
+          "藏寶的比喻"
+        ],
+        "hints": [
+          "一粒極小的種子。",
+          "它長成高大的樹。",
+          "飛鳥在枝上棲息。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 13,
+          "verse": "31-32"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "加利利",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/mustard_seed.jpg",
+          "title": "芥菜種的比喻",
+          "artist": "Unknown",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jesus_and_the_parable_of_the_mustard_seed.jpg"
+        },
+        "summary": "天國像一粒芥菜種，雖小卻長成大樹，成為飛鳥的棲息之處。",
+        "artNote": "畫面以極小的種子與成長的樹木並置，呈現天國由小而大的成長。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 13:31",
+            "text": "他又設個比喻對他們說：「天國好像一粒芥菜種，有人拿去種在田裡。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 13:32",
+          "text": "這原是百種裡最小的，等到長起來，卻比各樣的菜都大，且成了樹，天上的飛鳥來宿在它的枝上。」"
+        },
+        "storyId": "parables-kingdom",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "加利利（迦百農一帶）",
+        "geoNote": "芥菜種的比喻取材自當地常見的植物與農作。"
+      },
+      {
+        "id": "hidden_treasure",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "藏寶的比喻",
+        "options": [
+          "藏寶的比喻",
+          "重價珍珠",
+          "芥菜種的比喻",
+          "撒種的比喻"
+        ],
+        "hints": [
+          "有人在田裡發現寶藏。",
+          "他歡喜變賣一切。",
+          "為要買下那塊地。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 13,
+          "verse": "44"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "加利利",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/hidden_treasure.jpg",
+          "title": "藏寶的比喻",
+          "artist": "Possibly Rembrandt / Gerrit Dou",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parable_of_the_hidden_treasure_Rembrandt_-_Gerard_Dou.jpg"
+        },
+        "summary": "人發現田裡的寶藏，就歡喜變賣一切買下那塊地。",
+        "artNote": "以田間寶藏與人物驚喜的動作，強調發現天國價值的喜樂。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 13:44",
+            "text": "「天國好像寶貝藏在地裡，人遇見了就把它藏起來，歡歡喜喜地去變賣一切所有的，買這塊地。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 13:44",
+          "text": "「天國好像寶貝藏在地裡，人遇見了就把它藏起來，歡歡喜喜地去變賣一切所有的，買這塊地。"
+        },
+        "storyId": "parables-kingdom",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "加利利（迦百農一帶）",
+        "geoNote": "比喻以田地和寶藏為意象，背景是耶穌在加利利的教導。"
+      }
+    ],
+    "en": [
+      {
+        "id": "sower",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Parable of the Sower",
+        "options": [
+          "The Parable of the Sower",
+          "The Parable of the Wheat and the Tares",
+          "The Parable of the Mustard Seed",
+          "The Parable of the Hidden Treasure"
+        ],
+        "hints": [
+          "A sower goes out to sow.",
+          "The seed falls on different soils.",
+          "Only the good soil bears fruit."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 13,
+          "verse": "3-8"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "Galilee",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/sower.jpg",
+          "title": "The Parable of the Sower",
+          "artist": "Pieter Brueghel the Elder",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Landscape_with_the_Parable_of_the_Sower_-_WGA03340.jpg"
+        },
+        "summary": "The sower's seed falls on different soils; only the good soil produces a harvest.",
+        "artNote": "Bruegel places the sower within a wide field, grounding the parable in ordinary farm life.",
+        "verseHints": [
+          {
+            "ref": "Matthew 13:3",
+            "text": "He spoke to them many things in parables, saying, “Behold, a farmer went out to sow."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 13:8",
+          "text": "Others fell on good soil, and yielded fruit: some one hundred times as much, some sixty, and some thirty."
+        },
+        "storyId": "parables-kingdom",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Galilee (Capernaum area)",
+        "geoNote": "The parable of the sower is set against Galilean fields and soils."
+      },
+      {
+        "id": "mustard_seed",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Parable of the Mustard Seed",
+        "options": [
+          "The Parable of the Mustard Seed",
+          "The Parable of the Sower",
+          "The Parable of the Wheat and the Tares",
+          "The Parable of the Hidden Treasure"
+        ],
+        "hints": [
+          "A very small seed.",
+          "It grows into a large tree.",
+          "Birds nest in its branches."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 13,
+          "verse": "31-32"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "Galilee",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/mustard_seed.jpg",
+          "title": "The Parable of the Mustard Seed",
+          "artist": "Unknown",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jesus_and_the_parable_of_the_mustard_seed.jpg"
+        },
+        "summary": "The kingdom of heaven is like a mustard seed: small, yet it grows into a great tree.",
+        "artNote": "The image sets a tiny seed beside a growing tree, showing the kingdom's growth from small beginnings.",
+        "verseHints": [
+          {
+            "ref": "Matthew 13:31",
+            "text": "He set another parable before them, saying, “The Kingdom of Heaven is like a grain of mustard seed, which a man took, and sowed in his field;"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 13:32",
+          "text": "which indeed is smaller than all seeds. But when it is grown, it is greater than the herbs, and becomes a tree, so that the birds of the air come and lodge in its branches.”"
+        },
+        "storyId": "parables-kingdom",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Galilee (Capernaum area)",
+        "geoNote": "The mustard seed parable draws on a plant familiar in the region."
+      },
+      {
+        "id": "hidden_treasure",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Parable of the Hidden Treasure",
+        "options": [
+          "The Parable of the Hidden Treasure",
+          "The Pearl of Great Price",
+          "The Parable of the Mustard Seed",
+          "The Parable of the Sower"
+        ],
+        "hints": [
+          "A man finds treasure in a field.",
+          "He joyfully sells everything.",
+          "He buys the field."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 13,
+          "verse": "44"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "Galilee",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/hidden_treasure.jpg",
+          "title": "The Parable of the Hidden Treasure",
+          "artist": "Possibly Rembrandt / Gerrit Dou",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parable_of_the_hidden_treasure_Rembrandt_-_Gerard_Dou.jpg"
+        },
+        "summary": "A man finds treasure hidden in a field and joyfully sells all he has to buy it.",
+        "artNote": "The field, the treasure, and the finder's joy emphasize the value of discovering the kingdom.",
+        "verseHints": [
+          {
+            "ref": "Matthew 13:44",
+            "text": "“Again, the Kingdom of Heaven is like a treasure hidden in the field, which a man found, and hid. In his joy, he goes and sells all that he has, and buys that field."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 13:44",
+          "text": "“Again, the Kingdom of Heaven is like a treasure hidden in the field, which a man found, and hid. In his joy, he goes and sells all that he has, and buys that field."
+        },
+        "storyId": "parables-kingdom",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Galilee (Capernaum area)",
+        "geoNote": "The parable uses a field and treasure, set within Jesus' Galilean teaching."
+      }
+    ]
+  }
+}

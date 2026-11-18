@@ -1,0 +1,388 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "miracles-call",
+  "story": {
+    "zh-Hant": {
+      "id": "miracles-call",
+      "title": "神蹟、呼召與憐憫",
+      "intro": "從迦拿水變酒、呼召馬太，到好撒瑪利亞人的憐憫，看見耶穌主動尋找跟隨祂的人。",
+      "outro": "來跟從我，我要叫你們得人如得魚。",
+      "era": "nt",
+      "section": "jesus-life",
+      "themes": [
+        "miracle",
+        "parable",
+        "people"
+      ],
+      "order": 4,
+      "questionIds": [
+        "cana",
+        "calling_matthew",
+        "good_samaritan"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "cana",
+      "coverImage": "/images/cana.jpg",
+      "coverTitle": "迦拿婚宴"
+    },
+    "en": {
+      "id": "miracles-call",
+      "title": "Miracles, Call & Mercy",
+      "intro": "From the wedding at Cana and the calling of Matthew to the mercy of the Good Samaritan, see Jesus seek those who follow him.",
+      "outro": "Follow me, and I will make you fishers of people.",
+      "era": "nt",
+      "section": "jesus-life",
+      "themes": [
+        "miracle",
+        "parable",
+        "people"
+      ],
+      "order": 4,
+      "questionIds": [
+        "cana",
+        "calling_matthew",
+        "good_samaritan"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "cana",
+      "coverImage": "/images/cana.jpg",
+      "coverTitle": "The Wedding at Cana"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "cana",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "迦拿婚宴水變酒",
+        "options": [
+          "迦拿婚宴水變酒",
+          "五餅二魚",
+          "最後的晚餐",
+          "好撒瑪利亞人的比喻"
+        ],
+        "hints": [
+          "場景是一場熱鬧的婚宴。",
+          "僕人把水倒進石缸。",
+          "這是耶穌所行的頭一件神蹟。"
+        ],
+        "scripture": {
+          "book": "約翰福音",
+          "chapter": 2,
+          "verse": "1-11"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "cana",
+          "placeName": "迦拿",
+          "lat": 32.747,
+          "lng": 35.339
+        },
+        "image": {
+          "src": "/images/cana.jpg",
+          "title": "迦拿婚宴",
+          "artist": "Benvenuto Tisi",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wedding_at_Cana,_by_Benvenuto_Tisi.jpg"
+        },
+        "summary": "在加利利的迦拿一場婚宴上，耶穌吩咐僕人把水倒滿石缸，水就變成了上好的酒。",
+        "artNote": "Benvenuto Tisi 將婚宴置於文藝復興宴會場景，石缸與斟酒動作成為視覺焦點。",
+        "verseHints": [
+          {
+            "ref": "約翰福音 2:7",
+            "text": "耶穌對用人說：「把缸倒滿了水。」他們就倒滿了，直到缸口。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約翰福音 2:11",
+          "text": "這是耶穌所行的頭一件神蹟，是在加利利的迦拿行的，顯出他的榮耀來；他的門徒就信他了。"
+        },
+        "storyId": "miracles-call",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "Kafr Kanna（另有 Khirbet Qana）",
+        "geoNote": "迦拿的位置學界仍有爭議；傳統地點為加利利的 Kafr Kanna，另有 Khirbet Qana 候選。"
+      },
+      {
+        "id": "good_samaritan",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "好撒瑪利亞人的比喻",
+        "options": [
+          "好撒瑪利亞人的比喻",
+          "浪子回頭的比喻",
+          "五餅二魚",
+          "最後的晚餐"
+        ],
+        "hints": [
+          "路旁躺著一個受傷的人。",
+          "有人停下腳步伸出援手。",
+          "耶穌用這故事回答「誰是我的鄰舍」。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 10,
+          "verse": "25-37"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 8,
+          "locationId": "jericho_jerusalem_road",
+          "placeName": "耶利哥往耶路撒冷的路",
+          "lat": 31.85,
+          "lng": 35.4
+        },
+        "image": {
+          "src": "/images/good_samaritan.jpg",
+          "title": "好撒瑪利亞人",
+          "artist": "Joseph Highmore",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Highmore_(1692-1780)_-_The_Good_Samaritan_-_T00076_-_Tate.jpg"
+        },
+        "summary": "耶穌以被強盜打傷的路人為喻，指出真正愛鄰舍的是那位動了慈心的撒瑪利亞人。",
+        "artNote": "Joseph Highmore 以近景人物與柔和光線，突出撒瑪利亞人的憐憫。",
+        "verseHints": [
+          {
+            "ref": "路加福音 10:33",
+            "text": "惟有一個撒馬利亞人行路來到那裡，看見他就動了慈心，"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 10:37",
+          "text": "他說：「是憐憫他的。」耶穌說：「你去照樣行吧。」"
+        },
+        "storyId": "miracles-call",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Jericho–Jerusalem road",
+        "geoNote": "這是一條路線而非單一城市；傳統上與耶利哥到耶路撒冷之間的荒野道路有關。"
+      },
+      {
+        "id": "calling_matthew",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "耶穌呼召馬太",
+        "options": [
+          "耶穌呼召馬太",
+          "耶穌呼召彼得與安得烈",
+          "耶穌在水面行走",
+          "最後的晚餐"
+        ],
+        "hints": [
+          "場景在稅關。",
+          "耶穌對一個坐在稅關上的人說：「跟從我。」",
+          "那人後來寫了馬太福音。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 9,
+          "verse": "9-13"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "capernaum",
+          "placeName": "迦百農",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/calling_matthew.jpg",
+          "title": "聖馬太蒙召",
+          "artist": "Caravaggio",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Calling_of_Saint_Matthew-Caravaggo_(1599-1600).jpg"
+        },
+        "summary": "耶穌在迦百農的稅關呼召稅吏馬太，馬太就起來跟從了他。",
+        "artNote": "Caravaggio 以一道斜射的光與手勢，讓呼召在稅關的日常場景中發生。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 9:9",
+            "text": "耶穌從那裡往前走，看見一個人名叫馬太，坐在稅關上，就對他說：「你跟從我來。」他就起來跟從了耶穌。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 9:13",
+          "text": "經上說：『我喜愛憐恤，不喜愛祭祀。』這句話的意思，你們且去揣摩。我來本不是召義人，乃是召罪人。」"
+        },
+        "storyId": "miracles-call",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "Capernaum（Kfar Nahum）",
+        "geoNote": "迦百農位於加利利海北岸，是耶穌事工的重要基地；今有猶太會堂與聖彼得教堂遺址。"
+      }
+    ],
+    "en": [
+      {
+        "id": "cana",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Wedding at Cana",
+        "options": [
+          "The Wedding at Cana",
+          "Feeding the Five Thousand",
+          "The Last Supper",
+          "The Good Samaritan"
+        ],
+        "hints": [
+          "The scene is a lively wedding feast.",
+          "Servants pour water into stone jars.",
+          "This is Jesus' first miracle."
+        ],
+        "scripture": {
+          "book": "John",
+          "chapter": 2,
+          "verse": "1-11"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "cana",
+          "placeName": "Cana",
+          "lat": 32.747,
+          "lng": 35.339
+        },
+        "image": {
+          "src": "/images/cana.jpg",
+          "title": "The Wedding at Cana",
+          "artist": "Benvenuto Tisi",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wedding_at_Cana,_by_Benvenuto_Tisi.jpg"
+        },
+        "summary": "At a wedding in Cana of Galilee, Jesus tells the servants to fill stone jars with water, and the water becomes the best wine.",
+        "artNote": "Benvenuto Tisi stages the feast in a Renaissance banquet hall, with the stone jars and pouring as the focal action.",
+        "verseHints": [
+          {
+            "ref": "John 2:7",
+            "text": "Jesus said to them, “Fill the water pots with water.” They filled them up to the brim."
+          }
+        ],
+        "keyVerse": {
+          "ref": "John 2:11",
+          "text": "This beginning of his signs Jesus did in Cana of Galilee, and revealed his glory; and his disciples believed in him."
+        },
+        "storyId": "miracles-call",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Kafr Kanna (another candidate: Khirbet Qana)",
+        "geoNote": "Cana's location is disputed; the traditional site is Kafr Kanna in Galilee, with Khirbet Qana as another candidate."
+      },
+      {
+        "id": "good_samaritan",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Parable of the Good Samaritan",
+        "options": [
+          "The Parable of the Good Samaritan",
+          "The Parable of the Prodigal Son",
+          "Feeding the Five Thousand",
+          "The Last Supper"
+        ],
+        "hints": [
+          "A wounded man lies by the road.",
+          "Someone stops and helps him.",
+          "Jesus tells this story to answer “Who is my neighbor?”"
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 10,
+          "verse": "25-37"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 8,
+          "locationId": "jericho_jerusalem_road",
+          "placeName": "Road from Jericho to Jerusalem",
+          "lat": 31.85,
+          "lng": 35.4
+        },
+        "image": {
+          "src": "/images/good_samaritan.jpg",
+          "title": "The Good Samaritan",
+          "artist": "Joseph Highmore",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Highmore_(1692-1780)_-_The_Good_Samaritan_-_T00076_-_Tate.jpg"
+        },
+        "summary": "Jesus tells of a wounded traveler and the compassionate Samaritan who proves to be a true neighbor.",
+        "artNote": "Joseph Highmore brings the figures close and softens the light, focusing on the Samaritan's compassion.",
+        "verseHints": [
+          {
+            "ref": "Luke 10:33",
+            "text": "But a certain Samaritan, as he traveled, came where he was. When he saw him, he was moved with compassion,"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 10:37",
+          "text": "He said, “He who showed mercy on him.” Then Jesus said to him, “Go and do likewise.”"
+        },
+        "storyId": "miracles-call",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jericho–Jerusalem road",
+        "geoNote": "The parable is set on the road, not in a single town; tradition connects it with the wilderness road from Jericho to Jerusalem."
+      },
+      {
+        "id": "calling_matthew",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Calling of Matthew",
+        "options": [
+          "The Calling of Matthew",
+          "The Calling of Peter and Andrew",
+          "Jesus Walks on Water",
+          "The Last Supper"
+        ],
+        "hints": [
+          "The scene is set at a tax booth.",
+          "Jesus says to a man at the booth, “Follow me.”",
+          "That man later wrote the Gospel of Matthew."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 9,
+          "verse": "9-13"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "capernaum",
+          "placeName": "Capernaum",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/calling_matthew.jpg",
+          "title": "The Calling of Saint Matthew",
+          "artist": "Caravaggio",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Calling_of_Saint_Matthew-Caravaggo_(1599-1600).jpg"
+        },
+        "summary": "At the tax booth in Capernaum, Jesus calls the tax collector Matthew, who rises and follows him.",
+        "artNote": "Caravaggio lets a shaft of light and a gesture bring the call into an everyday tax-collector's scene.",
+        "verseHints": [
+          {
+            "ref": "Matthew 9:9",
+            "text": "As Jesus passed by from there, he saw a man called Matthew sitting at the tax collection office. He said to him, “Follow me.” He got up and followed him."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 9:13",
+          "text": "But you go and learn what this means: ‘I desire mercy, and not sacrifice,’for I came not to call the righteous, but sinners to repentance.”"
+        },
+        "storyId": "miracles-call",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Capernaum (Kfar Nahum)",
+        "geoNote": "Capernaum stood on the north shore of the Sea of Galilee and was a base for Jesus' ministry; ancient synagogue and church remains are there."
+      }
+    ]
+  }
+}

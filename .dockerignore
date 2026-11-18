@@ -16,3 +16,6 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 .DS_Store
+app/data/bibleart/
+tests/
+deploy/

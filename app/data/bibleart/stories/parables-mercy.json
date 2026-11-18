@@ -1,0 +1,386 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "parables-mercy",
+  "story": {
+    "zh-Hant": {
+      "id": "parables-mercy",
+      "title": "憐憫的比喻",
+      "intro": "從浪子回頭、失羊到法利賽人與稅吏的禱告，看見神主動尋找與赦免的憐憫。",
+      "outro": "一個罪人悔改，在天上也要這樣為他歡喜。",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "parable",
+        "people"
+      ],
+      "order": 6,
+      "questionIds": [
+        "prodigal_son",
+        "lost_sheep",
+        "pharisee_tax_collector"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "prodigal_son",
+      "coverImage": "/images/prodigal_son.jpg",
+      "coverTitle": "浪子回頭"
+    },
+    "en": {
+      "id": "parables-mercy",
+      "title": "Parables of Mercy",
+      "intro": "The prodigal son, the lost sheep, and the Pharisee and tax collector reveal God's seeking and forgiving mercy.",
+      "outro": "There is joy in heaven over one sinner who repents.",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "parable",
+        "people"
+      ],
+      "order": 6,
+      "questionIds": [
+        "prodigal_son",
+        "lost_sheep",
+        "pharisee_tax_collector"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "prodigal_son",
+      "coverImage": "/images/prodigal_son.jpg",
+      "coverTitle": "The Return of the Prodigal Son"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "prodigal_son",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "浪子回頭",
+        "options": [
+          "浪子回頭",
+          "好撒馬利亞人",
+          "失羊的比喻",
+          "最後的晚餐"
+        ],
+        "hints": [
+          "一位父親迎接歸來的兒子。",
+          "兒子曾離家浪費產業。",
+          "父親跑上前擁抱他。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 15,
+          "verse": "20"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "加利利",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/prodigal_son.jpg",
+          "title": "浪子回頭",
+          "artist": "Rembrandt",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt_Harmensz_van_Rijn_-_Return_of_the_Prodigal_Son_-_Google_Art_Project.jpg"
+        },
+        "summary": "離家的小兒子悔改歸回，父親以恩慈迎接他，並為他設宴慶祝。",
+        "artNote": "Rembrandt 以深沉光影與父親的擁抱，呈現赦免與歸回的溫度。",
+        "verseHints": [
+          {
+            "ref": "路加福音 15:20",
+            "text": "於是起來，往他父親那裡去。相離還遠，他父親看見，就動了慈心，跑去抱著他的頸項，連連與他親嘴。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 15:24",
+          "text": "因為我這個兒子是死而復活，失而又得的。』他們就快樂起來。"
+        },
+        "storyId": "parables-mercy",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "加利利（迦百農一帶）",
+        "geoNote": "耶穌在加利利一帶教導，常用比喻說明神的恩典。"
+      },
+      {
+        "id": "lost_sheep",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "失羊的比喻",
+        "options": [
+          "失羊的比喻",
+          "浪子回頭",
+          "撒種的比喻",
+          "好撒馬利亞人"
+        ],
+        "hints": [
+          "一位牧人尋找走失的羊。",
+          "他撇下九十九隻。",
+          "尋回後歡喜慶祝。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 15,
+          "verse": "4-5"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "加利利",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/lost_sheep.jpg",
+          "title": "失羊的比喻",
+          "artist": "John Atkinson Grimshaw",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Atkinson_Grimshaw_-_The_Parable_of_the_Lost_Sheep_-_y1990-77_-_Princeton_University_Art_Museum.jpg"
+        },
+        "summary": "牧人撇下九十九隻羊，去尋找那一隻走失的，尋回後歡喜快樂。",
+        "artNote": "Grimshaw 以夜色與牧人肩上的羊，強調尋回失羊的溫柔與堅持。",
+        "verseHints": [
+          {
+            "ref": "路加福音 15:4",
+            "text": "「你們中間誰有一百隻羊失去一隻，不把這九十九隻撇在曠野、去找那失去的羊，直到找著呢？"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 15:7",
+          "text": "我告訴你們，一個罪人悔改，在天上也要這樣為他歡喜，較比為九十九個不用悔改的義人歡喜更大。」"
+        },
+        "storyId": "parables-mercy",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "加利利（迦百農一帶）",
+        "geoNote": "牧羊在加利利周邊很常見，曠野與山坡都是牧場。"
+      },
+      {
+        "id": "pharisee_tax_collector",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "法利賽人與稅吏的禱告",
+        "options": [
+          "法利賽人與稅吏的禱告",
+          "浪子回頭",
+          "失羊的比喻",
+          "好撒馬利亞人"
+        ],
+        "hints": [
+          "兩人在聖殿裡禱告。",
+          "一人自誇，一人捶胸。",
+          "謙卑的稅吏得稱義。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 18,
+          "verse": "13-14"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/pharisee_tax_collector.png",
+          "title": "法利賽人與稅吏的禱告",
+          "artist": "Venediktos Emporios",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pharisee_and_the_Publican.png"
+        },
+        "summary": "自義的法利賽人與謙卑悔改的稅吏一同禱告，神稱那謙卑的為義。",
+        "artNote": "Emporios 以聖殿中的兩人對比，讓自義與謙卑的姿態形成強烈反差。",
+        "verseHints": [
+          {
+            "ref": "路加福音 18:13",
+            "text": "那稅吏遠遠地站著，連舉目望天也不敢，只捶著胸說：『神啊，開恩可憐我這個罪人！』"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 18:14",
+          "text": "我告訴你們，這人回家去比那人倒算為義了；因為，凡自高的，必降為卑；自卑的，必升為高。」"
+        },
+        "storyId": "parables-mercy",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶路撒冷",
+        "geoNote": "比喻提到兩人上聖殿禱告，場景指向耶路撒冷聖殿。"
+      }
+    ],
+    "en": [
+      {
+        "id": "prodigal_son",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Return of the Prodigal Son",
+        "options": [
+          "The Return of the Prodigal Son",
+          "The Good Samaritan",
+          "The Parable of the Lost Sheep",
+          "The Last Supper"
+        ],
+        "hints": [
+          "A father welcomes his returning son.",
+          "The son had left home and wasted his inheritance.",
+          "The father runs to embrace him."
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 15,
+          "verse": "20"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "Galilee",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/prodigal_son.jpg",
+          "title": "The Return of the Prodigal Son",
+          "artist": "Rembrandt",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt_Harmensz_van_Rijn_-_Return_of_the_Prodigal_Son_-_Google_Art_Project.jpg"
+        },
+        "summary": "The younger son repents and returns home; his father receives him with mercy and celebrates.",
+        "artNote": "Rembrandt's deep light and the father's embrace convey the warmth of forgiveness and return.",
+        "verseHints": [
+          {
+            "ref": "Luke 15:20",
+            "text": "“He arose, and came to his father. But while he was still far off, his father saw him, and was moved with compassion, and ran, and fell on his neck, and kissed him."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 15:24",
+          "text": "for this, my son, was dead, and is alive again. He was lost, and is found.’ They began to celebrate."
+        },
+        "storyId": "parables-mercy",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Galilee (Capernaum area)",
+        "geoNote": "Jesus taught around Galilee and often used parables to explain God's grace."
+      },
+      {
+        "id": "lost_sheep",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Parable of the Lost Sheep",
+        "options": [
+          "The Parable of the Lost Sheep",
+          "The Return of the Prodigal Son",
+          "The Parable of the Sower",
+          "The Good Samaritan"
+        ],
+        "hints": [
+          "A shepherd searches for a lost sheep.",
+          "He leaves the ninety-nine.",
+          "He rejoices when he finds it."
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 15,
+          "verse": "4-5"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "Galilee",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/lost_sheep.jpg",
+          "title": "The Parable of the Lost Sheep",
+          "artist": "John Atkinson Grimshaw",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Atkinson_Grimshaw_-_The_Parable_of_the_Lost_Sheep_-_y1990-77_-_Princeton_University_Art_Museum.jpg"
+        },
+        "summary": "The shepherd leaves the ninety-nine to find the one lost sheep and rejoices when it is found.",
+        "artNote": "Grimshaw's night scene and the shepherd carrying the sheep stress the tenderness and persistence of seeking the lost.",
+        "verseHints": [
+          {
+            "ref": "Luke 15:4",
+            "text": "“Which of you men, if you had one hundred sheep, and lost one of them, wouldn’t leave the ninety-nine in the wilderness, and go after the one that was lost, until he found it?"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 15:7",
+          "text": "I tell you that even so there will be more joy in heaven over one sinner who repents, than over ninety-nine righteous people who need no repentance."
+        },
+        "storyId": "parables-mercy",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Galilee (Capernaum area)",
+        "geoNote": "Shepherding was common around Galilee; wilderness and hillsides served as pasture."
+      },
+      {
+        "id": "pharisee_tax_collector",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Pharisee and the Tax Collector",
+        "options": [
+          "The Pharisee and the Tax Collector",
+          "The Return of the Prodigal Son",
+          "The Parable of the Lost Sheep",
+          "The Good Samaritan"
+        ],
+        "hints": [
+          "Two men pray in the temple.",
+          "One boasts; the other beats his breast.",
+          "The humble tax collector is justified."
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 18,
+          "verse": "13-14"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/pharisee_tax_collector.png",
+          "title": "The Pharisee and the Tax Collector",
+          "artist": "Venediktos Emporios",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pharisee_and_the_Publican.png"
+        },
+        "summary": "A self-righteous Pharisee and a humble tax collector pray; God justifies the humble one.",
+        "artNote": "Emporios contrasts the two figures in the temple, setting self-righteousness against humility.",
+        "verseHints": [
+          {
+            "ref": "Luke 18:13",
+            "text": "But the tax collector, standing far away, wouldn’t even lift up his eyes to heaven, but beat his breast, saying, ‘God, be merciful to me, a sinner!’"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 18:14",
+          "text": "I tell you, this man went down to his house justified rather than the other; for everyone who exalts himself will be humbled, but he who humbles himself will be exalted.”"
+        },
+        "storyId": "parables-mercy",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem",
+        "geoNote": "The parable speaks of two men going up to the temple, pointing to Jerusalem."
+      }
+    ]
+  }
+}

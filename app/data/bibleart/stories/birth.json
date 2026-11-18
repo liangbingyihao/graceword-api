@@ -1,0 +1,386 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "birth",
+  "story": {
+    "zh-Hant": {
+      "id": "birth",
+      "title": "降生與童年",
+      "intro": "從天使報喜到逃往埃及，跟隨耶穌降生的最初幾幕。",
+      "outro": "道成了肉身，住在我們中間。",
+      "era": "nt",
+      "section": "jesus-life",
+      "themes": [
+        "birth",
+        "people"
+      ],
+      "order": 1,
+      "questionIds": [
+        "annunciation",
+        "nativity",
+        "flight_egypt"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "nativity",
+      "coverImage": "/images/nativity.jpg",
+      "coverTitle": "耶穌降生"
+    },
+    "en": {
+      "id": "birth",
+      "title": "Birth & Childhood",
+      "intro": "From the annunciation to the flight into Egypt, the first scenes of Jesus' birth.",
+      "outro": "The Word became flesh and dwelt among us.",
+      "era": "nt",
+      "section": "jesus-life",
+      "themes": [
+        "birth",
+        "people"
+      ],
+      "order": 1,
+      "questionIds": [
+        "annunciation",
+        "nativity",
+        "flight_egypt"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "nativity",
+      "coverImage": "/images/nativity.jpg",
+      "coverTitle": "The Nativity"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "annunciation",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "天使向馬利亞報喜",
+        "options": [
+          "天使向馬利亞報喜",
+          "耶穌在水面行走",
+          "東方博士朝拜",
+          "耶穌受洗"
+        ],
+        "hints": [
+          "畫面中有一位帶翅膀的使者。",
+          "領受信息的那位女子來自拿撒勒。",
+          "這是耶穌降生前的序幕。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 1,
+          "verse": "26-38"
+        },
+        "event": {
+          "year": -5,
+          "tolerance": 8,
+          "locationId": "nazareth",
+          "placeName": "拿撒勒",
+          "lat": 32.6996,
+          "lng": 35.3035
+        },
+        "image": {
+          "src": "/images/annunciation.jpg",
+          "title": "聖母領報",
+          "artist": "Gerard David",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gerard_David_-_The_Annunciation_(The_Angel_and_the_Virgin).jpg"
+        },
+        "summary": "天使加百列向童女馬利亞顯現，宣告她將懷孕生子，這孩子要稱為至高者的兒子。",
+        "artNote": "Gerard David 以對稱構圖與柔和光線描繪天使與馬利亞，紅色床榻與書本象徵她的禱告生活。",
+        "verseHints": [
+          {
+            "ref": "路加福音 1:38",
+            "text": "馬利亞說：「我是主的使女，情願照你的話成就在我身上。」天使就離開她去了。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 1:31",
+          "text": "你要懷孕生子，可以給他起名叫耶穌。"
+        },
+        "storyId": "birth",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "Nazareth（拿撒勒）",
+        "geoNote": "傳統認為報喜地點在拿撒勒；今為以色列北部城市，天使報喜教堂所在。"
+      },
+      {
+        "id": "nativity",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "耶穌降生",
+        "options": [
+          "耶穌降生",
+          "耶穌受洗",
+          "最後的晚餐",
+          "拉撒路復活"
+        ],
+        "hints": [
+          "畫面中央是一個被布包裹的嬰孩。",
+          "母親身旁有馬槽與牲畜。",
+          "牧羊人前來朝拜。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 2,
+          "verse": "1-20"
+        },
+        "event": {
+          "year": -4,
+          "tolerance": 8,
+          "locationId": "bethlehem",
+          "placeName": "伯利恆",
+          "lat": 31.7054,
+          "lng": 35.2024
+        },
+        "image": {
+          "src": "/images/nativity.jpg",
+          "title": "耶穌降生",
+          "artist": "Lucas Cranach the Elder",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lucas_Cranach_d._%C3%84._016.jpg"
+        },
+        "summary": "馬利亞在伯利恆生下耶穌，放在馬槽裡；天使向野地的牧羊人報大喜的信息。",
+        "artNote": "Cranach 以深色背景襯托聖嬰與天使，強調道成肉身的謙卑。",
+        "verseHints": [
+          {
+            "ref": "路加福音 2:7",
+            "text": "就生了頭胎的兒子，用布包起來，放在馬槽裡，因為客店裡沒有地方。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 2:11",
+          "text": "因今天在大衛的城裡，為你們生了救主，就是主基督。"
+        },
+        "storyId": "birth",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Bethlehem（伯利恆）",
+        "geoNote": "伯利恆位於耶路撒冷以南約 10 公里；聖誕教堂是傳統上的耶穌降生地。"
+      },
+      {
+        "id": "flight_egypt",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "逃往埃及",
+        "options": [
+          "逃往埃及",
+          "耶穌降生",
+          "東方博士朝拜",
+          "耶穌受洗"
+        ],
+        "hints": [
+          "約瑟在夜間帶著一家人趕路。",
+          "他們要躲避希律王的殺害。",
+          "天使吩咐他們往埃及去。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 2,
+          "verse": "13-15"
+        },
+        "event": {
+          "year": -4,
+          "tolerance": 8,
+          "locationId": "egypt",
+          "placeName": "埃及",
+          "lat": 30,
+          "lng": 31.2
+        },
+        "image": {
+          "src": "/images/flight_egypt.jpg",
+          "title": "逃往埃及途中休息",
+          "artist": "Caravaggio",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rest_on_the_Flight_into_Egypt-Caravaggio_(c.1597).jpg"
+        },
+        "summary": "天使警告約瑟，約瑟就連夜帶著馬利亞和耶穌逃往埃及，躲避希律的屠殺。",
+        "artNote": "Caravaggio 以夜色與休息中的聖家，將逃亡的疲憊與天使的守護並置。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 2:13",
+            "text": "他們去後，有主的使者向約瑟夢中顯現，說：「起來！帶著小孩子同他母親逃往埃及，住在那裡，等我吩咐你；因為希律必尋找小孩子，要除滅他。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 2:15",
+          "text": "住在那裡，直到希律死了。這是要應驗主藉先知所說的話，說：「我從埃及召出我的兒子來。」"
+        },
+        "storyId": "birth",
+        "regionId": "egypt",
+        "regionName": "埃及",
+        "modernName": "Egypt（埃及）",
+        "geoNote": "聖經未指明埃及的具體城市；傳統上常與尼羅河三角洲或開羅一帶聯繫。"
+      }
+    ],
+    "en": [
+      {
+        "id": "annunciation",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Annunciation",
+        "options": [
+          "The Annunciation",
+          "Jesus Walks on Water",
+          "Adoration of the Magi",
+          "The Baptism of Jesus"
+        ],
+        "hints": [
+          "An angel with wings appears in the scene.",
+          "The woman receiving the message is from Nazareth.",
+          "This is the prelude to Jesus' birth."
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 1,
+          "verse": "26-38"
+        },
+        "event": {
+          "year": -5,
+          "tolerance": 8,
+          "locationId": "nazareth",
+          "placeName": "Nazareth",
+          "lat": 32.6996,
+          "lng": 35.3035
+        },
+        "image": {
+          "src": "/images/annunciation.jpg",
+          "title": "The Annunciation",
+          "artist": "Gerard David",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gerard_David_-_The_Annunciation_(The_Angel_and_the_Virgin).jpg"
+        },
+        "summary": "The angel Gabriel appears to the virgin Mary and announces that she will bear a son, the Son of the Most High.",
+        "artNote": "Gerard David builds the scene on symmetry and soft light; the red bed and open book suggest Mary's life of prayer.",
+        "verseHints": [
+          {
+            "ref": "Luke 1:38",
+            "text": "Mary said, “Behold, the handmaid of the Lord; be it to me according to your word.” The angel departed from her."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 1:31",
+          "text": "Behold, you will conceive in your womb, and give birth to a son, and will call his name ‘Jesus.’"
+        },
+        "storyId": "birth",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Nazareth",
+        "geoNote": "Tradition places the Annunciation in Nazareth, now a city in northern Israel; the Basilica of the Annunciation stands there."
+      },
+      {
+        "id": "nativity",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Nativity",
+        "options": [
+          "The Nativity",
+          "The Baptism of Jesus",
+          "The Last Supper",
+          "The Raising of Lazarus"
+        ],
+        "hints": [
+          "A newborn wrapped in cloth lies at the center.",
+          "The mother is beside a manger, with animals nearby.",
+          "Shepherds come to worship."
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 2,
+          "verse": "1-20"
+        },
+        "event": {
+          "year": -4,
+          "tolerance": 8,
+          "locationId": "bethlehem",
+          "placeName": "Bethlehem",
+          "lat": 31.7054,
+          "lng": 35.2024
+        },
+        "image": {
+          "src": "/images/nativity.jpg",
+          "title": "The Nativity",
+          "artist": "Lucas Cranach the Elder",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lucas_Cranach_d._%C3%84._016.jpg"
+        },
+        "summary": "Mary gives birth to Jesus in Bethlehem and lays him in a manger; angels announce the good news to shepherds.",
+        "artNote": "Cranach sets the child and angels against deep shadow, stressing the humility of the incarnation.",
+        "verseHints": [
+          {
+            "ref": "Luke 2:7",
+            "text": "She gave birth to her firstborn son. She wrapped him in bands of cloth, and laid him in a feeding trough, because there was no room for them in the inn."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 2:11",
+          "text": "For there is born to you, this day, in the city of David, a Savior, who is Christ the Lord."
+        },
+        "storyId": "birth",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Bethlehem",
+        "geoNote": "Bethlehem lies about 10 km south of Jerusalem; the Church of the Nativity is the traditional site of Jesus' birth."
+      },
+      {
+        "id": "flight_egypt",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Flight into Egypt",
+        "options": [
+          "The Flight into Egypt",
+          "The Nativity",
+          "Adoration of the Magi",
+          "The Baptism of Jesus"
+        ],
+        "hints": [
+          "Joseph leads the family on a night journey.",
+          "They are fleeing King Herod's violence.",
+          "An angel tells them to go to Egypt."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 2,
+          "verse": "13-15"
+        },
+        "event": {
+          "year": -4,
+          "tolerance": 8,
+          "locationId": "egypt",
+          "placeName": "Egypt",
+          "lat": 30,
+          "lng": 31.2
+        },
+        "image": {
+          "src": "/images/flight_egypt.jpg",
+          "title": "Rest on the Flight into Egypt",
+          "artist": "Caravaggio",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rest_on_the_Flight_into_Egypt-Caravaggio_(c.1597).jpg"
+        },
+        "summary": "Warned by an angel, Joseph takes Mary and Jesus by night and flees to Egypt to escape Herod's slaughter.",
+        "artNote": "Caravaggio contrasts the weariness of the fleeing family with the angel's quiet protection in the night.",
+        "verseHints": [
+          {
+            "ref": "Matthew 2:13",
+            "text": "Now when they had departed, behold, an angel of the Lord appeared to Joseph in a dream, saying, “Arise and take the young child and his mother, and flee into Egypt, and stay there until I tell you, for Herod will seek the young child to destroy him.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 2:15",
+          "text": "and was there until the death of Herod; that it might be fulfilled which was spoken by the Lord through the prophet, saying, “Out of Egypt I called my son.”"
+        },
+        "storyId": "birth",
+        "regionId": "egypt",
+        "regionName": "Egypt",
+        "modernName": "Egypt",
+        "geoNote": "Scripture does not name a city in Egypt; tradition often connects the flight with the Nile Delta or the Cairo area."
+      }
+    ]
+  }
+}

@@ -1,0 +1,1360 @@
+{
+  "contentVersion": "4863674b49d9",
+  "publishedAt": "2026-11-18T03:06:46.173Z",
+  "locales": {
+    "zh-Hant": {
+      "stories": [
+        {
+          "id": "birth",
+          "title": "降生與童年",
+          "intro": "從天使報喜到逃往埃及，跟隨耶穌降生的最初幾幕。",
+          "outro": "道成了肉身，住在我們中間。",
+          "era": "nt",
+          "section": "jesus-life",
+          "themes": [
+            "birth",
+            "people"
+          ],
+          "order": 1,
+          "questionIds": [
+            "annunciation",
+            "nativity",
+            "flight_egypt"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "nativity",
+          "coverImage": "/images/nativity.jpg",
+          "coverTitle": "耶穌降生"
+        },
+        {
+          "id": "childhood-worship",
+          "title": "朝拜與童年",
+          "intro": "從聖母訪親、東方博士朝拜，到少年耶穌在聖殿，跟隨耶穌童年的敬拜與成長。",
+          "outro": "耶穌的智慧和身量，並神和人喜愛他的心，都一齊增長。",
+          "era": "nt",
+          "section": "jesus-life",
+          "themes": [
+            "birth",
+            "people"
+          ],
+          "order": 2,
+          "questionIds": [
+            "visitation",
+            "magi",
+            "boy_jesus_temple"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "boy_jesus_temple",
+          "coverImage": "/images/boy_jesus_temple.jpg",
+          "coverTitle": "少年耶穌在聖殿"
+        },
+        {
+          "id": "early-ministry",
+          "title": "受洗與早期事工",
+          "intro": "從約旦河受洗到呼召第一批門徒，看見耶穌公開事工的起點。",
+          "outro": "天國近了，你們應當悔改。",
+          "era": "nt",
+          "section": "jesus-life",
+          "themes": [
+            "miracle",
+            "people"
+          ],
+          "order": 3,
+          "questionIds": [
+            "baptism",
+            "temptation",
+            "calling_peter"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "baptism",
+          "coverImage": "/images/baptism.jpg",
+          "coverTitle": "基督受洗"
+        },
+        {
+          "id": "miracles-call",
+          "title": "神蹟、呼召與憐憫",
+          "intro": "從迦拿水變酒、呼召馬太，到好撒瑪利亞人的憐憫，看見耶穌主動尋找跟隨祂的人。",
+          "outro": "來跟從我，我要叫你們得人如得魚。",
+          "era": "nt",
+          "section": "jesus-life",
+          "themes": [
+            "miracle",
+            "parable",
+            "people"
+          ],
+          "order": 4,
+          "questionIds": [
+            "cana",
+            "calling_matthew",
+            "good_samaritan"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "cana",
+          "coverImage": "/images/cana.jpg",
+          "coverTitle": "迦拿婚宴"
+        },
+        {
+          "id": "galilee",
+          "title": "加利利事工與教導",
+          "intro": "在加利利海邊，耶穌教導、醫治、平靜風浪，也呼召人跟隨他。",
+          "outro": "他的話語帶著權柄。",
+          "era": "nt",
+          "section": "jesus-life",
+          "themes": [
+            "miracle",
+            "teaching"
+          ],
+          "order": 5,
+          "questionIds": [
+            "sermon",
+            "storm",
+            "feed5000"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "sermon",
+          "coverImage": "/images/sermon.jpg",
+          "coverTitle": "登山寶訓"
+        },
+        {
+          "id": "parables-mercy",
+          "title": "憐憫的比喻",
+          "intro": "從浪子回頭、失羊到法利賽人與稅吏的禱告，看見神主動尋找與赦免的憐憫。",
+          "outro": "一個罪人悔改，在天上也要這樣為他歡喜。",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "parable",
+            "people"
+          ],
+          "order": 6,
+          "questionIds": [
+            "prodigal_son",
+            "lost_sheep",
+            "pharisee_tax_collector"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "prodigal_son",
+          "coverImage": "/images/prodigal_son.jpg",
+          "coverTitle": "浪子回頭"
+        },
+        {
+          "id": "parables-kingdom",
+          "title": "天國的比喻",
+          "intro": "撒種、芥菜種與藏寶，揭示天國由小而大的成長與價值。",
+          "outro": "有耳可聽的，就應當聽。",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "parable",
+            "teaching"
+          ],
+          "order": 7,
+          "questionIds": [
+            "sower",
+            "mustard_seed",
+            "hidden_treasure"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "sower",
+          "coverImage": "/images/sower.jpg",
+          "coverTitle": "撒種的比喻"
+        },
+        {
+          "id": "kingdom-values",
+          "title": "天國的價值",
+          "intro": "失錢、稗子與重價珍珠，揭示神尋找失喪者、等待收割，並天國的珍貴。",
+          "outro": "天國好像寶貝藏在地裡。",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "parable",
+            "teaching"
+          ],
+          "order": 8,
+          "questionIds": [
+            "lost_coin",
+            "wheat_tares",
+            "pearl_great_price"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "pearl_great_price",
+          "coverImage": "/images/pearl_great_price.jpg",
+          "coverTitle": "重價珍珠的比喻"
+        },
+        {
+          "id": "healing-miracles",
+          "title": "醫治的神蹟",
+          "intro": "癱子、睚魯的女兒與十個麻風病人，看見耶穌的權柄與憐憫。",
+          "outro": "你的信救了你。",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "miracle",
+            "people"
+          ],
+          "order": 9,
+          "questionIds": [
+            "paralytic_roof",
+            "jairus_daughter",
+            "ten_lepers"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "paralytic_roof",
+          "coverImage": "/images/paralytic_roof.jpg",
+          "coverTitle": "癱子從屋頂縋下"
+        },
+        {
+          "id": "healing-resurrection",
+          "title": "醫治與復活",
+          "intro": "血漏婦人、瞎子巴底買與拉撒路，看見耶穌勝過疾病、黑暗與死亡。",
+          "outro": "復活在我，生命也在我。",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "miracle",
+            "passion"
+          ],
+          "order": 10,
+          "questionIds": [
+            "woman_hemorrhage",
+            "blind_bartimaeus",
+            "lazarus"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "lazarus",
+          "coverImage": "/images/lazarus.jpg",
+          "coverTitle": "拉撒路復活"
+        },
+        {
+          "id": "encounters",
+          "title": "與耶穌相遇",
+          "intro": "井邊婦人、撒該與少年官，每個人都在耶穌面前被看見。",
+          "outro": "人子來，為要尋找、拯救失喪的人。",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "people",
+            "teaching"
+          ],
+          "order": 11,
+          "questionIds": [
+            "woman_well",
+            "zacchaeus",
+            "rich_young_ruler"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "woman_well",
+          "coverImage": "/images/woman_well.jpg",
+          "coverTitle": "耶穌與撒馬利亞婦人"
+        },
+        {
+          "id": "mercy-service",
+          "title": "饒恕、服事與奉獻",
+          "intro": "不饒恕人的僕人、馬大與馬利亞的接待，以及城牆奉獻的敬拜，思想饒恕、服事與奉獻。",
+          "outro": "你們若有彼此相愛的心，眾人因此就認出你們是我的門徒了。",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "people",
+            "teaching"
+          ],
+          "order": 12,
+          "questionIds": [
+            "unforgiving_servant",
+            "mary_martha",
+            "dedication"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "mary_martha",
+          "coverImage": "/images/mary_martha.jpg",
+          "coverTitle": "馬大與馬利亞接待耶穌"
+        },
+        {
+          "id": "seeing-believing",
+          "title": "看見與相信",
+          "intro": "瞎子得醫治、尼哥底母夜訪、多馬的懷疑，從看見到相信，信心被更新。",
+          "outro": "那沒有看見就信的有福了。",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "miracle",
+            "resurrection"
+          ],
+          "order": 13,
+          "questionIds": [
+            "blind",
+            "nicodemus",
+            "thomas"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "thomas",
+          "coverImage": "/images/thomas.jpg",
+          "coverTitle": "多馬的懷疑"
+        },
+        {
+          "id": "sea-salvation",
+          "title": "海上的拯救",
+          "intro": "耶穌在水面行走，保羅在海難中獲救，約拿在海上被拋下，看見風浪中的拯救。",
+          "outro": "在患難中，神仍掌權。",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "miracle",
+            "mission"
+          ],
+          "order": 14,
+          "questionIds": [
+            "walk_water",
+            "shipwreck_rome",
+            "jonah_ship"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "walk_water",
+          "coverImage": "/images/walk_water.jpg",
+          "coverTitle": "門徒看見耶穌在水面行走"
+        },
+        {
+          "id": "passion",
+          "title": "受難週",
+          "intro": "從最後的晚餐、客西馬尼園到各各他，跟隨耶穌走向十字架。",
+          "outro": "成了。",
+          "era": "nt",
+          "section": "passion-resurrection",
+          "themes": [
+            "passion"
+          ],
+          "order": 15,
+          "questionIds": [
+            "last_supper",
+            "gethsemane",
+            "crucifixion"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "crucifixion",
+          "coverImage": "/images/crucifixion.jpg",
+          "coverTitle": "基督受難"
+        },
+        {
+          "id": "passion-week",
+          "title": "受難週：進城與受審",
+          "intro": "從榮入聖城、潔淨聖殿到彼拉多審判，跟隨耶穌走向各各他。",
+          "outro": "他為我們的過犯受害，為我們的罪孽壓傷。",
+          "era": "nt",
+          "section": "passion-resurrection",
+          "themes": [
+            "passion"
+          ],
+          "order": 16,
+          "questionIds": [
+            "triumphal_entry",
+            "cleansing_temple",
+            "trial_pilate"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "trial_pilate",
+          "coverImage": "/images/trial_pilate.jpg",
+          "coverTitle": "耶穌在彼拉多面前受審"
+        },
+        {
+          "id": "passion-witness",
+          "title": "受難與復活同行",
+          "intro": "耶穌為門徒洗腳、西門替耶穌背十字架、以馬忤斯路上相遇，跟隨受難與復活中的同行者。",
+          "outro": "他們的眼睛明亮了，這才認出祂來。",
+          "era": "nt",
+          "section": "passion-resurrection",
+          "themes": [
+            "passion",
+            "resurrection"
+          ],
+          "order": 17,
+          "questionIds": [
+            "foot_washing",
+            "simon_cyrene",
+            "emmaus"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "emmaus",
+          "coverImage": "/images/emmaus.jpg",
+          "coverTitle": "以馬忤斯的晚餐"
+        },
+        {
+          "id": "resurrection",
+          "title": "復活與升天",
+          "intro": "從空墳墓到橄欖山，復活的基督向門徒顯現並託付使命。",
+          "outro": "你們要去，使萬民作我的門徒。",
+          "era": "nt",
+          "section": "passion-resurrection",
+          "themes": [
+            "resurrection",
+            "mission"
+          ],
+          "order": 18,
+          "questionIds": [
+            "resurrection",
+            "peter_commission",
+            "ascension"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "resurrection",
+          "coverImage": "/images/resurrection.jpg",
+          "coverTitle": "基督復活"
+        },
+        {
+          "id": "early-church",
+          "title": "初代教會與保羅",
+          "intro": "從五旬節到拔摩島，跟隨福音傳遍地中海的腳步。",
+          "outro": "直到地極，作我的見證。",
+          "era": "early-church",
+          "section": "early-church",
+          "themes": [
+            "mission",
+            "holy-spirit"
+          ],
+          "order": 19,
+          "questionIds": [
+            "pentecost",
+            "saul",
+            "patmos"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "pentecost",
+          "coverImage": "/images/pentecost.jpg",
+          "coverTitle": "聖靈降臨"
+        },
+        {
+          "id": "church-expansion",
+          "title": "初代教會的擴展",
+          "intro": "彼得獲救、保羅在雅典、呂底亞受洗，福音跨越監牢、哲學與文化邊界。",
+          "outro": "福音本是神的大能，要救一切相信的人。",
+          "era": "early-church",
+          "section": "early-church",
+          "themes": [
+            "mission",
+            "holy-spirit"
+          ],
+          "order": 20,
+          "questionIds": [
+            "peter_prison",
+            "athens",
+            "lydia"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "lydia",
+          "coverImage": "/images/lydia.jpg",
+          "coverTitle": "呂底亞受洗"
+        },
+        {
+          "id": "acts-church",
+          "title": "初代教會的行動",
+          "intro": "腓力、哥尼流與腓立比獄卒，看見福音跨越邊界。",
+          "outro": "並要在耶路撒冷、猶太全地和撒馬利亞，直到地極，作我的見證。",
+          "era": "early-church",
+          "section": "early-church",
+          "themes": [
+            "mission",
+            "holy-spirit"
+          ],
+          "order": 21,
+          "questionIds": [
+            "philip_ethiopian",
+            "cornelius",
+            "philippian_jailer"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "philippian_jailer",
+          "coverImage": "/images/philippian_jailer.jpg",
+          "coverTitle": "腓立比獄卒受洗"
+        },
+        {
+          "id": "joseph",
+          "title": "約瑟的故事",
+          "intro": "從彩衣、獄中到與兄弟相認，跟隨神在約瑟生命中的帶領。",
+          "outro": "你們的意思是要害我，但神的意思原是好的。",
+          "era": "ot",
+          "section": "old-testament",
+          "themes": [
+            "people"
+          ],
+          "order": 22,
+          "questionIds": [
+            "joseph_coat",
+            "joseph_prison",
+            "joseph_reunion"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "joseph_reunion",
+          "coverImage": "/images/joseph_reunion.jpg",
+          "coverTitle": "約瑟與兄弟相認"
+        },
+        {
+          "id": "dreams-night",
+          "title": "夢與夜間的引導",
+          "intro": "約瑟的夢、法老的夢與尼希米夜巡城牆，看見神在夜間與夢中引導歷史。",
+          "outro": "神必指引你的路。",
+          "era": "ot",
+          "section": "old-testament",
+          "themes": [
+            "people"
+          ],
+          "order": 23,
+          "questionIds": [
+            "joseph_dreams",
+            "pharaoh_dream",
+            "nehemiah_night"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "pharaoh_dream",
+          "coverImage": "/images/pharaoh_dream.jpg",
+          "coverTitle": "約瑟為法老解夢"
+        },
+        {
+          "id": "moses",
+          "title": "摩西與出埃及",
+          "intro": "從尼羅河邊的籃子到西奈山的十誡，看見神拯救與立約的作為。",
+          "outro": "我是耶和華你的神，曾將你從埃及地為奴之家領出來。",
+          "era": "ot",
+          "section": "old-testament",
+          "themes": [
+            "miracle",
+            "people"
+          ],
+          "order": 24,
+          "questionIds": [
+            "moses_basket",
+            "burning_bush",
+            "ten_commandments"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "ten_commandments",
+          "coverImage": "/images/ten_commandments.jpg",
+          "coverTitle": "摩西與十誡石版"
+        },
+        {
+          "id": "wilderness-provision",
+          "title": "曠野與神的供應",
+          "intro": "嗎哪、磐石出水與蓖麻樹，看見神在曠野與困境中照顧祂的子民。",
+          "outro": "我的恩典夠你用的。",
+          "era": "ot",
+          "section": "old-testament",
+          "themes": [
+            "miracle",
+            "people"
+          ],
+          "order": 25,
+          "questionIds": [
+            "manna",
+            "water_rock",
+            "jonah_plant"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "manna",
+          "coverImage": "/images/manna.jpg",
+          "coverTitle": "收集嗎哪"
+        },
+        {
+          "id": "jonah",
+          "title": "約拿與尼尼微",
+          "intro": "從逃避呼召到尼尼微悔改，體會神的憐憫與寬容。",
+          "outro": "我知道你是有恩典、有憐憫的神。",
+          "era": "ot",
+          "section": "old-testament",
+          "themes": [
+            "mission",
+            "people"
+          ],
+          "order": 26,
+          "questionIds": [
+            "jonah_call",
+            "jonah_fish",
+            "nineveh"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "nineveh",
+          "coverImage": "/images/nineveh.jpg",
+          "coverTitle": "約拿在尼尼微宣講"
+        },
+        {
+          "id": "nehemiah",
+          "title": "尼希米與重建",
+          "intro": "從書珊的禱告到耶路撒冷的城牆，看見神使用一個人帶動群體重建。",
+          "outro": "我們的神必為我們爭戰。",
+          "era": "ot",
+          "section": "old-testament",
+          "themes": [
+            "people"
+          ],
+          "order": 27,
+          "questionIds": [
+            "nehemiah_prayer",
+            "rebuild_wall",
+            "law_reading"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "rebuild_wall",
+          "coverImage": "/images/rebuild_wall.jpg",
+          "coverTitle": "重建耶路撒冷城牆"
+        }
+      ],
+      "questionStory": {
+        "annunciation": "birth",
+        "nativity": "birth",
+        "flight_egypt": "birth",
+        "visitation": "childhood-worship",
+        "magi": "childhood-worship",
+        "boy_jesus_temple": "childhood-worship",
+        "baptism": "early-ministry",
+        "temptation": "early-ministry",
+        "calling_peter": "early-ministry",
+        "cana": "miracles-call",
+        "calling_matthew": "miracles-call",
+        "good_samaritan": "miracles-call",
+        "sermon": "galilee",
+        "storm": "galilee",
+        "feed5000": "galilee",
+        "prodigal_son": "parables-mercy",
+        "lost_sheep": "parables-mercy",
+        "pharisee_tax_collector": "parables-mercy",
+        "sower": "parables-kingdom",
+        "mustard_seed": "parables-kingdom",
+        "hidden_treasure": "parables-kingdom",
+        "lost_coin": "kingdom-values",
+        "wheat_tares": "kingdom-values",
+        "pearl_great_price": "kingdom-values",
+        "paralytic_roof": "healing-miracles",
+        "jairus_daughter": "healing-miracles",
+        "ten_lepers": "healing-miracles",
+        "woman_hemorrhage": "healing-resurrection",
+        "blind_bartimaeus": "healing-resurrection",
+        "lazarus": "healing-resurrection",
+        "woman_well": "encounters",
+        "zacchaeus": "encounters",
+        "rich_young_ruler": "encounters",
+        "unforgiving_servant": "mercy-service",
+        "mary_martha": "mercy-service",
+        "dedication": "mercy-service",
+        "blind": "seeing-believing",
+        "nicodemus": "seeing-believing",
+        "thomas": "seeing-believing",
+        "walk_water": "sea-salvation",
+        "shipwreck_rome": "sea-salvation",
+        "jonah_ship": "sea-salvation",
+        "last_supper": "passion",
+        "gethsemane": "passion",
+        "crucifixion": "passion",
+        "triumphal_entry": "passion-week",
+        "cleansing_temple": "passion-week",
+        "trial_pilate": "passion-week",
+        "foot_washing": "passion-witness",
+        "simon_cyrene": "passion-witness",
+        "emmaus": "passion-witness",
+        "resurrection": "resurrection",
+        "peter_commission": "resurrection",
+        "ascension": "resurrection",
+        "pentecost": "early-church",
+        "saul": "early-church",
+        "patmos": "early-church",
+        "peter_prison": "church-expansion",
+        "athens": "church-expansion",
+        "lydia": "church-expansion",
+        "philip_ethiopian": "acts-church",
+        "cornelius": "acts-church",
+        "philippian_jailer": "acts-church",
+        "joseph_coat": "joseph",
+        "joseph_prison": "joseph",
+        "joseph_reunion": "joseph",
+        "joseph_dreams": "dreams-night",
+        "pharaoh_dream": "dreams-night",
+        "nehemiah_night": "dreams-night",
+        "moses_basket": "moses",
+        "burning_bush": "moses",
+        "ten_commandments": "moses",
+        "manna": "wilderness-provision",
+        "water_rock": "wilderness-provision",
+        "jonah_plant": "wilderness-provision",
+        "jonah_call": "jonah",
+        "jonah_fish": "jonah",
+        "nineveh": "jonah",
+        "nehemiah_prayer": "nehemiah",
+        "rebuild_wall": "nehemiah",
+        "law_reading": "nehemiah"
+      }
+    },
+    "en": {
+      "stories": [
+        {
+          "id": "birth",
+          "title": "Birth & Childhood",
+          "intro": "From the annunciation to the flight into Egypt, the first scenes of Jesus' birth.",
+          "outro": "The Word became flesh and dwelt among us.",
+          "era": "nt",
+          "section": "jesus-life",
+          "themes": [
+            "birth",
+            "people"
+          ],
+          "order": 1,
+          "questionIds": [
+            "annunciation",
+            "nativity",
+            "flight_egypt"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "nativity",
+          "coverImage": "/images/nativity.jpg",
+          "coverTitle": "The Nativity"
+        },
+        {
+          "id": "childhood-worship",
+          "title": "Childhood & Worship",
+          "intro": "From the visitation and the magi to the boy Jesus in the temple, follow the worship and growth of Jesus' childhood.",
+          "outro": "Jesus grew in wisdom and stature, and in favor with God and people.",
+          "era": "nt",
+          "section": "jesus-life",
+          "themes": [
+            "birth",
+            "people"
+          ],
+          "order": 2,
+          "questionIds": [
+            "visitation",
+            "magi",
+            "boy_jesus_temple"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "boy_jesus_temple",
+          "coverImage": "/images/boy_jesus_temple.jpg",
+          "coverTitle": "Jesus among the Doctors"
+        },
+        {
+          "id": "early-ministry",
+          "title": "Baptism & Early Ministry",
+          "intro": "From the Jordan River to the calling of the first disciples, the beginning of Jesus' public ministry.",
+          "outro": "The kingdom of heaven is at hand. Repent.",
+          "era": "nt",
+          "section": "jesus-life",
+          "themes": [
+            "miracle",
+            "people"
+          ],
+          "order": 3,
+          "questionIds": [
+            "baptism",
+            "temptation",
+            "calling_peter"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "baptism",
+          "coverImage": "/images/baptism.jpg",
+          "coverTitle": "The Baptism of Christ"
+        },
+        {
+          "id": "miracles-call",
+          "title": "Miracles, Call & Mercy",
+          "intro": "From the wedding at Cana and the calling of Matthew to the mercy of the Good Samaritan, see Jesus seek those who follow him.",
+          "outro": "Follow me, and I will make you fishers of people.",
+          "era": "nt",
+          "section": "jesus-life",
+          "themes": [
+            "miracle",
+            "parable",
+            "people"
+          ],
+          "order": 4,
+          "questionIds": [
+            "cana",
+            "calling_matthew",
+            "good_samaritan"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "cana",
+          "coverImage": "/images/cana.jpg",
+          "coverTitle": "The Wedding at Cana"
+        },
+        {
+          "id": "galilee",
+          "title": "Galilee: Ministry & Teaching",
+          "intro": "By the Sea of Galilee, Jesus teaches, heals, calms the storm, and calls people to follow him.",
+          "outro": "His words carried authority.",
+          "era": "nt",
+          "section": "jesus-life",
+          "themes": [
+            "miracle",
+            "teaching"
+          ],
+          "order": 5,
+          "questionIds": [
+            "sermon",
+            "storm",
+            "feed5000"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "sermon",
+          "coverImage": "/images/sermon.jpg",
+          "coverTitle": "The Sermon on the Mount"
+        },
+        {
+          "id": "parables-mercy",
+          "title": "Parables of Mercy",
+          "intro": "The prodigal son, the lost sheep, and the Pharisee and tax collector reveal God's seeking and forgiving mercy.",
+          "outro": "There is joy in heaven over one sinner who repents.",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "parable",
+            "people"
+          ],
+          "order": 6,
+          "questionIds": [
+            "prodigal_son",
+            "lost_sheep",
+            "pharisee_tax_collector"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "prodigal_son",
+          "coverImage": "/images/prodigal_son.jpg",
+          "coverTitle": "The Return of the Prodigal Son"
+        },
+        {
+          "id": "parables-kingdom",
+          "title": "Parables of the Kingdom",
+          "intro": "The sower, the mustard seed, and the hidden treasure reveal the kingdom's growth and value.",
+          "outro": "Whoever has ears to hear, let them hear.",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "parable",
+            "teaching"
+          ],
+          "order": 7,
+          "questionIds": [
+            "sower",
+            "mustard_seed",
+            "hidden_treasure"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "sower",
+          "coverImage": "/images/sower.jpg",
+          "coverTitle": "The Parable of the Sower"
+        },
+        {
+          "id": "kingdom-values",
+          "title": "The Value of the Kingdom",
+          "intro": "The lost coin, the wheat and the tares, and the pearl of great price reveal God's search, patience, and the kingdom's worth.",
+          "outro": "The kingdom of heaven is like treasure hidden in a field.",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "parable",
+            "teaching"
+          ],
+          "order": 8,
+          "questionIds": [
+            "lost_coin",
+            "wheat_tares",
+            "pearl_great_price"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "pearl_great_price",
+          "coverImage": "/images/pearl_great_price.jpg",
+          "coverTitle": "The Parable of the Pearl of Great Price"
+        },
+        {
+          "id": "healing-miracles",
+          "title": "Healing Miracles",
+          "intro": "The paralytic, Jairus' daughter, and the ten lepers show Jesus' authority and compassion.",
+          "outro": "Your faith has saved you.",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "miracle",
+            "people"
+          ],
+          "order": 9,
+          "questionIds": [
+            "paralytic_roof",
+            "jairus_daughter",
+            "ten_lepers"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "paralytic_roof",
+          "coverImage": "/images/paralytic_roof.jpg",
+          "coverTitle": "The Healing of the Paralytic"
+        },
+        {
+          "id": "healing-resurrection",
+          "title": "Healing & Resurrection",
+          "intro": "The bleeding woman, blind Bartimaeus, and Lazarus show Jesus' victory over illness, darkness, and death.",
+          "outro": "I am the resurrection and the life.",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "miracle",
+            "passion"
+          ],
+          "order": 10,
+          "questionIds": [
+            "woman_hemorrhage",
+            "blind_bartimaeus",
+            "lazarus"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "lazarus",
+          "coverImage": "/images/lazarus.jpg",
+          "coverTitle": "The Raising of Lazarus"
+        },
+        {
+          "id": "encounters",
+          "title": "Encounters with Jesus",
+          "intro": "The woman at the well, Zacchaeus, and the rich young ruler are each seen by Jesus.",
+          "outro": "The Son of Man came to seek and save the lost.",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "people",
+            "teaching"
+          ],
+          "order": 11,
+          "questionIds": [
+            "woman_well",
+            "zacchaeus",
+            "rich_young_ruler"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "woman_well",
+          "coverImage": "/images/woman_well.jpg",
+          "coverTitle": "Jesus and the Samaritan Woman at the Well"
+        },
+        {
+          "id": "mercy-service",
+          "title": "Forgiveness, Service & Dedication",
+          "intro": "The unforgiving servant, Mary and Martha's welcome, and the dedication of the wall invite us to forgive, serve, and offer ourselves.",
+          "outro": "By this everyone will know that you are my disciples, if you love one another.",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "people",
+            "teaching"
+          ],
+          "order": 12,
+          "questionIds": [
+            "unforgiving_servant",
+            "mary_martha",
+            "dedication"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "mary_martha",
+          "coverImage": "/images/mary_martha.jpg",
+          "coverTitle": "Christ with Mary and Martha"
+        },
+        {
+          "id": "seeing-believing",
+          "title": "Seeing & Believing",
+          "intro": "The healing of the blind man, Nicodemus' night visit, and Thomas' doubt move from seeing to believing.",
+          "outro": "Blessed are those who have not seen and yet believe.",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "miracle",
+            "resurrection"
+          ],
+          "order": 13,
+          "questionIds": [
+            "blind",
+            "nicodemus",
+            "thomas"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "thomas",
+          "coverImage": "/images/thomas.jpg",
+          "coverTitle": "The Incredulity of Saint Thomas"
+        },
+        {
+          "id": "sea-salvation",
+          "title": "Salvation on the Sea",
+          "intro": "Jesus walks on the water, Paul survives a shipwreck, and Jonah is thrown into the sea, revealing God's rescue in the storm.",
+          "outro": "Even in the storm, God reigns.",
+          "era": "nt",
+          "section": "jesus-teaching",
+          "themes": [
+            "miracle",
+            "mission"
+          ],
+          "order": 14,
+          "questionIds": [
+            "walk_water",
+            "shipwreck_rome",
+            "jonah_ship"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "walk_water",
+          "coverImage": "/images/walk_water.jpg",
+          "coverTitle": "The Disciples See Christ Walking on the Water"
+        },
+        {
+          "id": "passion",
+          "title": "Passion Week",
+          "intro": "From the Last Supper and Gethsemane to Golgotha, follow Jesus toward the cross.",
+          "outro": "It is finished.",
+          "era": "nt",
+          "section": "passion-resurrection",
+          "themes": [
+            "passion"
+          ],
+          "order": 15,
+          "questionIds": [
+            "last_supper",
+            "gethsemane",
+            "crucifixion"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "crucifixion",
+          "coverImage": "/images/crucifixion.jpg",
+          "coverTitle": "The Crucifixion"
+        },
+        {
+          "id": "passion-week",
+          "title": "Passion Week: Entry and Trial",
+          "intro": "From the triumphal entry and cleansing of the temple to Pilate's trial, follow Jesus toward Golgotha.",
+          "outro": "He was pierced for our transgressions.",
+          "era": "nt",
+          "section": "passion-resurrection",
+          "themes": [
+            "passion"
+          ],
+          "order": 16,
+          "questionIds": [
+            "triumphal_entry",
+            "cleansing_temple",
+            "trial_pilate"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "trial_pilate",
+          "coverImage": "/images/trial_pilate.jpg",
+          "coverTitle": "Christ Before Pilate"
+        },
+        {
+          "id": "passion-witness",
+          "title": "Witnesses of Passion & Resurrection",
+          "intro": "Jesus washes the disciples' feet, Simon carries the cross, and two disciples meet him on the road to Emmaus.",
+          "outro": "Their eyes were opened, and they recognized him.",
+          "era": "nt",
+          "section": "passion-resurrection",
+          "themes": [
+            "passion",
+            "resurrection"
+          ],
+          "order": 17,
+          "questionIds": [
+            "foot_washing",
+            "simon_cyrene",
+            "emmaus"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "emmaus",
+          "coverImage": "/images/emmaus.jpg",
+          "coverTitle": "The Supper at Emmaus"
+        },
+        {
+          "id": "resurrection",
+          "title": "Resurrection & Ascension",
+          "intro": "From the empty tomb to the Mount of Olives, the risen Christ appears and commissions his disciples.",
+          "outro": "Go and make disciples of all nations.",
+          "era": "nt",
+          "section": "passion-resurrection",
+          "themes": [
+            "resurrection",
+            "mission"
+          ],
+          "order": 18,
+          "questionIds": [
+            "resurrection",
+            "peter_commission",
+            "ascension"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "resurrection",
+          "coverImage": "/images/resurrection.jpg",
+          "coverTitle": "The Resurrection of Christ"
+        },
+        {
+          "id": "early-church",
+          "title": "The Early Church & Paul",
+          "intro": "From Pentecost to Patmos, follow the gospel as it spreads across the Mediterranean.",
+          "outro": "To the ends of the earth, my witnesses.",
+          "era": "early-church",
+          "section": "early-church",
+          "themes": [
+            "mission",
+            "holy-spirit"
+          ],
+          "order": 19,
+          "questionIds": [
+            "pentecost",
+            "saul",
+            "patmos"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "pentecost",
+          "coverImage": "/images/pentecost.jpg",
+          "coverTitle": "The Descent of the Holy Spirit"
+        },
+        {
+          "id": "church-expansion",
+          "title": "The Church Expands",
+          "intro": "Peter's rescue, Paul in Athens, and Lydia's baptism show the gospel crossing prison, philosophy, and cultural boundaries.",
+          "outro": "The gospel is the power of God for salvation to everyone who believes.",
+          "era": "early-church",
+          "section": "early-church",
+          "themes": [
+            "mission",
+            "holy-spirit"
+          ],
+          "order": 20,
+          "questionIds": [
+            "peter_prison",
+            "athens",
+            "lydia"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "lydia",
+          "coverImage": "/images/lydia.jpg",
+          "coverTitle": "The Baptism of Lydia"
+        },
+        {
+          "id": "acts-church",
+          "title": "The Early Church in Action",
+          "intro": "Philip, Cornelius, and the Philippian jailer show the gospel crossing boundaries.",
+          "outro": "You will be my witnesses to the ends of the earth.",
+          "era": "early-church",
+          "section": "early-church",
+          "themes": [
+            "mission",
+            "holy-spirit"
+          ],
+          "order": 21,
+          "questionIds": [
+            "philip_ethiopian",
+            "cornelius",
+            "philippian_jailer"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "philippian_jailer",
+          "coverImage": "/images/philippian_jailer.jpg",
+          "coverTitle": "Paul and Silas in Prison"
+        },
+        {
+          "id": "joseph",
+          "title": "The Story of Joseph",
+          "intro": "From the coat and prison to reunion with his brothers, follow God's guidance through Joseph's life.",
+          "outro": "You meant evil against me, but God meant it for good.",
+          "era": "ot",
+          "section": "old-testament",
+          "themes": [
+            "people"
+          ],
+          "order": 22,
+          "questionIds": [
+            "joseph_coat",
+            "joseph_prison",
+            "joseph_reunion"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "joseph_reunion",
+          "coverImage": "/images/joseph_reunion.jpg",
+          "coverTitle": "Joseph Reveals Himself to His Brothers"
+        },
+        {
+          "id": "dreams-night",
+          "title": "Dreams & Night Guidance",
+          "intro": "Joseph's dreams, Pharaoh's dream, and Nehemiah's night inspection show God guiding through dreams and the night.",
+          "outro": "He will direct your path.",
+          "era": "ot",
+          "section": "old-testament",
+          "themes": [
+            "people"
+          ],
+          "order": 23,
+          "questionIds": [
+            "joseph_dreams",
+            "pharaoh_dream",
+            "nehemiah_night"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "pharaoh_dream",
+          "coverImage": "/images/pharaoh_dream.jpg",
+          "coverTitle": "Joseph Interprets Pharaoh's Dream"
+        },
+        {
+          "id": "moses",
+          "title": "Moses and the Exodus",
+          "intro": "From the basket by the Nile to the Ten Commandments at Sinai, see God's rescue and covenant.",
+          "outro": "I am the Lord your God, who brought you out of the land of Egypt.",
+          "era": "ot",
+          "section": "old-testament",
+          "themes": [
+            "miracle",
+            "people"
+          ],
+          "order": 24,
+          "questionIds": [
+            "moses_basket",
+            "burning_bush",
+            "ten_commandments"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "ten_commandments",
+          "coverImage": "/images/ten_commandments.jpg",
+          "coverTitle": "Moses with the Tablets of the Law"
+        },
+        {
+          "id": "wilderness-provision",
+          "title": "Wilderness & Provision",
+          "intro": "Manna, water from the rock, and the gourd plant show God caring for his people in the wilderness and in hardship.",
+          "outro": "My grace is sufficient for you.",
+          "era": "ot",
+          "section": "old-testament",
+          "themes": [
+            "miracle",
+            "people"
+          ],
+          "order": 25,
+          "questionIds": [
+            "manna",
+            "water_rock",
+            "jonah_plant"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "manna",
+          "coverImage": "/images/manna.jpg",
+          "coverTitle": "The Gathering of the Manna"
+        },
+        {
+          "id": "jonah",
+          "title": "Jonah and Nineveh",
+          "intro": "From fleeing the call to Nineveh's repentance, discover God's mercy and patience.",
+          "outro": "I knew that you are a gracious God and merciful.",
+          "era": "ot",
+          "section": "old-testament",
+          "themes": [
+            "mission",
+            "people"
+          ],
+          "order": 26,
+          "questionIds": [
+            "jonah_call",
+            "jonah_fish",
+            "nineveh"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "nineveh",
+          "coverImage": "/images/nineveh.jpg",
+          "coverTitle": "Jonah Preaching before Nineveh"
+        },
+        {
+          "id": "nehemiah",
+          "title": "Nehemiah and the Rebuilding",
+          "intro": "From prayer in Susa to the walls of Jerusalem, see God use one person to rally a community.",
+          "outro": "Our God will fight for us.",
+          "era": "ot",
+          "section": "old-testament",
+          "themes": [
+            "people"
+          ],
+          "order": 27,
+          "questionIds": [
+            "nehemiah_prayer",
+            "rebuild_wall",
+            "law_reading"
+          ],
+          "questionCount": 3,
+          "anchorQuestionId": "rebuild_wall",
+          "coverImage": "/images/rebuild_wall.jpg",
+          "coverTitle": "Rebuilding the Walls of Jerusalem"
+        }
+      ],
+      "questionStory": {
+        "annunciation": "birth",
+        "nativity": "birth",
+        "flight_egypt": "birth",
+        "visitation": "childhood-worship",
+        "magi": "childhood-worship",
+        "boy_jesus_temple": "childhood-worship",
+        "baptism": "early-ministry",
+        "temptation": "early-ministry",
+        "calling_peter": "early-ministry",
+        "cana": "miracles-call",
+        "calling_matthew": "miracles-call",
+        "good_samaritan": "miracles-call",
+        "sermon": "galilee",
+        "storm": "galilee",
+        "feed5000": "galilee",
+        "prodigal_son": "parables-mercy",
+        "lost_sheep": "parables-mercy",
+        "pharisee_tax_collector": "parables-mercy",
+        "sower": "parables-kingdom",
+        "mustard_seed": "parables-kingdom",
+        "hidden_treasure": "parables-kingdom",
+        "lost_coin": "kingdom-values",
+        "wheat_tares": "kingdom-values",
+        "pearl_great_price": "kingdom-values",
+        "paralytic_roof": "healing-miracles",
+        "jairus_daughter": "healing-miracles",
+        "ten_lepers": "healing-miracles",
+        "woman_hemorrhage": "healing-resurrection",
+        "blind_bartimaeus": "healing-resurrection",
+        "lazarus": "healing-resurrection",
+        "woman_well": "encounters",
+        "zacchaeus": "encounters",
+        "rich_young_ruler": "encounters",
+        "unforgiving_servant": "mercy-service",
+        "mary_martha": "mercy-service",
+        "dedication": "mercy-service",
+        "blind": "seeing-believing",
+        "nicodemus": "seeing-believing",
+        "thomas": "seeing-believing",
+        "walk_water": "sea-salvation",
+        "shipwreck_rome": "sea-salvation",
+        "jonah_ship": "sea-salvation",
+        "last_supper": "passion",
+        "gethsemane": "passion",
+        "crucifixion": "passion",
+        "triumphal_entry": "passion-week",
+        "cleansing_temple": "passion-week",
+        "trial_pilate": "passion-week",
+        "foot_washing": "passion-witness",
+        "simon_cyrene": "passion-witness",
+        "emmaus": "passion-witness",
+        "resurrection": "resurrection",
+        "peter_commission": "resurrection",
+        "ascension": "resurrection",
+        "pentecost": "early-church",
+        "saul": "early-church",
+        "patmos": "early-church",
+        "peter_prison": "church-expansion",
+        "athens": "church-expansion",
+        "lydia": "church-expansion",
+        "philip_ethiopian": "acts-church",
+        "cornelius": "acts-church",
+        "philippian_jailer": "acts-church",
+        "joseph_coat": "joseph",
+        "joseph_prison": "joseph",
+        "joseph_reunion": "joseph",
+        "joseph_dreams": "dreams-night",
+        "pharaoh_dream": "dreams-night",
+        "nehemiah_night": "dreams-night",
+        "moses_basket": "moses",
+        "burning_bush": "moses",
+        "ten_commandments": "moses",
+        "manna": "wilderness-provision",
+        "water_rock": "wilderness-provision",
+        "jonah_plant": "wilderness-provision",
+        "jonah_call": "jonah",
+        "jonah_fish": "jonah",
+        "nineveh": "jonah",
+        "nehemiah_prayer": "nehemiah",
+        "rebuild_wall": "nehemiah",
+        "law_reading": "nehemiah"
+      }
+    }
+  }
+}

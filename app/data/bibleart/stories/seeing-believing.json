@@ -1,0 +1,386 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "seeing-believing",
+  "story": {
+    "zh-Hant": {
+      "id": "seeing-believing",
+      "title": "看見與相信",
+      "intro": "瞎子得醫治、尼哥底母夜訪、多馬的懷疑，從看見到相信，信心被更新。",
+      "outro": "那沒有看見就信的有福了。",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "miracle",
+        "resurrection"
+      ],
+      "order": 13,
+      "questionIds": [
+        "blind",
+        "nicodemus",
+        "thomas"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "thomas",
+      "coverImage": "/images/thomas.jpg",
+      "coverTitle": "多馬的懷疑"
+    },
+    "en": {
+      "id": "seeing-believing",
+      "title": "Seeing & Believing",
+      "intro": "The healing of the blind man, Nicodemus' night visit, and Thomas' doubt move from seeing to believing.",
+      "outro": "Blessed are those who have not seen and yet believe.",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "miracle",
+        "resurrection"
+      ],
+      "order": 13,
+      "questionIds": [
+        "blind",
+        "nicodemus",
+        "thomas"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "thomas",
+      "coverImage": "/images/thomas.jpg",
+      "coverTitle": "The Incredulity of Saint Thomas"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "blind",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "耶穌醫治瞎眼的人",
+        "options": [
+          "耶穌醫治瞎眼的人",
+          "拉撒路復活",
+          "耶穌受試探",
+          "好撒瑪利亞人的比喻"
+        ],
+        "hints": [
+          "一個失明的人站在畫面中央。",
+          "耶穌用泥抹他的眼睛。",
+          "他奉差往西羅亞池去洗。"
+        ],
+        "scripture": {
+          "book": "約翰福音",
+          "chapter": 9,
+          "verse": "1-12"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.7784,
+          "lng": 35.2354
+        },
+        "image": {
+          "src": "/images/blind.jpg",
+          "title": "基督醫治生來瞎眼的人",
+          "artist": "El Greco",
+          "license": "CC0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christ_Healing_the_Blind_MET_DT407.jpg"
+        },
+        "summary": "耶穌用唾沫和泥抹在生來瞎眼之人的眼睛上，叫他往西羅亞池去洗，他回頭就看見了。",
+        "artNote": "El Greco 以拉長的人物與戲劇性光線，表現醫治神蹟的屬靈張力。",
+        "verseHints": [
+          {
+            "ref": "約翰福音 9:7",
+            "text": "對他說：「你往西羅亞池子裡去洗。」（西羅亞翻出來就是「奉差遣」。）他去一洗，回頭就看見了。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約翰福音 9:25",
+          "text": "他說：「他是個罪人不是，我不知道；有一件事我知道，從前我是眼瞎的，如今能看見了。」"
+        },
+        "storyId": "seeing-believing",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Pool of Siloam, Jerusalem",
+        "geoNote": "耶穌醫治瞎眼的人後，叫他往西羅亞池去洗；西羅亞池位於耶路撒冷大衛城附近。"
+      },
+      {
+        "id": "thomas",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "多馬的懷疑",
+        "options": [
+          "多馬的懷疑",
+          "耶穌復活",
+          "以馬忤斯的晚餐",
+          "耶穌升天"
+        ],
+        "hints": [
+          "一個人伸手探入另一人的肋旁。",
+          "門徒不敢相信耶穌已復活。",
+          "耶穌邀請他觸摸釘痕。"
+        ],
+        "scripture": {
+          "book": "約翰福音",
+          "chapter": 20,
+          "verse": "24-29"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.7717,
+          "lng": 35.2297
+        },
+        "image": {
+          "src": "/images/thomas.jpg",
+          "title": "多馬的懷疑",
+          "artist": "Caravaggio",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas-Caravaggio_(1601-2).jpg"
+        },
+        "summary": "多馬說非看見釘痕就不信；耶穌顯現要他伸手探入肋旁，多馬便告白：「我的主！我的神！」",
+        "artNote": "Caravaggio 以強烈明暗與真實的觸摸動作，讓懷疑與信心同時出現在畫面。",
+        "verseHints": [
+          {
+            "ref": "約翰福音 20:27",
+            "text": "就對多馬說：「伸過你的指頭來，摸（原文是看）我的手；伸出你的手來，探入我的肋旁。不要疑惑，總要信！」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約翰福音 20:29",
+          "text": "耶穌對他說：「你因看見了我才信；那沒有看見就信的有福了。」"
+        },
+        "storyId": "seeing-believing",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Jerusalem",
+        "geoNote": "多馬的懷疑發生在耶路撒冷的門徒聚集中；確切地點不詳。"
+      },
+      {
+        "id": "nicodemus",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "尼哥底母夜訪耶穌",
+        "options": [
+          "尼哥底母夜訪耶穌",
+          "撒該",
+          "撒馬利亞婦人",
+          "馬大與馬利亞"
+        ],
+        "hints": [
+          "場景在夜間。",
+          "一位法利賽人來見耶穌。",
+          "他談到重生。"
+        ],
+        "scripture": {
+          "book": "約翰福音",
+          "chapter": 3,
+          "verse": "1-3"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/nicodemus.jpg",
+          "title": "尼哥底母夜訪耶穌",
+          "artist": "Henry Ossawa Tanner",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Study_for_Nicodemus_Visiting_Jesus,_by_Henry_Ossawa_Tanner.jpg"
+        },
+        "summary": "法利賽人尼哥底母夜間來見耶穌，耶穌教導他關於重生與神的國。",
+        "artNote": "Tanner 以夜色與微光，營造尼哥底母夜訪時尋求真理的氛圍。",
+        "verseHints": [
+          {
+            "ref": "約翰福音 3:3",
+            "text": "耶穌回答說：「我實實在在地告訴你，人若不重生，就不能見神的國。」"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約翰福音 3:16",
+          "text": "「神愛世人，甚至將他的獨生子賜給他們，叫一切信他的，不致滅亡，反得永生。"
+        },
+        "storyId": "seeing-believing",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶路撒冷",
+        "geoNote": "尼哥底母夜訪耶穌發生在耶路撒冷。"
+      }
+    ],
+    "en": [
+      {
+        "id": "blind",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "Jesus Heals the Blind Man",
+        "options": [
+          "Jesus Heals the Blind Man",
+          "The Raising of Lazarus",
+          "The Temptation of Jesus",
+          "The Good Samaritan"
+        ],
+        "hints": [
+          "A blind man stands at the center.",
+          "Jesus puts mud on his eyes.",
+          "He is sent to wash in the Pool of Siloam."
+        ],
+        "scripture": {
+          "book": "John",
+          "chapter": 9,
+          "verse": "1-12"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.7784,
+          "lng": 35.2354
+        },
+        "image": {
+          "src": "/images/blind.jpg",
+          "title": "Christ Healing the Blind",
+          "artist": "El Greco",
+          "license": "CC0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christ_Healing_the_Blind_MET_DT407.jpg"
+        },
+        "summary": "Jesus puts mud on the eyes of a man born blind and sends him to wash in the Pool of Siloam; he returns seeing.",
+        "artNote": "El Greco's elongated figures and dramatic light give the healing an intense spiritual charge.",
+        "verseHints": [
+          {
+            "ref": "John 9:7",
+            "text": "and said to him, “Go, wash in the pool of Siloam” (which means “Sent”). So he went away, washed, and came back seeing."
+          }
+        ],
+        "keyVerse": {
+          "ref": "John 9:25",
+          "text": "He therefore answered, “I don’t know if he is a sinner. One thing I do know: that though I was blind, now I see.”"
+        },
+        "storyId": "seeing-believing",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Pool of Siloam, Jerusalem",
+        "geoNote": "After healing the blind man, Jesus sent him to the Pool of Siloam, near the City of David in Jerusalem."
+      },
+      {
+        "id": "thomas",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Doubting Thomas",
+        "options": [
+          "The Doubting Thomas",
+          "The Resurrection",
+          "The Supper at Emmaus",
+          "The Ascension"
+        ],
+        "hints": [
+          "One man reaches toward another's side.",
+          "The disciples cannot believe Jesus is risen.",
+          "Jesus invites him to touch the wounds."
+        ],
+        "scripture": {
+          "book": "John",
+          "chapter": 20,
+          "verse": "24-29"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.7717,
+          "lng": 35.2297
+        },
+        "image": {
+          "src": "/images/thomas.jpg",
+          "title": "The Incredulity of Saint Thomas",
+          "artist": "Caravaggio",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas-Caravaggio_(1601-2).jpg"
+        },
+        "summary": "Thomas refuses to believe unless he sees the wounds; Jesus appears and invites him to touch his side, and Thomas confesses, “My Lord and my God!”",
+        "artNote": "Caravaggio's stark light and physical touch put doubt and faith in the same gesture.",
+        "verseHints": [
+          {
+            "ref": "John 20:27",
+            "text": "Then he said to Thomas, “Reach here your finger, and see my hands. Reach here your hand, and put it into my side. Don’t be unbelieving, but believing.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "John 20:29",
+          "text": "Jesus said to him, “Because you have seen me,you have believed. Blessed are those who have not seen, and have believed.”"
+        },
+        "storyId": "seeing-believing",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem",
+        "geoNote": "Thomas' doubt occurred at a gathering of the disciples in Jerusalem; the exact place is unknown."
+      },
+      {
+        "id": "nicodemus",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "Nicodemus Visits Jesus at Night",
+        "options": [
+          "Nicodemus Visits Jesus at Night",
+          "Zacchaeus",
+          "The Samaritan Woman",
+          "Mary and Martha"
+        ],
+        "hints": [
+          "The scene is at night.",
+          "A Pharisee comes to Jesus.",
+          "He speaks of being born again."
+        ],
+        "scripture": {
+          "book": "John",
+          "chapter": 3,
+          "verse": "1-3"
+        },
+        "event": {
+          "year": 28,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/nicodemus.jpg",
+          "title": "Nicodemus Visiting Jesus",
+          "artist": "Henry Ossawa Tanner",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Study_for_Nicodemus_Visiting_Jesus,_by_Henry_Ossawa_Tanner.jpg"
+        },
+        "summary": "Nicodemus, a Pharisee, comes to Jesus by night, and Jesus teaches him about being born again.",
+        "artNote": "Tanner's night and low light create the atmosphere of Nicodemus seeking truth after dark.",
+        "verseHints": [
+          {
+            "ref": "John 3:3",
+            "text": "Jesus answered him, “Most certainly, I tell you, unless one is born anew, he can’t see the Kingdom of God.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "John 3:16",
+          "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life."
+        },
+        "storyId": "seeing-believing",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem",
+        "geoNote": "Nicodemus visits Jesus by night in Jerusalem."
+      }
+    ]
+  }
+}

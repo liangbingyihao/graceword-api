@@ -1,0 +1,386 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "church-expansion",
+  "story": {
+    "zh-Hant": {
+      "id": "church-expansion",
+      "title": "初代教會的擴展",
+      "intro": "彼得獲救、保羅在雅典、呂底亞受洗，福音跨越監牢、哲學與文化邊界。",
+      "outro": "福音本是神的大能，要救一切相信的人。",
+      "era": "early-church",
+      "section": "early-church",
+      "themes": [
+        "mission",
+        "holy-spirit"
+      ],
+      "order": 20,
+      "questionIds": [
+        "peter_prison",
+        "athens",
+        "lydia"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "lydia",
+      "coverImage": "/images/lydia.jpg",
+      "coverTitle": "呂底亞受洗"
+    },
+    "en": {
+      "id": "church-expansion",
+      "title": "The Church Expands",
+      "intro": "Peter's rescue, Paul in Athens, and Lydia's baptism show the gospel crossing prison, philosophy, and cultural boundaries.",
+      "outro": "The gospel is the power of God for salvation to everyone who believes.",
+      "era": "early-church",
+      "section": "early-church",
+      "themes": [
+        "mission",
+        "holy-spirit"
+      ],
+      "order": 20,
+      "questionIds": [
+        "peter_prison",
+        "athens",
+        "lydia"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "lydia",
+      "coverImage": "/images/lydia.jpg",
+      "coverTitle": "The Baptism of Lydia"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "athens",
+        "era": "NT",
+        "difficulty": 3,
+        "mode": "zoom",
+        "answer": "保羅在雅典講道",
+        "options": [
+          "保羅在雅典講道",
+          "掃羅歸主（大馬士革路上）",
+          "彼得獲救出獄",
+          "約翰在拔摩島見異象"
+        ],
+        "hints": [
+          "一位使徒在哲學家聚集之地宣講。",
+          "背景是希臘的神廟與雕像。",
+          "他提到「未識之神」。"
+        ],
+        "scripture": {
+          "book": "使徒行傳",
+          "chapter": 17,
+          "verse": "16-34"
+        },
+        "event": {
+          "year": 51,
+          "tolerance": 10,
+          "locationId": "athens",
+          "placeName": "雅典亞略巴古",
+          "lat": 37.9715,
+          "lng": 23.7267
+        },
+        "image": {
+          "src": "/images/athens.jpg",
+          "title": "保羅在雅典講道",
+          "artist": "Raphael",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:V%26A_-_Raphael,_St_Paul_Preaching_in_Athens_(1515).jpg"
+        },
+        "summary": "保羅在雅典的亞略巴古向哲學家宣講，以「未識之神」為切入點，引領人認識創造主與復活的基督。",
+        "artNote": "Raphael 以古典建築與哲學家群像，將保羅的講道置於雅典的思想中心。",
+        "verseHints": [
+          {
+            "ref": "使徒行傳 17:23",
+            "text": "我遊行的時候，觀看你們所敬拜的，遇見一座壇，上面寫著『未識之神』。你們所不認識而敬拜的，我現在告訴你們。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "使徒行傳 17:31",
+          "text": "因為他已經定了日子，要藉著他所設立的人按公義審判天下，並且叫他從死裡復活，給萬人作可信的憑據。」"
+        },
+        "storyId": "church-expansion",
+        "regionId": "achaia",
+        "regionName": "亞該亞",
+        "modernName": "Areopagus, Athens",
+        "geoNote": "亞略巴古位於雅典衛城西北；保羅在此向哲學家講道。"
+      },
+      {
+        "id": "peter_prison",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "彼得獲救出獄",
+        "options": [
+          "彼得獲救出獄",
+          "保羅在雅典講道",
+          "掃羅歸主（大馬士革路上）",
+          "五旬節聖靈降臨"
+        ],
+        "hints": [
+          "彼得被鎖在監牢裡。",
+          "天使在夜間出現，鎖鏈脫落。",
+          "他以為自己是在見異象。"
+        ],
+        "scripture": {
+          "book": "使徒行傳",
+          "chapter": 12,
+          "verse": "1-11"
+        },
+        "event": {
+          "year": 44,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/peter_prison.jpg",
+          "title": "彼得獲救出獄",
+          "artist": "Battistello Caracciolo",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battistello_Caracciolo_-_Liberation_of_Saint_Peter.jpg"
+        },
+        "summary": "希律王囚禁彼得，教會迫切禱告；天使夜間顯現，打開監門，領彼得脫離牢獄。",
+        "artNote": "Battistello Caracciolo 以監牢的黑暗與天使的光，對比捆鎖與釋放。",
+        "verseHints": [
+          {
+            "ref": "使徒行傳 12:7",
+            "text": "忽然，有主的一個使者站在旁邊，屋裡有光照耀，天使拍彼得的肋旁，拍醒了他，說：「快快起來！」那鐵鍊就從他手上脫落下來。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "使徒行傳 12:11",
+          "text": "彼得醒悟過來，說：「我現在真知道主差遣他的使者，救我脫離希律的手和猶太百姓一切所盼望的。」"
+        },
+        "storyId": "church-expansion",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Jerusalem",
+        "geoNote": "彼得獲救出獄發生在耶路撒冷；確切監獄位置不詳。"
+      },
+      {
+        "id": "lydia",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "呂底亞受洗",
+        "options": [
+          "呂底亞受洗",
+          "哥尼流見異象",
+          "腓力為太監施洗",
+          "腓立比獄卒受洗"
+        ],
+        "hints": [
+          "一位賣紫色布的婦人。",
+          "她在河邊禱告。",
+          "保羅向她講道後她受洗。"
+        ],
+        "scripture": {
+          "book": "使徒行傳",
+          "chapter": 16,
+          "verse": "14-15"
+        },
+        "event": {
+          "year": 50,
+          "tolerance": 8,
+          "locationId": "philippi",
+          "placeName": "腓立比",
+          "lat": 41.01,
+          "lng": 24.29
+        },
+        "image": {
+          "src": "/images/lydia.jpg",
+          "title": "呂底亞受洗",
+          "artist": "Marie Ellenrieder",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:1861_Ellenrieder_Die_Taufe_der_Lydia_anagoria.JPG"
+        },
+        "summary": "賣紫色布的呂底亞在腓立比河邊聽保羅講道，主開她的心，她與全家受洗。",
+        "artNote": "Ellenrieder 以河邊施洗場景，呈現呂底亞與家人歸主。",
+        "verseHints": [
+          {
+            "ref": "使徒行傳 16:14",
+            "text": "有一個賣紫色布疋的婦人，名叫呂底亞，是推雅推喇城的人，素來敬拜神。她聽見了，主就開導她的心，叫她留心聽保羅所講的話。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "使徒行傳 16:15",
+          "text": "她和她一家既領了洗，便求我們說：「你們若以為我是真信主的（或譯：你們若以為我是忠心事主的），請到我家裡來住」；於是強留我們。"
+        },
+        "storyId": "church-expansion",
+        "regionId": "macedonia",
+        "regionName": "馬其頓",
+        "modernName": "腓立比",
+        "geoNote": "呂底亞在腓立比城外河邊聚會的地方聽保羅講道。"
+      }
+    ],
+    "en": [
+      {
+        "id": "athens",
+        "era": "NT",
+        "difficulty": 3,
+        "mode": "zoom",
+        "answer": "Paul Preaches in Athens",
+        "options": [
+          "Paul Preaches in Athens",
+          "The Conversion of Saul",
+          "Peter Is Freed from Prison",
+          "John's Vision on Patmos"
+        ],
+        "hints": [
+          "An apostle speaks where philosophers gather.",
+          "Greek temples and statues fill the background.",
+          "He speaks of the “unknown god.”"
+        ],
+        "scripture": {
+          "book": "Acts",
+          "chapter": 17,
+          "verse": "16-34"
+        },
+        "event": {
+          "year": 51,
+          "tolerance": 10,
+          "locationId": "athens",
+          "placeName": "Areopagus, Athens",
+          "lat": 37.9715,
+          "lng": 23.7267
+        },
+        "image": {
+          "src": "/images/athens.jpg",
+          "title": "St Paul Preaching in Athens",
+          "artist": "Raphael",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:V%26A_-_Raphael,_St_Paul_Preaching_in_Athens_(1515).jpg"
+        },
+        "summary": "At the Areopagus in Athens, Paul addresses the philosophers, beginning with the “unknown god” and proclaiming the Creator and the risen Christ.",
+        "artNote": "Raphael sets Paul's preaching among classical architecture and philosophers, at the intellectual heart of Athens.",
+        "verseHints": [
+          {
+            "ref": "Acts 17:23",
+            "text": "For as I passed along, and observed the objects of your worship, I found also an altar with this inscription: ‘TO AN UNKNOWN GOD.’ What therefore you worship in ignorance, this I announce to you."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Acts 17:31",
+          "text": "because he has appointed a day in which he will judge the world in righteousness by the man whom he has ordained; of which he has given assurance to all men, in that he has raised him from the dead.”"
+        },
+        "storyId": "church-expansion",
+        "regionId": "achaia",
+        "regionName": "Achaia",
+        "modernName": "Areopagus, Athens",
+        "geoNote": "The Areopagus is the rocky hill northwest of the Acropolis in Athens, where Paul addressed the philosophers."
+      },
+      {
+        "id": "peter_prison",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "Peter Is Freed from Prison",
+        "options": [
+          "Peter Is Freed from Prison",
+          "Paul Preaches in Athens",
+          "The Conversion of Saul",
+          "Pentecost"
+        ],
+        "hints": [
+          "Peter is bound in a prison cell.",
+          "An angel appears at night and the chains fall off.",
+          "He thinks he is seeing a vision."
+        ],
+        "scripture": {
+          "book": "Acts",
+          "chapter": 12,
+          "verse": "1-11"
+        },
+        "event": {
+          "year": 44,
+          "tolerance": 6,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/peter_prison.jpg",
+          "title": "The Liberation of Saint Peter",
+          "artist": "Battistello Caracciolo",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battistello_Caracciolo_-_Liberation_of_Saint_Peter.jpg"
+        },
+        "summary": "Herod imprisons Peter while the church prays earnestly; an angel appears at night, opens the prison, and leads him out.",
+        "artNote": "Battistello Caracciolo sets the angel's light against the darkness of the cell, contrasting chains and release.",
+        "verseHints": [
+          {
+            "ref": "Acts 12:7",
+            "text": "And behold, an angel of the Lord stood by him, and a light shone in the cell. He struck Peter on the side, and woke him up, saying, “Stand up quickly!” His chains fell off from his hands."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Acts 12:11",
+          "text": "When Peter had come to himself, he said, “Now I truly know that the Lord has sent out his angel and delivered me out of the hand of Herod, and from everything the Jewish people were expecting.”"
+        },
+        "storyId": "church-expansion",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem",
+        "geoNote": "Peter's deliverance took place in Jerusalem; the exact prison location is unknown."
+      },
+      {
+        "id": "lydia",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "Lydia Is Baptized",
+        "options": [
+          "Lydia Is Baptized",
+          "Cornelius Sees a Vision",
+          "Philip Baptizes the Eunuch",
+          "The Philippian Jailer Is Baptized"
+        ],
+        "hints": [
+          "A dealer in purple cloth.",
+          "She prays by the river.",
+          "She and her household are baptized after Paul speaks."
+        ],
+        "scripture": {
+          "book": "Acts",
+          "chapter": 16,
+          "verse": "14-15"
+        },
+        "event": {
+          "year": 50,
+          "tolerance": 8,
+          "locationId": "philippi",
+          "placeName": "Philippi",
+          "lat": 41.01,
+          "lng": 24.29
+        },
+        "image": {
+          "src": "/images/lydia.jpg",
+          "title": "The Baptism of Lydia",
+          "artist": "Marie Ellenrieder",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:1861_Ellenrieder_Die_Taufe_der_Lydia_anagoria.JPG"
+        },
+        "summary": "Lydia, a dealer in purple cloth, listens to Paul by the river in Philippi; the Lord opens her heart, and she and her household are baptized.",
+        "artNote": "Ellenrieder's riverside baptism shows Lydia and her household coming to faith.",
+        "verseHints": [
+          {
+            "ref": "Acts 16:14",
+            "text": "A certain woman named Lydia, a seller of purple, of the city of Thyatira, one who worshiped God, heard us; whose heart the Lord opened to listen to the things which were spoken by Paul."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Acts 16:15",
+          "text": "When she and her household were baptized, she begged us, saying, “If you have judged me to be faithful to the Lord, come into my house, and stay.” So she persuaded us."
+        },
+        "storyId": "church-expansion",
+        "regionId": "macedonia",
+        "regionName": "Macedonia",
+        "modernName": "Philippi",
+        "geoNote": "Lydia hears Paul at a riverside place of prayer outside Philippi."
+      }
+    ]
+  }
+}

@@ -10,6 +10,10 @@ class Config:
     JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY', 'abdfdfjdfljdgjrldfdfg')
     COZE_API_TOKEN = os.getenv('COZE_API_TOKEN', '111111111111')
     JWT_ACCESS_TOKEN_EXPIRES = int(os.getenv('JWT_ACCESS_TOKEN_EXPIRES', 3600))
+    BIBLEART_CATALOG_ROOT = os.getenv(
+        'BIBLEART_CATALOG_ROOT',
+        '/app/app/data/bibleart',
+    )
     SQLALCHEMY_ECHO = False
     SWAGGER = {
         'openapi': '3.0.2',  # 只保留这一个版本声明

@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 import traceback
 import sys
 sys.path.append('/app/app')
@@ -16,20 +17,18 @@ from config import Config
 from utils.exceptions import AuthError, handle_auth_error
 from extensions import db
 from utils.security import generate_password_hash
+from utils.logging_config import configure_logging
 
 pymysql.install_as_MySQLdb()
 
-# 配置日志
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    filename='app.log'
-)
+configure_logging()
 logger = logging.getLogger(__name__)
 
-def create_app():
+def create_app(test_config=None):
     app = Flask(__name__)
     app.config.from_object(Config)
+    if test_config:
+        app.config.update(test_config)
 
     # 初始化扩展
     db.init_app(app)
@@ -90,16 +89,27 @@ def register_commands(app):
     def handle_bad_request(error):
         # 获取错误堆栈
         error_stack = traceback.format_exc()
+        sensitive_headers = {"authorization", "cookie", "set-cookie"}
+        safe_headers = {
+            key: ("***" if key.lower() in sensitive_headers else value)
+            for key, value in request.headers.items()
+        }
+        body = request.get_data(as_text=True) if os.getenv("LOG_BODY") == "1" else "[redacted]"
 
-        # 记录业务日志（包含请求信息）
         logger.error(
-            f"400 Bad Request\n"
-            f"URL: {request.url}\n"
-            f"Method: {request.method}\n"
-            f"Headers: {dict(request.headers)}\n"
-            f"Body: {request.get_data(as_text=True)}\n"
-            f"Error: {str(error)}\n"
-            f"Stack Trace:\n{error_stack}"
+            "400 Bad Request\n"
+            "URL: %s\n"
+            "Method: %s\n"
+            "Headers: %s\n"
+            "Body: %s\n"
+            "Error: %s\n"
+            "Stack Trace:\n%s",
+            request.url,
+            request.method,
+            safe_headers,
+            body,
+            str(error),
+            error_stack,
         )
 
         # 返回标准化错误响应

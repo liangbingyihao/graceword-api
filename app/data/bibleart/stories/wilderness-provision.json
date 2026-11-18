@@ -1,0 +1,398 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "wilderness-provision",
+  "story": {
+    "zh-Hant": {
+      "id": "wilderness-provision",
+      "title": "曠野與神的供應",
+      "intro": "嗎哪、磐石出水與蓖麻樹，看見神在曠野與困境中照顧祂的子民。",
+      "outro": "我的恩典夠你用的。",
+      "era": "ot",
+      "section": "old-testament",
+      "themes": [
+        "miracle",
+        "people"
+      ],
+      "order": 25,
+      "questionIds": [
+        "manna",
+        "water_rock",
+        "jonah_plant"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "manna",
+      "coverImage": "/images/manna.jpg",
+      "coverTitle": "收集嗎哪"
+    },
+    "en": {
+      "id": "wilderness-provision",
+      "title": "Wilderness & Provision",
+      "intro": "Manna, water from the rock, and the gourd plant show God caring for his people in the wilderness and in hardship.",
+      "outro": "My grace is sufficient for you.",
+      "era": "ot",
+      "section": "old-testament",
+      "themes": [
+        "miracle",
+        "people"
+      ],
+      "order": 25,
+      "questionIds": [
+        "manna",
+        "water_rock",
+        "jonah_plant"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "manna",
+      "coverImage": "/images/manna.jpg",
+      "coverTitle": "The Gathering of the Manna"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "manna",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "exodus",
+        "answer": "以色列人收集嗎哪",
+        "options": [
+          "以色列人收集嗎哪",
+          "摩西領受十誡",
+          "約瑟與兄弟相認",
+          "尼希米夜巡城牆"
+        ],
+        "hints": [
+          "場景在曠野。",
+          "地上有細小的食物。",
+          "百姓清晨出去拾取。"
+        ],
+        "scripture": {
+          "book": "出埃及記",
+          "chapter": 16,
+          "verse": "14-15"
+        },
+        "event": {
+          "year": -1250,
+          "tolerance": 150,
+          "locationId": "wilderness_of_sinai",
+          "placeName": "西奈曠野",
+          "lat": 28.7,
+          "lng": 33.8
+        },
+        "image": {
+          "src": "/images/manna.jpg",
+          "title": "收集嗎哪",
+          "artist": "James Tissot",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tissot_The_Gathering_of_the_Manna_(color).jpg"
+        },
+        "summary": "神在曠野降下嗎哪供應以色列人，百姓每日清晨拾取。",
+        "artNote": "Tissot 以曠野清晨與俯身拾取的人群，呈現神每日的供應。",
+        "verseHints": [
+          {
+            "ref": "出埃及記 16:15",
+            "text": "以色列人看見，不知道是甚麼，就彼此對問說：「這是甚麼呢？」摩西對他們說：「這就是耶和華給你們吃的食物。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "出埃及記 16:4",
+          "text": "耶和華對摩西說：「我要將糧食從天降給你們。百姓可以出去，每天收每天的分，我好試驗他們遵不遵我的法度。"
+        },
+        "storyId": "wilderness-provision",
+        "regionId": "sinai",
+        "regionName": "西奈",
+        "modernName": "西奈曠野",
+        "geoNote": "嗎哪降在以色列人經過的曠野；位置隨行程而變。"
+      },
+      {
+        "id": "water_rock",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "exodus",
+        "answer": "摩西擊石出水",
+        "options": [
+          "摩西擊石出水",
+          "摩西見燃燒荊棘",
+          "約拿被拋入海中",
+          "尼希米禱告"
+        ],
+        "hints": [
+          "百姓在曠野沒有水喝。",
+          "摩西遵照神的吩咐擊打磐石。",
+          "水從磐石中流出。"
+        ],
+        "scripture": {
+          "book": "出埃及記",
+          "chapter": 17,
+          "verse": "6"
+        },
+        "event": {
+          "year": -1250,
+          "tolerance": 150,
+          "locationId": "rephidim",
+          "placeName": "利非訂",
+          "lat": 28.7,
+          "lng": 33.9
+        },
+        "image": {
+          "src": "/images/water_rock.jpg",
+          "title": "摩西擊石出水",
+          "artist": "Italian School",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Italian_School_-_Moses_Striking_the_Rock_-_353041_-_National_Trust.jpg"
+        },
+        "summary": "神吩咐摩西擊打磐石，水就流出，解了百姓的乾渴。",
+        "artNote": "義大利畫派以磐石與湧流的水為中心，強調神蹟回應百姓的乾渴。",
+        "verseHints": [
+          {
+            "ref": "出埃及記 17:6",
+            "text": "我必在何烈的磐石那裡，站在你面前。你要擊打磐石，從磐石裡必有水流出來，使百姓可以喝。」摩西就在以色列的長老眼前這樣行了。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "出埃及記 17:7",
+          "text": "他給那地方起名叫瑪撒（就是試探的意思），又叫米利巴（就是爭鬧的意思）；因以色列人爭鬧，又因他們試探耶和華，說：「耶和華是在我們中間不是？」"
+        },
+        "storyId": "wilderness-provision",
+        "regionId": "sinai",
+        "regionName": "西奈",
+        "modernName": "利非訂（Rephidim，傳統地點）",
+        "geoNote": "摩西在利非訂擊石出水；確切位置不詳。"
+      },
+      {
+        "id": "jonah_plant",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "divided-kingdom",
+        "answer": "約拿在蓖麻下",
+        "options": [
+          "約拿在蓖麻下",
+          "約拿被拋入海中",
+          "摩西在曠野",
+          "以利亞在樹下"
+        ],
+        "hints": [
+          "先知坐在城外。",
+          "一株植物為他遮蔭。",
+          "神用蟲子使植物枯乾。"
+        ],
+        "scripture": {
+          "book": "約拿書",
+          "chapter": 4,
+          "verse": "6-7"
+        },
+        "event": {
+          "year": -760,
+          "tolerance": 100,
+          "locationId": "nineveh",
+          "placeName": "尼尼微附近",
+          "lat": 36.36,
+          "lng": 43.15
+        },
+        "image": {
+          "src": "/images/jonah_plant.jpg",
+          "title": "約拿在蓖麻下",
+          "artist": "Maarten van Heemskerck",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maarten_van_Heemskerck_(Heemskerk_1498-Haarlem_1574)_-_Jonah_Under_His_Gourd_-_RCIN_405465_-_Royal_Collection.jpg"
+        },
+        "summary": "神安排蓖麻樹蔭遮蓋約拿，又安排蟲子使樹枯乾，教導他體會神的憐憫。",
+        "artNote": "Heemskerck 以寬幅風景與蓖麻樹蔭，呈現約拿的怒氣與神的憐憫。",
+        "verseHints": [
+          {
+            "ref": "約拿書 4:6",
+            "text": "耶和華神安排一棵蓖麻，使其發生高過約拿，影兒遮蓋他的頭，救他脫離苦楚；約拿因這棵蓖麻大大喜樂。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約拿書 4:7",
+          "text": "次日黎明，神卻安排一條蟲子咬這蓖麻，以致枯槁。"
+        },
+        "storyId": "wilderness-provision",
+        "regionId": "assyria",
+        "regionName": "亞述",
+        "modernName": "尼尼微附近",
+        "geoNote": "約拿在尼尼微城外搭棚，神安排蓖麻為他遮蔭。"
+      }
+    ],
+    "en": [
+      {
+        "id": "manna",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "exodus",
+        "answer": "The Israelites Gather Manna",
+        "options": [
+          "The Israelites Gather Manna",
+          "Moses Receives the Ten Commandments",
+          "Joseph Reunites with His Brothers",
+          "Nehemiah Inspects the Walls"
+        ],
+        "hints": [
+          "The scene is in the wilderness.",
+          "Small food lies on the ground.",
+          "The people go out to gather it at dawn."
+        ],
+        "scripture": {
+          "book": "Exodus",
+          "chapter": 16,
+          "verse": "14-15"
+        },
+        "event": {
+          "year": -1250,
+          "tolerance": 150,
+          "locationId": "wilderness_of_sinai",
+          "placeName": "Wilderness of Sinai",
+          "lat": 28.7,
+          "lng": 33.8
+        },
+        "image": {
+          "src": "/images/manna.jpg",
+          "title": "The Gathering of the Manna",
+          "artist": "James Tissot",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tissot_The_Gathering_of_the_Manna_(color).jpg"
+        },
+        "summary": "God provides manna in the wilderness, and the Israelites gather it each morning.",
+        "artNote": "Tissot shows a wilderness dawn and a crowd bending to gather, picturing God's daily provision.",
+        "verseHints": [
+          {
+            "ref": "Exodus 16:15",
+            "text": "When the children of Israel saw it, they said one to another, “What is it?” For they didn’t know what it was. Moses said to them, “It is the bread which Yahweh has given you to eat.”"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Exodus 16:4",
+          "text": "Then Yahweh said to Moses, “Behold, I will rain bread from the sky for you, and the people shall go out and gather a day’s portion every day, that I may test them, whether they will walk in my law, or not."
+        },
+        "storyId": "wilderness-provision",
+        "regionId": "sinai",
+        "regionName": "Sinai",
+        "modernName": "Wilderness of Sinai",
+        "geoNote": "Manna fell in the wilderness where Israel traveled; the location shifts with the route."
+      },
+      {
+        "id": "water_rock",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "exodus",
+        "answer": "Moses Strikes the Rock",
+        "options": [
+          "Moses Strikes the Rock",
+          "Moses and the Burning Bush",
+          "Jonah Is Thrown into the Sea",
+          "Nehemiah Prays"
+        ],
+        "hints": [
+          "The people have no water in the wilderness.",
+          "Moses strikes the rock as God commands.",
+          "Water flows out of the rock."
+        ],
+        "scripture": {
+          "book": "Exodus",
+          "chapter": 17,
+          "verse": "6"
+        },
+        "event": {
+          "year": -1250,
+          "tolerance": 150,
+          "locationId": "rephidim",
+          "placeName": "Rephidim",
+          "lat": 28.7,
+          "lng": 33.9
+        },
+        "image": {
+          "src": "/images/water_rock.jpg",
+          "title": "Moses Striking the Rock",
+          "artist": "Italian School",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Italian_School_-_Moses_Striking_the_Rock_-_353041_-_National_Trust.jpg"
+        },
+        "summary": "At God's command, Moses strikes the rock and water flows out for the thirsty people.",
+        "artNote": "The Italian School centers the rock and flowing water, emphasizing the miracle for a thirsty people.",
+        "verseHints": [
+          {
+            "ref": "Exodus 17:6",
+            "text": "Behold, I will stand before you there on the rock in Horeb. You shall strike the rock, and water will come out of it, that the people may drink.” Moses did so in the sight of the elders of Israel."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Exodus 17:7",
+          "text": "He called the name of the place Massah, and Meribah, because the children of Israel quarreled, and because they tested Yahweh, saying, “Is Yahweh among us, or not?”"
+        },
+        "storyId": "wilderness-provision",
+        "regionId": "sinai",
+        "regionName": "Sinai",
+        "modernName": "Rephidim (traditional)",
+        "geoNote": "Moses struck the rock at Rephidim; the exact location is uncertain."
+      },
+      {
+        "id": "jonah_plant",
+        "era": "OT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "divided-kingdom",
+        "answer": "Jonah Under the Gourd",
+        "options": [
+          "Jonah Under the Gourd",
+          "Jonah Is Thrown into the Sea",
+          "Moses in the Wilderness",
+          "Elijah Under the Broom Tree"
+        ],
+        "hints": [
+          "The prophet sits outside the city.",
+          "A plant provides shade for him.",
+          "God sends a worm to wither it."
+        ],
+        "scripture": {
+          "book": "Jonah",
+          "chapter": 4,
+          "verse": "6-7"
+        },
+        "event": {
+          "year": -760,
+          "tolerance": 100,
+          "locationId": "nineveh",
+          "placeName": "Near Nineveh",
+          "lat": 36.36,
+          "lng": 43.15
+        },
+        "image": {
+          "src": "/images/jonah_plant.jpg",
+          "title": "Jonah Under His Gourd",
+          "artist": "Maarten van Heemskerck",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maarten_van_Heemskerck_(Heemskerk_1498-Haarlem_1574)_-_Jonah_Under_His_Gourd_-_RCIN_405465_-_Royal_Collection.jpg"
+        },
+        "summary": "God provides a gourd plant to shade Jonah, then sends a worm to wither it, teaching him about mercy.",
+        "artNote": "Heemskerck's wide landscape and gourd shade frame Jonah's anger and God's mercy.",
+        "verseHints": [
+          {
+            "ref": "Jonah 4:6",
+            "text": "Yahweh God prepared a vine, and made it to come up over Jonah, that it might be a shade over his head, to deliver him from his discomfort. So Jonah was exceedingly glad because of the vine."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Jonah 4:7",
+          "text": "But God prepared a worm at dawn the next day, and it chewed on the vine, so that it withered."
+        },
+        "storyId": "wilderness-provision",
+        "regionId": "assyria",
+        "regionName": "Assyria",
+        "modernName": "Near Nineveh",
+        "geoNote": "Jonah camped outside Nineveh, where God provided a gourd plant for shade."
+      }
+    ]
+  }
+}

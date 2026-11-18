@@ -1,0 +1,398 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "moses",
+  "story": {
+    "zh-Hant": {
+      "id": "moses",
+      "title": "摩西與出埃及",
+      "intro": "從尼羅河邊的籃子到西奈山的十誡，看見神拯救與立約的作為。",
+      "outro": "我是耶和華你的神，曾將你從埃及地為奴之家領出來。",
+      "era": "ot",
+      "section": "old-testament",
+      "themes": [
+        "miracle",
+        "people"
+      ],
+      "order": 24,
+      "questionIds": [
+        "moses_basket",
+        "burning_bush",
+        "ten_commandments"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "ten_commandments",
+      "coverImage": "/images/ten_commandments.jpg",
+      "coverTitle": "摩西與十誡石版"
+    },
+    "en": {
+      "id": "moses",
+      "title": "Moses and the Exodus",
+      "intro": "From the basket by the Nile to the Ten Commandments at Sinai, see God's rescue and covenant.",
+      "outro": "I am the Lord your God, who brought you out of the land of Egypt.",
+      "era": "ot",
+      "section": "old-testament",
+      "themes": [
+        "miracle",
+        "people"
+      ],
+      "order": 24,
+      "questionIds": [
+        "moses_basket",
+        "burning_bush",
+        "ten_commandments"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "ten_commandments",
+      "coverImage": "/images/ten_commandments.jpg",
+      "coverTitle": "Moses with the Tablets of the Law"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "moses_basket",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "exodus",
+        "answer": "法老的女兒發現摩西",
+        "options": [
+          "法老的女兒發現摩西",
+          "摩西擊石出水",
+          "約瑟為法老解夢",
+          "大衛受膏"
+        ],
+        "hints": [
+          "場景在河邊。",
+          "蘆葦叢中有一個籃子。",
+          "一位埃及公主打開籃子。"
+        ],
+        "scripture": {
+          "book": "出埃及記",
+          "chapter": 2,
+          "verse": "5-6"
+        },
+        "event": {
+          "year": -1250,
+          "tolerance": 150,
+          "locationId": "nile_river",
+          "placeName": "尼羅河",
+          "lat": 29.85,
+          "lng": 31.25
+        },
+        "image": {
+          "src": "/images/moses_basket.jpg",
+          "title": "發現摩西",
+          "artist": "Lawrence Alma-Tadema",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:1904_Lawrence_Alma-Tadema_-_The_Finding_of_Moses.jpg"
+        },
+        "summary": "法老的女兒在尼羅河邊發現籃中的嬰孩摩西，憐憫他並收養他。",
+        "artNote": "Alma-Tadema 以尼羅河岸與蘆葦細節，將發現摩西置於埃及宮廷的優雅場景。",
+        "verseHints": [
+          {
+            "ref": "出埃及記 2:5",
+            "text": "法老的女兒來到河邊洗澡，她的使女們在河邊行走。她看見箱子在蘆荻中，就打發一個婢女拿來。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "出埃及記 2:10",
+          "text": "孩子漸長，婦人把他帶到法老的女兒那裡，就作了她的兒子。她給孩子起名叫摩西，意思說：「因我把他從水裡拉出來。」"
+        },
+        "storyId": "moses",
+        "regionId": "egypt",
+        "regionName": "埃及",
+        "modernName": "尼羅河（孟斐斯一帶）",
+        "geoNote": "摩西被放在尼羅河邊的蘆葦中；具體地點不詳。"
+      },
+      {
+        "id": "burning_bush",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "exodus",
+        "answer": "摩西看見燃燒的荊棘",
+        "options": [
+          "摩西看見燃燒的荊棘",
+          "摩西擊石出水",
+          "以利亞在迦密山",
+          "約拿在魚腹中"
+        ],
+        "hints": [
+          "曠野中有一團火焰。",
+          "荊棘被火燒著，卻沒有燒毀。",
+          "神從荊棘中呼召摩西。"
+        ],
+        "scripture": {
+          "book": "出埃及記",
+          "chapter": 3,
+          "verse": "2-5"
+        },
+        "event": {
+          "year": -1250,
+          "tolerance": 150,
+          "locationId": "mount_sinai",
+          "placeName": "西奈山",
+          "lat": 28.539,
+          "lng": 33.975
+        },
+        "image": {
+          "src": "/images/burning_bush.jpg",
+          "title": "摩西與燃燒的荊棘",
+          "artist": "Domenico Fetti (after)",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domenico_Fetti_(c.1589-1624)_(after)_-_Moses_and_the_Burning_Bush_-_1298273_-_National_Trust.jpg"
+        },
+        "summary": "神在燃燒卻不燒毀的荊棘中向摩西顯現，呼召他帶領以色列人出埃及。",
+        "artNote": "Fetti 以強烈光暈與動態人物，表現荊棘中神聖呼召的震撼。",
+        "verseHints": [
+          {
+            "ref": "出埃及記 3:2",
+            "text": "耶和華的使者從荊棘裡火焰中向摩西顯現。摩西觀看，不料，荊棘被火燒著，卻沒有燒毀。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "出埃及記 3:14",
+          "text": "神對摩西說：「我是自有永有的」；又說：「你要對以色列人這樣說：『那自有的打發我到你們這裡來。』」"
+        },
+        "storyId": "moses",
+        "regionId": "sinai",
+        "regionName": "西奈",
+        "modernName": "西奈山（Jebel Musa，傳統地點）",
+        "geoNote": "聖經稱之為「神的山」；傳統將西奈山與 Jebel Musa 相連。"
+      },
+      {
+        "id": "ten_commandments",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "exodus",
+        "answer": "摩西領受十誡",
+        "options": [
+          "摩西領受十誡",
+          "摩西擊石出水",
+          "約瑟為法老解夢",
+          "以斯拉宣讀律法"
+        ],
+        "hints": [
+          "場景在山上。",
+          "摩西手中拿著兩塊石版。",
+          "石版上寫著神的誡命。"
+        ],
+        "scripture": {
+          "book": "出埃及記",
+          "chapter": 31,
+          "verse": "18"
+        },
+        "event": {
+          "year": -1250,
+          "tolerance": 150,
+          "locationId": "mount_sinai",
+          "placeName": "西奈山",
+          "lat": 28.539,
+          "lng": 33.975
+        },
+        "image": {
+          "src": "/images/ten_commandments.jpg",
+          "title": "摩西與十誡石版",
+          "artist": "Moritz Daniel Oppenheim",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Moses_with_the_Tablets_of_the_Law_by_Moritz_Daniel_Oppenheim,_1818.jpg"
+        },
+        "summary": "神在西奈山把十誡寫在兩塊石版上，交給摩西。",
+        "artNote": "Oppenheim 以石版與摩西的莊嚴姿態，凸顯律法作為神聖啟示。",
+        "verseHints": [
+          {
+            "ref": "出埃及記 20:1",
+            "text": "神吩咐這一切的話說："
+          }
+        ],
+        "keyVerse": {
+          "ref": "出埃及記 31:18",
+          "text": "耶和華在西奈山和摩西說完了話，就把兩塊法版交給他，是神用指頭寫的石版。"
+        },
+        "storyId": "moses",
+        "regionId": "sinai",
+        "regionName": "西奈",
+        "modernName": "西奈山（Jebel Musa，傳統地點）",
+        "geoNote": "十誡賜於西奈山；傳統地點為 Jebel Musa。"
+      }
+    ],
+    "en": [
+      {
+        "id": "moses_basket",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "exodus",
+        "answer": "The Finding of Moses",
+        "options": [
+          "The Finding of Moses",
+          "Moses Strikes the Rock",
+          "Joseph Interprets Pharaoh's Dream",
+          "David Is Anointed"
+        ],
+        "hints": [
+          "The scene is by a river.",
+          "A basket lies among the reeds.",
+          "An Egyptian princess opens the basket."
+        ],
+        "scripture": {
+          "book": "Exodus",
+          "chapter": 2,
+          "verse": "5-6"
+        },
+        "event": {
+          "year": -1250,
+          "tolerance": 150,
+          "locationId": "nile_river",
+          "placeName": "The Nile",
+          "lat": 29.85,
+          "lng": 31.25
+        },
+        "image": {
+          "src": "/images/moses_basket.jpg",
+          "title": "The Finding of Moses",
+          "artist": "Lawrence Alma-Tadema",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:1904_Lawrence_Alma-Tadema_-_The_Finding_of_Moses.jpg"
+        },
+        "summary": "Pharaoh's daughter finds the baby Moses in a basket by the Nile, has compassion on him, and adopts him.",
+        "artNote": "Alma-Tadema sets the finding of Moses among Nile reeds and Egyptian courtly detail.",
+        "verseHints": [
+          {
+            "ref": "Exodus 2:5",
+            "text": "Pharaoh’s daughter came down to bathe at the river. Her maidens walked along by the riverside. She saw the basket among the reeds, and sent her handmaid to get it."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Exodus 2:10",
+          "text": "The child grew, and she brought him to Pharaoh’s daughter, and he became her son. She named him Moses, and said, “Because I drew him out of the water.”"
+        },
+        "storyId": "moses",
+        "regionId": "egypt",
+        "regionName": "Egypt",
+        "modernName": "The Nile (near Memphis)",
+        "geoNote": "Moses was placed among the reeds of the Nile; the exact spot is unknown."
+      },
+      {
+        "id": "burning_bush",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "exodus",
+        "answer": "Moses and the Burning Bush",
+        "options": [
+          "Moses and the Burning Bush",
+          "Moses Strikes the Rock",
+          "Elijah on Mount Carmel",
+          "Jonah in the Fish"
+        ],
+        "hints": [
+          "A flame burns in the wilderness.",
+          "The bush burns but is not consumed.",
+          "God calls Moses from the bush."
+        ],
+        "scripture": {
+          "book": "Exodus",
+          "chapter": 3,
+          "verse": "2-5"
+        },
+        "event": {
+          "year": -1250,
+          "tolerance": 150,
+          "locationId": "mount_sinai",
+          "placeName": "Mount Sinai",
+          "lat": 28.539,
+          "lng": 33.975
+        },
+        "image": {
+          "src": "/images/burning_bush.jpg",
+          "title": "Moses and the Burning Bush",
+          "artist": "Domenico Fetti (after)",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domenico_Fetti_(c.1589-1624)_(after)_-_Moses_and_the_Burning_Bush_-_1298273_-_National_Trust.jpg"
+        },
+        "summary": "God appears to Moses in a bush that burns without being consumed and calls him to lead Israel out of Egypt.",
+        "artNote": "Fetti uses a strong halo of light and dynamic figures to convey the shock of the divine call.",
+        "verseHints": [
+          {
+            "ref": "Exodus 3:2",
+            "text": "Yahweh’s angel appeared to him in a flame of fire out of the midst of a bush. He looked, and behold, the bush burned with fire, and the bush was not consumed."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Exodus 3:14",
+          "text": "God said to Moses, “I AM WHO I AM,” and he said, “You shall tell the children of Israel this: ‘I AM has sent me to you.’”"
+        },
+        "storyId": "moses",
+        "regionId": "sinai",
+        "regionName": "Sinai",
+        "modernName": "Mount Sinai (Jebel Musa, traditional)",
+        "geoNote": "Scripture calls it the mountain of God; tradition identifies it with Jebel Musa."
+      },
+      {
+        "id": "ten_commandments",
+        "era": "OT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "timeMode": "period",
+        "period": "exodus",
+        "answer": "Moses Receives the Ten Commandments",
+        "options": [
+          "Moses Receives the Ten Commandments",
+          "Moses Strikes the Rock",
+          "Joseph Interprets Pharaoh's Dream",
+          "Ezra Reads the Law"
+        ],
+        "hints": [
+          "The scene is on a mountain.",
+          "Moses holds two stone tablets.",
+          "The tablets bear God's commandments."
+        ],
+        "scripture": {
+          "book": "Exodus",
+          "chapter": 31,
+          "verse": "18"
+        },
+        "event": {
+          "year": -1250,
+          "tolerance": 150,
+          "locationId": "mount_sinai",
+          "placeName": "Mount Sinai",
+          "lat": 28.539,
+          "lng": 33.975
+        },
+        "image": {
+          "src": "/images/ten_commandments.jpg",
+          "title": "Moses with the Tablets of the Law",
+          "artist": "Moritz Daniel Oppenheim",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Moses_with_the_Tablets_of_the_Law_by_Moritz_Daniel_Oppenheim,_1818.jpg"
+        },
+        "summary": "On Mount Sinai, God gives Moses the Ten Commandments written on two stone tablets.",
+        "artNote": "Oppenheim's solemn Moses and stone tablets present the law as divine revelation.",
+        "verseHints": [
+          {
+            "ref": "Exodus 20:1",
+            "text": "God spoke all these words, saying,"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Exodus 31:18",
+          "text": "He gave to Moses, when he finished speaking with him on Mount Sinai, the two tablets of the testimony, stone tablets, written with God’s finger."
+        },
+        "storyId": "moses",
+        "regionId": "sinai",
+        "regionName": "Sinai",
+        "modernName": "Mount Sinai (Jebel Musa, traditional)",
+        "geoNote": "The Ten Commandments were given at Mount Sinai; the traditional site is Jebel Musa."
+      }
+    ]
+  }
+}

@@ -1,0 +1,388 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "passion-witness",
+  "story": {
+    "zh-Hant": {
+      "id": "passion-witness",
+      "title": "受難與復活同行",
+      "intro": "耶穌為門徒洗腳、西門替耶穌背十字架、以馬忤斯路上相遇，跟隨受難與復活中的同行者。",
+      "outro": "他們的眼睛明亮了，這才認出祂來。",
+      "era": "nt",
+      "section": "passion-resurrection",
+      "themes": [
+        "passion",
+        "resurrection"
+      ],
+      "order": 17,
+      "questionIds": [
+        "foot_washing",
+        "simon_cyrene",
+        "emmaus"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "emmaus",
+      "coverImage": "/images/emmaus.jpg",
+      "coverTitle": "以馬忤斯的晚餐"
+    },
+    "en": {
+      "id": "passion-witness",
+      "title": "Witnesses of Passion & Resurrection",
+      "intro": "Jesus washes the disciples' feet, Simon carries the cross, and two disciples meet him on the road to Emmaus.",
+      "outro": "Their eyes were opened, and they recognized him.",
+      "era": "nt",
+      "section": "passion-resurrection",
+      "themes": [
+        "passion",
+        "resurrection"
+      ],
+      "order": 17,
+      "questionIds": [
+        "foot_washing",
+        "simon_cyrene",
+        "emmaus"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "emmaus",
+      "coverImage": "/images/emmaus.jpg",
+      "coverTitle": "The Supper at Emmaus"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "emmaus",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "以馬忤斯的晚餐",
+        "options": [
+          "以馬忤斯的晚餐",
+          "最後的晚餐",
+          "五餅二魚",
+          "好撒瑪利亞人的比喻"
+        ],
+        "hints": [
+          "復活的耶穌與兩個門徒同行。",
+          "他們在傍晚一起擘餅。",
+          "門徒的眼睛忽然明亮了。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 24,
+          "verse": "13-35"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "emmaus",
+          "placeName": "以馬忤斯",
+          "lat": 31.839,
+          "lng": 34.99
+        },
+        "image": {
+          "src": "/images/emmaus.jpg",
+          "title": "以馬忤斯的晚餐",
+          "artist": "Caravaggio",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:1602-3_Caravaggio,Supper_at_Emmaus_National_Gallery,_London.jpg"
+        },
+        "summary": "復活的耶穌與兩個門徒往以馬忤斯去，途中講解聖經；擘餅時他們才認出他來。",
+        "artNote": "Caravaggio 以餐桌、手勢與光影，捕捉門徒忽然認出耶穌的瞬間。",
+        "verseHints": [
+          {
+            "ref": "路加福音 24:30",
+            "text": "到了坐席的時候，耶穌拿起餅來，祝謝了，擘開，遞給他們。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 24:31",
+          "text": "他們的眼睛明亮了，這才認出他來。忽然耶穌不見了。"
+        },
+        "storyId": "passion-witness",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "Nicopolis / Al-Qubeiba / Abu Ghosh（候選）",
+        "geoNote": "以馬忤斯的位置學界有爭議；常見候選包括 Nicopolis、Al-Qubeiba 與 Abu Ghosh。"
+      },
+      {
+        "id": "foot_washing",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "耶穌為門徒洗腳",
+        "options": [
+          "耶穌為門徒洗腳",
+          "最後的晚餐",
+          "潔淨聖殿",
+          "彼拉多審判"
+        ],
+        "hints": [
+          "耶穌拿著毛巾和盆。",
+          "他俯身為門徒洗腳。",
+          "他教導他們彼此服事。"
+        ],
+        "scripture": {
+          "book": "約翰福音",
+          "chapter": 13,
+          "verse": "4-5"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 3,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/foot_washing.jpg",
+          "title": "耶穌為門徒洗腳",
+          "artist": "Jacopo Tintoretto",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_Lavatorio_(Tintoretto).jpg"
+        },
+        "summary": "耶穌在最後晚餐前為門徒洗腳，留下謙卑服事的榜樣。",
+        "artNote": "Tintoretto 以透視與俯身動作，突顯基督謙卑服事的榜樣。",
+        "verseHints": [
+          {
+            "ref": "約翰福音 13:5",
+            "text": "隨後把水倒在盆裡，就洗門徒的腳，並用自己所束的手巾擦乾。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "約翰福音 13:14",
+          "text": "我是你們的主，你們的夫子，尚且洗你們的腳，你們也當彼此洗腳。"
+        },
+        "storyId": "passion-witness",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶路撒冷",
+        "geoNote": "洗腳發生在最後晚餐的樓房，位於耶路撒冷。"
+      },
+      {
+        "id": "simon_cyrene",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "西門替耶穌背十字架",
+        "options": [
+          "西門替耶穌背十字架",
+          "耶穌在彼拉多面前受審",
+          "耶穌榮入耶路撒冷",
+          "最後的晚餐"
+        ],
+        "hints": [
+          "耶穌背著十字架走向各各他。",
+          "士兵強迫一位路人幫忙。",
+          "那人來自古利奈。"
+        ],
+        "scripture": {
+          "book": "馬可福音",
+          "chapter": 15,
+          "verse": "21"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 3,
+          "locationId": "jerusalem",
+          "placeName": "耶路撒冷",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/simon_cyrene.jpg",
+          "title": "西門替耶穌背十字架",
+          "artist": "Giandomenico Tiepolo",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_V_-_Simon_of_Cyrene_helps_Jesus_carry_the_cross_by_Giandomenico_Tiepolo.jpg"
+        },
+        "summary": "古利奈人西門被士兵強迫，替耶穌背著十字架走向各各他。",
+        "artNote": "Tiepolo 以十字架與扶持的動作，呈現西門被迫分擔耶穌的重擔。",
+        "verseHints": [
+          {
+            "ref": "馬可福音 15:21",
+            "text": "有一個古利奈人西門，就是亞歷山大和魯孚的父親，從鄉下來，經過那地方，他們就勉強他同去，好背著耶穌的十字架。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 23:26",
+          "text": "帶耶穌去的時候，有一個古利奈人西門，從鄉下來；他們就抓住他，把十字架擱在他身上，叫他背著跟隨耶穌。"
+        },
+        "storyId": "passion-witness",
+        "regionId": "judea",
+        "regionName": "猶太",
+        "modernName": "耶路撒冷",
+        "geoNote": "西門背十字架發生在耶穌走向各各他的路上。"
+      }
+    ],
+    "en": [
+      {
+        "id": "emmaus",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Supper at Emmaus",
+        "options": [
+          "The Supper at Emmaus",
+          "The Last Supper",
+          "Feeding the Five Thousand",
+          "The Good Samaritan"
+        ],
+        "hints": [
+          "The risen Jesus walks with two disciples.",
+          "They break bread together in the evening.",
+          "Their eyes are opened."
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 24,
+          "verse": "13-35"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "emmaus",
+          "placeName": "Emmaus",
+          "lat": 31.839,
+          "lng": 34.99
+        },
+        "image": {
+          "src": "/images/emmaus.jpg",
+          "title": "The Supper at Emmaus",
+          "artist": "Caravaggio",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:1602-3_Caravaggio,Supper_at_Emmaus_National_Gallery,_London.jpg"
+        },
+        "summary": "The risen Jesus walks with two disciples to Emmaus and explains the Scriptures; they recognize him when he breaks bread.",
+        "artNote": "Caravaggio uses the table, hands, and light to catch the instant the disciples recognize Jesus.",
+        "verseHints": [
+          {
+            "ref": "Luke 24:30",
+            "text": "When he had sat down at the table with them, he took the bread and gave thanks. Breaking it, he gave to them."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 24:31",
+          "text": "Their eyes were opened, and they recognized him, and he vanished out of their sight."
+        },
+        "storyId": "passion-witness",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Nicopolis / Al-Qubeiba / Abu Ghosh (candidates)",
+        "geoNote": "Emmaus is disputed; candidates include Nicopolis, Al-Qubeiba, and Abu Ghosh."
+      },
+      {
+        "id": "foot_washing",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "Jesus Washes the Disciples' Feet",
+        "options": [
+          "Jesus Washes the Disciples' Feet",
+          "The Last Supper",
+          "The Cleansing of the Temple",
+          "Jesus Before Pilate"
+        ],
+        "hints": [
+          "Jesus takes a towel and a basin.",
+          "He kneels to wash the disciples' feet.",
+          "He teaches them to serve one another."
+        ],
+        "scripture": {
+          "book": "John",
+          "chapter": 13,
+          "verse": "4-5"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 3,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/foot_washing.jpg",
+          "title": "Christ Washing the Disciples' Feet",
+          "artist": "Jacopo Tintoretto",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_Lavatorio_(Tintoretto).jpg"
+        },
+        "summary": "Before the Last Supper, Jesus washes his disciples' feet, leaving an example of humble service.",
+        "artNote": "Tintoretto's perspective and kneeling posture highlight Christ's example of humble service.",
+        "verseHints": [
+          {
+            "ref": "John 13:5",
+            "text": "Then he poured water into the basin, and began to wash the disciples’ feet, and to wipe them with the towel that was wrapped around him."
+          }
+        ],
+        "keyVerse": {
+          "ref": "John 13:14",
+          "text": "If I then, the Lord and the Teacher, have washed your feet, you also ought to wash one another’s feet."
+        },
+        "storyId": "passion-witness",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem",
+        "geoNote": "The foot washing takes place in the upper room in Jerusalem."
+      },
+      {
+        "id": "simon_cyrene",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "Simon of Cyrene Carries the Cross",
+        "options": [
+          "Simon of Cyrene Carries the Cross",
+          "Jesus Before Pilate",
+          "The Triumphal Entry into Jerusalem",
+          "The Last Supper"
+        ],
+        "hints": [
+          "Jesus carries his cross toward Golgotha.",
+          "A passerby is compelled to help.",
+          "The man is from Cyrene."
+        ],
+        "scripture": {
+          "book": "Mark",
+          "chapter": 15,
+          "verse": "21"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 3,
+          "locationId": "jerusalem",
+          "placeName": "Jerusalem",
+          "lat": 31.778,
+          "lng": 35.235
+        },
+        "image": {
+          "src": "/images/simon_cyrene.jpg",
+          "title": "Simon of Cyrene Helps Jesus Carry the Cross",
+          "artist": "Giandomenico Tiepolo",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_V_-_Simon_of_Cyrene_helps_Jesus_carry_the_cross_by_Giandomenico_Tiepolo.jpg"
+        },
+        "summary": "Simon of Cyrene is compelled by the soldiers to carry Jesus' cross on the way to Golgotha.",
+        "artNote": "Tiepolo shows the cross and the helping gesture as Simon is compelled to share Jesus' burden.",
+        "verseHints": [
+          {
+            "ref": "Mark 15:21",
+            "text": "They compelled one passing by, coming from the country, Simon of Cyrene, the father of Alexander and Rufus, to go with them, that he might bear his cross."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 23:26",
+          "text": "When they led him away, they grabbed one Simon of Cyrene, coming from the country, and laid on him the cross, to carry it after Jesus."
+        },
+        "storyId": "passion-witness",
+        "regionId": "judea",
+        "regionName": "Judea",
+        "modernName": "Jerusalem",
+        "geoNote": "Simon carries the cross on the road to Golgotha."
+      }
+    ]
+  }
+}

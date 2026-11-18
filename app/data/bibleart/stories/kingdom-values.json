@@ -1,0 +1,386 @@
+{
+  "contentVersion": "4863674b49d9",
+  "storyId": "kingdom-values",
+  "story": {
+    "zh-Hant": {
+      "id": "kingdom-values",
+      "title": "天國的價值",
+      "intro": "失錢、稗子與重價珍珠，揭示神尋找失喪者、等待收割，並天國的珍貴。",
+      "outro": "天國好像寶貝藏在地裡。",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "parable",
+        "teaching"
+      ],
+      "order": 8,
+      "questionIds": [
+        "lost_coin",
+        "wheat_tares",
+        "pearl_great_price"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "pearl_great_price",
+      "coverImage": "/images/pearl_great_price.jpg",
+      "coverTitle": "重價珍珠的比喻"
+    },
+    "en": {
+      "id": "kingdom-values",
+      "title": "The Value of the Kingdom",
+      "intro": "The lost coin, the wheat and the tares, and the pearl of great price reveal God's search, patience, and the kingdom's worth.",
+      "outro": "The kingdom of heaven is like treasure hidden in a field.",
+      "era": "nt",
+      "section": "jesus-teaching",
+      "themes": [
+        "parable",
+        "teaching"
+      ],
+      "order": 8,
+      "questionIds": [
+        "lost_coin",
+        "wheat_tares",
+        "pearl_great_price"
+      ],
+      "questionCount": 3,
+      "anchorQuestionId": "pearl_great_price",
+      "coverImage": "/images/pearl_great_price.jpg",
+      "coverTitle": "The Parable of the Pearl of Great Price"
+    }
+  },
+  "questions": {
+    "zh-Hant": [
+      {
+        "id": "lost_coin",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "失錢的比喻",
+        "options": [
+          "失錢的比喻",
+          "失羊的比喻",
+          "藏寶的比喻",
+          "寡婦的奉獻"
+        ],
+        "hints": [
+          "一位婦人點燈打掃。",
+          "她失落了一塊銀錢。",
+          "找到後請朋友一同歡喜。"
+        ],
+        "scripture": {
+          "book": "路加福音",
+          "chapter": 15,
+          "verse": "8-9"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "加利利",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/lost_coin.jpg",
+          "title": "失錢的比喻",
+          "artist": "Godfried Schalcken",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Godefridus_Schalcken_-_Parable_of_the_Lost_Piece_of_Silver_-_GS-108_-_Leiden_Collection.jpg"
+        },
+        "summary": "婦人仔細尋找失落的銀錢，找到後與朋友一同歡喜。",
+        "artNote": "Schalcken 以燭光照明昏暗室內，將婦人尋找銀錢的仔細化為光與影的焦點。",
+        "verseHints": [
+          {
+            "ref": "路加福音 15:8",
+            "text": "「或是一個婦人有十塊錢，若失落一塊，豈不點上燈，打掃屋子，細細地找，直到找著嗎？"
+          }
+        ],
+        "keyVerse": {
+          "ref": "路加福音 15:10",
+          "text": "我告訴你們，一個罪人悔改，在神的使者面前也是這樣為他歡喜。」"
+        },
+        "storyId": "kingdom-values",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "加利利（迦百農一帶）",
+        "geoNote": "耶穌在加利利教導時以婦人尋錢作比喻。"
+      },
+      {
+        "id": "wheat_tares",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "稗子的比喻",
+        "options": [
+          "稗子的比喻",
+          "撒種的比喻",
+          "芥菜種的比喻",
+          "重價珍珠"
+        ],
+        "hints": [
+          "麥田裡混進了稗子。",
+          "僕人想拔掉它們。",
+          "主人說等收割時再分開。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 13,
+          "verse": "24-30"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "加利利",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/wheat_tares.jpg",
+          "title": "稗子的比喻",
+          "artist": "Abraham Bloemaert",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abraham_Bloemaert_-_Parable_of_the_Wheat_and_the_Tares_-_Walters_372505.jpg"
+        },
+        "summary": "麥田裡被撒下稗子，主人容許兩者一同生長，直到收割時才分開。",
+        "artNote": "Bloemaert 以麥田與人物動態，表現善惡並存與等待收割的張力。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 13:29",
+            "text": "主人說：『不必，恐怕薅稗子，連麥子也拔出來。"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 13:30",
+          "text": "容這兩樣一齊長，等著收割。當收割的時候，我要對收割的人說，先將稗子薅出來，捆成捆，留著燒；惟有麥子要收在倉裡。』」"
+        },
+        "storyId": "kingdom-values",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "加利利（迦百農一帶）",
+        "geoNote": "麥田與稗子是加利利農業環境中熟悉的景象。"
+      },
+      {
+        "id": "pearl_great_price",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "重價珍珠的比喻",
+        "options": [
+          "重價珍珠的比喻",
+          "藏寶的比喻",
+          "稗子的比喻",
+          "失錢的比喻"
+        ],
+        "hints": [
+          "一位商人尋找好珍珠。",
+          "他遇見一顆極貴重的。",
+          "就變賣一切買下它。"
+        ],
+        "scripture": {
+          "book": "馬太福音",
+          "chapter": 13,
+          "verse": "45-46"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "加利利",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/pearl_great_price.jpg",
+          "title": "重價珍珠的比喻",
+          "artist": "Workshop of Domenico Fetti",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Werkstatt_Domenico_Fetti_-_Gleichnis_von_der_k%C3%B6stlichen_Perle_-_GG_130_-_Kunsthistorisches_Museum.jpg"
+        },
+        "summary": "商人為一顆重價珍珠變賣一切，顯明天國的價值。",
+        "artNote": "Fetti 工作室以珍珠與商人為中心，襯托重價與捨棄一切的主題。",
+        "verseHints": [
+          {
+            "ref": "馬太福音 13:45",
+            "text": "天國又好像買賣人尋找好珠子，"
+          }
+        ],
+        "keyVerse": {
+          "ref": "馬太福音 13:46",
+          "text": "遇見一顆重價的珠子，就去變賣他一切所有的，買了這顆珠子。"
+        },
+        "storyId": "kingdom-values",
+        "regionId": "galilee",
+        "regionName": "加利利",
+        "modernName": "加利利（迦百農一帶）",
+        "geoNote": "重價珍珠的比喻屬馬太福音的天國比喻群。"
+      }
+    ],
+    "en": [
+      {
+        "id": "lost_coin",
+        "era": "NT",
+        "difficulty": 1,
+        "mode": "zoom",
+        "answer": "The Parable of the Lost Coin",
+        "options": [
+          "The Parable of the Lost Coin",
+          "The Parable of the Lost Sheep",
+          "The Parable of the Hidden Treasure",
+          "The Widow's Offering"
+        ],
+        "hints": [
+          "A woman lights a lamp and sweeps.",
+          "She has lost a silver coin.",
+          "She calls friends to rejoice with her."
+        ],
+        "scripture": {
+          "book": "Luke",
+          "chapter": 15,
+          "verse": "8-9"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "Galilee",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/lost_coin.jpg",
+          "title": "The Parable of the Lost Coin",
+          "artist": "Godfried Schalcken",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Godefridus_Schalcken_-_Parable_of_the_Lost_Piece_of_Silver_-_GS-108_-_Leiden_Collection.jpg"
+        },
+        "summary": "A woman searches carefully for a lost silver coin and rejoices with friends when she finds it.",
+        "artNote": "Schalcken uses candlelight to focus the woman's careful search for the lost coin.",
+        "verseHints": [
+          {
+            "ref": "Luke 15:8",
+            "text": "Or what woman, if she had ten drachmacoins, if she lost one drachma coin, wouldn’t light a lamp, sweep the house, and seek diligently until she found it?"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Luke 15:10",
+          "text": "Even so, I tell you, there is joy in the presence of the angels of God over one sinner repenting.”"
+        },
+        "storyId": "kingdom-values",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Galilee (Capernaum area)",
+        "geoNote": "Jesus used the woman's search for a coin while teaching in Galilee."
+      },
+      {
+        "id": "wheat_tares",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Parable of the Wheat and the Tares",
+        "options": [
+          "The Parable of the Wheat and the Tares",
+          "The Parable of the Sower",
+          "The Parable of the Mustard Seed",
+          "The Pearl of Great Price"
+        ],
+        "hints": [
+          "Weeds appear among the wheat.",
+          "The servants want to pull them up.",
+          "The master waits until the harvest."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 13,
+          "verse": "24-30"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "Galilee",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/wheat_tares.jpg",
+          "title": "The Parable of the Wheat and the Tares",
+          "artist": "Abraham Bloemaert",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abraham_Bloemaert_-_Parable_of_the_Wheat_and_the_Tares_-_Walters_372505.jpg"
+        },
+        "summary": "Weeds are sown among the wheat; the master lets both grow until the harvest, when they are separated.",
+        "artNote": "Bloemaert's field and figures picture the coexistence of good and evil and the wait for harvest.",
+        "verseHints": [
+          {
+            "ref": "Matthew 13:29",
+            "text": "“But he said, ‘No, lest perhaps while you gather up the darnel weeds, you root up the wheat with them."
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 13:30",
+          "text": "Let both grow together until the harvest, and in the harvest time I will tell the reapers, “First, gather up the darnel weeds, and bind them in bundles to burn them; but gather the wheat into my barn.”’”"
+        },
+        "storyId": "kingdom-values",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Galilee (Capernaum area)",
+        "geoNote": "Wheat and weeds were familiar sights in Galilee's agricultural setting."
+      },
+      {
+        "id": "pearl_great_price",
+        "era": "NT",
+        "difficulty": 2,
+        "mode": "zoom",
+        "answer": "The Pearl of Great Price",
+        "options": [
+          "The Pearl of Great Price",
+          "The Parable of the Hidden Treasure",
+          "The Parable of the Wheat and the Tares",
+          "The Parable of the Lost Coin"
+        ],
+        "hints": [
+          "A merchant searches for fine pearls.",
+          "He finds one of great value.",
+          "He sells everything to buy it."
+        ],
+        "scripture": {
+          "book": "Matthew",
+          "chapter": 13,
+          "verse": "45-46"
+        },
+        "event": {
+          "year": 30,
+          "tolerance": 6,
+          "locationId": "galilee",
+          "placeName": "Galilee",
+          "lat": 32.88,
+          "lng": 35.575
+        },
+        "image": {
+          "src": "/images/pearl_great_price.jpg",
+          "title": "The Parable of the Pearl of Great Price",
+          "artist": "Workshop of Domenico Fetti",
+          "license": "Public domain",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Werkstatt_Domenico_Fetti_-_Gleichnis_von_der_k%C3%B6stlichen_Perle_-_GG_130_-_Kunsthistorisches_Museum.jpg"
+        },
+        "summary": "A merchant sells everything to buy one pearl of great price, showing the value of the kingdom.",
+        "artNote": "Fetti's workshop centers the pearl and the merchant, highlighting great value and selling all.",
+        "verseHints": [
+          {
+            "ref": "Matthew 13:45",
+            "text": "“Again, the Kingdom of Heaven is like a man who is a merchant seeking fine pearls,"
+          }
+        ],
+        "keyVerse": {
+          "ref": "Matthew 13:46",
+          "text": "who having found one pearl of great price, he went and sold all that he had, and bought it."
+        },
+        "storyId": "kingdom-values",
+        "regionId": "galilee",
+        "regionName": "Galilee",
+        "modernName": "Galilee (Capernaum area)",
+        "geoNote": "The pearl parable belongs to Matthew's kingdom parables."
+      }
+    ]
+  }
+}
